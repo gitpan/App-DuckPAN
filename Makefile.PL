@@ -29,6 +29,7 @@ my %WriteMakefileArgs = (
     "Class::Load" => "0.18",
     "Config::INI" => "0.019",
     "Crypt::SSLeay" => "0.58",
+    "Data::Printer" => "0.3",
     "Dist::Zilla" => "4.300007",
     "Dist::Zilla::Plugin::UploadToDuckPAN" => 0,
     "Email::Valid" => "0.187",
@@ -44,7 +45,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }

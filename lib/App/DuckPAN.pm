@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.001';
+  $App::DuckPAN::VERSION = '0.002';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -23,6 +23,7 @@ use File::Temp qw/ :POSIX /;
 use Class::Load ':all';
 use Term::UI;
 use Term::ReadLine;
+use Carp;
 
 our $VERSION ||= '0.000';
 
@@ -132,7 +133,7 @@ sub execute {
 				push @left_args, $_;
 			}
 		}
-		return $self->perl->duckpan_install(@modules) unless @left_args;
+		exit $self->perl->duckpan_install(@modules) unless @left_args;
 	}
 	print $self->help->help;
 	exit 0;
@@ -222,20 +223,6 @@ sub check_ddg {
 	return $ok;
 }
 
-# sub check_locallib {
-	# my ( $self ) = @_;
-	# my $ok = 1;
-	# print "Checking for local::lib installation... ";
-	# if (my $perl5lib = $ENV{PERL5LIB}) {
-		# my @paths = split(/:/,$perl5lib);
-		# print "Yes";
-	# } else {
-		# print "No!"; $ok = 1;
-	# }
-	# print "\n";
-	# return $ok;
-# }
-
 sub checking_dukgo_user {
 	my ( $self, $user, $pass ) = @_;
 	my $response = $self->http->request(POST($self->dukgo_login, Content => {
@@ -243,6 +230,14 @@ sub checking_dukgo_user {
 		password => $pass,
 	}));
 	$response->code == 302 ? 1 : 0; # workaround, need something in dukgo
+}
+
+sub BUILD {
+	my ( $self ) = @_;
+	if ($^O eq 'MSWin32') {
+		print "\n[ERROR] We dont support Win32\n\n";
+		exit 1;
+	}
 }
 
 1;
@@ -256,7 +251,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 AUTHOR
 
