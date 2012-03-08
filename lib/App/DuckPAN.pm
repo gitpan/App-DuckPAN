@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.002';
+  $App::DuckPAN::VERSION = '0.003';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -190,7 +190,7 @@ sub check_wget {
 }
 
 sub get_local_ddg_version {
-	my $installed_version;
+	my $installed_version = "0";
 	eval {
 		load_class('DDG');
 		$installed_version = $DDG::VERSION;
@@ -242,7 +242,8 @@ sub BUILD {
 
 1;
 
-__END__
+
+
 =pod
 
 =head1 NAME
@@ -251,7 +252,13 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.002
+version 0.003
+
+=head1 DESCRIPTION
+
+Please see L<duckpan>
+
+__
 
 =head1 AUTHOR
 
@@ -265,4 +272,7 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
+
+__END__
 
