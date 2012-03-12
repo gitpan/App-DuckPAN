@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.003';
+  $App::DuckPAN::VERSION = '0.004';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -211,8 +211,12 @@ sub check_ddg {
 		if ($installed_version && version->parse($installed_version) == version->parse($module->version)) {
 			print $module->version;
 		} else {
-			print "You got ".$installed_version.", latest is ".$module->version."!\n";
-			print "[ERROR] Please install latest DDG with: cpanm ".$latest;
+			if ($installed_version) {
+				print "You got ".$installed_version.", latest is ".$module->version."!\n";
+			} else {
+				print "You dont have it installed at all, latest is ".$module->version."!\n";
+			}
+			print "[ERROR] Please install latest DDG with: duckpan DDG";
 			$ok = 0;
 		}
 	} else {
@@ -252,7 +256,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 
