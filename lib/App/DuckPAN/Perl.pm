@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.004';
+  $App::DuckPAN::Perl::VERSION = '0.005';
 }
 
 use Moo;
@@ -103,7 +103,7 @@ App::DuckPAN::Perl
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.004';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.005';
 }
 
 use Moo;
@@ -13,7 +13,12 @@ use MooX::Options;
 
 sub run {
 	my ( $self ) = @_;
-	exit 1 unless $self->app->check_requirements;
+	if ($self->app->check_requirements) {
+		print "\n[ERROR] Check for the requirements failed!! See instructions or reports above\n\n";
+		exit 1;
+	} else {
+		print "\nEVERYTHING OK! You can now go hacking! :)\n\n";
+	}
 }
 
 1;
@@ -26,7 +31,7 @@ App::DuckPAN::Cmd::Check
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 AUTHOR
 
