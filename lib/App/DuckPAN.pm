@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.005';
+  $App::DuckPAN::VERSION = '0.006';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -139,6 +139,26 @@ sub execute {
 	exit 0;
 }
 
+sub print_text {
+	shift;
+	for (@_) {
+		print "\n";
+		my @words = split(/\s+/,$_);
+		my $current_line = "";
+		for (@words) {
+			if ((length $current_line) + (length $_) < 79) {
+				$current_line .= " " if length $current_line;
+				$current_line .= $_;
+			} else {
+				print $current_line."\n";
+				$current_line = $_;
+			}
+		}
+		print $current_line."\n" if length $current_line;
+	}
+	print "\n";
+}
+
 sub check_requirements {
 	my ( $self ) = @_;
 	my $fail = 0;
@@ -147,8 +167,8 @@ sub check_requirements {
 	$fail = 1 unless $self->check_ddg;
 	$fail = 1 unless $self->check_git;
 	$fail = 1 unless $self->check_wget;
+	$fail = 1 unless $self->check_ssh;
 	if ($fail) {
-		print "[ERROR] Requirements fails\n";
 		return 1;
 	}
 	return 0;
@@ -182,6 +202,19 @@ sub check_wget {
 	print "Checking for wget... ";
 	if (my $wget = which('wget')) {
 		print $wget;
+	} else {
+		print "No!"; $ok = 0;
+	}
+	print "\n";
+	return $ok;
+}
+
+sub check_ssh {
+	my ( $self ) = @_;
+	my $ok = 1;
+	print "Checking for ssh... ";
+	if (my $ssh = which('ssh')) {
+		print $ssh;
 	} else {
 		print "No!"; $ok = 0;
 	}
@@ -256,7 +289,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 
