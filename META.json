@@ -58,7 +58,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.006",
+   "version" : "0.007",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -238,6 +238,11 @@
             },
             "name" : "TestRequires",
             "version" : "4.300009"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::UploadToDuckPAN",
+            "name" : "UploadToDuckPAN",
+            "version" : "0.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
