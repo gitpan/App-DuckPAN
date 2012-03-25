@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Goodie::VERSION = '0.007';
+  $App::DuckPAN::Cmd::Goodie::VERSION = '0.008';
 }
 
 use Moo;
@@ -23,6 +23,7 @@ sub run {
 			exit 1;
 		}
 		if ($args[0] eq 'test') {
+			print "\n[WARNING] Please use duckpan query to cover all plugins!\n";
 			shift @args;
 			if (defined $args[0] and $args[0] eq 'all') {
 				my $finder = Module::Pluggable::Object->new(
@@ -124,7 +125,7 @@ App::DuckPAN::Cmd::Goodie
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

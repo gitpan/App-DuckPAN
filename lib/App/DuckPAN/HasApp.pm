@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::HasApp::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::HasApp::VERSION = '0.007';
+  $App::DuckPAN::HasApp::VERSION = '0.008';
 }
 
 use Moo::Role;
@@ -23,7 +23,7 @@ App::DuckPAN::HasApp
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.007';
+  $App::DuckPAN::Help::VERSION = '0.008';
 }
 
 use Moo;
@@ -35,6 +35,10 @@ duckpan check
  Check if you fulfill all requirements for the development
  environment (will automatically gets fired on setup)
 
+duckpan query
+-------------
+ Test your plugins if they match a specific query (interactive)
+
 duckpan goodie
 --------------
  More help there about DDG::Goodie
@@ -60,14 +64,6 @@ __EOT__
 1;
 
 sub goodie { return shift->header().<<'__EOT__'; }
-duckpan goodie test [all|List of DDG::Goodie to test]
-------------------------------------------------
- Test your goodie (use it in your repository root), if you give
- all parameter then all findable modules in DDG::Goodie:: namespace
- are used. If a list of modules are given, those are used. If
- nothing is given, then it tries to find DDG::Goodie::* in the lib/ of the
- current directory.
-
 duckpan goodie new MyGoodie
 ------------------------------------------------
  Starts a new goodie 'DDG::Goodie::MyGoodie' in 'p5-ddg-goodie-mygoodie'
@@ -86,7 +82,7 @@ App::DuckPAN::Help
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 AUTHOR
 
