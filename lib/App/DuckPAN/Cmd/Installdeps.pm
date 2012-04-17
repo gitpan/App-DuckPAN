@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Installdeps::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.008';
+  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.009';
 }
 
 use Moo;
@@ -19,7 +19,7 @@ sub run {
 			"Found a dist.ini, suggesting a Dist::Zilla distribution",
 		);
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil authordeps --missing 2>/dev/null | cpanm"));
+			if (system("dzil authordeps 2>/dev/null | cpanm"));
 		$self->app->perl->cpanminus_install_error
 			if (system("dzil listdeps --missing 2>/dev/null | cpanm"));
 		$self->app->print_text(
@@ -30,6 +30,7 @@ sub run {
 }
 
 1;
+
 __END__
 =pod
 
@@ -39,7 +40,7 @@ App::DuckPAN::Cmd::Installdeps
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 AUTHOR
 
