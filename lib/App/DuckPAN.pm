@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.009';
+  $App::DuckPAN::VERSION = '0.010';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -180,7 +180,7 @@ sub check_git {
 	print "Checking for git... ";
 	if (my $git = which('git')) {
 		my $version_string = `$git --version`;
-		if ($version_string =~ m/git version (\d+)\.(\d+)\.(\d+)\.(\d+)/) {
+		if ($version_string =~ m/git version (\d+)\.(\d+)/) {
 			if ($1 <= 1 && $2 < 7) {
 				print "require minimum 1.7"; $ok = 0;
 			} else {
@@ -289,7 +289,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 DESCRIPTION
 
