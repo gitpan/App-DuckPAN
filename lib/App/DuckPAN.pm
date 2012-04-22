@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.011';
+  $App::DuckPAN::VERSION = '0.012';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -129,6 +129,8 @@ sub execute {
 		for (@arr_args) {
 			if ($_ =~ /^ddg/i || $_ =~ /^app::duckpan/i) {
 				push @modules, $_;
+			} elsif (lc($_) eq 'duckpan') {
+				push @modules, 'App::DuckPAN';
 			} else {
 				push @left_args, $_;
 			}
@@ -289,7 +291,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.011
+version 0.012
 
 =head1 DESCRIPTION
 
