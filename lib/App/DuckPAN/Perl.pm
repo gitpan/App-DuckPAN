@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.010';
+  $App::DuckPAN::Perl::VERSION = '0.011';
 }
 
 use Moo;
@@ -19,6 +19,7 @@ use LWP::Simple;
 use File::Temp qw/ :POSIX /;
 use version;
 use Class::Load ':all';
+
 
 sub dzil_root { Dist::Zilla::Util->_global_config_root }
 sub dzil_config { file(shift->dzil_root,'config.ini') }
@@ -43,8 +44,21 @@ sub setup {
 	$self->set_dzil_config($config);
 }
 
+
 sub get_local_version {
-	# TODO
+	my ($module) = @_;
+	require Module::Data;
+	my $v;
+	{
+		local $@;
+		eval {
+			$v = Module::Data->new( $module )->version;
+			1
+		} or return;
+	};
+	return if not defined $v;
+	return version->parse($v) if not ref $v;
+	return $v;
 }
 
 sub cpanminus_install_error {
@@ -67,20 +81,23 @@ sub duckpan_install {
 		for (@modules) {
 			my $module = $packages->package($_);
 			if ($module) {
-				# TODO
-				# my $localver = get_local_version($_);
-				# if ($localver && version->parse($localver) == version->parse($module->version)) {
-					# print "You already have latest version of ".$_." with ".$localver."\n";
-				# } else {
+				local $@;
+				my $localver = get_local_version($_);
+				if ($localver && $localver == version->parse($module->version)) {
+					print "You already have latest version of ".$_." with ".$localver."\n";
+				} elsif ($localver && $localver > version->parse($module->version)) {
+					print "You have a newer version of ".$_." with ".$localver." (duckpan has ".version->parse($module->version).")\n";
+				} else {
 					my $latest = $self->app->duckpan.'authors/id/'.$module->distribution->pathname;
 					push @to_install, $latest unless grep { $_ eq $latest } @to_install;
-				# }
+				}
 			} else {
 				print "[ERROR] Can't find package ".$_." on ".$self->app->duckpan."\n";
 				$error = 1;
 			}
 		}
 		return 1 if $error;
+		return 0 unless @to_install;
 		return system("cpanm ".join(" ",@to_install));
 	} else {
 		print "[ERROR] Can't reach duckpan at ".$self->app->duckpan."!\n";
@@ -111,7 +128,19 @@ App::DuckPAN::Perl
 
 =head1 VERSION
 
-version 0.010
+version 0.011
+
+=head1 FUNCTIONS
+
+=head2 get_local_version
+
+Returns a version object for the specified package.
+
+	my $version = App::DuckPAN::Perl::get_local_version('Moose');
+
+Returns C<undef> if the version was not defined or not installed.
+
+See L<< C<version.pm>'s documentation|version >> for more on version objects.
 
 =head1 AUTHOR
 

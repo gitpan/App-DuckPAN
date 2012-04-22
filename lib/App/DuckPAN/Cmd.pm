@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::VERSION = '0.010';
+  $App::DuckPAN::Cmd::VERSION = '0.011';
 }
 
 use Moo::Role;
@@ -22,6 +22,7 @@ sub execute {
 }
 
 1;
+
 __END__
 =pod
 
@@ -31,7 +32,7 @@ App::DuckPAN::Cmd
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 AUTHOR
 

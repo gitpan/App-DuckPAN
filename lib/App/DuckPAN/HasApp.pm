@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::HasApp::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::HasApp::VERSION = '0.010';
+  $App::DuckPAN::HasApp::VERSION = '0.011';
 }
 
 use Moo::Role;
@@ -14,6 +14,7 @@ has app => (
 );
 
 1;
+
 __END__
 =pod
 
@@ -23,7 +24,7 @@ App::DuckPAN::HasApp
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 AUTHOR
 

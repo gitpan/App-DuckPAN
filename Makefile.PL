@@ -36,6 +36,7 @@ my %WriteMakefileArgs = (
     "File::Temp" => "0.22",
     "File::Which" => "1.09",
     "LWP::Simple" => "6.00",
+    "Module::Data" => "0.006",
     "Module::Pluggable" => "4.0",
     "Moo" => "0.009013",
     "MooX::Cmd" => "0.001",
@@ -45,7 +46,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.010",
+  "VERSION" => "0.011",
   "test" => {
     "TESTS" => "t/*.t"
   }

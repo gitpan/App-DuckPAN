@@ -33,6 +33,7 @@
             "File::Temp" : "0.22",
             "File::Which" : "1.09",
             "LWP::Simple" : "6.00",
+            "Module::Data" : "0.006",
             "Module::Pluggable" : "4.0",
             "Moo" : "0.009013",
             "MooX::Cmd" : "0.001",
@@ -58,7 +59,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.010",
+   "version" : "0.011",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
