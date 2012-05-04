@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.015';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.016';
 }
 
 use Moo;
@@ -80,11 +80,11 @@ sub run {
 		page_js => $page_js,
 	);
 	my $runner = Plack::Runner->new(
-		loader => 'Restarter',
+		#loader => 'Restarter',
 		includes => ['lib'],
 		app => sub { $web->run_psgi(@_) },
 	);
-	$runner->loader->watch("./lib");
+	#$runner->loader->watch("./lib");
 	exit $runner->run;
 }
 
@@ -163,7 +163,7 @@ App::DuckPAN::Cmd::Server
 
 =head1 VERSION
 
-version 0.015
+version 0.016
 
 =head1 AUTHOR
 

@@ -44,7 +44,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: https://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.015
+version: 0.016
 x_Dist_Zilla:
   plugins:
     -
