@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.017';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.018';
 }
 
 use Moo;
@@ -11,7 +11,6 @@ with qw( App::DuckPAN::Cmd );
 
 use MooX::Options;
 use Plack::Runner;
-use App::DuckPAN::Web;
 use File::ShareDir::ProjectDistDir;
 use File::Copy;
 use Path::Class;
@@ -71,6 +70,8 @@ sub run {
 	print "\n\nStarting up webserver...";
 	print "\n\nYou can stop the webserver with Ctrl-C";
 	print "\n\n";
+
+	require App::DuckPAN::Web;
 
 	my $web = App::DuckPAN::Web->new(
 		blocks => \@blocks,
@@ -163,7 +164,7 @@ App::DuckPAN::Cmd::Server
 
 =head1 VERSION
 
-version 0.017
+version 0.018
 
 =head1 AUTHOR
 
