@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.012';
+  $App::DuckPAN::VERSION = '0.013';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -98,6 +98,7 @@ has config => (
 		get_config
 	)]
 );
+sub cfg { shift->config(@_) }
 
 sub _build_config { App::DuckPAN::Config->new }
 
@@ -120,6 +121,17 @@ sub _build_perl {
 	App::DuckPAN::Perl->new( app => shift );
 }
 
+has ddg => (
+	is => 'ro',
+	builder => '_build_ddg',
+	lazy => 1,
+);
+
+sub _build_ddg { 
+	load_class('App::DuckPAN::DDG');
+	App::DuckPAN::DDG->new( app => shift );
+}
+
 sub execute {
 	my ( $self, $args, $chain ) = @_;
 	my @arr_args = @{$args};
@@ -129,7 +141,7 @@ sub execute {
 		for (@arr_args) {
 			if ($_ =~ /^ddg/i || $_ =~ /^app::duckpan/i) {
 				push @modules, $_;
-			} elsif (lc($_) eq 'duckpan') {
+			} elsif (lc($_) eq 'duckpan' or lc($_) eq 'upgrade') {
 				push @modules, 'App::DuckPAN';
 			} else {
 				push @left_args, $_;
@@ -225,12 +237,8 @@ sub check_ssh {
 }
 
 sub get_local_ddg_version {
-	my $installed_version = "0";
-	eval {
-		load_class('DDG');
-		$installed_version = $DDG::VERSION;
-	};
-	return $installed_version;
+	my ( $self ) = @_;
+	return $self->perl->get_local_version('DDG');
 }
 
 sub check_ddg {
@@ -291,7 +299,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 DESCRIPTION
 

@@ -13,10 +13,13 @@ lib/App/DuckPAN/Cmd/Check.pm
 lib/App/DuckPAN/Cmd/Goodie.pm
 lib/App/DuckPAN/Cmd/Installdeps.pm
 lib/App/DuckPAN/Cmd/Query.pm
+lib/App/DuckPAN/Cmd/Server.pm
 lib/App/DuckPAN/Cmd/Setup.pm
 lib/App/DuckPAN/Config.pm
+lib/App/DuckPAN/DDG.pm
 lib/App/DuckPAN/HasApp.pm
 lib/App/DuckPAN/Help.pm
 lib/App/DuckPAN/Perl.pm
+lib/App/DuckPAN/Web.pm
 t/00-load.t
 t/release-pod-syntax.t

@@ -33,20 +33,26 @@ my %WriteMakefileArgs = (
     "Dist::Zilla" => "4.300007",
     "Dist::Zilla::Plugin::UploadToDuckPAN" => 0,
     "Email::Valid" => "0.187",
+    "File::ShareDir::ProjectDistDir" => 0,
     "File::Temp" => "0.22",
     "File::Which" => "1.09",
+    "HTML::TreeBuilder" => 0,
+    "LWP::Protocol::https" => 0,
     "LWP::Simple" => "6.00",
     "Module::Data" => "0.006",
     "Module::Pluggable" => "4.0",
     "Moo" => "0.009013",
     "MooX::Cmd" => "0.001",
+    "MooX::HasEnv" => 0,
     "MooX::Options" => "0.8",
     "Parse::CPAN::Packages::Fast" => "0.04",
+    "Plack" => "0.9986",
     "Term::UI" => "0.30",
+    "URL::Encode" => "0.01",
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.012",
+  "VERSION" => "0.013",
   "test" => {
     "TESTS" => "t/*.t"
   }
