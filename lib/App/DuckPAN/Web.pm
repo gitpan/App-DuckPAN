@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.013';
+  $App::DuckPAN::Web::VERSION = '0.014';
 }
 
 use Moo;
@@ -13,7 +13,6 @@ use Plack::Response;
 use HTML::Entities;
 use HTML::TreeBuilder;
 use Data::Printer;
-use URL::Encode qw( url_decode_utf8 );
 use IO::All -utf8;
 use HTTP::Request;
 use LWP::UserAgent;
@@ -160,7 +159,7 @@ App::DuckPAN::Web
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 AUTHOR
 
