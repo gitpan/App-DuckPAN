@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.016';
+  $App::DuckPAN::Web::VERSION = '0.017';
 }
 
 use Moo;
@@ -142,6 +142,16 @@ sub request {
 		}
 		$response->content_type('text/html');
 		$body = $page;
+    } elsif ($request->param('u') && $path_parts[0] eq 'iu') {
+        my $res = $self->ua->request(HTTP::Request->new(GET => "http://duckduckgo.com".$request->request_uri));
+        if ($res->is_success) {
+            $body = $res->decoded_content;
+            $response->code($res->code);
+            $response->content_type($res->content_type);
+        } else {
+            warn $res->status_line, "\n";
+            $body = "";
+        }
 	} else {
 		$response->content_type('text/html');
 		$body = $self->page_root;
@@ -151,6 +161,7 @@ sub request {
 }
 
 1;
+
 __END__
 =pod
 
@@ -160,7 +171,7 @@ App::DuckPAN::Web
 
 =head1 VERSION
 
-version 0.016
+version 0.017
 
 =head1 AUTHOR
 
