@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.014';
+  $App::DuckPAN::Web::VERSION = '0.015';
 }
 
 use Moo;
@@ -128,16 +128,17 @@ sub request {
 		} else {
 			my $root = HTML::TreeBuilder->new;
 			$root->parse($self->page_root);
-			my $error_field = $root->look_down(
-				"id", "error_homepage"
-			);
-			$error_field->push_content("Sorry, no hit on your plugins");
-			$error_field->attr( id => "error_duckduckhack" );
+			# my $error_field = $root->look_down(
+			# 	"id", "error_homepage"
+			# );
+			# $error_field->push_content("Sorry, no hit on your plugins");
+			# $error_field->attr( id => "error_duckduckhack" );
 			my $text_field = $root->look_down(
 				"name", "q"
 			);
 			$text_field->attr( value => $query );
 			$page = $root->as_HTML;
+			$page =~ s/<\/body>/<script type="text\/javascript">seterr('Sorry, no hit for your plugins')<\/script><\/body>/;
 		}
 		$response->content_type('text/html');
 		$body = $page;
@@ -159,7 +160,7 @@ App::DuckPAN::Web
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 AUTHOR
 

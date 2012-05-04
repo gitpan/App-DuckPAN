@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.014';
+  $App::DuckPAN::DDG::VERSION = '0.015';
 }
 
 use Moo;
@@ -22,7 +22,8 @@ sub get_blocks_from_current_dir {
 	my $finder = Module::Pluggable::Object->new(
 		search_path => ['lib/DDG/Spice','lib/DDG/Goodie'],
 	);
-	push @args, $finder->plugins;
+	my @plugins = $finder->plugins;
+	push @args, sort { $a cmp $b } @plugins;
 	@args = map {
 		$_ =~ s!/!::!g;
 		my @parts = split('::',$_);
@@ -69,7 +70,7 @@ App::DuckPAN::DDG
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 AUTHOR
 
