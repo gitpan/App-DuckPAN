@@ -27,6 +27,7 @@ requires:
   File::Temp: 0.22
   File::Which: 1.09
   HTML::TreeBuilder: 0
+  IO::All: 0
   LWP::Protocol::https: 0
   LWP::Simple: 6.00
   Module::Data: 0.006
@@ -44,7 +45,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: https://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.018
+version: 0.019
 x_Dist_Zilla:
   plugins:
     -

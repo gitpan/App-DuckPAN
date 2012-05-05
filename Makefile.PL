@@ -37,6 +37,7 @@ my %WriteMakefileArgs = (
     "File::Temp" => "0.22",
     "File::Which" => "1.09",
     "HTML::TreeBuilder" => 0,
+    "IO::All" => 0,
     "LWP::Protocol::https" => 0,
     "LWP::Simple" => "6.00",
     "Module::Data" => "0.006",
@@ -52,7 +53,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.018",
+  "VERSION" => "0.019",
   "test" => {
     "TESTS" => "t/*.t"
   }

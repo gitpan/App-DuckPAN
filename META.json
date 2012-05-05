@@ -34,6 +34,7 @@
             "File::Temp" : "0.22",
             "File::Which" : "1.09",
             "HTML::TreeBuilder" : "0",
+            "IO::All" : "0",
             "LWP::Protocol::https" : "0",
             "LWP::Simple" : "6.00",
             "Module::Data" : "0.006",
@@ -65,7 +66,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.018",
+   "version" : "0.019",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
