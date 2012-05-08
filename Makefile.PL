@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla" => "4.300007",
     "Dist::Zilla::Plugin::UploadToDuckPAN" => 0,
     "Email::Valid" => "0.187",
-    "File::ShareDir::ProjectDistDir" => 0,
+    "File::ShareDir::ProjectDistDir" => "0.003002",
     "File::Temp" => "0.22",
     "File::Which" => "1.09",
     "HTML::TreeBuilder" => 0,
@@ -53,7 +53,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.019",
+  "VERSION" => "0.020",
   "test" => {
     "TESTS" => "t/*.t"
   }
