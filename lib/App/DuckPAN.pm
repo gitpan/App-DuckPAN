@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.020';
+  $App::DuckPAN::VERSION = '0.021';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -143,6 +143,7 @@ sub execute {
 				push @modules, $_;
 			} elsif (lc($_) eq 'duckpan' or lc($_) eq 'upgrade') {
 				push @modules, 'App::DuckPAN';
+				push @modules, 'DDG' if lc($_) eq 'upgrade';
 			} else {
 				push @left_args, $_;
 			}
@@ -180,7 +181,6 @@ sub check_requirements {
 	#$fail = 1 unless $self->check_locallib;
 	$fail = 1 unless $self->check_ddg;
 	$fail = 1 unless $self->check_git;
-	$fail = 1 unless $self->check_wget;
 	$fail = 1 unless $self->check_ssh;
 	if ($fail) {
 		return 1;
@@ -203,19 +203,6 @@ sub check_git {
 		} else {
 			print "Unknown version!"; $ok = 0;
 		}
-	} else {
-		print "No!"; $ok = 0;
-	}
-	print "\n";
-	return $ok;
-}
-
-sub check_wget {
-	my ( $self ) = @_;
-	my $ok = 1;
-	print "Checking for wget... ";
-	if (my $wget = which('wget')) {
-		print $wget;
 	} else {
 		print "No!"; $ok = 0;
 	}
@@ -251,8 +238,9 @@ sub check_ddg {
 		my $module = $packages->package('DDG');
 		my $latest = $self->duckpan.'authors/id/'.$module->distribution->pathname;
 		my $installed_version = $self->get_local_ddg_version;
-		if ($installed_version && version->parse($installed_version) == version->parse($module->version)) {
-			print $module->version;
+		if ($installed_version && version->parse($installed_version) >= version->parse($module->version)) {
+			print $installed_version;
+			print " (duckpan has ".$module->version.")" if $installed_version ne $module->version;
 		} else {
 			if ($installed_version) {
 				print "You got ".$installed_version.", latest is ".$module->version."!\n";
@@ -299,7 +287,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.020
+version 0.021
 
 =head1 DESCRIPTION
 
