@@ -1,9 +1,9 @@
-package App::DuckPAN::Cmd::Installdeps;
+package App::DuckPAN::Cmd::Install;
 BEGIN {
-  $App::DuckPAN::Cmd::Installdeps::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.023';
+  $App::DuckPAN::Cmd::Install::VERSION = '0.023';
 }
 
 use Moo;
@@ -18,10 +18,9 @@ sub run {
 		$self->app->print_text(
 			"Found a dist.ini, suggesting a Dist::Zilla distribution",
 		);
+
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil authordeps 2>/dev/null | cpanm"));
-		$self->app->perl->cpanminus_install_error
-			if (system("dzil listdeps --missing 2>/dev/null | cpanm"));
+			if (system("dzil install --install-command 'cpanm .'"));
 		$self->app->print_text(
 			"Everything fine!",
 		);
@@ -36,7 +35,7 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Installdeps
+App::DuckPAN::Cmd::Install
 
 =head1 VERSION
 

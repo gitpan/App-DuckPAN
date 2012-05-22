@@ -11,6 +11,7 @@ lib/App/DuckPAN.pm
 lib/App/DuckPAN/Cmd.pm
 lib/App/DuckPAN/Cmd/Check.pm
 lib/App/DuckPAN/Cmd/Goodie.pm
+lib/App/DuckPAN/Cmd/Install.pm
 lib/App/DuckPAN/Cmd/Installdeps.pm
 lib/App/DuckPAN/Cmd/Query.pm
 lib/App/DuckPAN/Cmd/Server.pm
