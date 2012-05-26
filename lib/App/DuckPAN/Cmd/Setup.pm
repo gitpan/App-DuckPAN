@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.023';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.024';
 }
 
 use Moo;
@@ -186,7 +186,7 @@ App::DuckPAN::Cmd::Setup
 
 =head1 VERSION
 
-version 0.023
+version 0.024
 
 =head1 AUTHOR
 
