@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.032';
+  $App::DuckPAN::VERSION = '0.033';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -24,6 +24,7 @@ use Class::Load ':all';
 use Term::UI;
 use Term::ReadLine;
 use Carp;
+use Encode;
 
 our $VERSION ||= '0.000';
 
@@ -72,6 +73,13 @@ has term => (
 
 sub _build_term { Term::ReadLine->new('duckpan') }
 
+sub get_reply {
+	my ( $self, $prompt, %params ) = @_;
+	my $return = $self->term->get_reply( prompt => $prompt, %params );
+	Encode::_utf8_on($return);
+	return $return;
+}
+
 has http => (
 	is => 'ro',
 	builder => '_build_http',
@@ -86,6 +94,14 @@ sub _build_http {
 	$agent->proxy( http => $self->http_proxy ) if $self->has_http_proxy;
 	return $agent;
 }
+
+has server_hostname => (
+	is => 'ro',
+	builder => 1,
+	lazy => 1,
+);
+
+sub _build_server_hostname { defined $ENV{APP_DUCKPAN_SERVER_HOSTNAME} ? $ENV{APP_DUCKPAN_SERVER_HOSTNAME} : 'duckduckgo.com' }
 
 has config => (
 	is => 'ro',
@@ -287,7 +303,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.032
+version 0.033
 
 =head1 DESCRIPTION
 

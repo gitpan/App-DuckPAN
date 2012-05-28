@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.032';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.033';
 }
 
 use Moo;
@@ -20,7 +20,7 @@ sub run {
 	my @blocks = @{$self->app->ddg->get_blocks_from_current_dir(@args)};
 
 	print "\n(Empty query for ending test)\n";
-	while (my $query = $self->app->term->get_reply( prompt => 'Query: ' ) ) {
+	while (my $query = $self->app->get_reply( 'Query: ' ) ) {
 		my $request = DDG::Request->new( query_raw => $query );
 		my $hit;
 		for (@blocks) {
@@ -52,7 +52,7 @@ App::DuckPAN::Cmd::Query
 
 =head1 VERSION
 
-version 0.032
+version 0.033
 
 =head1 AUTHOR
 

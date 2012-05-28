@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.032';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.033';
 }
 
 use Moo;
@@ -34,29 +34,31 @@ sub run {
 
 	print "\n\nTrying to fetch current versions of the HTML from http://duckduckgo.com/\n\n";
 
+	my $hostname = $self->app->server_hostname;
+
 	my $fetch_page_root;
-	if ($fetch_page_root = get('http://duckduckgo.com/')) {
+	if ($fetch_page_root = get('http://'.$hostname.'/')) {
 		io(file($self->app->cfg->cache_path,'page_root.html'))->print($self->change_html($fetch_page_root));
 	} else {
 		print "\nRoot fetching failed, will just use cached version..."
 	}
 
 	my $fetch_page_spice;
-	if ($fetch_page_spice = get('http://duckduckgo.com/?q=duckduckhack-template-for-spice')) {
+	if ($fetch_page_spice = get('http://'.$hostname.'/?q=duckduckhack-template-for-spice')) {
 		io(file($self->app->cfg->cache_path,'page_spice.html'))->print($self->change_html($fetch_page_spice));
 	} else {
 		print "\nSpice-Template fetching failed, will just use cached version..."
 	}
 
 	my $fetch_page_css;
-	if ($fetch_page_css = get('http://duckduckgo.com/style.css')) {
+	if ($fetch_page_css = get('http://'.$hostname.'/style.css')) {
 		io(file($self->app->cfg->cache_path,'page.css'))->print($self->change_css($fetch_page_css));
 	} else {
 		print "\nCSS fetching failed, will just use cached version..."
 	}
 
 	my $fetch_page_js;
-	if ($fetch_page_js = get('http://duckduckgo.com/duckduck.js')) {
+	if ($fetch_page_js = get('http://'.$hostname.'/duckduck.js')) {
 		io(file($self->app->cfg->cache_path,'page.js'))->print($self->change_js($fetch_page_js));
 	} else {
 		print "\nJavaScript fetching failed, will just use cached version..."
@@ -108,6 +110,8 @@ sub change_html {
 	my $root = HTML::TreeBuilder->new;
 	$root->parse($html);
 
+	my $hostname = $self->app->server_hostname;
+
 	my @a = $root->look_down(
 		"_tag", "a"
 	);
@@ -120,7 +124,7 @@ sub change_html {
 		if ($_->attr('type') && $_->attr('type') eq 'text/css') {
 			$_->attr('href','/?duckduckhack_css=1');
 		} elsif (substr($_->attr('href'),0,1) eq '/') {
-			$_->attr('href','http://duckduckgo.com'.$_->attr('href'));
+			$_->attr('href','http://'.$hostname.''.$_->attr('href'));
 		}
 	}
 
@@ -133,7 +137,7 @@ sub change_html {
 			if ($src =~ m/^\/d\d{3}\.js/) {
 				$_->attr('src','/?duckduckhack_js=1');
 			} elsif (substr($src,0,1) eq '/') {
-				$_->attr('src','http://duckduckgo.com'.$_->attr('src'));
+				$_->attr('src','http://'.$hostname.''.$_->attr('src'));
 			}
 		}
 	}
@@ -144,7 +148,7 @@ sub change_html {
 
 	for (@img) {
 		if ($_->attr('src')) {
-			$_->attr('src','http://duckduckgo.com'.$_->attr('src'));
+			$_->attr('src','http://'.$hostname.''.$_->attr('src'));
 		}
 	}
 
@@ -164,7 +168,7 @@ App::DuckPAN::Cmd::Server
 
 =head1 VERSION
 
-version 0.032
+version 0.033
 
 =head1 AUTHOR
 
