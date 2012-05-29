@@ -46,7 +46,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.036
+version: 0.037
 x_Dist_Zilla:
   plugins:
     -
@@ -120,10 +120,6 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: MetaJSON
-      version: 4.300016
-    -
-      class: Dist::Zilla::Plugin::NextRelease
-      name: NextRelease
       version: 4.300016
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests

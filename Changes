@@ -3,8 +3,14 @@ Changes from 1738-08-15 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.036 at 2012-05-29 01:50:05 +0000
+version 0.037 at 2012-05-29 02:07:37 +0000
 ------------------------------------------
+
+  Change: b42c356025f3023b8f99c61fcf47cdd631e70a35
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-29 04:06:56 +0000
+
+    And the next bug in dist.ini fixed with new plugin ;) 
 
   Change: 0c9cdffdffb879edfb242d1f2be1ac5d01f1d96e
   Author: Torsten Raudssus <torsten@raudss.us>

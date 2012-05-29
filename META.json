@@ -67,7 +67,7 @@
          "web" : "http://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.036",
+   "version" : "0.037",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -158,11 +158,6 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "MetaJSON",
-            "version" : "4.300016"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::NextRelease",
-            "name" : "NextRelease",
             "version" : "4.300016"
          },
          {
