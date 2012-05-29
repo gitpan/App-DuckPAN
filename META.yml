@@ -3,6 +3,7 @@ abstract: 'The DuckDuckGo DuckPAN client'
 author:
   - 'Torsten Raudssus <torsten@raudss.us>'
 build_requires:
+  Test::LoadAllModules: 0.021
   Test::More: 0.98
 configure_requires:
   ExtUtils::MakeMaker: 6.30
@@ -45,7 +46,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: https://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.033
+version: 0.034
 x_Dist_Zilla:
   plugins:
     -

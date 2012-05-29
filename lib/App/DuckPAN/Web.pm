@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.033';
+  $App::DuckPAN::Web::VERSION = '0.034';
 }
 
 use Moo;
@@ -164,7 +164,7 @@ sub request {
 		$response->content_type('text/html');
 		$body = $self->page_root;
 	}
-	Encode::_utf8_off($body)
+	Encode::_utf8_off($body);
 	$response->body($body);
 	return $response;
 }
@@ -179,7 +179,7 @@ App::DuckPAN::Web
 
 =head1 VERSION
 
-version 0.033
+version 0.034
 
 =head1 AUTHOR
 

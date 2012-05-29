@@ -53,6 +53,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::LoadAllModules" : "0.021",
             "Test::More" : "0.98"
          }
       }
@@ -66,7 +67,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.033",
+   "version" : "0.034",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
