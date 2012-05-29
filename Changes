@@ -1,57 +1,528 @@
-Revision history for App-DuckPAN
+==================================================
+Changes from 1738-08-15 00:00:00 +0000 to present.
+==================================================
 
-0.034     2012-05-29 02:42:17 Europe/Berlin
+------------------------------------------
+version 0.035 at 2012-05-29 01:42:09 +0000
+------------------------------------------
 
-0.033     2012-05-28 22:35:00 Europe/Berlin
+  Change: f55dbffc9a5a9b0b9965d7ab0179ed3b68380d75
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-29 03:41:57 +0000
 
-0.032     2012-05-25 22:24:13 America/New_York
+    Added ChangelogFromGit 
 
-0.031     2012-05-25 22:21:01 America/New_York
+  Change: 46093e60f737fb4e4d0ed2d4b431bb702f09e484
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-29 02:42:25 +0000
 
-0.030     2012-05-26 04:17:40 Europe/Berlin
+    v0.034 
 
-0.023     2012-05-23 00:16:24 Europe/Berlin
+  Change: 623ec322c168e4007c6e6b412126a76572bfbed7
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-29 02:42:03 +0000
 
-0.022     2012-05-21 20:54:41 Europe/Berlin
+    Added requirement for the test 
 
-0.021     2012-05-21 20:35:09 Europe/Berlin
+  Change: 0fe3cdc92655bb7e714174b2bdecd400641491bc
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-29 02:41:24 +0000
 
-0.020     2012-05-08 12:00:53 Europe/Berlin
+    Fixed bug in Web server, added loadtest 
 
-0.019     2012-05-05 03:19:51 Europe/Berlin
+  Change: 3e5184543a5f2a40ceec79c462a67b88cd3b52b2
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-28 22:35:12 +0000
 
-0.018     2012-05-04 21:58:03 Europe/Berlin
+    v0.033 
 
-0.017     2012-05-04 19:11:57 Europe/Berlin
+  Change: ef5095b5c4098a7ab28ad7e881837ffe1cedcdbe
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-28 22:30:00 +0000
 
-0.016     2012-05-04 19:10:12 Europe/Berlin
+    Fixed utf8 query problem, fixed $hostname 
 
-0.015     2012-05-04 19:07:48 Europe/Berlin
+  Change: 4a6d74fd2f4780365d47500242239d170ae01f48
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-05-26 18:33:19 +0000
 
-0.014     2012-05-04 03:49:41 Europe/Berlin
+    Made hostname dynamic via $hostname variable which checks if
+    ENV{APP_DUCKPAN_SERVER_HOSTNAME} otherwise it defaults to
+    'duckduckgo.com' 
 
-0.013     2012-05-04 03:45:46 Europe/Berlin
+  Change: c12e25bc42ac63132662dd1cc827cdbb42004621
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-05-26 18:10:29 +0000
 
-0.012     2012-04-22 20:09:07 Europe/Berlin
+    Fixed UTF8 Encoding issue -- added line 161 RE:
+    https://github.com/duckduckgo/p5-app-duckpan/issues/2 
 
-0.011     2012-04-22 20:04:38 Europe/Berlin
+  Change: a6a3cf13643d01b0a0d41be2cb263c7753076197
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-05-25 22:24:28 +0000
 
-0.010     2012-04-17 04:45:04 Europe/Berlin
+    v0.032 
 
-0.009     2012-04-17 03:16:50 Europe/Berlin
+  Change: 87608b32295699f5f2429256fc8f74c49b2520ac
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-05-25 22:21:18 +0000
 
-0.008     2012-03-25 05:28:53 Europe/Berlin
+    v0.031 
 
-0.007     2012-03-19 00:29:29 Europe/Berlin
+  Change: d8fddbf478082bb90748136109adbd36df3e9c2e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-26 04:17:48 +0000
 
-0.006     2012-03-15 19:22:42 Europe/Berlin
+    v0.030 
 
-0.005     2012-03-14 22:30:55 Europe/Berlin
+  Change: f626340fe8af5a4bcfed7c0005d96d59d4876780
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-23 00:17:02 +0000
 
-0.004     2012-03-12 13:19:17 Europe/Berlin
+    v0.023 
 
-0.003     2012-03-08 18:27:55 Europe/Berlin
+  Change: ea5e4d9a120daf0f44a25a291943983024917d0b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-23 00:16:05 +0000
 
-0.002     2012-03-01 03:25:45 Europe/Berlin
+    Added duckpan install command 
 
-0.001     2012-02-29 03:59:50 Europe/Berlin
+  Change: a29156ef33906fa66951a07ea2400ffa15b375a1
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-21 20:55:22 +0000
+
+    v0.022 
+
+  Change: aefb693a036fd2e95af014040d5c1ffc9043d184
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-21 20:53:18 +0000
+
+    ok ok.. nginx is faking!... damn it ;) 
+
+  Change: dec978fb228154f33caf8ec6f9bd35f6872e4e1f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-21 20:35:19 +0000
+
+    v0.021 
+
+  Change: 7497effe4378b25d40b4ace1ecb141c8ed3de6c6
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-21 20:33:54 +0000
+
+    Fixed something stupid ;) 
+
+  Change: e3fae6d246173b95f92248b419f0e1a337df72f2
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-21 20:14:57 +0000
+
+    Fixed wrong rewrite to usage 
+
+  Change: 7349969d8447d66b5cdc018c311823a57bc31a1d
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-21 19:47:18 +0000
+
+    Added upgrading of DDG on duckpan upgrade, added wrap_jsonp_callback
+    to the duckpan server 
+
+  Change: 2996490285be74f5ccdd42e601865470e7353857
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-11 04:40:57 +0000
+
+    Removed wget check 
+
+  Change: d8075be411bf1027a9ce69d4df86b3e9af1a1976
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-11 04:40:11 +0000
+
+    Hups 
+
+  Change: a5e59b136080e99ff93f84560bceefad6ca31937
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-11 04:38:41 +0000
+
+    Allow higher version of DDG 
+
+  Change: 17c281b4e73b6759968ad78103c6d0976970b077
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-08 12:01:08 +0000
+
+    v0.020 
+
+  Change: fc7c8e0fb422b62315bc44644e6242ea597d8dce
+  Author: Kent Fredric <kentfredric@gmail.com>
+  Date : 2012-05-08 17:40:19 +0000
+
+    Increase dependency on File::ShareDir::ProjectDistDir to 0.3.2 or
+    higher to solve infinite ascension loop bug 
+
+  Change: 5d2ef238ba75a48e8854239dec1d2fbbdc5a2aa0
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-05 03:20:00 +0000
+
+    v0.019 
+
+  Change: e86229d9c55993477e3c0e7292c4c05210fb535c
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-05 03:19:39 +0000
+
+    Added a missing requirement 
+
+  Change: d22289fab94051f98821b24cc46d207df770ed2b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 21:58:14 +0000
+
+    v0.018 
+
+  Change: 489b3fe0b1922a33c78dd692d52808fce7b9e0ed
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 21:57:54 +0000
+
+    Changed the use of DDG::Request to a require 
+
+  Change: 00d02203f6b930600c480bb2bd08a059a7159f44
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 19:12:09 +0000
+
+    v0.017 
+
+  Change: 8eff885bccfddd8bf1aaff45a18ffaf57dc0a374
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-05-04 11:11:16 +0000
+
+    handle /iu/ 
+
+  Change: ae7e280c2260597409b88ab7b635ba88f601c670
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 19:10:22 +0000
+
+    v0.016 
+
+  Change: 16a136c7f304e6086fe44705f8ba8b5fe89ad5f5
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 19:09:46 +0000
+
+    Removed anyway not working reloader functionality 
+
+  Change: 99593620dadc24c4d7ff12bada9a892d80a93924
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 19:07:56 +0000
+
+    v0.015 
+
+  Change: cbc31fdf2b2a4327865a30ce972921d63bbbef5b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 19:06:51 +0000
+
+    Added different method for showing the error 
+
+  Change: 086cfe8bdb2b340833cad7e131638bbad213c994
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 04:12:56 +0000
+
+    Sorted plugins 
+
+  Change: edad336ed9368f2dea705c0179cb5e800e404bf5
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 03:49:54 +0000
+
+    v0.014 
+
+  Change: e3ad0fbf07019d14affcdc5f4745dc21f63ba852
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 03:49:23 +0000
+
+    Hups! 
+
+  Change: 20f52c526e22ed5cf8f11b6f8b552cc7ddd8bee2
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 03:48:06 +0000
+
+    v0.013 
+
+  Change: 11ea4a7bfc55d192464aa998796e7340a1f8b9b3
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-04 03:45:12 +0000
+
+    <evilgrins> 
+
+  Change: b710e5d374f89cca2845e30823c881ace4b39412
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 05:52:55 +0000
+
+    More details 
+
+  Change: 034b0f46b903f40166f9f245ca3ee9ed4f30ea8d
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 05:22:47 +0000
+
+    Added check for latest DDG 
+
+  Change: 74bba28d330fd5e96b98168c29ba0c38182ba984
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 05:09:53 +0000
+
+    Yeah!.... already triggering 
+
+  Change: 323b750fcde6bf15c3d0c015959a5aa0acd17cfc
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 04:28:11 +0000
+
+    Added JS 
+
+  Change: 0fd7a1a5f1f649102dd2185b36f739c84b777d1a
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 04:12:08 +0000
+
+    Added missing MooX::HasEnv 
+
+  Change: 2bd338b16ba09f79de5638835ec625364dcf1524
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 03:49:02 +0000
+
+    Yeah dont stack regexp, just make it proper.... 
+
+  Change: 699c0ce265625c8d23ec4762482ad50f9bcff13a
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-03 03:42:08 +0000
+
+    First start of the spice testing webserver 
+
+  Change: f67529b71ca6b6140c9d330aa9b800635fdde828
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-22 20:09:50 +0000
+
+    v0.012 
+
+  Change: 8316a7b04ee11c8a4071e7eb051e60824817cb64
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-22 20:08:52 +0000
+
+    Added link for duckpan to DuckPAN so that duckpan duckpan works 
+
+  Change: 2ff197799651da4dd50953ba8a337d50b17ba553
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-22 20:05:43 +0000
+
+    v0.011 
+
+  Change: ede96654e497ac08296f1d8ff211393292121aeb
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-22 20:04:32 +0000
+
+    Added requirement 
+
+  Change: f9836a1c28475f2f20b1ea4223e417b6bc14b6fb
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-22 20:03:53 +0000
+
+    Small tuning of the version check 
+
+  Change: a4e5a3412ba46efc2db94ebee3e6ff72258a5e51
+  Author: Kent Fredric <kentfredric@gmail.com>
+  Date : 2012-04-18 07:48:53 +0000
+
+    Initial code ( untested ) for version checking 
+
+  Change: ca6ef4447ccc8068e7340891b3ed2a8ce8becf1a
+  Author: Kent Fredric <kentfredric@gmail.com>
+  Date : 2012-04-18 07:46:00 +0000
+
+    more ^M in t/ 
+
+  Change: eece4d88fcc68669d997c2b7610487136ffc3ea0
+  Author: Kent Fredric <kentfredric@gmail.com>
+  Date : 2012-04-18 07:40:04 +0000
+
+    Strip annoying ^M windows linefeed codes 
+
+  Change: e6c4c76adc6d8f7ca7830ac898ee8b6b20b1c186
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-17 04:46:04 +0000
+
+    v0.010 
+
+  Change: 311ebc15715e36ec985a52ca585e6c974fdadfd1
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-04-16 19:48:53 +0000
+
+    fix git version regex to handle newer versions 
+
+  Change: fcd9aa891ebbf6d358d542c978cfb06f33afe97e
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-17 03:25:48 +0000
+
+    v0.009 
+
+  Change: b77fbdd0214d807e20ee111d42f2728031cf53e4
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-04-17 03:16:37 +0000
+
+    Force update of author deps 
+
+  Change: 30f41d8f8fe9ce8984cf00de0c861dacc8623c74
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-25 05:29:56 +0000
+
+    v0.008 
+
+  Change: 8b3bfe9c29792b5a0b174cdc0db56c277400c668
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-25 05:28:32 +0000
+
+    Removed goodie test reference in help 
+
+  Change: 8d3b31c2e0627625864a056de24f7e07c4633cc7
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-25 05:28:05 +0000
+
+    Fixed help added warning on goodie test 
+
+  Change: fee664d77804eabc9a4b6558eae7d9611e076222
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-25 05:24:53 +0000
+
+    Added query command 
+
+  Change: a9b35a5b1a73efeb491f24333a1848ce05743b72
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-19 00:30:11 +0000
+
+    v0.007 
+
+  Change: 95145d21e72b7d33291675c1c4a7291465b067b3
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-19 00:28:50 +0000
+
+    Added ability to install App::DuckPAN from duckpan.org, added
+    "DualPAN" existence of package 
+
+  Change: 914e3881672cec3034f34c1554cd997d349149f2
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-15 19:23:23 +0000
+
+    v0.006 
+
+  Change: d69f510a2ef78e8bb2e7c3de2a9ae50b90b562bc
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-15 19:22:31 +0000
+
+    Added installdeps command 
+
+  Change: 683e616350cd320422e03100e1093bf0b4a14b5c
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-14 22:33:11 +0000
+
+    v0.005 
+
+  Change: cfa905f1fb6ccbb31215ea1dee182cf6a10c567f
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-12 13:33:21 +0000
+
+    More verbose for check 
+
+  Change: ea34bfc53a87647177323544397eec1a2a0148bd
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-12 13:20:27 +0000
+
+    v0.004 
+
+  Change: 1e3e70eaccbafdfed08f8806c07cd7e4f7064c02
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-12 13:19:09 +0000
+
+    Small doc modification 
+
+  Change: 06eb8fdf11a648c5fa2999444eecfba03180c786
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-08 18:28:33 +0000
+
+    v0.003 
+
+  Change: 4a50cf094c29b31dabc53e3c4278aff13b565de6
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-08 18:27:38 +0000
+
+    More documentation, fixed bug 
+
+  Change: 5f2fbfedf65dee505a773641a273e5d3526cb2b2
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-01 03:31:13 +0000
+
+    v0.002 
+
+  Change: a47158d3eec0f879fa8c88788579590d1afcf9eb
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-03-01 03:25:36 +0000
+
+    Added Data::Printer requirement 
+
+  Change: 42acbaff6c2354794e7a2bfe036502f6e0911db8
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-29 04:05:36 +0000
+
+    v0.001 
+
+  Change: f91c2f4b0e47de9a17ca6e2c5b01fad443c794eb
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-29 03:59:11 +0000
+
+    Added goodie Command, added more help, more requirements checks 
+
+  Change: a20d6e2f61278469456becaa3fda24e75c109533
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-13 18:15:36 +0000
+
+    Added defaults, more little changes 
+
+  Change: 8f6c03aa18d2e18d215fcc0260c9e7b17e5b1ae8
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-12 03:45:27 +0000
+
+    Now duckpan acts like cpanm on DuckPAN for ^DDG parameters,
+    generating of ~/.duckpan/config.ini included 
+
+  Change: 984d4437c20d2cec2cbfd25b2ce1445e1422ac3d
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-12 02:21:33 +0000
+
+    Added $args to run 
+
+  Change: a847c68b4d2871675f8326ae6148172d858fdc14
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-12 01:51:51 +0000
+
+    Using Dist::Zilla config if exist 
+
+  Change: 99861586e7b7fde7f42ea878303b73aba6f26619
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-11 23:50:13 +0000
+
+    crazedpsyc suxx :-P 
+
+  Change: ab4fe545e234d11ad77716b346fdbc530a281d26
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-11 23:34:20 +0000
+
+    Fixed requirements, fixed error if no dukgo login 
+
+  Change: a2da512ea631a157c450ac15013f410af6d9eb18
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-11 23:24:22 +0000
+
+    Added dukgo user/pass question 
+
+  Change: ff312068ee74de181c35fd6738d600257177e5fa
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-11 21:52:25 +0000
+
+    First version... more to come 
+
+  Change: 732581ea2276ba9d5e0911c6b57c9326ee5f9924
+  Author: Torsten Raudssus <github@raudssus.de>
+  Date : 2012-02-03 20:00:33 +0000
+
+    initial commit 
+
+================
+End of releases.
+================
