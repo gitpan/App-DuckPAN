@@ -50,11 +50,11 @@ my %WriteMakefileArgs = (
     "Parse::CPAN::Packages::Fast" => "0.04",
     "Plack" => "0.9986",
     "Term::UI" => "0.30",
-    "URL::Encode" => "0.01",
+    "URI" => "1.60",
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.037",
+  "VERSION" => "0.038",
   "test" => {
     "TESTS" => "t/*.t"
   }

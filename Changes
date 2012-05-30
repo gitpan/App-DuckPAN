@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1738-08-15 00:00:00 +0000 to present.
+Changes from 1738-08-16 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.037 at 2012-05-29 02:07:37 +0000
+version 0.038 at 2012-05-30 18:41:24 +0000
 ------------------------------------------
+
+  Change: efdd86b1a6a9f2f4c7e5c180ea55b75a6897eefe
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-05-30 20:40:43 +0000
+
+    Added uri escaped query replacement, fixed load test impossibility 
 
   Change: b42c356025f3023b8f99c61fcf47cdd631e70a35
   Author: Torsten Raudssus <torsten@raudss.us>

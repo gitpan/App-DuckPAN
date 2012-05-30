@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Install::VERSION = '0.037';
+  $App::DuckPAN::Cmd::Install::VERSION = '0.038';
 }
 
 use Moo;
@@ -39,7 +39,7 @@ App::DuckPAN::Cmd::Install
 
 =head1 VERSION
 
-version 0.037
+version 0.038
 
 =head1 AUTHOR
 
