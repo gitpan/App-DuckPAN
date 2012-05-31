@@ -3,8 +3,20 @@ Changes from 1738-08-17 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.040 at 2012-05-31 00:38:06 +0000
+version 0.041 at 2012-05-31 22:18:36 +0000
 ------------------------------------------
+
+  Change: a8463440ac9ea138d3ba229652ddb66fb32f3a82
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-06-01 00:18:19 +0000
+
+    Removed old Pod::Weaver relied doc 
+
+  Change: da607fc3cffe1c82b9f5df7f1a027d7495c545b5
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-06-01 00:15:13 +0000
+
+    Added more real nginx-like behaviour of the rewrite 
 
   Change: 228434764470f590fdb2865194c84281c92486d2
   Author: moollaza <moollaza@gmail.com>
