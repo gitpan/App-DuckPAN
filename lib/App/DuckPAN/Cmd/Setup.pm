@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.038';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.039';
 }
 
 use Moo;
@@ -176,28 +176,3 @@ sub setup {
 }
 
 1;
-
-__END__
-=pod
-
-=head1 NAME
-
-App::DuckPAN::Cmd::Setup
-
-=head1 VERSION
-
-version 0.038
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-

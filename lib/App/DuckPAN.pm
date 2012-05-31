@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.038';
+  $App::DuckPAN::VERSION = '0.039';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -293,37 +293,10 @@ sub BUILD {
 
 1;
 
-
-
-=pod
-
-=head1 NAME
-
-App::DuckPAN - The DuckDuckGo DuckPAN client
-
-=head1 VERSION
-
-version 0.038
+__END__
 
 =head1 DESCRIPTION
 
 Please see L<duckpan>
 
 __
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-
-
-__END__
-

@@ -46,7 +46,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.038
+version: 0.039
 x_Dist_Zilla:
   plugins:
     -
@@ -137,10 +137,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Authority
       name: Authority
       version: 1.006
-    -
-      class: Dist::Zilla::Plugin::PodWeaver
-      name: PodWeaver
-      version: 3.101641
     -
       class: Dist::Zilla::Plugin::Repository
       name: Repository

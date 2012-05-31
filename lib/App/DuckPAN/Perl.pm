@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.038';
+  $App::DuckPAN::Perl::VERSION = '0.039';
 }
 
 use Moo;
@@ -44,6 +44,17 @@ sub setup {
 	$self->set_dzil_config($config);
 }
 
+=func get_local_version
+
+Returns a version object for the specified package.
+
+	my $version = App::DuckPAN::Perl::get_local_version('Moose');
+
+Returns C<undef> if the version was not defined or not installed.
+
+See L<< C<version.pm>'s documentation|version >> for more on version objects.
+
+=cut
 
 sub get_local_version {
 	my ( $self, $module ) = @_;
@@ -118,40 +129,3 @@ sub get_dzil_config {
 }
 
 1;
-
-__END__
-=pod
-
-=head1 NAME
-
-App::DuckPAN::Perl
-
-=head1 VERSION
-
-version 0.038
-
-=head1 FUNCTIONS
-
-=head2 get_local_version
-
-Returns a version object for the specified package.
-
-	my $version = App::DuckPAN::Perl::get_local_version('Moose');
-
-Returns C<undef> if the version was not defined or not installed.
-
-See L<< C<version.pm>'s documentation|version >> for more on version objects.
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-

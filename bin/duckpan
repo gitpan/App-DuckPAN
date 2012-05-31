@@ -8,32 +8,7 @@ use utf8::all;
 use App::DuckPAN;
 App::DuckPAN->new_with_cmd;
 
-
-
-=pod
-
-=head1 NAME
-
-duckpan - Command line tool for using the DuckPAN of DuckDuckGo
-
-=head1 VERSION
-
-version 0.038
-
-=head1 DESCRIPTION
-
-L<DuckPAN|http://duckpan.org/> is a project of L<DuckDuckGo|https://duckduckgo.com/>
-trying to make a release platform for the contributions to DuckDuckGo. DuckDuckGo
-is a search engine, using so a so called Zero-click Info to spice the search result
-with a very specific result, for example 2+2 or 200 USD to EUR. In this concept
-there is like a nearly unlimited option of what contributions are possible. Beside
-gathering those Zero-click Info plugins, we also want to use it to store all
-released style projects of DuckDuckGo (for example opensource browser plugins and
-the other user contributed tools).
-
-We are still in the buildup of all this, but you may contact us in the channel
-mentioned in the SUPPORT section down under. So anything can change, but we try to
-keep this client and already implemented features stable.
+__END__
 
 =head1 SYNPOSIS
 
@@ -60,6 +35,21 @@ keep this client and already implemented features stable.
   # Setup your environment for using Dist::Zilla::Plugin::UploadToDuckPAN
   # BETA
 
+=head1 DESCRIPTION
+
+L<DuckPAN|http://duckpan.org/> is a project of L<DuckDuckGo|https://duckduckgo.com/>
+trying to make a release platform for the contributions to DuckDuckGo. DuckDuckGo
+is a search engine, using so a so called Zero-click Info to spice the search result
+with a very specific result, for example 2+2 or 200 USD to EUR. In this concept
+there is like a nearly unlimited option of what contributions are possible. Beside
+gathering those Zero-click Info plugins, we also want to use it to store all
+released style projects of DuckDuckGo (for example opensource browser plugins and
+the other user contributed tools).
+
+We are still in the buildup of all this, but you may contact us in the channel
+mentioned in the SUPPORT section down under. So anything can change, but we try to
+keep this client and already implemented features stable.
+
 =head1 SEE ALSO
 
 L<https://duckduckgo.com>
@@ -80,24 +70,7 @@ Repository
 
   https://github.com/duckduckgo/p5-app-duckpan
   Pull request and additional contributors are welcome
-
+ 
 Issue Tracker
 
   https://github.com/duckduckgo/p5-app-duckpan/issues
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-
-
-__END__
-

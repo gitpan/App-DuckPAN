@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.038';
+  $App::DuckPAN::Web::VERSION = '0.039';
 }
 
 use Moo;
@@ -125,10 +125,11 @@ sub request {
 			last if $result;
 		}
 		my $page = $self->page_spice;
-		my $uri_encoded_query = uri_escape($query);
-		my $uri_encoded_ddh = uri_escape('duckduckhack-template-for-spice');
+		my $uri_encoded_query = uri_escape($query, "^A-Za-z");
+		my $uri_encoded_ddh = quotemeta(uri_escape('duckduckhack-template-for-spice', "^A-Za-z"));
 		$page =~ s/duckduckhack-template-for-spice/$query/g;
 		$page =~ s/$uri_encoded_ddh/$uri_encoded_query/g;
+
 		if ($result) {
 			p($result);
             my $call_extf = $result->caller->module_share_dir.'/spice.js';
@@ -174,27 +175,3 @@ sub request {
 }
 
 1;
-__END__
-=pod
-
-=head1 NAME
-
-App::DuckPAN::Web
-
-=head1 VERSION
-
-version 0.038
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-

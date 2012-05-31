@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1738-08-16 00:00:00 +0000 to present.
+Changes from 1738-08-17 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.038 at 2012-05-30 18:41:24 +0000
+version 0.039 at 2012-05-31 00:25:40 +0000
 ------------------------------------------
+
+  Change: 228434764470f590fdb2865194c84281c92486d2
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-05-30 20:12:31 +0000
+
+    rq template-for-spice error fixed -- removed [PodWeaver] from
+    dist.ini 
 
   Change: efdd86b1a6a9f2f4c7e5c180ea55b75a6897eefe
   Author: Torsten Raudssus <torsten@raudss.us>
