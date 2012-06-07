@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1738-08-17 00:00:00 +0000 to present.
+Changes from 1738-08-24 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.041 at 2012-05-31 22:18:36 +0000
+version 0.042 at 2012-06-07 21:05:51 +0000
 ------------------------------------------
+
+  Change: a8cd7e48043dc0dee73fc808c4d00fcdf6535399
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-06-07 23:05:36 +0000
+
+    Deprecated goodie test 
 
   Change: a8463440ac9ea138d3ba229652ddb66fb32f3a82
   Author: Torsten Raudssus <torsten@raudss.us>

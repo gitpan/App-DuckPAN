@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.041';
+  $App::DuckPAN::Help::VERSION = '0.042';
 }
 
 use Moo;
@@ -35,13 +35,15 @@ duckpan check
  Check if you fulfill all requirements for the development
  environment (will automatically gets fired on setup)
 
+duckpan installdeps
+-------------
+ Install all requirements of the specific DuckDuckHack project (if
+ possible), like zeroclickinfo-spice, zeroclickinfo-goodie, duckduckgo
+ or community-platform
+
 duckpan query
 -------------
  Test your plugins if they match a specific query (interactive)
-
-duckpan goodie
---------------
- More help there about DDG::Goodie
 
 duckpan release
 ---------------
