@@ -67,7 +67,7 @@
          "web" : "http://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.042",
+   "version" : "0.043",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

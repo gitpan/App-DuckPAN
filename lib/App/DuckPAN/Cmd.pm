@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::VERSION = '0.042';
+  $App::DuckPAN::Cmd::VERSION = '0.043';
 }
 
 use Moo::Role;
