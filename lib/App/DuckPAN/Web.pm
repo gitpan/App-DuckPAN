@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.043';
+  $App::DuckPAN::Web::VERSION = '0.044';
 }
 
 use Moo;
@@ -97,8 +97,14 @@ sub request {
 					my $res = $self->ua->request(HTTP::Request->new(GET => $to));
 					if ($res->is_success) {
 						$body = $res->decoded_content;
+                        warn "Cannot use wrap_jsonp_callback and wrap_string callback at the same time!" if $rewrite->wrap_jsonp_callback && $rewrite->wrap_string_callback;
 						if ($rewrite->wrap_jsonp_callback && $rewrite->callback) {
 							$body = $rewrite->callback.'('.$body.');';
+						}
+						elsif ($rewrite->wrap_string_callback && $rewrite->callback) {
+                            $body =~ s/"/\\"/g;
+                            $body =~ s/\n/\\n/g;
+							$body = $rewrite->callback.'("'.$body.'");';
 						}
 						$response->code($res->code);
 						$response->content_type($res->content_type);
@@ -128,8 +134,9 @@ sub request {
 		}
 		my $page = $self->page_spice;
 		my $uri_encoded_query = uri_escape($query, "^A-Za-z");
+		my $html_encoded_query = encode_entities($query);
 		my $uri_encoded_ddh = quotemeta(uri_escape('duckduckhack-template-for-spice', "^A-Za-z"));
-		$page =~ s/duckduckhack-template-for-spice/$query/g;
+		$page =~ s/duckduckhack-template-for-spice/$html_encoded_query/g;
 		$page =~ s/$uri_encoded_ddh/$uri_encoded_query/g;
 
 		if ($result) {

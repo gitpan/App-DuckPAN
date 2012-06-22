@@ -1,10 +1,52 @@
 ==================================================
-Changes from 1738-08-24 00:00:00 +0000 to present.
+Changes from 1738-09-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.043 at 2012-06-07 22:52:00 +0000
+version 0.044 at 2012-06-22 15:02:32 +0000
 ------------------------------------------
+
+  Change: 7f324c45eb15f9682aaf8996b9e9609a7513a824
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-06-22 10:56:51 +0000
+
+    Fixed rights 
+
+  Change: 733c24146cfc7298ac99f0f535abe62e82c00622
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-06-22 10:56:33 +0000
+
+    Fixed bug about handling cpanminus failure 
+
+  Change: b54e60b5c3a75024220a1f204c8b969bc0d67e30
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-06-13 04:25:23 +0000
+
+    Fixes 
+
+  Change: 96926d7e30cf3d12317884842312e62c9a12cc5f
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-06-16 14:41:12 +0000
+
+    remove an extra debugger 
+
+  Change: 42818dd3f048df73ee8b1eb927050d375cd7967a
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-06-16 14:40:04 +0000
+
+    escape newlines _right_... 
+
+  Change: 8c6f29b82b967c6952251ce5a79f92141f2f113c
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-06-16 14:09:23 +0000
+
+    escape newlines in spice return 
+
+  Change: c4b1d1e9e01589724908713912531e4d3df7d49a
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-06-15 22:08:49 +0000
+
+    handle spice string wrappers in duckpan too... 
 
   Change: 7e6aa202e38fc009ac4c82d00c442c83d91190e3
   Author: Torsten Raudssus <torsten@raudss.us>

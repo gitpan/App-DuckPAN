@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.043';
+  $App::DuckPAN::VERSION = '0.044';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
