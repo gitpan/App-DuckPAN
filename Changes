@@ -1,10 +1,30 @@
 ==================================================
-Changes from 1738-09-08 00:00:00 +0000 to present.
+Changes from 1738-09-25 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.046 at 2012-06-22 18:17:51 +0000
+version 0.045 at 2012-07-09 10:03:14 +0000
 ------------------------------------------
+
+  Change: 0c0a575d55d6e56328334124640cb3041cc394a8
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-07-09 06:02:43 +0000
+
+    Added location support 
+
+  Change: d0ebec3087ceee9abe3673f008f796348bb8732d
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-07-08 17:03:43 +0000
+
+    Non spice now also at least works and get dumped display on the web
+    server 
+
+  Change: 3eb87ecae43fe52c338bd13cdaba61732a7da542
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-07-08 16:17:04 +0000
+
+    Fetching the rewrite to before any request, to prevent people from
+    changing it on a per request base. 
 
   Change: 7f324c45eb15f9682aaf8996b9e9609a7513a824
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -3,20 +3,23 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.046';
+  $App::DuckPAN::Web::VERSION = '0.045';
 }
 
 use Moo;
 use DDG::Request;
+use DDG::Test::Location;
 use Plack::Request;
 use Plack::Response;
 use HTML::Entities;
 use HTML::TreeBuilder;
+use HTML::Element;
 use Data::Printer;
 use IO::All -utf8;
 use HTTP::Request;
 use LWP::UserAgent;
 use URI::Escape;
+use Data::Dumper;
 
 has blocks => ( is => 'ro', required => 1 );
 has page_root => ( is => 'ro', required => 1 );
@@ -26,6 +29,7 @@ has page_js => ( is => 'ro', required => 1 );
 
 has _share_dir_hash => ( is => 'rw' );
 has _path_hash => ( is => 'rw' );
+has _rewrite_hash => ( is => 'rw' );
 
 has ua => (
 	is => 'ro',
@@ -41,14 +45,19 @@ sub BUILD {
 	my ( $self ) = @_;
 	my %share_dir_hash;
 	my %path_hash;
+	my %rewrite_hash;
 	for (@{$self->blocks}) {
 		for (@{$_->only_plugin_objs}) {
-			$share_dir_hash{$_->module_share_dir} = ref $_ if $_->can('module_share_dir');
-			$path_hash{$_->path} = ref $_ if $_->can('path');
+			if ($_->does('DDG::IsSpice')) {
+				$rewrite_hash{ref $_} = $_->rewrite if $_->has_rewrite;
+				$share_dir_hash{$_->module_share_dir} = ref $_ if $_->can('module_share_dir');
+				$path_hash{$_->path} = ref $_ if $_->can('path');
+			}
 		}
 	}
 	$self->_share_dir_hash(\%share_dir_hash);
 	$self->_path_hash(\%path_hash);
+	$self->_rewrite_hash(\%rewrite_hash);
 }
 
 sub run_psgi {
@@ -77,8 +86,8 @@ sub request {
 				$path_remainder =~ s/\/+/\//g;
 				$path_remainder =~ s/^\///;
 				my $spice_class = $self->_path_hash->{$_};
-				die "Spice tested here must have a rewrite..." unless $spice_class->has_rewrite;
-				my $rewrite = $spice_class->rewrite;
+				my $rewrite = $self->_rewrite_hash->{$spice_class};
+				die "Spice tested here must have a rewrite..." unless $rewrite;
 				my $from = $rewrite->from;
 				my $re = $rewrite->has_from ? qr{$from} : qr{(.*)};
 				if (my @captures = $path_remainder =~ m/$re/) {
@@ -126,7 +135,10 @@ sub request {
 	} elsif ($request->param('q')) {
 		my $query = $request->param('q');
 		Encode::_utf8_on($query);
-		my $ddg_request = DDG::Request->new( query_raw => $query );
+		my $ddg_request = DDG::Request->new(
+			query_raw => $query,
+			location => test_location_by_env(),
+		);
 		my $result;
 		for (@{$self->blocks}) {
 			($result) = $_->request($ddg_request);
@@ -139,8 +151,9 @@ sub request {
 		$page =~ s/duckduckhack-template-for-spice/$html_encoded_query/g;
 		$page =~ s/$uri_encoded_ddh/$uri_encoded_query/g;
 
-		if ($result) {
-			p($result);
+		p($result) if $result;
+
+		if (ref $result eq 'DDG::ZeroClickInfo::Spice') {
             my $call_extf = $result->caller->module_share_dir.'/spice.js';
             my $call_extc = $result->caller->module_share_dir.'/spice.css';
             my $call_ext = $result->call_path;
@@ -149,18 +162,25 @@ sub request {
 			$page =~ s/####DUCKDUCKHACK-CALL-EXTF####/$call_extf/g;
 		} else {
 			my $root = HTML::TreeBuilder->new;
-			$root->parse($self->page_root);
-			# my $error_field = $root->look_down(
-			# 	"id", "error_homepage"
-			# );
-			# $error_field->push_content("Sorry, no hit on your plugins");
-			# $error_field->attr( id => "error_duckduckhack" );
-			my $text_field = $root->look_down(
-				"name", "q"
-			);
-			$text_field->attr( value => $query );
-			$page = $root->as_HTML;
-			$page =~ s/<\/body>/<script type="text\/javascript">seterr('Sorry, no hit for your plugins')<\/script><\/body>/;
+			if ($result) {
+				$root->parse($page);
+				#my $dump = encode_entities(Dumper $result);
+				my $content = $root->look_down(
+					"id", "bottom_spacing2"
+				);
+				my $dump = HTML::Element->new('pre');
+				$dump->push_content(Dumper $result);
+				$content->insert_element($dump);
+				$page = $root->as_HTML;
+			} else {
+				$root->parse($self->page);
+				my $text_field = $root->look_down(
+					"name", "q"
+				);
+				$text_field->attr( value => $query );
+				$page = $root->as_HTML;
+				$page =~ s/<\/body>/<script type="text\/javascript">seterr('Sorry, no hit for your plugins')<\/script><\/body>/;
+			}
 		}
 		$response->content_type('text/html');
 		$body = $page;

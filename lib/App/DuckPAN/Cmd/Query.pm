@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.046';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.045';
 }
 
 use Moo;
@@ -19,10 +19,20 @@ sub run {
 
 	my @blocks = @{$self->app->ddg->get_blocks_from_current_dir(@args)};
 
+	require DDG;
+	DDG->import;
+	require DDG::Request;
+	DDG::Request->import;
+	require DDG::Test::Location;
+	DDG::Test::Location->import;
+
 	print "\n(Empty query for ending test)\n";
 	while (my $query = $self->app->get_reply( 'Query: ' ) ) {
 		eval {
-			my $request = DDG::Request->new( query_raw => $query );
+			my $request = DDG::Request->new(
+				query_raw => $query,
+				location => test_location_by_env(),
+			);
 			my $hit;
 			for (@blocks) {
 				my ($result) = $_->request($request);

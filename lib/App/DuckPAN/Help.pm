@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.046';
+  $App::DuckPAN::Help::VERSION = '0.045';
 }
 
 use Moo;
