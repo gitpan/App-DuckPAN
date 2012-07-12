@@ -1,10 +1,35 @@
 ==================================================
-Changes from 1738-09-25 00:00:00 +0000 to present.
+Changes from 1738-09-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.050 at 2012-07-09 13:07:26 +0000
+version 0.051 at 2012-07-12 22:55:54 +0000
 ------------------------------------------
+
+  Change: 3497345c5bb27b0bece0c920fe13357ef93aaee4
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-07-12 18:48:57 +0000
+
+    Starting using MooX, excluded functionality of Cmd::Query to other
+    package to avoid POE warning, fixed no plugin hit page usage 
+
+  Change: afc5cb5a1ff54b27192574adcb881b5b4aa004de
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-07-12 17:01:19 +0000
+
+    Added history to DuckPAN query, small fix in web.pm 
+
+  Change: 81fccf6be844f8bf0b5f056e2a5683fff676190f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-07-09 16:25:07 +0000
+
+    Added [MetaNoIndex] here to be sure 
+
+  Change: 6e4f5db8afd8c148e632d3f3055d8385e9b95b3f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-07-09 09:37:47 +0000
+
+    Added language to duckpan server/query 
 
   Change: 0c0a575d55d6e56328334124640cb3041cc394a8
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -44,9 +44,11 @@ my %WriteMakefileArgs = (
     "Module::Data" => "0.006",
     "Module::Pluggable" => "4.0",
     "Moo" => "0.009013",
+    "MooX" => 0,
     "MooX::Cmd" => "0.001",
     "MooX::HasEnv" => 0,
     "MooX::Options" => "0.8",
+    "POE" => "1.354",
     "Parse::CPAN::Packages::Fast" => "0.04",
     "Plack" => "0.9986",
     "Term::UI" => "0.30",
@@ -54,7 +56,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.050",
+  "VERSION" => "0.051",
   "test" => {
     "TESTS" => "t/*.t"
   }

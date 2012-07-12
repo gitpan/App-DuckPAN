@@ -8,12 +8,18 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120630'
+generated_by: 'Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: App-DuckPAN
+no_index:
+  directory:
+    - t/
+    - xt/
+    - ex/
+    - inc/
 requires:
   App::cpanminus: 1.5007
   CPAN::Repository: 0.007
@@ -34,9 +40,11 @@ requires:
   Module::Data: 0.006
   Module::Pluggable: 4.0
   Moo: 0.009013
+  MooX: 0
   MooX::Cmd: 0.001
   MooX::HasEnv: 0
   MooX::Options: 0.8
+  POE: 1.354
   Parse::CPAN::Packages::Fast: 0.04
   Plack: 0.9986
   Term::UI: 0.30
@@ -46,7 +54,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.050
+version: 0.051
 x_Dist_Zilla:
   plugins:
     -
@@ -108,7 +116,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: Git::NextVersion
-      version: 1.121010
+      version: 1.121820
     -
       class: Dist::Zilla::Plugin::PkgVersion
       name: PkgVersion
@@ -144,19 +152,19 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Git/Check'
-      version: 1.121010
+      version: 1.121820
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Git/Commit'
-      version: 1.121010
+      version: 1.121820
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Git/Tag'
-      version: 1.121010
+      version: 1.121820
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Git/Push'
-      version: 1.121010
+      version: 1.121820
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -177,6 +185,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::UploadToDuckPAN
       name: UploadToDuckPAN
       version: 0.001
+    -
+      class: Dist::Zilla::Plugin::MetaNoIndex
+      name: MetaNoIndex
+      version: 4.300020
     -
       class: Dist::Zilla::Plugin::ChangelogFromGit
       name: ChangelogFromGit

@@ -3,12 +3,13 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.050';
+  $App::DuckPAN::Web::VERSION = '0.051';
 }
 
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
+use DDG::Test::Language;
 use Plack::Request;
 use Plack::Response;
 use HTML::Entities;
@@ -138,6 +139,7 @@ sub request {
 		my $ddg_request = DDG::Request->new(
 			query_raw => $query,
 			location => test_location_by_env(),
+			language => test_language_by_env(),
 		);
 		my $result;
 		for (@{$self->blocks}) {
@@ -164,7 +166,6 @@ sub request {
 			my $root = HTML::TreeBuilder->new;
 			if ($result) {
 				$root->parse($page);
-				#my $dump = encode_entities(Dumper $result);
 				my $content = $root->look_down(
 					"id", "bottom_spacing2"
 				);
@@ -173,7 +174,7 @@ sub request {
 				$content->insert_element($dump);
 				$page = $root->as_HTML;
 			} else {
-				$root->parse($self->page);
+				$root->parse($self->page_root);
 				my $text_field = $root->look_down(
 					"name", "q"
 				);

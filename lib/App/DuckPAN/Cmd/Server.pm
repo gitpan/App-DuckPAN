@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.050';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.051';
 }
 
 use Moo;
