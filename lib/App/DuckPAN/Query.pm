@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.051';
+  $App::DuckPAN::Query::VERSION = '0.052';
 }
 
 use Moo;
@@ -15,7 +15,7 @@ use Data::Printer;
 use POE qw( Wheel::ReadLine );
 
 sub run {
-	my ( $self, @blocks ) = @_;
+	my ( $self, $app, @blocks ) = @_;
 
 	require DDG;
 	DDG->import;
@@ -26,11 +26,9 @@ sub run {
 	require DDG::Test::Language;
 	DDG::Test::Language->import;
 
-	# $history_path = $self->app->cache_path."/query_history";
-	# warn $self->app->cache_path;
+	$history_path = $app->config->cache_path."/query_history";
 
 	print "\n(Empty query for ending test)\n";
-	# while (my $query = $self->app->get_reply( 'Query: ' ) ) {
 	while (1) {
 		
 		POE::Session->create(
