@@ -3,14 +3,26 @@ Changes from 1738-10-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.053 at 2012-08-11 19:23:43 +0000
+version 0.054 at 2012-08-11 19:24:16 +0000
 ------------------------------------------
+
+  Change: 097130c3948a52f2f44a8d21e3f411ddfe152c7f
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-08-11 15:24:12 +0000
+
+    Merge branch 'master' of github.com:duckduckgo/p5-app-duckpan 
 
   Change: 0b2b37e2eac32a71e6ecb0419eca4e1fc40b5a53
   Author: moollaza <moollaza@gmail.com>
   Date : 2012-08-11 15:23:31 +0000
 
     added user agent Mozilla/5.0 to Web.pm (required for some APIs) 
+
+  Change: 470ecbe101d9e8c42d37697761f2144f076f837b
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-08-04 20:56:51 +0000
+
+    English tweaks 
 
   Change: a47b00f09473146e8cd38000fcf5631953f8529e
   Author: moollaza <moollaza@gmail.com>

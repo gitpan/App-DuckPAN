@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.053';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.054';
 }
 
 use MooX qw( Options );
