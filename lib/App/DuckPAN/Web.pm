@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.052';
+  $App::DuckPAN::Web::VERSION = '0.053';
 }
 
 use Moo;
@@ -36,6 +36,7 @@ has ua => (
 	is => 'ro',
 	default => sub {
 		LWP::UserAgent->new(
+			agent => "Mozilla/5.0", #User Agent required for some API's (eg. Vimeo, IsItUp)
 			timeout => 5,
 			ssl_opts => { verify_hostname => 0 },
 		);

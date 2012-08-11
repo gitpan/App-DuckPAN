@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1738-09-29 00:00:00 +0000 to present.
+Changes from 1738-10-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.052 at 2012-07-13 19:40:11 +0000
+version 0.053 at 2012-08-11 19:23:43 +0000
 ------------------------------------------
+
+  Change: 0b2b37e2eac32a71e6ecb0419eca4e1fc40b5a53
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2012-08-11 15:23:31 +0000
+
+    added user agent Mozilla/5.0 to Web.pm (required for some APIs) 
 
   Change: a47b00f09473146e8cd38000fcf5631953f8529e
   Author: moollaza <moollaza@gmail.com>
