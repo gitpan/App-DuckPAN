@@ -44,19 +44,21 @@ my %WriteMakefileArgs = (
     "Module::Data" => "0.006",
     "Module::Pluggable" => "4.0",
     "Moo" => "0.009013",
-    "MooX" => 0,
+    "MooX" => "0.101",
     "MooX::Cmd" => "0.001",
-    "MooX::HasEnv" => 0,
+    "MooX::HasEnv" => "0.003",
     "MooX::Options" => "3.71",
     "POE" => "1.354",
     "Parse::CPAN::Packages::Fast" => "0.04",
+    "Path::Class" => "0.26",
     "Plack" => "0.9986",
+    "Starman" => 0,
     "Term::UI" => "0.30",
     "URI" => "1.60",
     "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.055",
+  "VERSION" => "0.056",
   "test" => {
     "TESTS" => "t/*.t"
   }

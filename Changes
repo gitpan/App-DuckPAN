@@ -1,10 +1,50 @@
 ==================================================
-Changes from 1738-11-21 00:00:00 +0000 to present.
+Changes from 1739-03-04 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.055 at 2012-09-04 00:35:10 +0000
+version 0.056 at 2012-12-16 20:22:47 +0000
 ------------------------------------------
+
+  Change: 38479a32cad1657cc05b2e00d2d1f48d753686cc
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2012-12-04 18:16:58 +0000
+
+    remove carriage returns from windows
+
+    grep -rl $'\r' | xargs dos2unix 
+
+  Change: d6e52de71ef6a6f83f6d049509caa0f12836dafb
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2012-12-04 16:07:43 +0000
+
+    Merge git://github.com/jagtalon/p5-app-duckpan 
+
+  Change: 70309612fd0223fc3a5a8f5d2cfe87e2dc5c1895
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2012-12-03 10:07:55 +0000
+
+    Broaden deprecation message for 'duckpan goodie' 
+
+  Change: a2aa3eb26b2a05ff2c0620adf62f3b4e53f913df
+  Author: getty <getty@debian.localdomain>
+  Date : 2012-11-30 11:17:08 +0000
+
+    Fixed rights 
+
+  Change: 2b638136a737da494475c608b1860cb24b9f70f6
+  Author: getty <getty@debian.localdomain>
+  Date : 2012-11-30 11:16:22 +0000
+
+    Added static files test feature (beta) 
+
+  Change: 99c3db474f06c07bee27ba0eebb2808b0d93152c
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2012-09-11 15:22:52 +0000
+
+    Fixed the UTF8 problem on Duckpan:
+
+    - Changed uri_escape() to uri_escape_utf8(). 
 
   Change: 330c7d27fa21453bbc24c5d8eeeb2ed9c620ab87
   Author: moollaza <moollaza@gmail.com>
