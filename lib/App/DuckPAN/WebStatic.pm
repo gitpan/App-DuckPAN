@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::WebStatic::VERSION = '0.056';
+  $App::DuckPAN::WebStatic::VERSION = '0.057';
 }
 
 use Moo;
@@ -73,10 +73,12 @@ sub request {
 	my $response = Plack::Response->new(200);
 	my $body;
 
+	my $locale = defined $ENV{DDG_LOCALE} ? $ENV{DDG_LOCALE} : 'en_US';
+
 	my $site = $self->_ports->{$request->port};
 
 	if ($site->{urls}->{$request->request_uri}) {
-		$body = io($site->{urls}->{$request->request_uri}->{'en_US'})->slurp;
+		$body = io($site->{urls}->{$request->request_uri}->{$locale})->slurp;
 		$response->code("200");
 		$response->content_type('text/html');
 	} else {

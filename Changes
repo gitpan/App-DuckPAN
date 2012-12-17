@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1739-03-04 00:00:00 +0000 to present.
+Changes from 1739-03-05 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.056 at 2012-12-16 20:22:47 +0000
+version 0.057 at 2012-12-17 01:07:26 +0000
 ------------------------------------------
+
+  Change: 22e34a750f52fc0bd0186763339d6e8ce8c0ef58
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-12-17 02:07:03 +0000
+
+    Using static feature with different language through DDG_LOCALE env
+    variable 
 
   Change: 38479a32cad1657cc05b2e00d2d1f48d753686cc
   Author: Dylan Lloyd <dylan@dylansserver.com>
