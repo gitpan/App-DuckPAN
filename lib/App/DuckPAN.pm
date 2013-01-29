@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.057';
+  $App::DuckPAN::VERSION = '0.058';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -25,6 +25,7 @@ use Term::UI;
 use Term::ReadLine;
 use Carp;
 use Encode;
+use Path::Class;
 
 our $VERSION ||= '0.000';
 
@@ -260,11 +261,11 @@ sub check_ddg {
 			print " (duckpan has ".$module->version.")" if $installed_version ne $module->version;
 		} else {
 			if ($installed_version) {
-				print "You got ".$installed_version.", latest is ".$module->version."!\n";
+				print "You have version ".$installed_version.", latest is ".$module->version."!\n";
 			} else {
-				print "You dont have it installed at all, latest is ".$module->version."!\n";
+				print "You don't have DDG installed! Latest is ".$module->version."!\n";
 			}
-			print "[ERROR] Please install latest DDG with: duckpan DDG";
+			print "[ERROR] Please install the latest DDG package with: duckpan DDG\n";
 			$ok = 0;
 		}
 	} else {
@@ -290,6 +291,11 @@ sub BUILD {
 		print "\n[ERROR] We dont support Win32\n\n";
 		exit 1;
 	}
+    my $env_config = file($self->cfg->config_path, 'env.ini');
+    if (-e $env_config) {
+        my $env = Config::INI::Reader->read_file(file($self->cfg->config_path, 'env.ini'));
+        map { $ENV{$_} = $env->{'_'}{$_}; } keys $env->{'_'} if $env->{'_'};
+    }
 }
 
 1;

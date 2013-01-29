@@ -10,13 +10,16 @@ dist.ini
 lib/App/DuckPAN.pm
 lib/App/DuckPAN/Cmd.pm
 lib/App/DuckPAN/Cmd/Check.pm
+lib/App/DuckPAN/Cmd/Env.pm
 lib/App/DuckPAN/Cmd/Goodie.pm
 lib/App/DuckPAN/Cmd/Install.pm
 lib/App/DuckPAN/Cmd/Installdeps.pm
 lib/App/DuckPAN/Cmd/Query.pm
+lib/App/DuckPAN/Cmd/Release.pm
 lib/App/DuckPAN/Cmd/Server.pm
 lib/App/DuckPAN/Cmd/Setup.pm
 lib/App/DuckPAN/Cmd/Static.pm
+lib/App/DuckPAN/Cmd/Test.pm
 lib/App/DuckPAN/Config.pm
 lib/App/DuckPAN/DDG.pm
 lib/App/DuckPAN/HasApp.pm

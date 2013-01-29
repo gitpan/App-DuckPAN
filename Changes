@@ -1,10 +1,175 @@
 ==================================================
-Changes from 1739-03-05 00:00:00 +0000 to present.
+Changes from 1739-04-17 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.057 at 2012-12-17 01:07:26 +0000
+version 0.058 at 2013-01-29 22:10:25 +0000
 ------------------------------------------
+
+  Change: 5025afe617116c95fd322b9a439c1187f3baeac9
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 16:53:50 +0000
+
+    removed repeat dependency 
+
+  Change: 8e1f9971c7029676d90acac8556cc5291c57afe2
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 16:51:17 +0000
+
+    Merge branch 'accept-header' of
+    git://github.com/nomeata/p5-app-duckpan into accept-header 
+
+  Change: 5a1c717474f3ca4c3f93501f8797429214210208
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 16:48:42 +0000
+
+    Merge branch 'env'
+
+    Conflicts:
+
+    lib/App/DuckPAN/Help.pm 
+
+  Change: abca91ec132e0d7ed07559c0e62e4b1753d3094a
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 16:34:48 +0000
+
+    added `duckpan env rm <name>` command to help 
+
+  Change: f3abe43ef25942e8a98d6a125d352398becf7748
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 16:27:30 +0000
+
+    error w/o key to rm, & don't output on success 
+
+  Change: 252e3bcc171e6ce063e202c3bf796e428d8fd8b3
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 16:21:48 +0000
+
+    add duckpan env rm <name> command 
+
+  Change: fdacae504f4f397efe4b2c828dcdce80f685dfe6
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 15:48:54 +0000
+
+    add duckpan env to Help 
+
+  Change: 491821ea5126b0117430a8acdb2e9c5a0a2c9864
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 15:38:35 +0000
+
+    move to $config_path/env.ini, and error handling
+
+    create the file if it doesn't exist, and don't choke when it's empty 
+
+  Change: beb2fcf56cebfdd19a792c1c74666d829e65b61c
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 15:13:21 +0000
+
+    print error and exit if variable is already defined 
+
+  Change: 901e1e4df51073f8a232a469d31bd5810af07b24
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 14:26:11 +0000
+
+    moved env variable initialization to DuckPAN.pm 
+
+  Change: 27cdadcc34c7709756e2d06403451221942fd914
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-27 15:56:26 +0000
+
+    remove windows carriage returns from wrapped strings 
+
+  Change: 9f39dfc96a48bfe4768d2679fa4e482bf9da04ea
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-26 14:32:38 +0000
+
+    fix `duckpan query <module>` command
+
+    modules can be specified with PluginType::Plugin, i.e. Goodie::ABC
+    multiple modules can also be specified 
+
+  Change: 82c344adb507b6f163ed7b00b6b403bae446f0e6
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 22:41:45 +0000
+
+    reformatted help text 
+
+  Change: 845b81cf9e84b662c0a662ed112dec7d3047927a
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 22:14:13 +0000
+
+    rm'd unimplemented topics, rephrased some 
+
+  Change: 1e854faa96267ef2595be835160e11d2ab574394
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 22:13:05 +0000
+
+    added duckpan release command 
+
+  Change: 228409d3864c5ad3cda47b7de60af895e29821b7
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 22:12:53 +0000
+
+    added duckpan test command 
+
+  Change: 60ced247e39b9de40a9577650a9ddb76debcb464
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 21:31:31 +0000
+
+    removed `duckpan faq` from help 
+
+  Change: 67f66e6483765cce5cee0b63ddd0b2ce5a8f1081
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 20:48:36 +0000
+
+    better grammar in some error messages 
+
+  Change: 4b80ada08928b2da120ca3683d7c7c88faae38ec
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 20:00:10 +0000
+
+    list env variables & values with `duckpan env key` 
+
+  Change: c017e56bc3f407394927c36aaca03b6bb39179e7
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 19:30:35 +0000
+
+    read in env.ini variables on server startup 
+
+  Change: f0c69176a4c13b75a157ae4fb19be35a825363eb
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-24 19:12:30 +0000
+
+    added env command to add environment variables
+
+    environment variables added with `duckpan add <name> <value>` are
+    stored in $app->cfg->cache_path/env.ini 
+
+  Change: ee702047e548a218b498f0684cc75ac7e20fadd5
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-23 14:23:14 +0000
+
+    exit duckpan query on unhandled SIGINT etc.
+
+    we don't have a listener for UIDESTROY, so this works, and is simpler 
+
+  Change: ba6d35ece0ff1aa8491b1d6df2c8567f156b7e17
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-23 14:08:41 +0000
+
+    reapply utf8 fix by jag
+
+    I inadvertently rolled this back while removing windows carriage
+    returns. A test should be added for this functionality. 
+
+  Change: 667fc5f47a3bc9e419a35c4bd37429ad1d032ff8
+  Author: Joachim Breitner <mail@joachim-breitner.de>
+  Date : 2013-01-22 22:53:27 +0000
+
+    Implement the accept_header property of the rewrite class
+
+    Requires commit 177d9dad9790515892385f799facca4fe10bd36b in
+    duckduckgo. 
 
   Change: 22e34a750f52fc0bd0186763339d6e8ce8c0ef58
   Author: Torsten Raudssus <torsten@raudss.us>

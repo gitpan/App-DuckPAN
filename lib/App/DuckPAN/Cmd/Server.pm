@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.057';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.058';
 }
 
 use Moo;
@@ -17,6 +17,7 @@ use Path::Class;
 use IO::All -utf8;
 use LWP::Simple;
 use HTML::TreeBuilder;
+use Config::INI;
 
 sub run {
 	my ( $self, @args ) = @_;
