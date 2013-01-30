@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.058';
+  $App::DuckPAN::VERSION = '0.059';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -294,7 +294,7 @@ sub BUILD {
     my $env_config = file($self->cfg->config_path, 'env.ini');
     if (-e $env_config) {
         my $env = Config::INI::Reader->read_file(file($self->cfg->config_path, 'env.ini'));
-        map { $ENV{$_} = $env->{'_'}{$_}; } keys $env->{'_'} if $env->{'_'};
+        map { $ENV{$_} = $env->{'_'}{$_}; } keys %{$env->{'_'}} if $env->{'_'};
     }
 }
 

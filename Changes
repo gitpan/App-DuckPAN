@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-04-17 00:00:00 +0000 to present.
+Changes from 1739-04-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.058 at 2013-01-29 22:10:25 +0000
+version 0.059 at 2013-01-30 01:11:19 +0000
 ------------------------------------------
+
+  Change: 6632a05728df31774b2212114e2493e0e6f804a7
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-01-29 19:59:48 +0000
+
+    cast keys to hash references for stricter perls 
 
   Change: 5025afe617116c95fd322b9a439c1187f3baeac9
   Author: Dylan Lloyd <dylan@dylansserver.com>

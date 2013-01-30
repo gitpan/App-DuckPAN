@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Env::VERSION = '0.058';
+  $App::DuckPAN::Cmd::Env::VERSION = '0.059';
 }
 
 use Path::Class;
@@ -24,17 +24,17 @@ sub run {
     if (defined $name ) {
       my $config = Config::INI::Reader->read_file($config_file);
       if ($name eq 'key') {
-        map { print "$_ = $config->{'_'}{$_}\n" } keys $config->{'_'};
+        map { print "$_ = $config->{'_'}{$_}\n" } keys %{$config->{'_'}};
         exit 0;
       } elsif ($name eq 'rm') {
-         if ($config->{'_'} and grep {$_ eq $key} keys $config->{'_'}) {
+         if ($config->{'_'} and grep {$_ eq $key} keys %{$config->{'_'}}) {
            delete $config->{'_'}{$key};
            open my $output, '>', $config_file;
-           Config::INI::Writer->write_handle($config, $output);
+           Config::INI::Writer->write_handle(%{$config}, $output);
            exit 0;
          }
          exit 0 if defined $key;
-      } elsif ($config->{'_'} and grep {$_ eq $name} keys $config->{'_'}) {
+      } elsif ($config->{'_'} and grep {$_ eq $name} keys %{$config->{'_'}}) {
         print STDERR "$name is already defined in env.ini\n";
         exit 1;
       }
