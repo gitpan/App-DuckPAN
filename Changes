@@ -3,8 +3,14 @@ Changes from 1739-04-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.059 at 2013-01-30 01:11:19 +0000
+version 0.060 at 2013-01-30 01:25:32 +0000
 ------------------------------------------
+
+  Change: 8b2cb2312aa8b0186408b26d68e6ed508c5e9f5e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-01-30 02:25:23 +0000
+
+    Fixed rights 
 
   Change: 6632a05728df31774b2212114e2493e0e6f804a7
   Author: Dylan Lloyd <dylan@dylansserver.com>
