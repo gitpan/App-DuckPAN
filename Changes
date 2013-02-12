@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-04-18 00:00:00 +0000 to present.
+Changes from 1739-05-01 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.060 at 2013-01-30 01:25:32 +0000
+version 0.061 at 2013-02-12 17:30:51 +0000
 ------------------------------------------
+
+  Change: 9a2746fbf617695e448a0a61b786e22a3f81523e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-12 18:29:23 +0000
+
+    Switched position of documentation 
 
   Change: 8b2cb2312aa8b0186408b26d68e6ed508c5e9f5e
   Author: Torsten Raudssus <torsten@raudss.us>
