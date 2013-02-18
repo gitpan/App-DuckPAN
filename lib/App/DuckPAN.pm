@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.061';
+  $App::DuckPAN::VERSION = '0.062';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -63,7 +63,17 @@ sub _ua_string {
 
 option http_proxy => (
 	is => 'ro',
-	predicate => 'has_http_proxy',
+	predicate => 1,
+);
+
+option config => (
+	is => 'ro',
+	predicate => 1,
+);
+
+option cache => (
+	is => 'ro',
+	predicate => 1,
 );
 
 has term => (
@@ -98,16 +108,16 @@ sub _build_http {
 
 has server_hostname => (
 	is => 'ro',
-	builder => 1,
 	lazy => 1,
+	builder => 1,
 );
 
 sub _build_server_hostname { defined $ENV{APP_DUCKPAN_SERVER_HOSTNAME} ? $ENV{APP_DUCKPAN_SERVER_HOSTNAME} : 'duckduckgo.com' }
 
-has config => (
+has cfg => (
 	is => 'ro',
-	builder => '_build_config',
 	lazy => 1,
+	builder => 1,
 	handles => [qw(
 		config_path
 		config_file
@@ -115,9 +125,14 @@ has config => (
 		get_config
 	)]
 );
-sub cfg { shift->config(@_) }
 
-sub _build_config { App::DuckPAN::Config->new }
+sub _build_cfg {
+	my ( $self ) = @_;
+	App::DuckPAN::Config->new(
+		$self->has_config ? ( config_path => $self->config ) : (),
+		$self->has_cache ? ( cache_path => $self->cache ) : (),
+	);
+}
 
 has help => (
 	is => 'ro',
@@ -304,28 +319,35 @@ __END__
 
 =head1 SYNPOSIS
 
-  # You need an account at https://dukgo.com/
-
   duckpan check
   # Check for the requirements to make duckpan contributions
   
-  duckpan goodie test
+  duckpan query
   # Fire up your own CLI DuckDuckGo to test goodies
   # Use it in the zeroclickinfo-goodies repository root
+
+  duckpan server
+  # Fire up your own Webserver that acts like DuckDuckGo to test
+  # spice (and goodies if you like). Use it in the
+  # zeroclickinfo-spice repository root
   
   duckpan help <command>
   # Getting help
 
   # TODO  
-  duckpan release
   duckpan test
-  duckpan faq
+  #######
+
+  # For the followings you need an account at https://dukgo.com/
+
   # TODO
+  duckpan release
+  #######
 
   # BETA
   duckpan setup
   # Setup your environment for using Dist::Zilla::Plugin::UploadToDuckPAN
-  # BETA
+  #######
 
 =head1 DESCRIPTION
 

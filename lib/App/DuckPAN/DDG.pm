@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.061';
+  $App::DuckPAN::DDG::VERSION = '0.062';
 }
 
 use Moo;
@@ -58,7 +58,7 @@ sub get_blocks_from_current_dir {
 	for (keys %blocks_plugins) {
 		my $block_class = 'DDG::Block::'.$_;
 		load_class($block_class);
-		push @blocks, $block_class->new( plugins => $blocks_plugins{$_} );
+		push @blocks, $block_class->new( plugins => $blocks_plugins{$_}, return_one => 0 );
 	}
 	load_class('DDG::Request');
 	return \@blocks;

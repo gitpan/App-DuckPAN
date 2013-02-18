@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.061';
+  $App::DuckPAN::Query::VERSION = '0.062';
 }
 
 use Moo;
@@ -49,14 +49,12 @@ sub run {
 				language => test_language_by_env(),
 			);
 			my $hit;
-			for (@blocks) {
-				my ($result) = $_->request($request);
-				if ($result) {
+			for my $b (@blocks) {
+				for ($b->request($request)) {
 					$hit = 1;
 					print "\n";
-					p($result);
+					p($_);
 					print "\n";
-					last;
 				}
 			}
 			unless ($hit) {

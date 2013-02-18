@@ -16,10 +16,12 @@ lib/App/DuckPAN/Cmd/Install.pm
 lib/App/DuckPAN/Cmd/Installdeps.pm
 lib/App/DuckPAN/Cmd/Query.pm
 lib/App/DuckPAN/Cmd/Release.pm
+lib/App/DuckPAN/Cmd/Rm.pm
 lib/App/DuckPAN/Cmd/Server.pm
 lib/App/DuckPAN/Cmd/Setup.pm
 lib/App/DuckPAN/Cmd/Static.pm
 lib/App/DuckPAN/Cmd/Test.pm
+lib/App/DuckPAN/CmdBase/Env.pm
 lib/App/DuckPAN/Config.pm
 lib/App/DuckPAN/DDG.pm
 lib/App/DuckPAN/HasApp.pm
@@ -28,5 +30,7 @@ lib/App/DuckPAN/Perl.pm
 lib/App/DuckPAN/Query.pm
 lib/App/DuckPAN/Web.pm
 lib/App/DuckPAN/WebStatic.pm
-t/00-load.t
+t/app_duckpan.t
+t/load.t
 t/release-pod-syntax.t
+t/system_duckpan.t

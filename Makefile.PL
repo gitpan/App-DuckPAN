@@ -12,8 +12,10 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "The DuckDuckGo DuckPAN client",
   "AUTHOR" => "Torsten Raudssus <torsten\@raudss.us>",
   "BUILD_REQUIRES" => {
+    "File::Temp" => "0.22",
     "Test::LoadAllModules" => "0.021",
-    "Test::More" => "0.98"
+    "Test::More" => "0.98",
+    "Test::Script::Run" => "0.05"
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -55,10 +57,9 @@ my %WriteMakefileArgs = (
     "Starman" => 0,
     "Term::UI" => "0.30",
     "URI" => "1.60",
-    "utf8::all" => "0.004",
     "version" => "0.96"
   },
-  "VERSION" => "0.061",
+  "VERSION" => "0.062",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -64,14 +64,15 @@
             "Starman" : "0",
             "Term::UI" : "0.30",
             "URI" : "1.60",
-            "utf8::all" : "0.004",
             "version" : "0.96"
          }
       },
       "test" : {
          "requires" : {
+            "File::Temp" : "0.22",
             "Test::LoadAllModules" : "0.021",
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "Test::Script::Run" : "0.05"
          }
       }
    },
@@ -84,7 +85,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.061",
+   "version" : "0.062",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"

@@ -1,10 +1,77 @@
 ==================================================
-Changes from 1739-05-01 00:00:00 +0000 to present.
+Changes from 1739-05-07 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.061 at 2013-02-12 17:30:51 +0000
+version 0.062 at 2013-02-18 18:52:10 +0000
 ------------------------------------------
+
+  Change: 7a1ff5ece31136dd644d13a4f3aa5346a360e8fe
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-18 19:51:58 +0000
+
+    Removed debugging output 
+
+  Change: e07b38eac1908be361757f1d2619a04da6f1cfdd
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 12:59:42 +0000
+
+    Fixed rights 
+
+  Change: b901b316443cd3f90dd30f48710391f1dd962d43
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 12:59:30 +0000
+
+    Fixed SYNOPSIS 
+
+  Change: cb5cd78bf06a6fba87daad20153c84ba894b6333
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 09:19:09 +0000
+
+    removed utf8 requirement 
+
+  Change: 1c9cbcfc74c0ca7e75ec783bf9eb84c26253b7bb
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 09:18:55 +0000
+
+    Fixed rights 
+
+  Change: e338a2a5126fbd94eb12bd6b02f444358309386f
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 09:18:38 +0000
+
+    Removed utf8::all, might produce impacts, must get fixed without it. 
+
+  Change: 0607b841968dea8a03c697b5ca07f3009ddfb847
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 04:27:06 +0000
+
+    Excluded DDG tests for user installing directly from CPAN first 
+
+  Change: d3f05ac5858d929b2363691c6c674494040dfc50
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-15 04:22:53 +0000
+
+    Restructured ENV feature a bit, added testsuite for whitebox and
+    blackbox testing 
+
+  Change: dcc04bbdb77b650fd747455d98b732e45a58f78b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-14 23:53:31 +0000
+
+    Hups 
+
+  Change: 0603436da0fa07d8b93f190eb6ca826c974fffb0
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-14 22:56:56 +0000
+
+    Adding multiply hit support to duckpan query 
+
+  Change: a3f2b77ae03099da3f7b20ec64cb55067f257ce7
+  Author: yegg <yegg@duckduckgo.com>
+  Date : 2013-02-14 15:50:01 +0000
+
+    Multiple plugin calling (Spice, and for goodies theoreticalliy). 
 
   Change: 9a2746fbf617695e448a0a61b786e22a3f81523e
   Author: Torsten Raudssus <torsten@raudss.us>
