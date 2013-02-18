@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.062';
+  $App::DuckPAN::Cmd::Static::VERSION = '0.063';
 }
 
 use Moo;
@@ -25,15 +25,19 @@ sub run {
 	my %sites = (
 		duckduckgo => {
 			port => 5000,
-			url => "http://duckduckgo.com",
+			url => "http://duckduckgo.com/",
 		},
 		dontbubbleus => {
 			port => 5001,
-			url => "http://dontbubble.us",
+			url => "http://dontbubble.us/",
 		},
 		donttrackus => {
 			port => 5002,
-			url => "http://donttrack.us",
+			url => "http://donttrack.us/",
+		},
+		whatisdnt => {
+			port => 5003,
+			url => "http://whatisdnt.com/",
 		},
 	);
 

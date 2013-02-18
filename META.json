@@ -69,7 +69,11 @@
       },
       "test" : {
          "requires" : {
+            "Dir::Self" : "0.10",
+            "File::FindLib" : "0.001001",
             "File::Temp" : "0.22",
+            "File::chdir" : "0.1008",
+            "Test::Expect" : "0.31",
             "Test::LoadAllModules" : "0.021",
             "Test::More" : "0.98",
             "Test::Script::Run" : "0.05"
@@ -85,7 +89,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.062",
+   "version" : "0.063",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"

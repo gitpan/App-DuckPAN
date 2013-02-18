@@ -3,8 +3,63 @@ Changes from 1739-05-07 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.062 at 2013-02-18 18:52:10 +0000
+version 0.063 at 2013-02-18 23:43:50 +0000
 ------------------------------------------
+
+  Change: 9c5008261fa0441ec79c108a59f1ab9977c90b86
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-19 00:43:20 +0000
+
+    Added whatisdnt, fixed requirements (majuscule-- ;)), prepare for
+    release 
+
+  Change: 1de0eb99a7a49c56afc1b0e46251c94b9acd62db
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 15:17:55 +0000
+
+    Merge branch 'cmd-tests' 
+
+  Change: 941e38b416c7d318d6b8da304b2e7841a42512e9
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 15:16:09 +0000
+
+    fixed typo crashing duckpan query 
+
+  Change: 722333b192a2d16b671df0525b0f1325eef03fe4
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 14:55:14 +0000
+
+    use FindLib to include the dev lib 
+
+  Change: 2efe4dd3c041cbef0cbc306c5c600c8ca4808fda
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 14:55:14 +0000
+
+    renamed duckpan query test file 
+
+  Change: d38df62bca5d8b976580a9427e384264b48b889c
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 14:55:14 +0000
+
+    moved test lib & configured cmds test for dist bin 
+
+  Change: 307c8ac0465207ea15f1c5b21aa7d8404178f4f3
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 14:55:13 +0000
+
+    added File::chdir dependency for duckpan command testing 
+
+  Change: 4d4f3d6d38a6203f714898a654b009f5dc634908
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 14:54:33 +0000
+
+    use Dir::Self to load /bin/duckpan 
+
+  Change: 64424955ba0166f9846b6ee11fae520aac945484
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 14:54:11 +0000
+
+    added expect tests for `duckpan query` 
 
   Change: 7a1ff5ece31136dd644d13a4f3aa5346a360e8fe
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -31,6 +31,9 @@ lib/App/DuckPAN/Query.pm
 lib/App/DuckPAN/Web.pm
 lib/App/DuckPAN/WebStatic.pm
 t/app_duckpan.t
+t/lib/DDG/Goodie/TwoShoes.pm
+t/lib/DDG/Spice/NagaBhutJolokiaDax.pm
 t/load.t
 t/release-pod-syntax.t
 t/system_duckpan.t
+t/system_duckpan_query.t

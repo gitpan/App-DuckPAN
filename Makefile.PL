@@ -12,7 +12,11 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "The DuckDuckGo DuckPAN client",
   "AUTHOR" => "Torsten Raudssus <torsten\@raudss.us>",
   "BUILD_REQUIRES" => {
+    "Dir::Self" => "0.10",
+    "File::FindLib" => "0.001001",
     "File::Temp" => "0.22",
+    "File::chdir" => "0.1008",
+    "Test::Expect" => "0.31",
     "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
@@ -59,7 +63,7 @@ my %WriteMakefileArgs = (
     "URI" => "1.60",
     "version" => "0.96"
   },
-  "VERSION" => "0.062",
+  "VERSION" => "0.063",
   "test" => {
     "TESTS" => "t/*.t"
   }

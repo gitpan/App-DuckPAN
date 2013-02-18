@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::CmdBase::Env::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::CmdBase::Env::VERSION = '0.062';
+  $App::DuckPAN::CmdBase::Env::VERSION = '0.063';
 }
 
 use MooX qw( Options );
