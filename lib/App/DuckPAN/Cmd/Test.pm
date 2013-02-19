@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Test::VERSION = '0.063';
+  $App::DuckPAN::Cmd::Test::VERSION = '0.064';
 }
+# ABSTRACT: Command for running the tests of this library
 
 use MooX qw( Options );
 with qw( App::DuckPAN::Cmd );

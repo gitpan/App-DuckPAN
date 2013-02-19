@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::WebStatic::VERSION = '0.063';
+  $App::DuckPAN::WebStatic::VERSION = '0.064';
 }
+# ABSTRACT: Webserver for duckpan static
 
 use Moo;
 use IO::All -utf8;

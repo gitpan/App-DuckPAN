@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.063';
+  $App::DuckPAN::Web::VERSION = '0.064';
 }
+# ABSTRACT: Webserver for duckpan server
 
 use Moo;
 use DDG::Request;

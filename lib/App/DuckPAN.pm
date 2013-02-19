@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.063';
+  $App::DuckPAN::VERSION = '0.064';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -330,7 +330,7 @@ __END__
   # Fire up your own Webserver that acts like DuckDuckGo to test
   # spice (and goodies if you like). Use it in the
   # zeroclickinfo-spice repository root
-  
+
   duckpan help <command>
   # Getting help
 

@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::HasApp::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::HasApp::VERSION = '0.063';
+  $App::DuckPAN::HasApp::VERSION = '0.064';
 }
+# ABSTRACT: Simple role for classes which carry an object of App::DuckPAN
 
 use Moo::Role;
 

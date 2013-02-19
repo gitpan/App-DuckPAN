@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Config::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Config::VERSION = '0.063';
+  $App::DuckPAN::Config::VERSION = '0.064';
 }
+# ABSTRACT: Configuration class of the duckpan client
 
 use Moo;
 use MooX::HasEnv;

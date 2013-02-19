@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.063';
+  $App::DuckPAN::Perl::VERSION = '0.064';
 }
+# ABSTRACT: Perl related functionality for duckpan
 
 use Moo;
 with 'App::DuckPAN::HasApp';

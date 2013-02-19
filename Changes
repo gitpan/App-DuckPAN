@@ -1,10 +1,34 @@
 ==================================================
-Changes from 1739-05-07 00:00:00 +0000 to present.
+Changes from 1739-05-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.063 at 2013-02-18 23:43:50 +0000
+version 0.064 at 2013-02-19 02:33:36 +0000
 ------------------------------------------
+
+  Change: 51bf6a2fa6f15c63954b0926c8486163ab4d8ce2
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 21:24:04 +0000
+
+    added File::HomeDir dependency 
+
+  Change: bc3ddad95d5fc4664a5e21633c26f6a193ed9a06
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 21:19:49 +0000
+
+    added test cases for duckpan env {add, rm} 
+
+  Change: 72bf36c1dd2a7718de40c37c6d0d0cba135058c1
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 21:18:14 +0000
+
+    run rm_env when it is commanded 
+
+  Change: a7c9aa3842366a734d6f8cd1262a56b8a1e8a066
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-19 01:47:17 +0000
+
+    Added a bit more ABSTRACT so that documentation is generated 
 
   Change: 9c5008261fa0441ec79c108a59f1ab9977c90b86
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -14,6 +14,7 @@ my %WriteMakefileArgs = (
   "BUILD_REQUIRES" => {
     "Dir::Self" => "0.10",
     "File::FindLib" => "0.001001",
+    "File::HomeDir" => "1.00",
     "File::Temp" => "0.22",
     "File::chdir" => "0.1008",
     "Test::Expect" => "0.31",
@@ -63,7 +64,7 @@ my %WriteMakefileArgs = (
     "URI" => "1.60",
     "version" => "0.96"
   },
-  "VERSION" => "0.063",
+  "VERSION" => "0.064",
   "test" => {
     "TESTS" => "t/*.t"
   }

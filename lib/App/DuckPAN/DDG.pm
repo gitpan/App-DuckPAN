@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.063';
+  $App::DuckPAN::DDG::VERSION = '0.064';
 }
+# ABSTRACT: DDG related functionality of duckpan
 
 use Moo;
 with 'App::DuckPAN::HasApp';

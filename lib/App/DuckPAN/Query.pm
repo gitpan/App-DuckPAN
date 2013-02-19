@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.063';
+  $App::DuckPAN::Query::VERSION = '0.064';
 }
+# ABSTRACT: Main application/loop for duckpan query
 
 use Moo;
 

@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.063';
+  $App::DuckPAN::Cmd::Static::VERSION = '0.064';
 }
+# ABSTRACT: Starting up the static webserver
 
 use Moo;
 with qw( App::DuckPAN::Cmd );

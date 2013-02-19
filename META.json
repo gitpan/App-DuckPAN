@@ -71,6 +71,7 @@
          "requires" : {
             "Dir::Self" : "0.10",
             "File::FindLib" : "0.001001",
+            "File::HomeDir" : "1.00",
             "File::Temp" : "0.22",
             "File::chdir" : "0.1008",
             "Test::Expect" : "0.31",
@@ -85,14 +86,14 @@
       "homepage" : "https://github.com/duckduckgo/p5-app-duckpan",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/duckduckgo/p5-app-duckpan.git",
+         "url" : "git://github.com/duckduckgo/p5-app-duckpan",
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.063",
+   "version" : "0.064",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.014002"
+         "version" : "5.016002"
       },
       "plugins" : [
          {
@@ -255,7 +256,7 @@
          {
             "class" : "Dist::Zilla::Plugin::UploadToDuckPAN",
             "name" : "UploadToDuckPAN",
-            "version" : "0.002"
+            "version" : "0.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaNoIndex",
