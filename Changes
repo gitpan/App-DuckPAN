@@ -3,8 +3,14 @@ Changes from 1739-05-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.064 at 2013-02-19 02:33:36 +0000
+version 0.065 at 2013-02-19 03:02:03 +0000
 ------------------------------------------
+
+  Change: bab884e6a8b7128f51e40f4eef50ac51304fdca7
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-19 04:01:51 +0000
+
+    Disabled failing tests 
 
   Change: 51bf6a2fa6f15c63954b0926c8486163ab4d8ce2
   Author: Dylan Lloyd <dylan@dylansserver.com>

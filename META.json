@@ -86,14 +86,14 @@
       "homepage" : "https://github.com/duckduckgo/p5-app-duckpan",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/duckduckgo/p5-app-duckpan",
+         "url" : "git://github.com/duckduckgo/p5-app-duckpan.git",
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.064",
+   "version" : "0.065",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.016002"
+         "version" : "5.014002"
       },
       "plugins" : [
          {
@@ -256,7 +256,7 @@
          {
             "class" : "Dist::Zilla::Plugin::UploadToDuckPAN",
             "name" : "UploadToDuckPAN",
-            "version" : "0.001"
+            "version" : "0.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaNoIndex",

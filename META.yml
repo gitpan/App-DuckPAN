@@ -61,11 +61,11 @@ requires:
   version: 0.96
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
-  repository: git://github.com/duckduckgo/p5-app-duckpan
-version: 0.064
+  repository: git://github.com/duckduckgo/p5-app-duckpan.git
+version: 0.065
 x_Dist_Zilla:
   perl:
-    version: 5.016002
+    version: 5.014002
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
@@ -194,7 +194,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::UploadToDuckPAN
       name: UploadToDuckPAN
-      version: 0.001
+      version: 0.002
     -
       class: Dist::Zilla::Plugin::MetaNoIndex
       name: MetaNoIndex

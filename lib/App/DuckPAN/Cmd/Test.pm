@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Test::VERSION = '0.064';
+  $App::DuckPAN::Cmd::Test::VERSION = '0.065';
 }
 # ABSTRACT: Command for running the tests of this library
 

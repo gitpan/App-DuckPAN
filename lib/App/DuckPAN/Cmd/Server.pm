@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.064';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.065';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 

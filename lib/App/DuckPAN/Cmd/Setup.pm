@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.064';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.065';
 }
 # ABSTRACT: Setting up your dukgo.com Account on your duckpan client
 

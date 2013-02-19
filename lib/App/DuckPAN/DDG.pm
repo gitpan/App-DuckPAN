@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.064';
+  $App::DuckPAN::DDG::VERSION = '0.065';
 }
 # ABSTRACT: DDG related functionality of duckpan
 

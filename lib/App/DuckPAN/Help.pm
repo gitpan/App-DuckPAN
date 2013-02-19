@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.064';
+  $App::DuckPAN::Help::VERSION = '0.065';
 }
 # ABSTRACT: Contains the main help page
 
