@@ -8,7 +8,6 @@ build_requires:
   File::HomeDir: 1.00
   File::Temp: 0.22
   File::chdir: 0.1008
-  Test::Expect: 0.31
   Test::LoadAllModules: 0.021
   Test::More: 0.98
   Test::Script::Run: 0.05
@@ -62,7 +61,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.065
+version: 0.066
 x_Dist_Zilla:
   perl:
     version: 5.014002

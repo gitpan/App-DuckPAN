@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.065';
+  $App::DuckPAN::Cmd::Static::VERSION = '0.066';
 }
 # ABSTRACT: Starting up the static webserver
 

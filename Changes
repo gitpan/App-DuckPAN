@@ -1,10 +1,46 @@
 ==================================================
-Changes from 1739-05-08 00:00:00 +0000 to present.
+Changes from 1739-05-09 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.065 at 2013-02-19 03:02:03 +0000
+version 0.066 at 2013-02-20 19:12:14 +0000
 ------------------------------------------
+
+  Change: 7ac628f4bf1120f586062b0fa582656df459f0bf
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-20 20:11:51 +0000
+
+    Had to delete this test 
+
+  Change: 031ca9af9c52962462f6103bcfb0255178364c44
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-20 20:09:45 +0000
+
+    More fixes of tests 
+
+  Change: a5edd943f271edb320dc0dc31663be9fb53d2f25
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-20 20:05:58 +0000
+
+    Merge branch 'master' of github.com:duckduckgo/p5-app-duckpan 
+
+  Change: 8e21f347177d0a1bb22c02045e98946e8dad14a7
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-20 20:05:24 +0000
+
+    Removed Test::Except for now; added App::Duckpan to fool metacpandb 
+
+  Change: 9373bbdda9a53e2d8cf564df1db2f24a568c3fff
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 22:30:13 +0000
+
+    fixed problem with randomly ordered env output 
+
+  Change: f5ccdbfda39ac6198e56fd7a5bbaa95d130caace
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-18 22:20:10 +0000
+
+    fixed failing tests with empty env.ini & re-enabled 
 
   Change: bab884e6a8b7128f51e40f4eef50ac51304fdca7
   Author: Torsten Raudssus <torsten@raudss.us>

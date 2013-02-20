@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::WebStatic::VERSION = '0.065';
+  $App::DuckPAN::WebStatic::VERSION = '0.066';
 }
 # ABSTRACT: Webserver for duckpan static
 

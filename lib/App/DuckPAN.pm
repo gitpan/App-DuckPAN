@@ -3,9 +3,19 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::VERSION = '0.065';
+  $App::DuckPAN::VERSION = '0.066';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
+
+{ # Fooling CPAN
+  package App::Duckpan;
+BEGIN {
+  $App::Duckpan::AUTHORITY = 'cpan:GETTY';
+}
+{
+  $App::Duckpan::VERSION = '0.066';
+}
+}
 
 use Moo;
 use MooX::Cmd;

@@ -17,7 +17,6 @@ my %WriteMakefileArgs = (
     "File::HomeDir" => "1.00",
     "File::Temp" => "0.22",
     "File::chdir" => "0.1008",
-    "Test::Expect" => "0.31",
     "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
@@ -64,7 +63,7 @@ my %WriteMakefileArgs = (
     "URI" => "1.60",
     "version" => "0.96"
   },
-  "VERSION" => "0.065",
+  "VERSION" => "0.066",
   "test" => {
     "TESTS" => "t/*.t"
   }
