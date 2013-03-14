@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::CmdBase::Env::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::CmdBase::Env::VERSION = '0.066';
+  $App::DuckPAN::CmdBase::Env::VERSION = '0.067';
 }
 # ABSTRACT: Base class for ENV related functionality of duckpan (duckpan env and duckpan rm)
 

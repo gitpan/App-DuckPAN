@@ -60,11 +60,11 @@ requires:
   version: 0.96
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
-  repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.066
+  repository: git://github.com/duckduckgo/p5-app-duckpan
+version: 0.067
 x_Dist_Zilla:
   perl:
-    version: 5.014002
+    version: 5.016002
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
@@ -125,7 +125,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: Git::NextVersion
-      version: 2.008
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::PkgVersion
       name: PkgVersion
@@ -161,19 +161,19 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Git/Check'
-      version: 2.008
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Git/Commit'
-      version: 2.008
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Git/Tag'
-      version: 2.008
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Git/Push'
-      version: 2.008
+      version: 2.009
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -193,7 +193,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::UploadToDuckPAN
       name: UploadToDuckPAN
-      version: 0.002
+      version: 0.001
     -
       class: Dist::Zilla::Plugin::MetaNoIndex
       name: MetaNoIndex

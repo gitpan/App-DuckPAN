@@ -63,7 +63,7 @@ my %WriteMakefileArgs = (
     "URI" => "1.60",
     "version" => "0.96"
   },
-  "VERSION" => "0.066",
+  "VERSION" => "0.067",
   "test" => {
     "TESTS" => "t/*.t"
   }

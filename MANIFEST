@@ -5,6 +5,7 @@ META.json
 META.yml
 Makefile.PL
 README
+README.md
 bin/duckpan
 dist.ini
 lib/App/DuckPAN.pm

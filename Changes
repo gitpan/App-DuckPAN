@@ -1,10 +1,56 @@
 ==================================================
-Changes from 1739-05-09 00:00:00 +0000 to present.
+Changes from 1739-05-31 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.066 at 2013-02-20 19:12:14 +0000
+version 0.067 at 2013-03-14 02:02:08 +0000
 ------------------------------------------
+
+  Change: 76a5bd2f0216a5a0e03317ac3d174b98d6b3b100
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-03-09 16:01:14 +0000
+
+    Fix for strings with extra newlines/carriage returns
+
+    The \n escaping is working fine, but for HTML output that still has
+    weird returns, Javascript will take that as a newline and throw an
+    "Unterminated string literal" error in the browser-side. Removing \R
+    after the \n have been escaped solves the issue.
+
+    Thank you to bureado <https://github.com/bureado>, who authored this
+    change and commit. 
+
+  Change: e8c710baa7348b9b8f8013fc5cbf832a64416b3d
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-21 12:42:47 +0000
+
+    updated plain old documentation 
+
+  Change: 1b7d9c4bf191e8c5be2b802861baee11cdfc60b2
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-02-21 11:41:56 +0000
+
+    Small update to README, added duckpan env <name> 
+
+  Change: 65ea78199d448d3f1bcc3b8148ae2a81ef352472
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-02-21 08:24:49 +0000
+
+    Add subheaders to README.md 
+
+  Change: 8d9efa14bf9521ab2f3d502c5ca5a9d37b5bc75d
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-02-21 11:14:54 +0000
+
+    Updated README - Made it look a little nicer. 
+
+  Change: b65ae97f5e10f8644f35f3e9b7ef686c8cc23c77
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-02-21 10:54:59 +0000
+
+    Create README.md
+
+    Because we really SHOULD have one here. 
 
   Change: 7ac628f4bf1120f586062b0fa582656df459f0bf
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.066';
+  $App::DuckPAN::Web::VERSION = '0.067';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -119,7 +119,7 @@ sub request {
 						elsif ($rewrite->wrap_string_callback && $rewrite->callback) {
                             $body =~ s/"/\\"/g;
                             $body =~ s/\n/\\n/g;
-                            $body =~ s/\r//g;
+                            $body =~ s/\R//g;
 							$body = $rewrite->callback.'("'.$body.'");';
 						}
 						$response->code($res->code);
