@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::CmdBase::Env::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::CmdBase::Env::VERSION = '0.068';
+  $App::DuckPAN::CmdBase::Env::VERSION = '0.069';
 }
 # ABSTRACT: Base class for ENV related functionality of duckpan (duckpan env and duckpan rm)
 
@@ -80,3 +80,28 @@ sub show_usage {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+App::DuckPAN::CmdBase::Env - Base class for ENV related functionality of duckpan (duckpan env and duckpan rm)
+
+=head1 VERSION
+
+version 0.069
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudss.us>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

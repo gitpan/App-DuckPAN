@@ -3,8 +3,14 @@ Changes from 1739-07-04 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.068 at 2013-04-17 21:25:46 +0000
+version 0.069 at 2013-04-17 23:00:04 +0000
 ------------------------------------------
+
+  Change: e826f2d6287f4fe1e40954eb5d9473dc3f426e2e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-04-18 00:59:54 +0000
+
+    A little bit of tuning 
 
   Change: 8f4de100b03ffd83b6639b2b34daf77d1326fe4e
   Author: Michael Smith <crazedpsyc@duckduckgo.com>
