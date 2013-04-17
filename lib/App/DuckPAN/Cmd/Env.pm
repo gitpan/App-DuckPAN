@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Env;
 BEGIN {
-  $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Env::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Env::VERSION = '0.068';
 }
 
 use Moo;

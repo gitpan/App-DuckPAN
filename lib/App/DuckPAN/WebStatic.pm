@@ -1,9 +1,9 @@
 package App::DuckPAN::WebStatic;
 BEGIN {
-  $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::WebStatic::VERSION = '0.067';
+  $App::DuckPAN::WebStatic::VERSION = '0.068';
 }
 # ABSTRACT: Webserver for duckpan static
 

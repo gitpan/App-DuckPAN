@@ -1,9 +1,9 @@
 package App::DuckPAN::Perl;
 BEGIN {
-  $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Perl::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.067';
+  $App::DuckPAN::Perl::VERSION = '0.068';
 }
 # ABSTRACT: Perl related functionality for duckpan
 

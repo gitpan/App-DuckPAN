@@ -11,16 +11,7 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "The DuckDuckGo DuckPAN client",
   "AUTHOR" => "Torsten Raudssus <torsten\@raudss.us>",
-  "BUILD_REQUIRES" => {
-    "Dir::Self" => "0.10",
-    "File::FindLib" => "0.001001",
-    "File::HomeDir" => "1.00",
-    "File::Temp" => "0.22",
-    "File::chdir" => "0.1008",
-    "Test::LoadAllModules" => "0.021",
-    "Test::More" => "0.98",
-    "Test::Script::Run" => "0.05"
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -63,12 +54,35 @@ my %WriteMakefileArgs = (
     "URI" => "1.60",
     "version" => "0.96"
   },
-  "VERSION" => "0.067",
+  "TEST_REQUIRES" => {
+    "Dir::Self" => "0.10",
+    "File::FindLib" => "0.001001",
+    "File::HomeDir" => "1.00",
+    "File::Temp" => "0.22",
+    "File::chdir" => "0.1008",
+    "Test::LoadAllModules" => "0.021",
+    "Test::More" => "0.98",
+    "Test::Script::Run" => "0.05"
+  },
+  "VERSION" => "0.068",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

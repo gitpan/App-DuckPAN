@@ -1,9 +1,9 @@
 package App::DuckPAN::DDG;
 BEGIN {
-  $App::DuckPAN::DDG::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::DDG::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.067';
+  $App::DuckPAN::DDG::VERSION = '0.068';
 }
 # ABSTRACT: DDG related functionality of duckpan
 

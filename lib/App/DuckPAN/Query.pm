@@ -1,9 +1,9 @@
 package App::DuckPAN::Query;
 BEGIN {
-  $App::DuckPAN::Query::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.067';
+  $App::DuckPAN::Query::VERSION = '0.068';
 }
 # ABSTRACT: Main application/loop for duckpan query
 

@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Static;
 BEGIN {
-  $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Static::VERSION = '0.068';
 }
 # ABSTRACT: Starting up the static webserver
 

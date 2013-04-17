@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Query;
 BEGIN {
-  $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.068';
 }
 
 use MooX qw( Options );

@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Check;
 BEGIN {
-  $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.068';
 }
 
 use Moo;

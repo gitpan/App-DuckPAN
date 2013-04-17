@@ -1,10 +1,40 @@
 ==================================================
-Changes from 1739-05-31 00:00:00 +0000 to present.
+Changes from 1739-07-04 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.067 at 2013-03-14 02:02:08 +0000
+version 0.068 at 2013-04-17 21:25:46 +0000
 ------------------------------------------
+
+  Change: 8f4de100b03ffd83b6639b2b34daf77d1326fe4e
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-04-17 14:37:23 +0000
+
+    fix tabs and remove testing code 
+
+  Change: 8a821be6b9c5fcb5b71989db92395911f01ca6e1
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-04-17 14:34:25 +0000
+
+    handle subdirs of the sharedirs... 
+
+  Change: 0ddd699ac9c8c56d3bbd0ee0d6bddf37a607a924
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-04-17 22:18:10 +0000
+
+    Changed Authority to cpan:DDG 
+
+  Change: b72d3a2b9c1202ea2eea9e0ba31d4fa766517462
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-04-17 13:39:28 +0000
+
+    handle share dirs from non-spices 
+
+  Change: 81e97d750574ce66241ee2267e5d59209698296b
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-04-07 20:54:19 +0000
+
+    specify origin branch for dzil release 
 
   Change: 76a5bd2f0216a5a0e03317ac3d174b98d6b3b100
   Author: Dylan Lloyd <dylan@dylansserver.com>

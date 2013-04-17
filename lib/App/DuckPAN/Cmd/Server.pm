@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Server;
 BEGIN {
-  $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.068';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 

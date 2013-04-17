@@ -1,19 +1,19 @@
 package App::DuckPAN;
 BEGIN {
-  $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.067';
+  $App::DuckPAN::VERSION = '0.068';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
 { # Fooling CPAN
   package App::Duckpan;
 BEGIN {
-  $App::Duckpan::AUTHORITY = 'cpan:GETTY';
+  $App::Duckpan::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::Duckpan::VERSION = '0.067';
+  $App::Duckpan::VERSION = '0.068';
 }
 }
 

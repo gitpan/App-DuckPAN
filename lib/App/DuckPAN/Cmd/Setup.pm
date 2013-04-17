@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Setup;
 BEGIN {
-  $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.068';
 }
 # ABSTRACT: Setting up your dukgo.com Account on your duckpan client
 

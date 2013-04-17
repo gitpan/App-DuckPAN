@@ -1,9 +1,9 @@
 package App::DuckPAN::Help;
 BEGIN {
-  $App::DuckPAN::Help::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.067';
+  $App::DuckPAN::Help::VERSION = '0.068';
 }
 # ABSTRACT: Contains the main help page
 

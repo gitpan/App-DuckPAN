@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Install;
 BEGIN {
-  $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Install::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Install::VERSION = '0.068';
 }
 
 use Moo;

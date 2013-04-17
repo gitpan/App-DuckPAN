@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Release;
 BEGIN {
-  $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Release::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Release::VERSION = '0.068';
 }
 
 use MooX qw( Options );

@@ -1,9 +1,9 @@
 package App::DuckPAN::Web;
 BEGIN {
-  $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.067';
+  $App::DuckPAN::Web::VERSION = '0.068';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -53,9 +53,9 @@ sub BUILD {
 		for (@{$_->only_plugin_objs}) {
 			if ($_->does('DDG::IsSpice')) {
 				$rewrite_hash{ref $_} = $_->rewrite if $_->has_rewrite;
-				$share_dir_hash{$_->module_share_dir} = ref $_ if $_->can('module_share_dir');
-				$path_hash{$_->path} = ref $_ if $_->can('path');
 			}
+			$share_dir_hash{$_->module_share_dir} = ref $_ if $_->can('module_share_dir');
+			$path_hash{$_->path} = ref $_ if $_->can('path');
 		}
 	}
 	$self->_share_dir_hash(\%share_dir_hash);
@@ -77,8 +77,8 @@ sub request {
 	my $response = Plack::Response->new(200);
 	my $body;
 	if (@path_parts && $path_parts[0] eq 'share') {
-		my $filename = pop @path_parts;
-		my $share_dir = join('/',@path_parts);
+		my $share_dir = join('/', @path_parts[0..2]);
+		my $filename = join('/', @path_parts[3..$#path_parts]);
 		my $filename_path = $self->_share_dir_hash->{$share_dir}->can('share')->($filename);
 		$body = -f $filename_path ? io($filename_path)->slurp : "";
 	} elsif (@path_parts && $path_parts[0] eq 'js') {
@@ -185,8 +185,7 @@ sub request {
 			push (@calls_script, $result->caller->module_share_dir.'/spice.js');
 			push (@calls_nrc, $result->caller->module_share_dir.'/spice.css');
 			push (@calls_nrj, $result->call_path);
-
-		    } else {
+                    } else {
 			my $content = $root->look_down(
 			    "id", "bottom_spacing2"
 			    );

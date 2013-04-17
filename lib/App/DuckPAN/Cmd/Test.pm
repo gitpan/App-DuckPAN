@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Test;
 BEGIN {
-  $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Test::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Test::VERSION = '0.068';
 }
 # ABSTRACT: Command for running the tests of this library
 

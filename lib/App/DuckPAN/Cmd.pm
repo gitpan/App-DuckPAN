@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd;
 BEGIN {
-  $App::DuckPAN::Cmd::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::VERSION = '0.067';
+  $App::DuckPAN::Cmd::VERSION = '0.068';
 }
 # ABSTRACT: Base class for commands of DuckPAN
 

@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Rm;
 BEGIN {
-  $App::DuckPAN::Cmd::Rm::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Rm::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Rm::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Rm::VERSION = '0.068';
 }
 
 use Moo;

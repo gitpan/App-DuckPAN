@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Goodie;
 BEGIN {
-  $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Goodie::VERSION = '0.067';
+  $App::DuckPAN::Cmd::Goodie::VERSION = '0.068';
 }
 
 use Moo;
