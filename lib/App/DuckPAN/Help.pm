@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.069';
+  $App::DuckPAN::Help::VERSION = '0.070';
 }
 # ABSTRACT: Contains the main help page
 
@@ -71,6 +71,7 @@ __EOT__
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -79,7 +80,7 @@ App::DuckPAN::Help - Contains the main help page
 
 =head1 VERSION
 
-version 0.069
+version 0.070
 
 =head1 AUTHOR
 
@@ -93,4 +94,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Config::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Config::VERSION = '0.069';
+  $App::DuckPAN::Config::VERSION = '0.070';
 }
 # ABSTRACT: Configuration class of the duckpan client
 
@@ -36,6 +36,7 @@ sub get_config {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -44,7 +45,7 @@ App::DuckPAN::Config - Configuration class of the duckpan client
 
 =head1 VERSION
 
-version 0.069
+version 0.070
 
 =head1 AUTHOR
 
@@ -58,4 +59,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

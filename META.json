@@ -89,10 +89,10 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.069",
+   "version" : "0.070",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.014002"
+         "version" : "5.010001"
       },
       "plugins" : [
          {
@@ -168,7 +168,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
             "name" : "Git::NextVersion",
-            "version" : "2.013"
+            "version" : "2.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
@@ -218,22 +218,22 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "@Git/Check",
-            "version" : "2.013"
+            "version" : "2.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "name" : "@Git/Commit",
-            "version" : "2.013"
+            "version" : "2.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@Git/Tag",
-            "version" : "2.013"
+            "version" : "2.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Push",
             "name" : "@Git/Push",
-            "version" : "2.013"
+            "version" : "2.010"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",

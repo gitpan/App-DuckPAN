@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.069';
+  $App::DuckPAN::DDG::VERSION = '0.070';
 }
 # ABSTRACT: DDG related functionality of duckpan
 
@@ -68,6 +68,7 @@ sub get_blocks_from_current_dir {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -76,7 +77,7 @@ App::DuckPAN::DDG - DDG related functionality of duckpan
 
 =head1 VERSION
 
-version 0.069
+version 0.070
 
 =head1 AUTHOR
 
@@ -90,4 +91,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Installdeps::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.069';
+  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.070';
 }
 
 use Moo;
@@ -32,6 +32,7 @@ sub run {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -40,7 +41,7 @@ App::DuckPAN::Cmd::Installdeps
 
 =head1 VERSION
 
-version 0.069
+version 0.070
 
 =head1 AUTHOR
 
@@ -54,4 +55,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
