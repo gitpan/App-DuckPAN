@@ -37,3 +37,4 @@ t/lib/DDG/Spice/NagaBhutJolokiaDax.pm
 t/load.t
 t/release-pod-syntax.t
 t/system_duckpan.t
+weaver.ini

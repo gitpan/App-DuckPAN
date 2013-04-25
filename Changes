@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-07-07 00:00:00 +0000 to present.
+Changes from 1739-07-12 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.070 at 2013-04-20 18:06:05 +0000
+version 0.070 at 2013-04-25 16:59:24 +0000
 ------------------------------------------
+
+  Change: c35a79c3f7f841ed3c1bd99280caacf9b9a7510e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-04-25 18:59:11 +0000
+
+    Added travis plugin, travis.yml and weaver.ini 
 
   Change: e826f2d6287f4fe1e40954eb5d9473dc3f426e2e
   Author: Torsten Raudssus <torsten@raudss.us>
