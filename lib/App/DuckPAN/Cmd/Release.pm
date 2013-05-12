@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Release::VERSION = '0.071';
+  $App::DuckPAN::Cmd::Release::VERSION = '0.072';
 }
 
 use MooX qw( Options );
@@ -31,11 +31,11 @@ App::DuckPAN::Cmd::Release
 
 =head1 VERSION
 
-version 0.071
+version 0.072
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudss.us>
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 

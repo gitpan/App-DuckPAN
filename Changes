@@ -1,10 +1,28 @@
 ==================================================
-Changes from 1739-07-12 00:00:00 +0000 to present.
+Changes from 1739-07-29 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.071 at 2013-04-25 17:16:49 +0000
+version 0.072 at 2013-05-12 23:35:58 +0000
 ------------------------------------------
+
+  Change: 3e4179d9b8c38924d9b6f31c6bf5e7bb6597075e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-05-13 01:35:46 +0000
+
+    Fixed problems about PodWeaver warnings 
+
+  Change: 57cf0a6419e0219be01f64cf1095df73933d3167
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-05-02 23:31:14 +0000
+
+    Added up new Travis plugin, new .travis.yml 
+
+  Change: 8705acede0c21da0c167a5ba123667b114ba7292
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-04-25 22:48:26 +0000
+
+    Added notify email open@duckduckgo.com 
 
   Change: c35a79c3f7f841ed3c1bd99280caacf9b9a7510e
   Author: Torsten Raudssus <torsten@raudss.us>

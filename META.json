@@ -1,7 +1,7 @@
 {
    "abstract" : "The DuckDuckGo DuckPAN client",
    "author" : [
-      "Torsten Raudssus <torsten@raudss.us>"
+      "Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921",
@@ -89,7 +89,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.071",
+   "version" : "0.072",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"
@@ -273,9 +273,9 @@
             "version" : "0.006"
          },
          {
-            "class" : "Dist::Zilla::Plugin::TravisYML",
-            "name" : "TravisYML",
-            "version" : "0.97"
+            "class" : "Dist::Zilla::Plugin::TravisCI",
+            "name" : "TravisCI",
+            "version" : "0.003"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.071';
+  $App::DuckPAN::VERSION = '0.072';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -13,7 +13,7 @@ BEGIN {
   $App::Duckpan::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::Duckpan::VERSION = '0.071';
+  $App::Duckpan::VERSION = '0.072';
 }
 }
 
@@ -335,7 +335,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.071
+version 0.072
 
 =encoding utf8
 
@@ -418,7 +418,7 @@ L<http://duckpan.org>
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudss.us>
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 

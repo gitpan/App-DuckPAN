@@ -1,7 +1,7 @@
 ---
 abstract: 'The DuckDuckGo DuckPAN client'
 author:
-  - 'Torsten Raudssus <torsten@raudss.us>'
+  - 'Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>'
 build_requires:
   Dir::Self: 0.10
   File::FindLib: 0.001001
@@ -61,7 +61,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.071
+version: 0.072
 x_Dist_Zilla:
   perl:
     version: 5.014002
@@ -207,9 +207,9 @@ x_Dist_Zilla:
       name: ChangelogFromGit
       version: 0.006
     -
-      class: Dist::Zilla::Plugin::TravisYML
-      name: TravisYML
-      version: 0.97
+      class: Dist::Zilla::Plugin::TravisCI
+      name: TravisCI
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'

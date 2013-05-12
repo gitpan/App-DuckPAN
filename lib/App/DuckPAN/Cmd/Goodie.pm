@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Goodie::VERSION = '0.071';
+  $App::DuckPAN::Cmd::Goodie::VERSION = '0.072';
 }
 
 use Moo;
@@ -31,11 +31,11 @@ App::DuckPAN::Cmd::Goodie
 
 =head1 VERSION
 
-version 0.071
+version 0.072
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudss.us>
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 

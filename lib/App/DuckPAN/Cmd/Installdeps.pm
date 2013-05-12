@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Installdeps::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.071';
+  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.072';
 }
 
 use Moo;
@@ -19,9 +19,9 @@ sub run {
 			"Found a dist.ini, suggesting a Dist::Zilla distribution",
 		);
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil authordeps --missing 2>/dev/null | cpanm"));
+			if (system("dzil authordeps --missing 2>/dev/null | grep -vP '[^\\w:]' | cpanm"));
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil listdeps --missing 2>/dev/null | cpanm"));
+			if (system("dzil listdeps --missing 2>/dev/null | grep -vP '[^\\w:]' | cpanm"));
 		$self->app->print_text(
 			"Everything fine!",
 		);
@@ -40,11 +40,11 @@ App::DuckPAN::Cmd::Installdeps
 
 =head1 VERSION
 
-version 0.071
+version 0.072
 
 =head1 AUTHOR
 
-Torsten Raudssus <torsten@raudss.us>
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
