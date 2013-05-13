@@ -56,12 +56,13 @@ requires:
   Plack: 0.9986
   Starman: 0
   Term::UI: 0.30
+  Time::HiRes: 1.9725
   URI: 1.60
   version: 0.96
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.073
+version: 0.074
 x_Dist_Zilla:
   perl:
     version: 5.014002

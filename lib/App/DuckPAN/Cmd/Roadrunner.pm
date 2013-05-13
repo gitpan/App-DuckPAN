@@ -3,13 +3,14 @@ BEGIN {
   $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.073';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.074';
 }
 
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
 use MooX::Options;
+use Time::HiRes qw( usleep );
 
 sub run {
 	my ( $self, @args ) = @_;
@@ -25,6 +26,8 @@ sub run {
 		$self->app->print_text(
 			"Everything fine!",
 		);
+
+		print "\a"; usleep 225000; print "\a";
 	}
 
 }
@@ -40,7 +43,7 @@ App::DuckPAN::Cmd::Roadrunner
 
 =head1 VERSION
 
-version 0.073
+version 0.074
 
 =head1 AUTHOR
 

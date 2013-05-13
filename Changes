@@ -3,8 +3,14 @@ Changes from 1739-07-30 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.073 at 2013-05-13 00:30:24 +0000
+version 0.074 at 2013-05-13 00:56:20 +0000
 ------------------------------------------
+
+  Change: 7be6420e2ee0e2ad9c07eadf4222cea43dcd4ac0
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-05-13 02:56:04 +0000
+
+    Added Time::HiRes for making roadrunner beep beep possible on finish 
 
   Change: eb704744767807cb45e4b53bf04c727af7cabc2b
   Author: Torsten Raudssus <torsten@raudss.us>
