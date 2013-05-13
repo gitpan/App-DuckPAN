@@ -18,6 +18,7 @@ lib/App/DuckPAN/Cmd/Installdeps.pm
 lib/App/DuckPAN/Cmd/Query.pm
 lib/App/DuckPAN/Cmd/Release.pm
 lib/App/DuckPAN/Cmd/Rm.pm
+lib/App/DuckPAN/Cmd/Roadrunner.pm
 lib/App/DuckPAN/Cmd/Server.pm
 lib/App/DuckPAN/Cmd/Setup.pm
 lib/App/DuckPAN/Cmd/Static.pm

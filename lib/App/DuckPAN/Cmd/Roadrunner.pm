@@ -1,9 +1,9 @@
-package App::DuckPAN::Cmd::Install;
+package App::DuckPAN::Cmd::Roadrunner;
 BEGIN {
-  $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Install::VERSION = '0.073';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.073';
 }
 
 use Moo;
@@ -18,9 +18,10 @@ sub run {
 		$self->app->print_text(
 			"Found a dist.ini, suggesting a Dist::Zilla distribution",
 		);
-
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil install --install-command 'cpanm .'"));
+			if (system("dzil authordeps --missing 2>/dev/null | grep -vP '[^\\w:]' | cpanm --quiet --notest --skip-satisfied"));
+		$self->app->perl->cpanminus_install_error
+			if (system("dzil listdeps --missing 2>/dev/null | grep -vP '[^\\w:]' | cpanm --quiet --notest --skip-satisfied"));
 		$self->app->print_text(
 			"Everything fine!",
 		);
@@ -35,7 +36,7 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Install
+App::DuckPAN::Cmd::Roadrunner
 
 =head1 VERSION
 
