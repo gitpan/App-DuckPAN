@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Env::VERSION = '0.081';
+  $App::DuckPAN::Cmd::Env::VERSION = '0.087';
 }
 
 use Moo;
@@ -41,7 +41,7 @@ App::DuckPAN::Cmd::Env
 
 =head1 VERSION
 
-version 0.081
+version 0.087
 
 =head1 AUTHOR
 

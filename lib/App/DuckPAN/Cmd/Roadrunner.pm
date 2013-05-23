@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.081';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.087';
 }
 
 use Moo;
@@ -55,7 +55,7 @@ App::DuckPAN::Cmd::Roadrunner
 
 =head1 VERSION
 
-version 0.081
+version 0.087
 
 =head1 AUTHOR
 

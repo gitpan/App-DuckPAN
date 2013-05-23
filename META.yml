@@ -63,11 +63,15 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.081
+version: 0.087
 x_Dist_Zilla:
   perl:
     version: 5.014002
   plugins:
+    -
+      class: Dist::Zilla::Plugin::UploadToDuckPAN
+      name: UploadToDuckPAN
+      version: 0.004
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@Basic/GatherDir'
@@ -196,10 +200,6 @@ x_Dist_Zilla:
           type: requires
       name: TestRequires
       version: 4.300034
-    -
-      class: Dist::Zilla::Plugin::UploadToDuckPAN
-      name: UploadToDuckPAN
-      version: 0.004
     -
       class: Dist::Zilla::Plugin::MetaNoIndex
       name: MetaNoIndex
