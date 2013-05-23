@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Install;
 BEGIN {
-  $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Install::VERSION = '0.076';
+  $App::DuckPAN::Cmd::Install::VERSION = '0.080';
 }
 
 use Moo;
@@ -29,3 +29,28 @@ sub run {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+App::DuckPAN::Cmd::Install
+
+=head1 VERSION
+
+version 0.080
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

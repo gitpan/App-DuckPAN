@@ -1,9 +1,9 @@
 package App::DuckPAN::Perl;
 BEGIN {
-  $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Perl::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.076';
+  $App::DuckPAN::Perl::VERSION = '0.080';
 }
 # ABSTRACT: Perl related functionality for duckpan
 
@@ -119,3 +119,28 @@ sub get_dzil_config {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+App::DuckPAN::Perl - Perl related functionality for duckpan
+
+=head1 VERSION
+
+version 0.080
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

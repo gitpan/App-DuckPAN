@@ -1,19 +1,19 @@
 package App::DuckPAN;
 BEGIN {
-  $App::DuckPAN::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.076';
+  $App::DuckPAN::VERSION = '0.080';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
 { # Fooling CPAN
   package App::Duckpan;
 BEGIN {
-  $App::Duckpan::AUTHORITY = 'cpan:GETTY';
+  $App::Duckpan::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::Duckpan::VERSION = '0.076';
+  $App::Duckpan::VERSION = '0.080';
 }
 }
 
@@ -325,7 +325,19 @@ sub BUILD {
 
 1;
 
+
 __END__
+=pod
+
+=head1 NAME
+
+App::DuckPAN - The DuckDuckGo DuckPAN client
+
+=head1 VERSION
+
+version 0.080
+
+=encoding utf8
 
 =head1 SYNPOSIS
 
@@ -383,7 +395,7 @@ and lets you preview their visual design.
   # Setup your environment for using Dist::Zilla::Plugin::UploadToDuckPAN
 
 =head1 SUPPORT
- 
+
 Issue Tracker: L<https://github.com/duckduckgo/p5-app-duckpan/issues>
 
 IRC: #duckduckgo on irc.freenode.net (join us!)
@@ -403,3 +415,17 @@ L<https://github.com/duckduckgo>
 L<https://dukgo.com>
 
 L<http://duckpan.org>
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

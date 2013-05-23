@@ -1,7 +1,7 @@
 ---
 abstract: 'The DuckDuckGo DuckPAN client'
 author:
-  - 'Torsten Raudssus <torsten@raudss.us>'
+  - 'Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>'
 build_requires:
   Dir::Self: 0.10
   File::FindLib: 0.001001
@@ -57,15 +57,16 @@ requires:
   Plack: 0.9986
   Starman: 0
   Term::UI: 0.30
+  Time::HiRes: 1.9725
   URI: 1.60
   version: 0.96
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.076
+version: 0.080
 x_Dist_Zilla:
   perl:
-    version: 5.018000
+    version: 5.014002
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
@@ -160,6 +161,10 @@ x_Dist_Zilla:
       name: Repository
       version: 0.19
     -
+      class: Dist::Zilla::Plugin::PodWeaver
+      name: PodWeaver
+      version: 3.101641
+    -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Git/Check'
       version: 2.013
@@ -202,7 +207,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ChangelogFromGit
       name: ChangelogFromGit
-      version: 0.007
+      version: 0.006
+    -
+      class: Dist::Zilla::Plugin::TravisCI
+      name: TravisCI
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
@@ -232,4 +241,4 @@ x_Dist_Zilla:
     config:
       is_trial: 0
     version: 4.300034
-x_authority: cpan:GETTY
+x_authority: cpan:DDG

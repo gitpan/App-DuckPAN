@@ -12,7 +12,7 @@ install_share dist => "share";
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "The DuckDuckGo DuckPAN client",
-  "AUTHOR" => "Torsten Raudssus <torsten\@raudss.us>",
+  "AUTHOR" => "Torsten Raudssus <torsten\@raudss.us> L<https://raudss.us/>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30",
@@ -54,6 +54,7 @@ my %WriteMakefileArgs = (
     "Plack" => "0.9986",
     "Starman" => 0,
     "Term::UI" => "0.30",
+    "Time::HiRes" => "1.9725",
     "URI" => "1.60",
     "version" => "0.96"
   },
@@ -67,7 +68,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.076",
+  "VERSION" => "0.080",
   "test" => {
     "TESTS" => "t/*.t"
   }

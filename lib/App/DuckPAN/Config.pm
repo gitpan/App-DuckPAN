@@ -1,9 +1,9 @@
 package App::DuckPAN::Config;
 BEGIN {
-  $App::DuckPAN::Config::AUTHORITY = 'cpan:GETTY';
+  $App::DuckPAN::Config::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Config::VERSION = '0.076';
+  $App::DuckPAN::Config::VERSION = '0.080';
 }
 # ABSTRACT: Configuration class of the duckpan client
 
@@ -34,3 +34,28 @@ sub get_config {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+App::DuckPAN::Config - Configuration class of the duckpan client
+
+=head1 VERSION
+
+version 0.080
+
+=head1 AUTHOR
+
+Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
