@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Rm::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Rm::VERSION = '0.087';
+  $App::DuckPAN::Cmd::Rm::VERSION = '0.100';
 }
 
 use Moo;
@@ -33,7 +33,7 @@ App::DuckPAN::Cmd::Rm
 
 =head1 VERSION
 
-version 0.087
+version 0.100
 
 =head1 AUTHOR
 
