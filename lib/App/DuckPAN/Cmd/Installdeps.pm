@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Installdeps::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.075';
+  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.076';
 }
 
 use Moo;

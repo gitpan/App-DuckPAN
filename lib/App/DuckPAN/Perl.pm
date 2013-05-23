@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.075';
+  $App::DuckPAN::Perl::VERSION = '0.076';
 }
 # ABSTRACT: Perl related functionality for duckpan
 

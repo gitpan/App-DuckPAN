@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.075';
+  $App::DuckPAN::Query::VERSION = '0.076';
 }
 # ABSTRACT: Main application/loop for duckpan query
 
