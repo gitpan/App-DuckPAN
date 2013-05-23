@@ -1,9 +1,9 @@
 package App::DuckPAN::Query;
 BEGIN {
-  $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Query::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.074';
+  $App::DuckPAN::Query::VERSION = '0.075';
 }
 # ABSTRACT: Main application/loop for duckpan query
 
@@ -105,28 +105,3 @@ sub setup_console {
 
 
 1;
-
-__END__
-=pod
-
-=head1 NAME
-
-App::DuckPAN::Query - Main application/loop for duckpan query
-
-=head1 VERSION
-
-version 0.074
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-

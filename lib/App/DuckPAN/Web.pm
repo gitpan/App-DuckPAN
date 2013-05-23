@@ -1,9 +1,9 @@
 package App::DuckPAN::Web;
 BEGIN {
-  $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Web::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.074';
+  $App::DuckPAN::Web::VERSION = '0.075';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -28,6 +28,7 @@ has page_root => ( is => 'ro', required => 1 );
 has page_spice => ( is => 'ro', required => 1 );
 has page_css => ( is => 'ro', required => 1 );
 has page_js => ( is => 'ro', required => 1 );
+has server_hostname => ( is => 'ro', required => 0 );
 
 has _share_dir_hash => ( is => 'rw' );
 has _path_hash => ( is => 'rw' );
@@ -53,9 +54,9 @@ sub BUILD {
 		for (@{$_->only_plugin_objs}) {
 			if ($_->does('DDG::IsSpice')) {
 				$rewrite_hash{ref $_} = $_->rewrite if $_->has_rewrite;
+				$share_dir_hash{$_->module_share_dir} = ref $_ if $_->can('module_share_dir');
+				$path_hash{$_->path} = ref $_ if $_->can('path');
 			}
-			$share_dir_hash{$_->module_share_dir} = ref $_ if $_->can('module_share_dir');
-			$path_hash{$_->path} = ref $_ if $_->can('path');
 		}
 	}
 	$self->_share_dir_hash(\%share_dir_hash);
@@ -70,17 +71,35 @@ sub run_psgi {
 	return $response->finalize;
 }
 
+my $has_common_js = 0;
+
 sub request {
 	my ( $self, $request ) = @_;
+	my $hostname = $self->server_hostname;
 	my @path_parts = split(/\/+/,$request->request_uri);
 	shift @path_parts;
 	my $response = Plack::Response->new(200);
 	my $body;
+
 	if (@path_parts && $path_parts[0] eq 'share') {
-		my $share_dir = join('/', @path_parts[0..2]);
-		my $filename = join('/', @path_parts[3..$#path_parts]);
+		my $filename = pop @path_parts;
+		my $share_dir = join('/',@path_parts);
+
+		if ($filename =~ /\.js$/ and
+			$has_common_js and
+			$share_dir =~ /(share\/spice\/([^\/]+)\/?)(.*)/){
+
+			my $parent_dir = $1;
+			my $parent_name = $2;
+			my $common_js = $parent_dir."$parent_name.js";
+
+			$body = io($common_js)->slurp;
+			warn "\nAppended $common_js to $filename\n\n";
+		}
+
 		my $filename_path = $self->_share_dir_hash->{$share_dir}->can('share')->($filename);
-		$body = -f $filename_path ? io($filename_path)->slurp : "";
+		$body .= -f $filename_path ? io($filename_path)->slurp : "";
+
 	} elsif (@path_parts && $path_parts[0] eq 'js') {
 		for (keys %{$self->_path_hash}) {
 			if ($request->request_uri =~ m/^$_/g) {
@@ -105,6 +124,8 @@ sub request {
 							$to =~ s/$cap_from//g;
 						}
 					}
+					# Make sure we replace "${dollar}" with "$".
+					$to =~ s/\$\{dollar\}/\$/g;
 					p($to);
 					my $res = $self->ua->request(HTTP::Request->new(
 						GET => $to,
@@ -112,21 +133,21 @@ sub request {
 						));
 					if ($res->is_success) {
 						$body = $res->decoded_content;
-                        warn "Cannot use wrap_jsonp_callback and wrap_string callback at the same time!" if $rewrite->wrap_jsonp_callback && $rewrite->wrap_string_callback;
+						warn "Cannot use wrap_jsonp_callback and wrap_string callback at the same time!" if $rewrite->wrap_jsonp_callback && $rewrite->wrap_string_callback;
 						if ($rewrite->wrap_jsonp_callback && $rewrite->callback) {
 							$body = $rewrite->callback.'('.$body.');';
 						}
 						elsif ($rewrite->wrap_string_callback && $rewrite->callback) {
-                            $body =~ s/"/\\"/g;
-                            $body =~ s/\n/\\n/g;
-                            $body =~ s/\R//g;
+							$body =~ s/"/\\"/g;
+							$body =~ s/\n/\\n/g;
+							$body =~ s/\R//g;
 							$body = $rewrite->callback.'("'.$body.'");';
 						}
 						$response->code($res->code);
 						$response->content_type($res->content_type);
 					} else {
-					    warn $res->status_line, "\n";
-					    $body = "";
+						warn $res->status_line, "\n";
+						$body = "";
 					}
 				}
 			}
@@ -152,13 +173,11 @@ sub request {
 		my @calls_nrj = ();
 		my @calls_nrc = ();
 		my @calls_script = ();
-
+		my @calls_template = ();
 
 		for (@{$self->blocks}) {
-		    push(@results,$_->request($ddg_request));
+			push(@results,$_->request($ddg_request));
 		}
-
-
 
 		my $page = $self->page_spice;
 		my $uri_encoded_query = uri_escape_utf8($query, "^A-Za-z");
@@ -168,105 +187,125 @@ sub request {
 		$page =~ s/$uri_encoded_ddh/$uri_encoded_query/g;
 
 		# For debugging query replacement.
-#		p($uri_encoded_ddh);
-#		p($page);
+		#p($uri_encoded_ddh);
+		#p($page);
 
 		my $root = HTML::TreeBuilder->new;
 		$root->parse($page);
 
 		foreach my $result (@results) {
 
-		    # Info for terminal.
-		    p($result) if $result;
+			# Info for terminal.
+			p($result) if $result;
 
-		    # NOTE -- this isn't designed to have both goodies and spice at once.
+			# NOTE -- this isn't designed to have both goodies and spice at once.
 
-		    if (ref $result eq 'DDG::ZeroClickInfo::Spice') {
-			push (@calls_script, $result->caller->module_share_dir.'/spice.js');
-			push (@calls_nrc, $result->caller->module_share_dir.'/spice.css');
-			push (@calls_nrj, $result->call_path);
-                    } else {
-			my $content = $root->look_down(
-			    "id", "bottom_spacing2"
-			    );
-			my $dump = HTML::Element->new('pre');
-			$dump->push_content(Dumper $result);
-			$content->insert_element($dump);
-			$page = $root->as_HTML;
-		    }
+			if (ref $result eq 'DDG::ZeroClickInfo::Spice') {
 
+				my $io;
+				my @files;
+				my $share_dir = $result->caller->module_share_dir;
+				my @path = split(/\/+/, $share_dir);
+				my $filename = $path[-1];
+
+				if (scalar(@path) > 3 and
+					$share_dir =~ /(share\/spice\/([^\/]+)\/?)(.*)/){
+
+					my $parent_dir = $1;
+					my $parent_name = $2;
+					my $common_js = $parent_dir."$parent_name.js";
+
+					unless ($has_common_js) {
+						$has_common_js = 1 if (-f $common_js);
+					}
+
+				 	@files = map { $_ } grep {
+					       $_->name =~ /^.+handlebars$/
+					   } io($parent_dir)->all_files;
+				}
+
+				$filename =~ s/share\/spice\///g;
+				$filename =~ s/\//\_/g;
+
+				$io = io($result->caller->module_share_dir);
+				push(@files, @$io);
+
+				foreach (@files){
+
+					if ($_->filename =~ /$filename\.js$/){
+						push (@calls_nrj, $_);
+
+					} elsif ($_->filename =~ /$filename\.css$/){
+						push (@calls_nrc, $_);
+
+					} elsif ($_->filename =~ /^.+handlebars$/){
+						push (@calls_template, $_);
+					}
+				}
+				push (@calls_nrj, $result->call_path);
+
+			} else {
+				my $content = $root->look_down(
+					"id", "bottom_spacing2"
+					);
+				my $dump = HTML::Element->new('pre');
+				$dump->push_content(Dumper $result);
+				$content->insert_element($dump);
+				$page = $root->as_HTML;
+			}
 		}
 
 		if (!scalar(@results)) {
 
-		    print "NO RESULTS\n";
+			print "NO RESULTS\n";
 
-		    $root = HTML::TreeBuilder->new;
-		    $root->parse($self->page_root);
-		    my $text_field = $root->look_down(
+			$root = HTML::TreeBuilder->new;
+			$root->parse($self->page_root);
+			my $text_field = $root->look_down(
 			"name", "q"
 			);
-		    $text_field->attr( value => $query );
-		    $page = $root->as_HTML;
-		    $page =~ s/<\/body>/<script type="text\/javascript">seterr('Sorry, no hit for your plugins')<\/script><\/body>/;
+			$text_field->attr( value => $query );
+			$page = $root->as_HTML;
+			$page =~ s/<\/body>/<script type="text\/javascript">seterr('Sorry, no hit for your plugins')<\/script><\/body>/;
 		}
- 
+
 
 		if (@calls_nrj) {
-		    my $calls_nrj = join(";",map { "nrj('".$_."')" } @calls_nrj) . ';';
-		    my $calls_nrc = join(";",map { "nrc('".$_."')" } @calls_nrc) . ';';
-		    my $calls_script = join("",map { "<script type='text/JavaScript' src='".$_."'></script>" } @calls_script);
+			my $calls_nrj = join(";",map { "nrj('".$_."')" } @calls_nrj) . ';';
+			my $calls_nrc = join(";",map { "nrc('".$_."')" } @calls_nrc) . ';';
+			my $calls_script = join("",map { "<script type='text/JavaScript' src='".$_."'></script>" } @calls_script);
 
-		    $page =~ s/####DUCKDUCKHACK-CALL-NRJ####/$calls_nrj/g;
-		    $page =~ s/####DUCKDUCKHACK-CALL-NRC####/$calls_nrc/g;
-		    $page =~ s/####DUCKDUCKHACK-CALL-SCRIPT####/$calls_script/g;
+			my ($template_name, $template_content);
+			$calls_script .= join("",map {
+				$template_name = $_->filename;
+				$template_name =~ s/.handlebars//g;
+				$template_content = $_->all;
+				"<script class='duckduckhack_template' name='$template_name' type='text/x-handlebars-template'>$template_content</script>"
+			} @calls_template);
+
+			$page =~ s/####DUCKDUCKHACK-CALL-NRJ####/$calls_nrj/g;
+			$page =~ s/####DUCKDUCKHACK-CALL-NRC####/$calls_nrc/g;
+			$page =~ s/####DUCKDUCKHACK-CALL-SCRIPT####/$calls_script/g;
 		}
-
 
 		$response->content_type('text/html');
 		$body = $page;
-    } elsif ($request->param('u') && $path_parts[0] eq 'iu') {
-        my $res = $self->ua->request(HTTP::Request->new(GET => "http://duckduckgo.com".$request->request_uri));
-        if ($res->is_success) {
-            $body = $res->decoded_content;
-            $response->code($res->code);
-            $response->content_type($res->content_type);
-        } else {
-            warn $res->status_line, "\n";
-            $body = "";
-        }
+
 	} else {
-		$response->content_type('text/html');
-		$body = $self->page_root;
+		my $res = $self->ua->request(HTTP::Request->new(GET => "http://".$hostname.$request->request_uri));
+		if ($res->is_success) {
+			$body = $res->decoded_content;
+			$response->code($res->code);
+			$response->content_type($res->content_type);
+		} else {
+			warn $res->status_line, "\n";
+			$body = "";
+		}
 	}
+
 	Encode::_utf8_off($body);
 	$response->body($body);
 	return $response;
 }
 
 1;
-
-__END__
-=pod
-
-=head1 NAME
-
-App::DuckPAN::Web - Webserver for duckpan server
-
-=head1 VERSION
-
-version 0.074
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-

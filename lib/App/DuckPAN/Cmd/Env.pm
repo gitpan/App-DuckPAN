@@ -1,9 +1,9 @@
 package App::DuckPAN::Cmd::Env;
 BEGIN {
-  $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $App::DuckPAN::Cmd::Env::VERSION = '0.074';
+  $App::DuckPAN::Cmd::Env::VERSION = '0.075';
 }
 
 use Moo;
@@ -31,28 +31,3 @@ sub run {
 }
 
 1;
-
-__END__
-=pod
-
-=head1 NAME
-
-App::DuckPAN::Cmd::Env
-
-=head1 VERSION
-
-version 0.074
-
-=head1 AUTHOR
-
-Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
-
