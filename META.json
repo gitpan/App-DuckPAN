@@ -91,7 +91,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.080",
+   "version" : "0.081",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"

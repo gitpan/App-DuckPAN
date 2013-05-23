@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.080';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.081';
 }
 
 use MooX qw( Options );
@@ -32,7 +32,7 @@ App::DuckPAN::Cmd::Query
 
 =head1 VERSION
 
-version 0.080
+version 0.081
 
 =head1 AUTHOR
 

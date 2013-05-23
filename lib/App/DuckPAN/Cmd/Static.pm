@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.080';
+  $App::DuckPAN::Cmd::Static::VERSION = '0.081';
 }
 # ABSTRACT: Starting up the static webserver
 
@@ -66,7 +66,7 @@ App::DuckPAN::Cmd::Static - Starting up the static webserver
 
 =head1 VERSION
 
-version 0.080
+version 0.081
 
 =head1 AUTHOR
 
