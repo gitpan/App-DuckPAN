@@ -1,10 +1,37 @@
 ==================================================
-Changes from 1739-08-09 00:00:00 +0000 to present.
+Changes from 1739-08-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.100 at 2013-05-23 23:23:13 +0000
+version 0.101 at 2013-06-11 17:00:25 +0000
 ------------------------------------------
+
+  Change: 5f529b31c87c354395acac3ee376e4ccfc8f862a
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-11 18:59:41 +0000
+
+    Added poupload command 
+
+  Change: 77942a59e24addbad839973538b9b9e6b5b49292
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-11 07:59:31 +0000
+
+    Bump HTML::Parser to avoid head parsing bug (I used the right acronym
+    this time) 
+
+  Change: faeeb6b356cf6f13ae641e28bfa475bee49f0447
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-05-31 18:00:12 +0000
+
+    get rid of windows carraige returns!
+
+    grep -rl $'\r' . | xargs dos2unix 
+
+  Change: f0524b58f9d0a668a2080e566268725f7c296ac1
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-05-31 17:55:42 +0000
+
+    take away exec bit from Cmd::Query 
 
   Change: cd5dcd44e0528b3603706b7fe2a0c2ffc2750015
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.100';
+  $App::DuckPAN::Help::VERSION = '0.101';
 }
 # ABSTRACT: Contains the main help page
 
@@ -54,6 +54,10 @@ duckpan env rm <name>
 ---------------------
  Remove an environment variable from duckpan
 
+duckpan poupload
+---------------
+ Upload a po file to the Community Platform (Translation manager only)
+
 duckpan release
 ---------------
  Release the project of the current directory to DuckPAN [TODO]
@@ -79,7 +83,7 @@ App::DuckPAN::Help - Contains the main help page
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 AUTHOR
 

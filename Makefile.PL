@@ -37,6 +37,7 @@ my %WriteMakefileArgs = (
     "File::ShareDir::ProjectDistDir" => "0.003002",
     "File::Temp" => "0.22",
     "File::Which" => "1.09",
+    "HTML::Parser" => "3.71",
     "HTML::TreeBuilder" => 0,
     "IO::All" => 0,
     "LWP::Protocol::https" => 0,
@@ -68,7 +69,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.100",
+  "VERSION" => "0.101",
   "test" => {
     "TESTS" => "t/*.t"
   }

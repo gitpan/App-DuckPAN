@@ -40,6 +40,7 @@ requires:
   File::ShareDir::ProjectDistDir: 0.003002
   File::Temp: 0.22
   File::Which: 1.09
+  HTML::Parser: 3.71
   HTML::TreeBuilder: 0
   IO::All: 0
   LWP::Protocol::https: 0
@@ -63,7 +64,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.100
+version: 0.101
 x_Dist_Zilla:
   perl:
     version: 5.014002
