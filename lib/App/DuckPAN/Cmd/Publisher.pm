@@ -1,27 +1,31 @@
-package App::DuckPAN::Cmd::Static;
+package App::DuckPAN::Cmd::Publisher;
 BEGIN {
-  $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Cmd::Publisher::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.102';
+  $App::DuckPAN::Cmd::Publisher::VERSION = '0.102';
 }
-# ABSTRACT: Starting up the static webserver
+# ABSTRACT: Starting up the publisher test webserver
 
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
 use MooX::Options;
 
+use Path::Class;
 use Plack::Handler::Starman;
 
 sub run {
 	my ( $self, @args ) = @_;
 
-	print "\n\nStarting up static webserver...";
+	print "\n\nChecking for Publisher...\n";
+
+	my $publisher_pm = file('lib','DDG','Publisher.pm')->absolute;
+	die "You must be in the root of the duckduckgo-publisher repository" unless -f $publisher_pm;
+
+	print "\n\nStarting up publisher webserver...";
 	print "\n\nYou can stop the webserver with Ctrl-C";
 	print "\n\n";
-
-	require App::DuckPAN::WebStatic;
 
 	my %sites = (
 		duckduckgo => {
@@ -35,11 +39,15 @@ sub run {
 		donttrackus => {
 			port => 5002,
 			url => "http://donttrack.us/",
-		},
+		},	
 		whatisdnt => {
 			port => 5003,
 			url => "http://whatisdnt.com/",
 		},
+		#fixtracking => {
+		#	port => 5004,
+		#	url => "http://fixtracking.com/",
+		#},
 	);
 
 	for (keys %sites) {
@@ -48,7 +56,9 @@ sub run {
 
 	print "\n\n";
 
-	my $web = App::DuckPAN::WebStatic->new(
+	require App::DuckPAN::WebPublisher;
+	my $web = App::DuckPAN::WebPublisher->new(
+		app => $self->app,
 		sites => \%sites,
 	);
 	my @ports = map { $sites{$_}->{port} } keys %sites; 
@@ -62,7 +72,7 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Static - Starting up the static webserver
+App::DuckPAN::Cmd::Publisher - Starting up the publisher test webserver
 
 =head1 VERSION
 

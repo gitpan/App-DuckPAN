@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.101';
+  $App::DuckPAN::Help::VERSION = '0.102';
 }
 # ABSTRACT: Contains the main help page
 
@@ -58,6 +58,10 @@ duckpan poupload
 ---------------
  Upload a po file to the Community Platform (Translation manager only)
 
+duckpan publisher
+---------------
+ Live testing of duckduckgo-publisher
+
 duckpan release
 ---------------
  Release the project of the current directory to DuckPAN [TODO]
@@ -83,7 +87,7 @@ App::DuckPAN::Help - Contains the main help page
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 AUTHOR
 

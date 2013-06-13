@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.101';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.102';
 }
+# ABSTRACT: Command line tool for testing queries and see triggered plugins
 
 use MooX qw( Options );
 with qw( App::DuckPAN::Cmd );
@@ -28,11 +29,11 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Query
+App::DuckPAN::Cmd::Query - Command line tool for testing queries and see triggered plugins
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 AUTHOR
 

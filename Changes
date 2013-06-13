@@ -1,10 +1,46 @@
 ==================================================
-Changes from 1739-08-28 00:00:00 +0000 to present.
+Changes from 1739-08-30 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.101 at 2013-06-11 17:00:25 +0000
+version 0.102 at 2013-06-13 23:12:35 +0000
 ------------------------------------------
+
+  Change: b543f9d6b78be051d35ef0f485907760a1701cb6
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-14 01:12:13 +0000
+
+    Added publisher feature 
+
+  Change: 0f22fe885122bef21d883e1170fa2e1f750f1512
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-13 16:33:41 +0000
+
+    I just like committing. 
+
+  Change: c6b2290a25d4ff759b31502382eeed2fb0eaaf95
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-13 16:31:15 +0000
+
+    Okay, now how about this one? 
+
+  Change: 0b7ed619900996c0ba971228556d688a3bafeb54
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-13 16:28:13 +0000
+
+    SKIP default server test if a custom one is set 
+
+  Change: e58208e7cde16e17ccf7e92d7aa63b688b691b3e
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-13 16:14:48 +0000
+
+    Don't puke on non-root servers in test 
+
+  Change: 3c303848f8645d680bd5428acbbc4ad1304b1d1d
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-11 19:03:08 +0000
+
+    Added all missing ABSTRACT 
 
   Change: 5f529b31c87c354395acac3ee376e4ccfc8f862a
   Author: Torsten Raudssus <torsten@raudss.us>

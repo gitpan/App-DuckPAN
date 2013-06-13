@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.101';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.102';
 }
+# ABSTRACT: Install requirements as fast as possible
 
 use Moo;
 with qw( App::DuckPAN::Cmd );
@@ -51,11 +52,11 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Roadrunner
+App::DuckPAN::Cmd::Roadrunner - Install requirements as fast as possible
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 AUTHOR
 

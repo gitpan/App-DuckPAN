@@ -3,8 +3,9 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.101';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.102';
 }
+# ABSTRACT: Command for checking the requirements
 
 use Moo;
 with qw( App::DuckPAN::Cmd );
@@ -28,11 +29,11 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Check
+App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 AUTHOR
 
