@@ -44,7 +44,7 @@ my %WriteMakefileArgs = (
     "LWP::Simple" => "6.00",
     "Module::Data" => "0.006",
     "Module::Pluggable" => "4.0",
-    "Moo" => "0.009013",
+    "Moo" => "1.002000",
     "MooX" => "0.101",
     "MooX::Cmd" => "0.001",
     "MooX::HasEnv" => "0.003",
@@ -69,7 +69,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.102",
+  "VERSION" => "0.103",
   "test" => {
     "TESTS" => "t/*.t"
   }

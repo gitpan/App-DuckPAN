@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Installdeps::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.102';
+  $App::DuckPAN::Cmd::Installdeps::VERSION = '0.103';
 }
 # ABSTRACT: Regular way to install requirements with tests
 
@@ -41,7 +41,7 @@ App::DuckPAN::Cmd::Installdeps - Regular way to install requirements with tests
 
 =head1 VERSION
 
-version 0.102
+version 0.103
 
 =head1 AUTHOR
 

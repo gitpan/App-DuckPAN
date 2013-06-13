@@ -3,8 +3,21 @@ Changes from 1739-08-30 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.102 at 2013-06-13 23:12:35 +0000
+version 0.103 at 2013-06-13 23:22:00 +0000
 ------------------------------------------
+
+  Change: 511d8ee1a5aa98a8f4f37f8d61b56bda357bd0ad
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-14 01:21:49 +0000
+
+    removed garbage.... lol 
+
+  Change: a61f23e2db4ef57b149dd45bb2a9ae95555e25c6
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-14 01:20:35 +0000
+
+    Added fixtracking (for development on it), added options for sites to
+    set domain specific 
 
   Change: b543f9d6b78be051d35ef0f485907760a1701cb6
   Author: Torsten Raudssus <torsten@raudss.us>
