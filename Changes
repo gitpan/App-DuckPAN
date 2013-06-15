@@ -1,10 +1,144 @@
 ==================================================
-Changes from 1739-08-30 00:00:00 +0000 to present.
+Changes from 1739-09-01 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.103 at 2013-06-13 23:22:00 +0000
+version 0.104 at 2013-06-15 20:21:25 +0000
 ------------------------------------------
+
+  Change: f071a1486b7c7b9f55dc50fb9481f687c3c11898
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 16:01:17 +0000
+
+    removed new LWP agent from Server.pm, was only needed for previous
+    testing/debugging 
+
+  Change: 626e53313197a5ef75d30262bf1727de763501d9
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:41:31 +0000
+
+    resolving rebase... 
+
+  Change: 03823884b6fd195047eacada2c5ecc9e31b6a303
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-15 15:39:46 +0000
+
+    Bump HTTP::Parser version to avoid head parsing bug 
+
+  Change: 18557b65e5b36d3e3f319d52f2952b2d2eae8039
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-15 15:39:09 +0000
+
+    add sharedir with latest files 
+
+  Change: 89d43f18a6735cacfad11af145903cc9158a9b09
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-06-15 15:36:23 +0000
+
+    ${dollar} now has to be converted into $. 
+
+  Change: 333d7ddf1f679c0597a5bcd3dbdfcb36ccb826c4
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-06-15 15:36:23 +0000
+
+    Experiments with {{dollar}}. 
+
+  Change: 9fe4b7adc740e0cc3e6f190b0902f051e8f10185
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:36:23 +0000
+
+    added support to DuckPAN for common js and handlebars files in parent
+    dir 
+
+  Change: 24aa24cac514c53ffdf3b66862d14d576d23dc77
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-06-15 15:35:31 +0000
+
+    Moved {{dollar}} to Rewrite.pm 
+
+  Change: 6fcb6f363fa371bb51348c20eb54c502eddf4ed1
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-06-15 15:35:31 +0000
+
+    Duckpan can now convert "${dollar}" to "$."
+
+    This is mostly used by plug-ins that require "$" in the URL e.g.
+    Zipcode. 
+
+  Change: db8dcf08a42f49e9e4a55f28f25762f839fdec29
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:31 +0000
+
+    updated DuckPAN to grab versioned spice2 files from static 
+
+  Change: 379cd899e9d63281cd88d925b7ec20af1be4be48
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:31 +0000
+
+    added message to show this is an experimental DuckPAN installation 
+
+  Change: 6d57976714e4fe03a29e01bfaba76bd276e942dd
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:31 +0000
+
+    updated Web.pm to work with new naming convention 
+
+  Change: a3bbcdc0e677b2d498838174e40b08ec8b6a4e99
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:31 +0000
+
+    fixed duckpan server to meet new filenames, improved LWP request,
+    added Useragent 
+
+  Change: edffe9effb696ea919d70f7329da47313c033b64
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:30 +0000
+
+    renamed files to match new organization 
+
+  Change: f03c632e56810849d2bbebd494d01acc67ae62c9
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:30 +0000
+
+    consolidated carousel js and handlebars tempalte 
+
+  Change: d8a125e8c2045fe73a441abfe6fd7244c7a7f6a8
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:30 +0000
+
+    duckpan now redirects all requests to duckduckgo 
+
+  Change: 92f0356e3c23d3d77d31dd527210b58cc906fd8e
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:30 +0000
+
+    added carousel files, removed redundant variables 
+
+  Change: e4a5e60a0c0e5d59d3b0620458de799bd22b4dd4
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:35:30 +0000
+
+    modified duckpan to use uncompiled handlebars templates, using full
+    handlebars runtime 
+
+  Change: a26c083f4ddd5e68e9775db3f71484d3cdd50c31
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:32:35 +0000
+
+    Duckpan now adds spice templates in script tag with class
+    'duckduckhack_template' 
+
+  Change: 1ddaae3ebc8b808bcedd098d9db83823234925a1
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:32:35 +0000
+
+    switched Duckpan to grab full handlebars lib 
+
+  Change: fd6448236dafcfebca694e27cbcc23dcf6831c49
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-15 15:32:35 +0000
+
+    Added calls to grab spice2 related js files 
 
   Change: 511d8ee1a5aa98a8f4f37f8d61b56bda357bd0ad
   Author: Torsten Raudssus <torsten@raudss.us>
@@ -68,6 +202,12 @@ version 0.103 at 2013-06-13 23:22:00 +0000
     Bump HTML::Parser to avoid head parsing bug (I used the right acronym
     this time) 
 
+  Change: b996114c7ca826fafbbc061263fd8a785989d642
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-06-11 07:57:12 +0000
+
+    Bump HTTP::Parser version to avoid head parsing bug 
+
   Change: faeeb6b356cf6f13ae641e28bfa475bee49f0447
   Author: Dylan Lloyd <dylan@dylansserver.com>
   Date : 2013-05-31 18:00:12 +0000
@@ -82,6 +222,12 @@ version 0.103 at 2013-06-13 23:22:00 +0000
 
     take away exec bit from Cmd::Query 
 
+  Change: d378d2fa4b44814fa7d2b3bdcfc8ae064d2a59f8
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-05-31 17:54:59 +0000
+
+    take away exec bit from Cmd::Query 
+
   Change: cd5dcd44e0528b3603706b7fe2a0c2ffc2750015
   Author: Torsten Raudssus <torsten@raudss.us>
   Date : 2013-05-24 00:21:09 +0000
@@ -93,6 +239,12 @@ version 0.103 at 2013-06-13 23:22:00 +0000
   Date : 2013-05-23 15:59:20 +0000
 
     add sharedir to master, too 
+
+  Change: c53b158f672ebb19a6023324bb6d68ce466c208d
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-05-23 15:55:01 +0000
+
+    add sharedir with latest files 
 
   Change: 3a32915b8e7690dc05943399846b7a9ca0a11e22
   Author: Torsten Raudssus <torsten@raudss.us>
@@ -130,6 +282,47 @@ version 0.103 at 2013-06-13 23:22:00 +0000
 
     Added up new Travis plugin, new .travis.yml 
 
+  Change: f8b24018d1c5b0af041b8eb4e08e24ba010e20b2
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-05-01 16:11:21 +0000
+
+    ${dollar} now has to be converted into $. 
+
+  Change: 99af7a4b7d15de88a7ab71984ba840c4da3c4eff
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-05-01 15:33:00 +0000
+
+    Experiments with {{dollar}}. 
+
+  Change: 625c3c9fbdf8bef1b87449fd6e1117d7296b8d42
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-30 11:00:41 +0000
+
+    Merge branch 'spice2' of github.com:duckduckgo/p5-app-duckpan into
+    spice2 
+
+  Change: 3615a42a6323cd9ca6c5352950228842ce357c68
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-30 11:00:38 +0000
+
+    added support to DuckPAN for common js and handlebars files in parent
+    dir 
+
+  Change: 74df3817e25fc3f30b78543ee3d8fba1155fd143
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-04-27 15:15:47 +0000
+
+    Moved {{dollar}} to Rewrite.pm 
+
+  Change: cb32c112c2a521fba3f0a6275a60c3a0c9a96b0a
+  Author: Jag Talon <talon.jag@gmail.com>
+  Date : 2013-04-26 16:49:09 +0000
+
+    Duckpan can now convert "${dollar}" to "$."
+
+    This is mostly used by plug-ins that require "$" in the URL e.g.
+    Zipcode. 
+
   Change: 8705acede0c21da0c167a5ba123667b114ba7292
   Author: Torsten Raudssus <torsten@raudss.us>
   Date : 2013-04-25 22:48:26 +0000
@@ -141,6 +334,12 @@ version 0.103 at 2013-06-13 23:22:00 +0000
   Date : 2013-04-25 18:59:11 +0000
 
     Added travis plugin, travis.yml and weaver.ini 
+
+  Change: 56d727b8dfd0d33cd4cc8b4933065746ca43a1e9
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-18 11:52:16 +0000
+
+    updated DuckPAN to grab versioned spice2 files from static 
 
   Change: e826f2d6287f4fe1e40954eb5d9473dc3f426e2e
   Author: Torsten Raudssus <torsten@raudss.us>
@@ -172,11 +371,86 @@ version 0.103 at 2013-06-13 23:22:00 +0000
 
     handle share dirs from non-spices 
 
+  Change: 131cf61420de88f72891012bdecb86025b30e80f
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-12 15:36:43 +0000
+
+    added message to show this is an experimental DuckPAN installation 
+
+  Change: 80573b45eb19ad949ef5089940aa898b5644f5a9
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-12 12:13:57 +0000
+
+    updated Web.pm to work with new naming convention 
+
   Change: 81e97d750574ce66241ee2267e5d59209698296b
   Author: Dylan Lloyd <dylan@dylansserver.com>
   Date : 2013-04-07 20:54:19 +0000
 
     specify origin branch for dzil release 
+
+  Change: 238c3e97dd769c869f883ad443e5072c0adc761c
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-05 17:53:10 +0000
+
+    fixed duckpan server to meet new filenames, improved LWP request,
+    added Useragent 
+
+  Change: cea53624e442adf615dec24353614ead2c6f68eb
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-04-05 16:30:19 +0000
+
+    renamed files to match new organization 
+
+  Change: ac890bdc53e8e75c054186f8d85ad136b9127d2a
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-28 18:57:57 +0000
+
+    consolidated carousel js and handlebars tempalte 
+
+  Change: 37f2ee9cc20b4e907bf4fe62a383ac81c4466da7
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-27 18:59:30 +0000
+
+    duckpan now redirects all requests to duckduckgo 
+
+  Change: 12b6dc20322fb723aeff038d5321c1c6974dd8f2
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-27 13:35:33 +0000
+
+    added carousel files, removed redundant variables 
+
+  Change: d618207846e6036998e9dc93585a59f18a620f12
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-26 20:51:50 +0000
+
+    modified duckpan to use uncompiled handlebars templates, using full
+    handlebars runtime 
+
+  Change: 5488ec554585267f9af3e8a971fbf274c615d6d0
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-26 11:10:02 +0000
+
+    Duckpan now adds spice templates in script tag with class
+    'duckduckhack_template' 
+
+  Change: ea38fa855381ec815c0280bcee2ddd26650f318f
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-26 11:09:38 +0000
+
+    switched Duckpan to grab full handlebars lib 
+
+  Change: 57a26c5f3980e82d856df144e509d6f10e2bcda3
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-21 20:56:36 +0000
+
+    Added calls to grab spice2 related js files 
+
+  Change: dd80ddd6213b28a380d093d54024353a61a3f11f
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-03-11 09:52:52 +0000
+
+    git keeps saying I've modified these 
 
   Change: 76a5bd2f0216a5a0e03317ac3d174b98d6b3b100
   Author: Dylan Lloyd <dylan@dylansserver.com>

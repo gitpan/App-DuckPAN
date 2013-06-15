@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Rm::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Rm::VERSION = '0.103';
+  $App::DuckPAN::Cmd::Rm::VERSION = '0.104';
 }
 # ABSTRACT: Remove an ENV variable
 
@@ -26,6 +26,7 @@ sub run {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -34,7 +35,7 @@ App::DuckPAN::Cmd::Rm - Remove an ENV variable
 
 =head1 VERSION
 
-version 0.103
+version 0.104
 
 =head1 AUTHOR
 
@@ -48,4 +49,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

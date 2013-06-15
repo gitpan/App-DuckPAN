@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::CmdBase::Env::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::CmdBase::Env::VERSION = '0.103';
+  $App::DuckPAN::CmdBase::Env::VERSION = '0.104';
 }
 # ABSTRACT: Base class for ENV related functionality of duckpan (duckpan env and duckpan rm)
 
@@ -82,6 +82,7 @@ sub show_usage {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -90,7 +91,7 @@ App::DuckPAN::CmdBase::Env - Base class for ENV related functionality of duckpan
 
 =head1 VERSION
 
-version 0.103
+version 0.104
 
 =head1 AUTHOR
 
@@ -104,4 +105,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

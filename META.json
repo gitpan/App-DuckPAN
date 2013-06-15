@@ -65,7 +65,6 @@
             "Plack" : "0.9986",
             "Starman" : "0",
             "Term::UI" : "0.30",
-            "Time::HiRes" : "1.9725",
             "URI" : "1.60",
             "version" : "0.96"
          }
@@ -92,10 +91,10 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.103",
+   "version" : "0.104",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.014002"
+         "version" : "5.010001"
       },
       "plugins" : [
          {
@@ -273,12 +272,12 @@
          {
             "class" : "Dist::Zilla::Plugin::ChangelogFromGit",
             "name" : "ChangelogFromGit",
-            "version" : "0.006"
+            "version" : "0.007"
          },
          {
             "class" : "Dist::Zilla::Plugin::TravisCI",
             "name" : "TravisCI",
-            "version" : "0.003"
+            "version" : "0.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

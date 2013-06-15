@@ -35,10 +35,15 @@ lib/App/DuckPAN/Query.pm
 lib/App/DuckPAN/Web.pm
 lib/App/DuckPAN/WebPublisher.pm
 lib/App/DuckPAN/WebStatic.pm
+share/duckduck.js
+share/handlebars.js
+share/jquery.js
 share/page.css
 share/page.js
 share/page_root.html
 share/page_spice.html
+share/spice2_duckpan.js
+share/spice2_latest.js
 t/app_duckpan.t
 t/lib/DDG/Goodie/TwoShoes.pm
 t/lib/DDG/Spice/NagaBhutJolokiaDax.pm
