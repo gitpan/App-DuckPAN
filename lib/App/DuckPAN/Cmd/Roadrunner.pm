@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.104';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.105';
 }
 # ABSTRACT: Install requirements as fast as possible
 
@@ -21,9 +21,9 @@ sub run {
 			"Found a dist.ini, suggesting a Dist::Zilla distribution",
 		);
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil authordeps --missing 2>/dev/null | grep -vP '[^\\w:]' | cpanm --quiet --notest --skip-satisfied"));
+			if (system("dzil authordeps --missing 2>/dev/null | grep -ve '^\\W' | cpanm --quiet --notest --skip-satisfied"));
 		$self->app->perl->cpanminus_install_error
-			if (system("dzil listdeps --missing 2>/dev/null | grep -vP '[^\\w:]' | cpanm --quiet --notest --skip-satisfied"));
+			if (system("dzil listdeps --missing 2>/dev/null | grep -ve '^\\W' | cpanm --quiet --notest --skip-satisfied"));
 		$self->app->print_text(
 			"Everything fine!",
 		);
@@ -48,7 +48,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -57,7 +56,7 @@ App::DuckPAN::Cmd::Roadrunner - Install requirements as fast as possible
 
 =head1 VERSION
 
-version 0.104
+version 0.105
 
 =head1 AUTHOR
 
@@ -71,3 +70,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

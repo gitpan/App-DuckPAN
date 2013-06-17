@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.104';
+  $App::DuckPAN::Web::VERSION = '0.105';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -311,7 +311,6 @@ sub request {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -320,7 +319,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.104
+version 0.105
 
 =head1 AUTHOR
 
@@ -334,3 +333,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

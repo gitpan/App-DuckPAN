@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Release::VERSION = '0.104';
+  $App::DuckPAN::Cmd::Release::VERSION = '0.105';
 }
 # ABSTRACT: Release the distribution of the current directory
 
@@ -24,7 +24,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -33,7 +32,7 @@ App::DuckPAN::Cmd::Release - Release the distribution of the current directory
 
 =head1 VERSION
 
-version 0.104
+version 0.105
 
 =head1 AUTHOR
 
@@ -47,3 +46,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
