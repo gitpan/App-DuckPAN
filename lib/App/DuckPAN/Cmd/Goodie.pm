@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Goodie::VERSION = '0.105';
+  $App::DuckPAN::Cmd::Goodie::VERSION = '0.106';
 }
 # ABSTRACT: DEPRECATED
 
@@ -32,7 +32,7 @@ App::DuckPAN::Cmd::Goodie - DEPRECATED
 
 =head1 VERSION
 
-version 0.105
+version 0.106
 
 =head1 AUTHOR
 

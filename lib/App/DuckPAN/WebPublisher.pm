@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::WebPublisher::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::WebPublisher::VERSION = '0.105';
+  $App::DuckPAN::WebPublisher::VERSION = '0.106';
 }
 # ABSTRACT: Webserver for duckpan publisher
 
@@ -80,7 +80,7 @@ sub request {
 
 	if (defined $site->fullpath_files->{$file}) {
 		print 'Request '.$request->path_info.' uses '.$file.' from DDG::Publisher...'."\n";
-		$body = $site->fullpath_files->{$file}->content;
+		$body = $site->fullpath_files->{$file}->uncached_content;
 		$response->code("200");
 		$response->content_type('text/html');
 	} else {
@@ -90,8 +90,8 @@ sub request {
 			$response->code($res->code);
 			$response->content_type($res->content_type);
 		} else {
-			warn $res->status_line, "\n";
-			$body = "";
+			$body = "GET ".$url.$request->request_uri.": ".$res->status_line;
+			warn $body, "\n";
 		}
 	}
 
@@ -111,7 +111,7 @@ App::DuckPAN::WebPublisher - Webserver for duckpan publisher
 
 =head1 VERSION
 
-version 0.105
+version 0.106
 
 =head1 AUTHOR
 

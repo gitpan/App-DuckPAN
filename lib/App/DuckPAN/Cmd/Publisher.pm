@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Publisher::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Publisher::VERSION = '0.105';
+  $App::DuckPAN::Cmd::Publisher::VERSION = '0.106';
 }
 # ABSTRACT: Starting up the publisher test webserver
 
@@ -58,8 +58,8 @@ sub run {
 		},
 	);
 
-	for (keys %sites) {
-		print "Serving ".$sites{$_}->{url}." on ".$sites{$_}->{port}."\n";
+	for (sort { $sites{$a}->{port} <=> $sites{$b}->{port} } keys %sites) {
+		print "Serving on port ".$sites{$_}->{port}.": ".$sites{$_}->{url}."\n";
 	}
 
 	print "\n\n";
@@ -84,7 +84,7 @@ App::DuckPAN::Cmd::Publisher - Starting up the publisher test webserver
 
 =head1 VERSION
 
-version 0.105
+version 0.106
 
 =head1 AUTHOR
 

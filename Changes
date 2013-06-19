@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1739-09-03 00:00:00 +0000 to present.
+Changes from 1739-09-05 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.105 at 2013-06-17 13:46:31 +0000
+version 0.106 at 2013-06-19 02:39:15 +0000
 ------------------------------------------
+
+  Change: aa0a5ab9cec58642d6ec69e8b3cfd5c55c31f854
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-19 04:38:42 +0000
+
+    Fixed some problems about cached content with publisher feature and
+    added a bit more debugging on NotFound case 
 
   Change: 647a4b0e6269a385ec333e171c6fd3f1f7ae6ac4
   Author: Torsten Raudssus <torsten@raudss.us>
