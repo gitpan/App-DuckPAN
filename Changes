@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-09-05 00:00:00 +0000 to present.
+Changes from 1739-09-07 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.106 at 2013-06-19 02:39:15 +0000
+version 0.107 at 2013-06-21 01:58:20 +0000
 ------------------------------------------
+
+  Change: 9bf86c515fa797d928dfcbd3af008f7e48b2c829
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-06-21 03:58:10 +0000
+
+    That didnt worked out.. 
 
   Change: aa0a5ab9cec58642d6ec69e8b3cfd5c55c31f854
   Author: Torsten Raudssus <torsten@raudss.us>

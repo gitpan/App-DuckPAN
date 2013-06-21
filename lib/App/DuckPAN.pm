@@ -3,19 +3,10 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.106';
+  $App::DuckPAN::VERSION = '0.107';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
-{ # Fooling CPAN
-  package App::Duckpan;
-BEGIN {
-  $App::Duckpan::AUTHORITY = 'cpan:DDG';
-}
-{
-  $App::Duckpan::VERSION = '0.106';
-}
-}
 
 use Moo;
 use MooX::Cmd;
@@ -335,7 +326,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.106
+version 0.107
 
 =encoding utf8
 
