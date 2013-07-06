@@ -63,10 +63,10 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.107
+version: 0.108
 x_Dist_Zilla:
   perl:
-    version: 5.014002
+    version: 5.010001
   plugins:
     -
       class: Dist::Zilla::Plugin::UploadToDuckPAN
@@ -207,11 +207,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ChangelogFromGit
       name: ChangelogFromGit
-      version: 0.006
+      version: 0.007
     -
       class: Dist::Zilla::Plugin::TravisCI
       name: TravisCI
-      version: 0.003
+      version: 0.002
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'

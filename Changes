@@ -1,10 +1,28 @@
 ==================================================
-Changes from 1739-09-07 00:00:00 +0000 to present.
+Changes from 1739-09-22 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.107 at 2013-06-21 01:58:20 +0000
+version 0.108 at 2013-07-06 17:59:53 +0000
 ------------------------------------------
+
+  Change: e3620233e6d2763b3c61666a5e12421453a44bfe
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-07-06 13:59:36 +0000
+
+    Fixed duckpan, now works with d1000.js 
+
+  Change: 6dd2ece003d966303828fb09245625bc8b2fedec
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-06-24 18:05:30 +0000
+
+    add "installing duckpan" instructions to the readme 
+
+  Change: 07d5db90855726f284ec28415a290d1fb6a4852c
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-06-21 13:21:28 +0000
+
+    Updated DuckPAN help output and POD 
 
   Change: 9bf86c515fa797d928dfcbd3af008f7e48b2c829
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.107';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.108';
 }
 # ABSTRACT: Install requirements as fast as possible
 
@@ -48,6 +48,7 @@ sub run {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -56,7 +57,7 @@ App::DuckPAN::Cmd::Roadrunner - Install requirements as fast as possible
 
 =head1 VERSION
 
-version 0.107
+version 0.108
 
 =head1 AUTHOR
 
@@ -70,4 +71,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

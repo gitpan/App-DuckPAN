@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.107';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.108';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 
@@ -146,7 +146,7 @@ sub change_html {
 
 	for (@script) {
 		if (my $src = $_->attr('src')) {
-			if ($src =~ m/^\/d\d{3}\.js/) {
+			if ($src =~ m/^\/d\d{4}\.js/) {
 				$_->attr('src','/?duckduckhack_js=1');
 			} elsif (substr($src,0,1) eq '/') {
 				$_->attr('src','http://'.$hostname.''.$_->attr('src'));
@@ -172,6 +172,7 @@ sub change_html {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -180,7 +181,7 @@ App::DuckPAN::Cmd::Server - Starting up the webserver to test plugins
 
 =head1 VERSION
 
-version 0.107
+version 0.108
 
 =head1 AUTHOR
 
@@ -194,4 +195,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

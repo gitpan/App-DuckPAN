@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Help::VERSION = '0.107';
+  $App::DuckPAN::Help::VERSION = '0.108';
 }
 # ABSTRACT: Contains the main help page
 
@@ -27,9 +27,10 @@ __EOT__
 sub help { return shift->header().<<'__EOT__'; }
 Usage:
 
-- duckpan check
-    Check if you fulfill all requirements for the development
-    environment (this is run automatically during setup)
+duckpan check
+------------
+ Check if you fulfill all requirements for the development
+ environment (this is run automatically during setup)
 
 duckpan installdeps
 -------------------
@@ -54,21 +55,19 @@ duckpan env rm <name>
 ---------------------
  Remove an environment variable from duckpan
 
-duckpan poupload
----------------
- Upload a po file to the Community Platform (Translation manager only)
+duckpan test
+------------
+ Test your release (this will run automatically before a release)
 
 duckpan publisher
 ---------------
  Live testing of duckduckgo-publisher
 
-duckpan release
----------------
- Release the project of the current directory to DuckPAN [TODO]
+**Note: The following commands require a dukgo account
 
-duckpan test
-------------
- Test your release (this will run automatically before a release)
+duckpan poupload
+---------------
+ Upload a po file to the Community Platform (Translation manager only)
 
 duckpan release
 ---------------
@@ -79,6 +78,7 @@ __EOT__
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -87,7 +87,7 @@ App::DuckPAN::Help - Contains the main help page
 
 =head1 VERSION
 
-version 0.107
+version 0.108
 
 =head1 AUTHOR
 
@@ -101,4 +101,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
