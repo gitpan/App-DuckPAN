@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::HasApp::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::HasApp::VERSION = '0.109';
+  $App::DuckPAN::HasApp::VERSION = '0.110';
 }
 # ABSTRACT: Simple role for classes which carry an object of App::DuckPAN
 
@@ -26,7 +26,7 @@ App::DuckPAN::HasApp - Simple role for classes which carry an object of App::Duc
 
 =head1 VERSION
 
-version 0.109
+version 0.110
 
 =head1 AUTHOR
 
