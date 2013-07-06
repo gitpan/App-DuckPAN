@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.108';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.109';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 
@@ -146,7 +146,7 @@ sub change_html {
 
 	for (@script) {
 		if (my $src = $_->attr('src')) {
-			if ($src =~ m/^\/d\d{4}\.js/) {
+			if ($src =~ m/^\/d\d{3,4}\.js/) {
 				$_->attr('src','/?duckduckhack_js=1');
 			} elsif (substr($src,0,1) eq '/') {
 				$_->attr('src','http://'.$hostname.''.$_->attr('src'));
@@ -181,7 +181,7 @@ App::DuckPAN::Cmd::Server - Starting up the webserver to test plugins
 
 =head1 VERSION
 
-version 0.108
+version 0.109
 
 =head1 AUTHOR
 
