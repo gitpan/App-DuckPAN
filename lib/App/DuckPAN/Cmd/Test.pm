@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Test::VERSION = '0.110';
+  $App::DuckPAN::Cmd::Test::VERSION = '0.111';
 }
 # ABSTRACT: Command for running the tests of this library
 
@@ -30,7 +30,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -39,7 +38,7 @@ App::DuckPAN::Cmd::Test - Command for running the tests of this library
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 AUTHOR
 
@@ -53,3 +52,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

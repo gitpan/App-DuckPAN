@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.110';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.111';
 }
 # ABSTRACT: Setting up your dukgo.com Account on your duckpan client
 
@@ -179,7 +179,6 @@ sub setup {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -188,7 +187,7 @@ App::DuckPAN::Cmd::Setup - Setting up your dukgo.com Account on your duckpan cli
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 AUTHOR
 
@@ -202,3 +201,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

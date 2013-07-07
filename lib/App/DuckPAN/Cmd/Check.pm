@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.110';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.111';
 }
 # ABSTRACT: Command for checking the requirements
 
@@ -14,6 +14,7 @@ use MooX::Options;
 
 sub run {
 	my ( $self ) = @_;
+	exit 1 unless $self->app->check_app_duckpan;
 	if ($self->app->check_requirements) {
 		print "\n[ERROR] Check for the requirements failed!! See instructions or reports above\n\n";
 		exit 1;
@@ -25,7 +26,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -34,7 +34,7 @@ App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 AUTHOR
 
@@ -48,3 +48,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

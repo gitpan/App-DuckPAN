@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-09-22 00:00:00 +0000 to present.
+Changes from 1739-09-23 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.110 at 2013-07-06 23:02:53 +0000
+version 0.111 at 2013-07-07 01:22:06 +0000
 ------------------------------------------
+
+  Change: 9c5c14630ec6bb7130029e919ac672c339344d3a
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-07-07 03:21:46 +0000
+
+    Checking for latest App::DuckPAN now 
 
   Change: 681b578a9e8a119ff5ca67646d7aba983c34ddc8
   Author: Dylan Lloyd <dylan@dylansserver.com>

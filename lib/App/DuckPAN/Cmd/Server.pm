@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.110';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.111';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 
@@ -23,6 +23,7 @@ use Config::INI;
 sub run {
 	my ( $self, @args ) = @_;
 
+	exit 1 unless $self->app->check_app_duckpan;
 	exit 1 unless $self->app->check_ddg;
 
 	dir($self->app->cfg->cache_path)->mkpath unless -d $self->app->cfg->cache_path;
@@ -172,7 +173,6 @@ sub change_html {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -181,7 +181,7 @@ App::DuckPAN::Cmd::Server - Starting up the webserver to test plugins
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 AUTHOR
 
@@ -195,3 +195,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Install::VERSION = '0.110';
+  $App::DuckPAN::Cmd::Install::VERSION = '0.111';
 }
 # ABSTRACT: Install the distribution in current directory
 
@@ -32,7 +32,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -41,7 +40,7 @@ App::DuckPAN::Cmd::Install - Install the distribution in current directory
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 AUTHOR
 
@@ -55,3 +54,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

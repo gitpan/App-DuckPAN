@@ -7,7 +7,7 @@ $|=1;
 use App::DuckPAN;
 App::DuckPAN->new_with_cmd;
 
-__END__
+
 
 =pod
 
@@ -17,7 +17,7 @@ duckpan - Command line tool for using the DuckPAN of DuckDuckGo
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 DESCRIPTION
 
@@ -110,3 +110,7 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
+
+__END__
+

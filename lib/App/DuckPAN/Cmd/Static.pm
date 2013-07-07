@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Static::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Static::VERSION = '0.110';
+  $App::DuckPAN::Cmd::Static::VERSION = '0.111';
 }
 # ABSTRACT: Starting up the static webserver
 
@@ -58,7 +58,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -67,7 +66,7 @@ App::DuckPAN::Cmd::Static - Starting up the static webserver
 
 =head1 VERSION
 
-version 0.110
+version 0.111
 
 =head1 AUTHOR
 
@@ -81,3 +80,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
