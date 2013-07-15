@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.111';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.112';
 }
 # ABSTRACT: Command line tool for testing queries and see triggered plugins
 
@@ -26,6 +26,7 @@ sub run {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -34,7 +35,7 @@ App::DuckPAN::Cmd::Query - Command line tool for testing queries and see trigger
 
 =head1 VERSION
 
-version 0.111
+version 0.112
 
 =head1 AUTHOR
 
@@ -48,4 +49,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

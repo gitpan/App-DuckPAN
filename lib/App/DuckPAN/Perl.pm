@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Perl::VERSION = '0.111';
+  $App::DuckPAN::Perl::VERSION = '0.112';
 }
 # ABSTRACT: Perl related functionality for duckpan
 
@@ -121,6 +121,7 @@ sub get_dzil_config {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -129,7 +130,7 @@ App::DuckPAN::Perl - Perl related functionality for duckpan
 
 =head1 VERSION
 
-version 0.111
+version 0.112
 
 =head1 AUTHOR
 
@@ -143,4 +144,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

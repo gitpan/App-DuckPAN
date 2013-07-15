@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.111';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.112';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 
@@ -29,14 +29,13 @@ sub run {
 	dir($self->app->cfg->cache_path)->mkpath unless -d $self->app->cfg->cache_path;
 
 	my %spice_files = (
-		'page_root.html'         => { name => 'DuckDuckGo HTML', file_path => '/' },
-		'page_spice.html'        => { name => 'DuckDuckGo Spice-Template', file_path => '/?q=duckduckhack-template-for-spice2' },
-		'page.css'               => { name => 'DuckDuckGo CSS', file_path => '/style.css' },
-		'duckduck.js'            => { name => 'DuckDuckGo Javascript', file_path => '/duckduck.js' },
-		'jquery.js'              => { name => 'jQuery', file_path => '/js/jquery/jquery-1.8.2.min.js' },
-		'handlebars.js'          => { name => 'Handlebars.js', file_path => '/js/handlebars-1.0.0-rc.3.js' },
-		'spice2_latest.js'       => { name => 'Spice2.js', file_path => '/spice2/spice2_latest.js' },
-		'spice2_duckpan.js'      => { name => 'Spice2 DuckPAN javascript', file_path => '/spice2/spice2_duckpan.js' }
+		'page_root.html'            => { name => 'DuckDuckGo HTML', file_path => '/' },
+		'page_spice.html'           => { name => 'DuckDuckGo Spice-Template', file_path => '/?q=duckduckhack-template-for-spice2' },
+		'page.css'                  => { name => 'DuckDuckGo CSS', file_path => '/style.css' },
+		'duckduck.js'               => { name => 'DuckDuckGo Javascript', file_path => '/duckduck.js' },
+		'handlebars.js'             => { name => 'Handlebars.js', file_path => '/js/handlebars-1.0.0-rc.3.js' },
+		'spice2_duckpan.js'         => { name => 'Spice2.js', file_path => '/spice2/spice2_duckpan.js' },
+		'spice2_duckpan_compile.js' => { name => 'Spice2 DuckPAN compile script', file_path => '/spice2/spice2_duckpan_compile.js' }
 	);
 
 	my @blocks = @{$self->app->ddg->get_blocks_from_current_dir(@args)};
@@ -76,10 +75,9 @@ sub run {
 	# Concatenate all JS files
 	# Order matters because of dependencies
 	my $page_js = io(file($self->app->cfg->cache_path,'duckduck.js'))->slurp;
-	$page_js .= io(file($self->app->cfg->cache_path,'jquery.js'))->slurp;
 	$page_js .= io(file($self->app->cfg->cache_path,'handlebars.js'))->slurp;
-	$page_js .= io(file($self->app->cfg->cache_path,'spice2_latest.js'))->slurp;
 	$page_js .= io(file($self->app->cfg->cache_path,'spice2_duckpan.js'))->slurp;
+	$page_js .= io(file($self->app->cfg->cache_path,'spice2_duckpan_compile.js'))->slurp;
 
 	print "\n\nStarting up webserver...";
 	print "\n\nYou can stop the webserver with Ctrl-C";
@@ -173,6 +171,7 @@ sub change_html {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -181,7 +180,7 @@ App::DuckPAN::Cmd::Server - Starting up the webserver to test plugins
 
 =head1 VERSION
 
-version 0.111
+version 0.112
 
 =head1 AUTHOR
 
@@ -195,4 +194,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
