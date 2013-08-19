@@ -1,10 +1,30 @@
 ==================================================
-Changes from 1739-10-01 00:00:00 +0000 to present.
+Changes from 1739-11-05 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.112 at 2013-07-15 21:06:53 +0000
+version 0.115 at 2013-08-19 23:15:38 +0000
 ------------------------------------------
+
+  Change: d2ffbb413cdbd86d9050e0956086ab5c99164aba
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-08-03 09:32:00 +0000
+
+    Merge pull request #9 from istepura/master
+
+    Web.pm - use environment proxy settings is UserAgent 
+
+  Change: 5a1ade90e418f4d04e2c7cab63c9696327dddca4
+  Author: Igor Stepura <igor.stepura@gmail.com>
+  Date : 2013-07-18 16:14:17 +0000
+
+    Web.pm - use environment proxy settings is UserAgent 
+
+  Change: b7326df473c5302ad24d654d580671d63b79ad77
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-07-15 19:54:32 +0000
+
+    only rewrite spice specific js files 
 
   Change: 7edc58390bb87febd0c41d12f62ce0112aea0846
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
