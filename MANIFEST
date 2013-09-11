@@ -23,7 +23,6 @@ lib/App/DuckPAN/Cmd/Rm.pm
 lib/App/DuckPAN/Cmd/Roadrunner.pm
 lib/App/DuckPAN/Cmd/Server.pm
 lib/App/DuckPAN/Cmd/Setup.pm
-lib/App/DuckPAN/Cmd/Static.pm
 lib/App/DuckPAN/Cmd/Test.pm
 lib/App/DuckPAN/CmdBase/Env.pm
 lib/App/DuckPAN/Config.pm

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Test::VERSION = '0.115';
+  $App::DuckPAN::Cmd::Test::VERSION = '0.116';
 }
 # ABSTRACT: Command for running the tests of this library
 
@@ -39,7 +39,7 @@ App::DuckPAN::Cmd::Test - Command for running the tests of this library
 
 =head1 VERSION
 
-version 0.115
+version 0.116
 
 =head1 AUTHOR
 

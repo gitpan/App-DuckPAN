@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-11-05 00:00:00 +0000 to present.
+Changes from 1739-11-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.115 at 2013-08-19 23:15:38 +0000
+version 0.116 at 2013-09-11 19:21:19 +0000
 ------------------------------------------
+
+  Change: 06a9592c93a9b7427047c094a70a6319e0ffe492
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-09-11 21:20:56 +0000
+
+    Added duckduckhack to publisher, removed old legacy static command 
 
   Change: d2ffbb413cdbd86d9050e0956086ab5c99164aba
   Author: Zaahir Moolla <moollaza@duckduckgo.com>

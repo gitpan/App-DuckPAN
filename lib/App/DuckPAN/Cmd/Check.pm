@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.115';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.116';
 }
 # ABSTRACT: Command for checking the requirements
 
@@ -35,7 +35,7 @@ App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.115
+version 0.116
 
 =head1 AUTHOR
 

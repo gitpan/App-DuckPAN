@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Publisher::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Publisher::VERSION = '0.115';
+  $App::DuckPAN::Cmd::Publisher::VERSION = '0.116';
 }
 # ABSTRACT: Starting up the publisher test webserver
 
@@ -15,7 +15,7 @@ use MooX::Options;
 use Path::Class;
 use Plack::Handler::Starman;
 
-for (qw( duckduckgo dontbubbleus donttrackus whatisdnt fixtracking )) {
+for (qw( duckduckgo dontbubbleus donttrackus whatisdnt fixtracking duckduckhack )) {
 	option $_ => (
 		is => 'ro',
 		format => 's',
@@ -56,6 +56,10 @@ sub run {
 			port => 5004,
 			url => $self->has_fixtracking ? $self->fixtracking : "http://fixtracking.com/",
 		},
+		duckduckhack => {
+			port => 5005,
+			url => $self->has_duckduckhack ? $self->duckduckhack : "http://duckduckhack.com/",
+		},
 	);
 
 	for (sort { $sites{$a}->{port} <=> $sites{$b}->{port} } keys %sites) {
@@ -85,7 +89,7 @@ App::DuckPAN::Cmd::Publisher - Starting up the publisher test webserver
 
 =head1 VERSION
 
-version 0.115
+version 0.116
 
 =head1 AUTHOR
 

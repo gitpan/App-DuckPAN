@@ -63,7 +63,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.115
+version: 0.116
 x_Dist_Zilla:
   perl:
     version: 5.018000
