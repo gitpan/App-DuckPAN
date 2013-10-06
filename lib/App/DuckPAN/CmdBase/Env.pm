@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::CmdBase::Env::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::CmdBase::Env::VERSION = '0.116';
+  $App::DuckPAN::CmdBase::Env::VERSION = '0.118';
 }
 # ABSTRACT: Base class for ENV related functionality of duckpan (duckpan env and duckpan rm)
 
@@ -91,7 +91,7 @@ App::DuckPAN::CmdBase::Env - Base class for ENV related functionality of duckpan
 
 =head1 VERSION
 
-version 0.116
+version 0.118
 
 =head1 AUTHOR
 

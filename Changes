@@ -1,10 +1,118 @@
 ==================================================
-Changes from 1739-11-28 00:00:00 +0000 to present.
+Changes from 1739-12-23 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.116 at 2013-09-11 19:21:19 +0000
+version 0.118 at 2013-10-06 00:58:45 +0000
 ------------------------------------------
+
+  Change: a945fd942c985ef107060f43585386a11b8dfbcb
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-10-06 02:57:47 +0000
+
+    New travis configx 
+
+  Change: 495b15efd4cf7cab32b88d27e266b93cbd856a02
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-05 15:31:40 +0000
+
+    Merge branch 'master' into zaahir/dpserver-goodie-support 
+
+  Change: ae4a232c115f341732707b50c4602cd594ce55be
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-10-01 21:51:19 +0000
+
+    Web.pm - Better method for creating script tag strings, added more
+    comments 
+
+  Change: 60ee7573c8658d2480bbff3134b674ed246f8ed2
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-10-01 21:31:53 +0000
+
+    Web.pm - Better way of accesing Goodie object data, convert to json
+    and pass into script 
+
+  Change: 5cedf582a15d72357ecb739f88642699df54389c
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-10-01 17:31:57 +0000
+
+    Small fix, checking for wrong ref 
+
+  Change: 84b1363ca36564d29b7a8c9738923ba850ea3b72
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-10-01 17:23:22 +0000
+
+    Added support for goodies in DuckPAN, moved around some code in
+    Web.pm also 
+
+  Change: 45390b6c43babbd9433ae123ac82f90e264cae72
+  Author: zekiel <zac@duckduckgo.com>
+  Date : 2013-09-19 11:13:58 +0000
+
+    minor grammar and a link to the forum 
+
+  Change: 388a86ebdeded2e527aa223759015c1cc7831f76
+  Author: Gabriel Weinberg <yegg@alum.mit.edu>
+  Date : 2013-09-18 19:34:45 +0000
+
+    Update README.md
+
+    Minor tweaks. 
+
+  Change: 83f0df5f1d771e60fa40c0a5d18d2ab38703920d
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:54:07 +0000
+
+    README - modified debugging section 
+
+  Change: 6d891cde7ed470987bdc938e4b975cd12f54b7b5
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:44:06 +0000
+
+    README - fixed sytax highlighting, removed scary red text 
+
+  Change: ac33af715ffd1fe3374d9a443f44942d26989401
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:43:10 +0000
+
+    README - fixed bolding 
+
+  Change: e0faaef10a794b207dd02ac6f5798e3fec8e54d0
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:42:37 +0000
+
+    README - minor fix to login section 
+
+  Change: 9b7e73caed00a80f22fa5ce0ffa7e83f3804f474
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:41:28 +0000
+
+    README - made headings a little smaller, fixed line breaks 
+
+  Change: c1da7df7e39978aaa61d25d90d6cc5cf862868a6
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:39:25 +0000
+
+    README - more fixes to wording 
+
+  Change: 52811ad850bebcce4fd6aba15b6bdcc678383dcf
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:37:32 +0000
+
+    README - small fix to wording 
+
+  Change: e8218f667904a6673daac58d10e157c4cf26e2c1
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:34:49 +0000
+
+    Merge branch 'master' of github.com:duckduckgo/p5-app-duckpan 
+
+  Change: 06054c3e7ace776698fb6ff55d5d2617956fbc9e
+  Author: moollaza <moollaza@gmail.com>
+  Date : 2013-09-18 14:34:34 +0000
+
+    README - Big update to inclue install instructions, DDH VM
+    instructions and debugging instructions 
 
   Change: 06a9592c93a9b7427047c094a70a6319e0ffe492
   Author: Torsten Raudssus <torsten@raudss.us>

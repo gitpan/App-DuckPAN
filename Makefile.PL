@@ -40,6 +40,7 @@ my %WriteMakefileArgs = (
     "HTML::Parser" => "3.71",
     "HTML::TreeBuilder" => 0,
     "IO::All" => 0,
+    "JSON" => "2.59",
     "LWP::Protocol::https" => 0,
     "LWP::Simple" => "6.00",
     "Module::Data" => "0.006",
@@ -68,7 +69,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.116",
+  "VERSION" => "0.118",
   "test" => {
     "TESTS" => "t/*.t"
   }
