@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.118';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.119';
 }
 # ABSTRACT: Command for checking the requirements
 
@@ -26,7 +26,6 @@ sub run {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -35,7 +34,7 @@ App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.118
+version 0.119
 
 =head1 AUTHOR
 
@@ -49,3 +48,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

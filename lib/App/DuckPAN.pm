@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.118';
+  $App::DuckPAN::VERSION = '0.119';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -350,8 +350,8 @@ sub BUILD {
 
 1;
 
-__END__
 
+__END__
 =pod
 
 =head1 NAME
@@ -360,7 +360,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.118
+version 0.119
 
 =encoding utf8
 
@@ -453,3 +453,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
