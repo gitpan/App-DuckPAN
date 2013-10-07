@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.119';
+  $App::DuckPAN::Web::VERSION = '0.120';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -357,12 +357,12 @@ sub request {
 		}
 	}
 
-	Encode::_utf8_off($body);
 	$response->body($body);
 	return $response;
 }
 
 1;
+
 __END__
 =pod
 
@@ -372,7 +372,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.119
+version 0.120
 
 =head1 AUTHOR
 
