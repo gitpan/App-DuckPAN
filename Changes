@@ -3,8 +3,63 @@ Changes from 1739-12-24 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.120 at 2013-10-07 01:58:25 +0000
+version 0.121 at 2013-10-07 18:22:08 +0000
 ------------------------------------------
+
+  Change: 8a66e8393ea8afbac1546acf60097f874cb50280
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-07 10:51:34 +0000
+
+    Merge pull request #24 from
+    duckduckgo/dylan/api_response-utf8-encoding
+
+    encode utf8 api_responses to bytestream for plack 
+
+  Change: 9a54351eecce8cbf10ba3cde8db3e72d145021b9
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-07 10:37:52 +0000
+
+    Merge pull request #22 from duckduckgo/dylan/loadlibs
+
+    prepend optional specified libs to @INC 
+
+  Change: 93042162adbf5a636c3c5b0c37cf369c9b2b841e
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 07:42:34 +0000
+
+    include a full example of -I flag usage 
+
+  Change: fcd914d657eb07f573d7015fa4a4d747af6be74b
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 07:39:46 +0000
+
+    document -I flag 
+
+  Change: 9e4160361a8ae3dbac4c7d2d2d6f733161004e87
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 07:37:27 +0000
+
+    include comments explaining utf8 handling 
+
+  Change: 2917b6cd840d4b04f3d41c2acddbeaeea9fc696e
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 05:38:05 +0000
+
+    typos 
+
+  Change: 4a2e73b21fbf9f76934d900c45d74dcf6e2426c2
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 04:16:11 +0000
+
+    encode utf8 api_responses to bytestream for plack 
+
+  Change: dcfdd7383d000a705bdceb53160d11414ff3c0f1
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 03:06:21 +0000
+
+    prepend optional specified libs to @INC
+
+    https://github.com/duckduckgo/p5-app-duckpan/issues/19 
 
   Change: 02d751fa7456795c76f431875548af750bdbd88f
   Author: yegg <yegg@duckduckgo.com>

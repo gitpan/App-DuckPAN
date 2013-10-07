@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.120';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.121';
 }
 # ABSTRACT: Setting up your dukgo.com Account on your duckpan client
 
@@ -90,7 +90,7 @@ sub run {
 		$self->setup_email unless $self->has_email;
 	}
 	unless ($self->has_user && $self->has_pass) {
-		print "\nGetting your https://dukgo.com/ user informations\n\n";
+		print "\nGetting your https://dukgo.com/ user information\n\n";
 		$self->setup_dukgo;
 	}
 	my %vars = (
@@ -187,7 +187,7 @@ App::DuckPAN::Cmd::Setup - Setting up your dukgo.com Account on your duckpan cli
 
 =head1 VERSION
 
-version 0.120
+version 0.121
 
 =head1 AUTHOR
 

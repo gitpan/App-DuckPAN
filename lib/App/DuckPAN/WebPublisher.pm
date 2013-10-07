@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::WebPublisher::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::WebPublisher::VERSION = '0.120';
+  $App::DuckPAN::WebPublisher::VERSION = '0.121';
 }
 # ABSTRACT: Webserver for duckpan publisher
 
@@ -95,6 +95,9 @@ sub request {
 		}
 	}
 
+	# This could cause issues with incorrectly encoded data as Plack expects a
+	# raw bytestream. We should find the root of this issue and reencode
+	# offending strings.
 	Encode::_utf8_off($body);
 	$response->body($body);
 	return $response;
@@ -111,7 +114,7 @@ App::DuckPAN::WebPublisher - Webserver for duckpan publisher
 
 =head1 VERSION
 
-version 0.120
+version 0.121
 
 =head1 AUTHOR
 

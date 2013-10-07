@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.120';
+  $App::DuckPAN::Web::VERSION = '0.121';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -135,6 +135,8 @@ sub request {
 						));
 					if ($res->is_success) {
 						$body = $res->decoded_content;
+						# Encode utf8 api_responses to bytestream for Plack.
+						utf8::encode $body if utf8::is_utf8 $body;
 						warn "Cannot use wrap_jsonp_callback and wrap_string callback at the same time!" if $rewrite->wrap_jsonp_callback && $rewrite->wrap_string_callback;
 						if ($rewrite->wrap_jsonp_callback && $rewrite->callback) {
 							$body = $rewrite->callback.'('.$body.');';
@@ -372,7 +374,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.120
+version 0.121
 
 =head1 AUTHOR
 
