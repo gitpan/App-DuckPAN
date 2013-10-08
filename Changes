@@ -1,10 +1,19 @@
 ==================================================
-Changes from 1739-12-24 00:00:00 +0000 to present.
+Changes from 1739-12-25 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.121 at 2013-10-07 18:22:08 +0000
+version 0.122 at 2013-10-08 00:47:54 +0000
 ------------------------------------------
+
+  Change: 8aee863d8e6874aee9bee05611806ce8f3b8dc97
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-07 12:34:49 +0000
+
+    Merge pull request #23 from
+    duckduckgo/dylan/duplicate-req-process-fix
+
+    ensure top level req before processing query 
 
   Change: 8a66e8393ea8afbac1546acf60097f874cb50280
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
@@ -52,6 +61,14 @@ version 0.121 at 2013-10-07 18:22:08 +0000
   Date : 2013-10-07 04:16:11 +0000
 
     encode utf8 api_responses to bytestream for plack 
+
+  Change: fa24bf92dc37695fef72098550143cb235f5460e
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-07 03:49:11 +0000
+
+    ensure top level req before processing query
+
+    https://github.com/duckduckgo/p5-app-duckpan/issues/17 
 
   Change: dcfdd7383d000a705bdceb53160d11414ff3c0f1
   Author: Dylan Lloyd <dylan@dylansserver.com>

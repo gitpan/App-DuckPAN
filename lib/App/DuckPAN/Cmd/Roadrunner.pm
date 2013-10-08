@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Roadrunner::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.121';
+  $App::DuckPAN::Cmd::Roadrunner::VERSION = '0.122';
 }
 # ABSTRACT: Install requirements as fast as possible
 
@@ -56,7 +56,7 @@ App::DuckPAN::Cmd::Roadrunner - Install requirements as fast as possible
 
 =head1 VERSION
 
-version 0.121
+version 0.122
 
 =head1 AUTHOR
 

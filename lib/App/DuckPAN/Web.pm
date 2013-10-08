@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.121';
+  $App::DuckPAN::Web::VERSION = '0.122';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -164,7 +164,7 @@ sub request {
 	} elsif ($request->param('duckduckhack_js')) {
 		$response->content_type('text/javascript');
 		$body = $self->page_js;
-	} elsif ($request->param('q')) {
+	} elsif ($request->param('q') && $request->path_info eq '/') {
 		my $query = $request->param('q');
 		Encode::_utf8_on($query);
 		my $ddg_request = DDG::Request->new(
@@ -374,7 +374,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.121
+version 0.122
 
 =head1 AUTHOR
 
