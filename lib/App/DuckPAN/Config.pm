@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Config::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Config::VERSION = '0.122';
+  $App::DuckPAN::Config::VERSION = '0.123';
 }
 # ABSTRACT: Configuration class of the duckpan client
 
@@ -44,7 +44,7 @@ App::DuckPAN::Config - Configuration class of the duckpan client
 
 =head1 VERSION
 
-version 0.122
+version 0.123
 
 =head1 AUTHOR
 

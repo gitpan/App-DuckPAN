@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::VERSION = '0.122';
+  $App::DuckPAN::Cmd::VERSION = '0.123';
 }
 # ABSTRACT: Base class for commands of DuckPAN
 
@@ -33,7 +33,7 @@ App::DuckPAN::Cmd - Base class for commands of DuckPAN
 
 =head1 VERSION
 
-version 0.122
+version 0.123
 
 =head1 AUTHOR
 
