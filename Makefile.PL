@@ -53,7 +53,7 @@ my %WriteMakefileArgs = (
     "POE" => "1.354",
     "Parse::CPAN::Packages::Fast" => "0.04",
     "Path::Class" => "0.26",
-    "Plack" => "0.9986",
+    "Plack" => "1.0029",
     "Starman" => 0,
     "Term::UI" => "0.30",
     "URI" => "1.60",
@@ -69,7 +69,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.123",
+  "VERSION" => "0.124",
   "test" => {
     "TESTS" => "t/*.t"
   }

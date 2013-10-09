@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.123';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.124';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 
@@ -171,6 +171,7 @@ sub change_html {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -179,7 +180,7 @@ App::DuckPAN::Cmd::Server - Starting up the webserver to test plugins
 
 =head1 VERSION
 
-version 0.123
+version 0.124
 
 =head1 AUTHOR
 
@@ -193,4 +194,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

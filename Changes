@@ -1,10 +1,24 @@
 ==================================================
-Changes from 1739-12-25 00:00:00 +0000 to present.
+Changes from 1739-12-26 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.123 at 2013-10-08 00:49:00 +0000
+version 0.124 at 2013-10-09 21:14:36 +0000
 ------------------------------------------
+
+  Change: 3b98a012c4497f8969c1e662a86f46ef7e0c14b1
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-09 17:14:26 +0000
+
+    Dist.ini - Bump Plack dependency to newest release 
+
+  Change: 1da15915e01d78128ee51d6ece2c860d9aa7e1b7
+  Author: Jag Talon <jagtalon@users.noreply.github.com>
+  Date : 2013-10-09 13:58:51 +0000
+
+    Small typo fix.
+
+    releaseses -> releases 
 
   Change: 8aee863d8e6874aee9bee05611806ce8f3b8dc97
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
