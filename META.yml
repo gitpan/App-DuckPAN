@@ -60,11 +60,12 @@ requires:
   Starman: 0
   Term::UI: 0.30
   URI: 1.60
+  WWW::DuckDuckGo: 0.015
   version: 0.96
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.124
+version: 0.125
 x_Dist_Zilla:
   perl:
     version: 5.010001

@@ -57,6 +57,7 @@ my %WriteMakefileArgs = (
     "Starman" => 0,
     "Term::UI" => "0.30",
     "URI" => "1.60",
+    "WWW::DuckDuckGo" => "0.015",
     "version" => "0.96"
   },
   "TEST_REQUIRES" => {
@@ -69,7 +70,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.124",
+  "VERSION" => "0.125",
   "test" => {
     "TESTS" => "t/*.t"
   }

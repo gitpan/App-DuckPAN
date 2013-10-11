@@ -4,8 +4,7 @@
 
 my @libs;
 BEGIN {
-    use Getopt::Long;
-    Getopt::Long::Configure 'bundling';
+    use Getopt::Long qw/:config bundling pass_through/;
     GetOptions 'include|I=s' => \@libs;
     @libs = split ',', join ',', @libs;
 }
@@ -26,7 +25,7 @@ duckpan - Command line tool for using the DuckPAN of DuckDuckGo
 
 =head1 VERSION
 
-version 0.124
+version 0.125
 
 =head1 DESCRIPTION
 

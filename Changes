@@ -1,10 +1,41 @@
 ==================================================
-Changes from 1739-12-26 00:00:00 +0000 to present.
+Changes from 1739-12-28 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.124 at 2013-10-09 21:14:36 +0000
+version 0.125 at 2013-10-11 17:12:16 +0000
 ------------------------------------------
+
+  Change: 13aa26fa5350d89478d67da03c57526773f2d1d1
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-11 06:35:37 +0000
+
+    don't be destructive to ARGV with lib preprocessing 
+
+  Change: a0f274aff58010b88961e9ff9b0f9223f8b230ac
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-09 23:09:02 +0000
+
+    Server.pm - add duckpan.js back to list so it gets copied from
+    dist_dir 
+
+  Change: 98ebd1dd81224231bac8bfe9302caa5d95afeecb
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-09 22:46:51 +0000
+
+    Server.pm - Don't request duckpan.js from DuckDuckGo 
+
+  Change: a9daee88d5367152fc9436fc1b9e95634f9b6026
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-09 22:38:45 +0000
+
+    Added duckpan.js to share dir 
+
+  Change: d730484f1c7c3124aac2936c7130756f1f0c6845
+  Author: yegg <yegg@duckduckgo.com>
+  Date : 2013-10-09 19:57:24 +0000
+
+    WWW::DuckDuckGo requirement. 
 
   Change: 3b98a012c4497f8969c1e662a86f46ef7e0c14b1
   Author: Zaahir Moolla <moollaza@fastmail.fm>

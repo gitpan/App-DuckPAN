@@ -35,6 +35,7 @@ lib/App/DuckPAN/Web.pm
 lib/App/DuckPAN/WebPublisher.pm
 lib/App/DuckPAN/WebStatic.pm
 share/duckduck.js
+share/duckpan.js
 share/handlebars.js
 share/jquery.js
 share/page.css
