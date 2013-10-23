@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.127';
+  $App::DuckPAN::Web::VERSION = '0.128';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -16,25 +16,13 @@ use Plack::Response;
 use HTML::Entities;
 use HTML::TreeBuilder;
 use HTML::Element;
+use Data::Printer;
 use IO::All -utf8;
 use HTTP::Request;
 use LWP::UserAgent;
 use URI::Escape;
 use JSON;
 use Data::Dumper;
-
-use Env qw( DP_NOCOLOR);
-# By setting the environment variable DP_NOCOLOR or ANSI_COLORS_DISABLED
-# change the behaviour of query printer on console. 
-if ($DP_NOCOLOR) {
-    require Data::Printer;
-    import Data::Printer colored => 0;
-}
-else {
-    require Data::Printer;
-    import Data::Printer;
-}
-
 
 has blocks => ( is => 'ro', required => 1 );
 has page_root => ( is => 'ro', required => 1 );
@@ -387,7 +375,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.127
+version 0.128
 
 =head1 AUTHOR
 

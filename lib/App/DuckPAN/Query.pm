@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.127';
+  $App::DuckPAN::Query::VERSION = '0.128';
 }
 # ABSTRACT: Main application/loop for duckpan query
 
@@ -11,17 +11,8 @@ use Moo;
 
 my $query;
 my $history_path;
-use Env qw( DP_NOCOLOR);
-# By setting the environment variable DP_NOCOLOR or ANSI_COLORS_DISABLED
-# change the behaviour of query printer on console. 
-if ($DP_NOCOLOR) {
-    require Data::Printer;
-    import Data::Printer colored => 0;
-}
-else {
-    require Data::Printer;
-    import Data::Printer;
-}
+
+use Data::Printer;
 use POE qw( Wheel::ReadLine );
 
 sub run {
@@ -125,7 +116,7 @@ App::DuckPAN::Query - Main application/loop for duckpan query
 
 =head1 VERSION
 
-version 0.127
+version 0.128
 
 =head1 AUTHOR
 

@@ -3,8 +3,17 @@ Changes from 1740-01-09 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.127 at 2013-10-23 20:38:21 +0000
+version 0.128 at 2013-10-23 21:43:46 +0000
 ------------------------------------------
+
+  Change: b82d5b62e3ebaf38ccfd094701fa9bd046e806e3
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-23 17:42:57 +0000
+
+    Revert "Merge pull request #33 from djinn/feature/query_colors"
+
+    This reverts commit abff58d7a1499b1a9120fbd992fd25de67e99e50,
+    reversing changes made to 239875fd669b59fbda2580fc3c3ab86e16f5911f. 
 
   Change: abff58d7a1499b1a9120fbd992fd25de67e99e50
   Author: Zaahir Moolla <moollaza@duckduckgo.com>

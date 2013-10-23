@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.127';
+  $App::DuckPAN::VERSION = '0.128';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -360,7 +360,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.127
+version 0.128
 
 =encoding utf8
 

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Rm::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Rm::VERSION = '0.127';
+  $App::DuckPAN::Cmd::Rm::VERSION = '0.128';
 }
 # ABSTRACT: Remove an ENV variable
 
@@ -35,7 +35,7 @@ App::DuckPAN::Cmd::Rm - Remove an ENV variable
 
 =head1 VERSION
 
-version 0.127
+version 0.128
 
 =head1 AUTHOR
 
