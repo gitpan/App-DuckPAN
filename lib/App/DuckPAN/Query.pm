@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Query::VERSION = '0.125';
+  $App::DuckPAN::Query::VERSION = '0.126';
 }
 # ABSTRACT: Main application/loop for duckpan query
 
@@ -116,7 +116,7 @@ App::DuckPAN::Query - Main application/loop for duckpan query
 
 =head1 VERSION
 
-version 0.125
+version 0.126
 
 =head1 AUTHOR
 
