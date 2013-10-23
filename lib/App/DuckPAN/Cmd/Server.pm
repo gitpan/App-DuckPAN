@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Server::VERSION = '0.126';
+  $App::DuckPAN::Cmd::Server::VERSION = '0.127';
 }
 # ABSTRACT: Starting up the webserver to test plugins
 
@@ -181,7 +181,7 @@ App::DuckPAN::Cmd::Server - Starting up the webserver to test plugins
 
 =head1 VERSION
 
-version 0.126
+version 0.127
 
 =head1 AUTHOR
 

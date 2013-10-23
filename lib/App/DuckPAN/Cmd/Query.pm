@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Query::VERSION = '0.126';
+  $App::DuckPAN::Cmd::Query::VERSION = '0.127';
 }
 # ABSTRACT: Command line tool for testing queries and see triggered plugins
 
@@ -35,7 +35,7 @@ App::DuckPAN::Cmd::Query - Command line tool for testing queries and see trigger
 
 =head1 VERSION
 
-version 0.126
+version 0.127
 
 =head1 AUTHOR
 
