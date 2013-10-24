@@ -3,8 +3,40 @@ Changes from 1740-01-10 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.129 at 2013-10-24 20:00:24 +0000
+version 0.130 at 2013-10-24 20:02:06 +0000
 ------------------------------------------
+
+  Change: 768358708912fe41d2aba80a1aaad8bd9b2556df
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-24 12:00:16 +0000
+
+    Merge pull request #39 from duckduckgo/zaahir/fix-duckpan-help
+
+    Zaahir/fix duckpan help 
+
+  Change: e222d2f68b385fb32c58240a4edfc9cecd2ab201
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-24 14:02:52 +0000
+
+    Fixed test indendation and cannonicalized spelling of DuckPAN 
+
+  Change: b33dfe4ae68714e4a5a825a58e0ec47046e436ab
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-24 14:01:58 +0000
+
+    No longer pass version to DuckPAN::App:Help -- not needed 
+
+  Change: c89d87ed7fb351d974e67638c46a2555939d339d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-24 13:55:40 +0000
+
+    Normalized all POD documentation 
+
+  Change: 580ffc5c18f31c24435359f948323b28f297a3f8
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-24 12:50:01 +0000
+
+    Cleaned up DuckPAN help output 
 
   Change: b82d5b62e3ebaf38ccfd094701fa9bd046e806e3
   Author: Zaahir Moolla <moollaza@fastmail.fm>
