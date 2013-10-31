@@ -64,8 +64,10 @@
             "Parse::CPAN::Packages::Fast" : "0.04",
             "Path::Class" : "0.26",
             "Plack" : "1.0029",
+            "Pod::Usage" : "1.63",
             "Starman" : "0",
             "Term::UI" : "0.30",
+            "Text::Xslate" : "v3.0.0",
             "URI" : "1.60",
             "WWW::DuckDuckGo" : "0.015",
             "version" : "0.96"
@@ -93,7 +95,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.130",
+   "version" : "0.131",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.010001"

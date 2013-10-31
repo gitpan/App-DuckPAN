@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.130';
+  $App::DuckPAN::VERSION = '0.131';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -207,6 +207,16 @@ sub print_text {
 	print "\n";
 }
 
+sub camel_to_underscore {
+ my ($self, $name) = @_;
+	# Replace first capital by lowercase
+	# if followed my lowercase.
+	$name =~ s/^([A-Z])([a-z])/lc($1).$2/e;
+	# Substitute camelCase to camel_case
+	$name =~ s/([a-z])([A-Z])/$1.'_'.lc($2)/ge;
+	return lc $name;
+}
+
 sub check_requirements {
 	my ( $self ) = @_;
 	my $fail = 0;
@@ -360,7 +370,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.130
+version 0.131
 
 =head1 DuckPAN
 
@@ -405,8 +415,6 @@ B<Repository>:
 B<Issue Tracker>:
 
     https://github.com/duckduckgo/p5-app-duckpan/issues
-
-=cut
 
 =head1 AUTHOR
 

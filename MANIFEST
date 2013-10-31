@@ -15,6 +15,7 @@ lib/App/DuckPAN/Cmd/Env.pm
 lib/App/DuckPAN/Cmd/Goodie.pm
 lib/App/DuckPAN/Cmd/Install.pm
 lib/App/DuckPAN/Cmd/Installdeps.pm
+lib/App/DuckPAN/Cmd/New.pm
 lib/App/DuckPAN/Cmd/Poupload.pm
 lib/App/DuckPAN/Cmd/Publisher.pm
 lib/App/DuckPAN/Cmd/Query.pm

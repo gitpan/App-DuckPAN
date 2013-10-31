@@ -3,14 +3,14 @@ BEGIN {
   $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Goodie::VERSION = '0.130';
+  $App::DuckPAN::Cmd::Goodie::VERSION = '0.131';
 }
 # ABSTRACT: DEPRECATED
 
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
-use MooX::Options;
+use MooX::Options protect_argv => 0;
 use Module::Pluggable::Object;
 use Class::Load ':all';
 use Data::Printer;
@@ -33,7 +33,7 @@ App::DuckPAN::Cmd::Goodie - DEPRECATED
 
 =head1 VERSION
 
-version 0.130
+version 0.131
 
 =head1 AUTHOR
 

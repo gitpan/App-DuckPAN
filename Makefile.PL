@@ -54,8 +54,10 @@ my %WriteMakefileArgs = (
     "Parse::CPAN::Packages::Fast" => "0.04",
     "Path::Class" => "0.26",
     "Plack" => "1.0029",
+    "Pod::Usage" => "1.63",
     "Starman" => 0,
     "Term::UI" => "0.30",
+    "Text::Xslate" => "v3.0.0",
     "URI" => "1.60",
     "WWW::DuckDuckGo" => "0.015",
     "version" => "0.96"
@@ -70,7 +72,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.130",
+  "VERSION" => "0.131",
   "test" => {
     "TESTS" => "t/*.t"
   }

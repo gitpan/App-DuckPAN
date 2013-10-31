@@ -3,11 +3,12 @@ BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Test::VERSION = '0.130';
+  $App::DuckPAN::Cmd::Test::VERSION = '0.131';
 }
 # ABSTRACT: Command for running the tests of this library
 
-use MooX qw( Options );
+use MooX;
+use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
 
 sub run {
@@ -39,7 +40,7 @@ App::DuckPAN::Cmd::Test - Command for running the tests of this library
 
 =head1 VERSION
 
-version 0.130
+version 0.131
 
 =head1 AUTHOR
 

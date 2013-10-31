@@ -3,14 +3,14 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Check::VERSION = '0.130';
+  $App::DuckPAN::Cmd::Check::VERSION = '0.131';
 }
 # ABSTRACT: Command for checking the requirements
 
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
-use MooX::Options;
+use MooX::Options protect_argv => 0;
 
 sub run {
 	my ( $self ) = @_;
@@ -35,7 +35,7 @@ App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.130
+version 0.131
 
 =head1 AUTHOR
 

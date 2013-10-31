@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Web::VERSION = '0.130';
+  $App::DuckPAN::Web::VERSION = '0.131';
 }
 # ABSTRACT: Webserver for duckpan server
 
@@ -13,11 +13,12 @@ use DDG::Test::Location;
 use DDG::Test::Language;
 use Plack::Request;
 use Plack::Response;
+use Plack::MIME;
 use HTML::Entities;
 use HTML::TreeBuilder;
 use HTML::Element;
 use Data::Printer;
-use IO::All -utf8;
+use IO::All;
 use HTTP::Request;
 use LWP::UserAgent;
 use URI::Escape;
@@ -83,7 +84,10 @@ sub request {
 	my $response = Plack::Response->new(200);
 	my $body;
 
-	if (@path_parts && $path_parts[0] eq 'share') {
+	if ($request->request_uri eq "/"){
+		$response->content_type("text/html");
+		$body = $self->page_root;
+	} elsif (@path_parts && $path_parts[0] eq 'share') {
 		my $filename = pop @path_parts;
 		my $share_dir = join('/',@path_parts);
 
@@ -100,6 +104,8 @@ sub request {
 		}
 
 		my $filename_path = $self->_share_dir_hash->{$share_dir}->can('share')->($filename);
+		my $content_type = Plack::MIME->mime_type($filename);
+		$response->content_type($content_type);
 		$body .= -f $filename_path ? io($filename_path)->slurp : "";
 
 	} elsif (@path_parts && $path_parts[0] eq 'js' && $path_parts[1] eq 'spice') {
@@ -157,6 +163,7 @@ sub request {
 			}
 		}
 	} elsif ($request->param('duckduckhack_ignore')) {
+		$response->status(204);
 		$body = "";
 	} elsif ($request->param('duckduckhack_css')) {
 		$response->content_type('text/css');
@@ -375,7 +382,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.130
+version 0.131
 
 =head1 AUTHOR
 

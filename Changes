@@ -1,10 +1,193 @@
 ==================================================
-Changes from 1740-01-10 00:00:00 +0000 to present.
+Changes from 1740-01-17 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.130 at 2013-10-24 20:02:06 +0000
+version 0.131 at 2013-10-31 16:55:52 +0000
 ------------------------------------------
+
+  Change: d33ae4bc04349d05fc4b8a462e81ac8978f3b338
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-31 12:55:38 +0000
+
+    Small update to duckpan server in Help 
+
+  Change: d00e29d5a468f17656ffab40fe35960703bc2561
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-31 12:41:00 +0000
+
+    removed content_length(0) for duckduckhack_ignore response 
+
+  Change: 7e16ac057dd5d6c1d8e2b92a8063ab0b15e85c0c
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-30 16:49:40 +0000
+
+    Merge pull request #48 from duckduckgo/zaahir/more-caching-fixes
+
+    Two small updates to DP Server 
+
+  Change: 9b1ed0f702c71786c90cf105b695d952aff74188
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-30 19:35:24 +0000
+
+    Serve root page from cache when / requested, also return proper HTTP
+    response and content-length for ignored requests 
+
+  Change: 76e3b23f022512c75b6de02ee851e6f8d1198df8
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-30 16:35:08 +0000
+
+    Add Pod::Usage to dist, should have been added when Help was updated 
+
+  Change: 43245d22bf819a32b99c1002c3ce0b65ea1ff5c7
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-30 09:33:46 +0000
+
+    Merge pull request #43 from duckduckgo/pr/37
+
+    Pr/37 -- updated 
+
+  Change: e9ab10d8620d5eeddad2c391a1cc5ce120da5bb1
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-30 07:47:51 +0000
+
+    Merge pull request #44 from duckduckgo/zaahir/more-utf8-fixes
+
+    Zaahir/more utf8 fixes 
+
+  Change: 4d407044b71e96cac2e06d21f6011d3eadec76ac
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-30 07:42:16 +0000
+
+    Merge pull request #45 from duckduckgo/zaahir/verbose-and-no-cache
+
+    add --no-cache and --verbose 
+
+  Change: 5d48a76c49efd206a639830b69873039209202b4
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-29 23:52:14 +0000
+
+    Removed duplicate line 
+
+  Change: 14e8f9ac79ccf8eeb54516e78bb0441d11ceb275
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-29 14:12:42 +0000
+
+    Merge pull request #47 from duckduckgo/zaahir/moox-protect-argv
+
+    add protect_args flag to MooX::Options import 
+
+  Change: c739a24eac11764c32df0161685de873eecf3ec0
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-29 17:07:31 +0000
+
+    add protect_args flag to MooX::Options import 
+
+  Change: a894d84167e2bc0d756cc59e376e6c29131010ff
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-29 14:30:08 +0000
+
+    Properly removed recognized commands fom @args 
+
+  Change: cbf56ebb0a1785461ba10e403172c2c592018fea
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-29 13:41:06 +0000
+
+    add --no-cache and --verbose 
+
+  Change: fbd4c77357e8ded11b3da2b6e7f47d480c21e327
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 18:11:32 +0000
+
+    Removed utf8 flag from use IO::All import 
+
+  Change: ba19da676bdb39d80fbefc720566be65ab467e77
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 18:10:26 +0000
+
+    Use Plack::Mime to set proper content type for /share files 
+
+  Change: 79187a77a73a74fd48dd740bc40a082c43b67cec
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 17:10:08 +0000
+
+    Fixed bug in regex replace, need to use a variable, not a function 
+
+  Change: e35e1325ebdcca6d8766f2a35075e0f8dfb5016c
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 16:06:51 +0000
+
+    Removed usage of the word "plugin" cleaned up code a bit 
+
+  Change: 54b38e4adc4907d7a2a9074d3101a87b4530e695
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 16:05:33 +0000
+
+    If no name given as argument, ask for one 
+
+  Change: 3aae5a46790ce2a95c84abfcb87ad7926d91fc6d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 16:04:55 +0000
+
+    Remove unneeded functions 
+
+  Change: 323735afa1221596a8a8315702172a355a628ad9
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 16:04:28 +0000
+
+    Update abstract, provide more details 
+
+  Change: f1fcf2eed2d106d08f5e28399fcf3cf188ab47ce
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-28 15:58:44 +0000
+
+    DuckPAN.pm - created function camel_to_underscore 
+
+  Change: c8ddd53e4728471641721b3f6d795b18eed1a0b8
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-10-26 16:45:05 +0000
+
+    Merge remote-tracking branch 'origin/zaahir/server-no-globals' 
+
+  Change: 821cb262800f6a83d5d60f8a52876a5ad69ba3f6
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-26 16:18:58 +0000
+
+    Server - removed globals, opt for Moo attributes instead 
+
+  Change: 93466bd0b170da906214582ba420ee4b0289c3b0
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-10-26 13:14:34 +0000
+
+    Merge pull request #32 from
+    duckduckgo/zaahir/duckpan-cache-page-assets
+
+    Introduce caching for page assets (js/css) 
+
+  Change: b6682ed52e8d401b4e87ed76ef02ced104894d1d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-26 15:57:45 +0000
+
+    Server - More comments and cleanup 
+
+  Change: 91621a3d1d9a50c423f1ae166b55c605d7672426
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-26 15:26:08 +0000
+
+    Server.pm - added more comments for further clarification 
+
+  Change: 416cf87aeca41cd2bfb9782d3e7e3c9cf553b502
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-26 14:47:47 +0000
+
+    Server.pm - Should also check and use spice2_dev.js (for internal
+    use) 
+
+  Change: 753173919b091a7a654353a6b3f119e77c91a34d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-26 14:47:31 +0000
+
+    Server.pm - Lowercased filenames in comment 
 
   Change: 768358708912fe41d2aba80a1aaad8bd9b2556df
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
@@ -31,6 +214,12 @@ version 0.130 at 2013-10-24 20:02:06 +0000
   Date : 2013-10-24 13:55:40 +0000
 
     Normalized all POD documentation 
+
+  Change: 59b192abfe24c68355e415d08eee4699287fd322
+  Author: Supreet Sethi <supreet.sethi@gmail.com>
+  Date : 2013-10-24 23:18:53 +0000
+
+    Converted the system to use Text::Xslate 
 
   Change: 580ffc5c18f31c24435359f948323b28f297a3f8
   Author: Zaahir Moolla <moollaza@fastmail.fm>
@@ -69,6 +258,25 @@ version 0.130 at 2013-10-24 20:02:06 +0000
 
     Feature/help changes 
 
+  Change: 197ea0beb92c5fd86cbac449b785b1c2f679e247
+  Author: Supreet Sethi <supreet.sethi@gmail.com>
+  Date : 2013-10-19 00:58:46 +0000
+
+    added Text::Sprintf::Named for New command in duckpan 
+
+  Change: 39db6ab91fc0a2ad57aaaca300f5293c77c9f29e
+  Author: Supreet Sethi <supreet.sethi@gmail.com>
+  Date : 2013-10-19 00:57:30 +0000
+
+    Changed the approach to finding plugin definitions Changed how the
+    files were being moved More stringent error checking 
+
+  Change: 3c9bafc67ff0f3485d2cb6a572d85825cd37d58f
+  Author: Supreet Sethi <supreet.sethi@gmail.com>
+  Date : 2013-10-17 00:31:06 +0000
+
+    Plugintemplate creates boilerplate code for goodie and spice plugin. 
+
   Change: 9a07b90ad28bbbb87be555002e8b14e47b1ba097
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
   Date : 2013-10-14 17:37:26 +0000
@@ -82,11 +290,36 @@ version 0.130 at 2013-10-24 20:02:06 +0000
     Setting environment variable DP_NOCOLOR or ANSI_COLORS_DISABLED to
     show no colors with duckpan query command 
 
+  Change: fd774caa7582098f36c0ce010a559c06d3251d5a
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-11 12:07:53 +0000
+
+    Server.pm - Added lots of comments, fixed some indentation 
+
+  Change: 8f4ef17cdcaf06f970fdd9702fbecb28aae86535
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-11 10:59:21 +0000
+
+    Server.pm - Normalize \d capture groups with \d+ 
+
   Change: 13aa26fa5350d89478d67da03c57526773f2d1d1
   Author: Dylan Lloyd <dylan@dylansserver.com>
   Date : 2013-10-11 06:35:37 +0000
 
     don't be destructive to ARGV with lib preprocessing 
+
+  Change: c6344549db7c32de051ef7e442b23561ef57853f
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-10 19:07:52 +0000
+
+    Web.pm - added missing curly brace 
+
+  Change: bd4fe144eec5f005e2708854e180726122152f67
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-10 17:15:15 +0000
+
+    Web.pm - Get and cache versioned page_js, page_css and spice_js
+    files. No more hardocoded js/css calls 
 
   Change: 957aaabe34f28085834e765a7106e2a6afdd7e55
   Author: Supreet Sethi <supreet.sethi@gmail.com>
