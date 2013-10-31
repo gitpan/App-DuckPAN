@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.131';
+  $App::DuckPAN::Cmd::Setup::VERSION = '0.132';
 }
 # ABSTRACT: Setting up your dukgo.com Account on your duckpan client
 
@@ -188,7 +188,7 @@ App::DuckPAN::Cmd::Setup - Setting up your dukgo.com Account on your duckpan cli
 
 =head1 VERSION
 
-version 0.131
+version 0.132
 
 =head1 AUTHOR
 
