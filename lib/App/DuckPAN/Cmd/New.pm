@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::New::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::New::VERSION = '0.132';
+  $App::DuckPAN::Cmd::New::VERSION = '0.133';
 }
 # ABSTRACT: Take a name as input and generates a new, named Goodie or Spice instant answer skeleton
 
@@ -130,7 +130,7 @@ App::DuckPAN::Cmd::New - Take a name as input and generates a new, named Goodie 
 
 =head1 VERSION
 
-version 0.132
+version 0.133
 
 =head1 AUTHOR
 

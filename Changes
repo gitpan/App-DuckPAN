@@ -1,10 +1,70 @@
 ==================================================
-Changes from 1740-01-17 00:00:00 +0000 to present.
+Changes from 1740-02-22 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.132 at 2013-10-31 18:30:53 +0000
+version 0.133 at 2013-12-06 03:42:54 +0000
 ------------------------------------------
+
+  Change: cba79403c75d457aea2685c9f76dca0f7a0644c2
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-12-05 20:37:42 +0000
+
+    Kill the LICENSE 
+
+  Change: ed31968a59557fb726d23358f5c5afc2b7c74215
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2013-12-05 19:37:58 +0000
+
+    Bump uploadtoduckpan requirement 
+
+  Change: 73f141d6be2fd0d387bf66218f89a051f64599a6
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2013-12-04 07:37:50 +0000
+
+    Merge pull request #49 from shedd/vagrant
+
+    Adding Vagrant option to README 
+
+  Change: 86c9781f8d1f9c24a7657d929c11b391bec8e4cf
+  Author: shedd <robert@shedd.us>
+  Date : 2013-12-03 21:56:18 +0000
+
+    fix typo 
+
+  Change: b514025843d0fc6d931071cad8581e179a8366f4
+  Author: shedd <robert@shedd.us>
+  Date : 2013-12-03 20:12:59 +0000
+
+    additional notes added to README issues link for duckpan-vagrant and
+    link to Vagrant docs 
+
+  Change: c76b3e67a3d945c58ed066685c453974d88a4d90
+  Author: shedd <robert@shedd.us>
+  Date : 2013-12-03 20:03:16 +0000
+
+    updating roadmap
+
+    The Vagrant implementation can be run headless, so it seems to check
+    both of these items off the list 
+
+  Change: 16f3f1d0d008c8ed7d018e8528eef72c80330a8d
+  Author: shedd <robert@shedd.us>
+  Date : 2013-12-03 20:02:31 +0000
+
+    adding Vagrant information to README 
+
+  Change: 7ce1c1e9d4dcbce62d45dc09b02fc80c7bb1b768
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-11-01 12:45:09 +0000
+
+    Added Apache 2.0 License 
+
+  Change: 519714a8db9d3e2d2520b0cd54cb94ddba647853
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2013-10-31 18:48:28 +0000
+
+    Added CONTRIBUTING and PR Template. Added linebreaks to README 
 
   Change: d51325bb3809f51f373263d0ce3aa7160039bdff
   Author: Zaahir Moolla <moollaza@fastmail.fm>

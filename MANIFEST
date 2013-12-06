@@ -1,3 +1,4 @@
+CONTRIBUTING.md
 Changes
 LICENSE
 MANIFEST
@@ -8,6 +9,7 @@ README
 README.md
 bin/duckpan
 dist.ini
+duckpan_pr_template.md
 lib/App/DuckPAN.pm
 lib/App/DuckPAN/Cmd.pm
 lib/App/DuckPAN/Cmd/Check.pm

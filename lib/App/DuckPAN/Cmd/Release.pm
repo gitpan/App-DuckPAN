@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Release::VERSION = '0.132';
+  $App::DuckPAN::Cmd::Release::VERSION = '0.133';
 }
 # ABSTRACT: Release the distribution of the current directory
 
@@ -34,7 +34,7 @@ App::DuckPAN::Cmd::Release - Release the distribution of the current directory
 
 =head1 VERSION
 
-version 0.132
+version 0.133
 
 =head1 AUTHOR
 
