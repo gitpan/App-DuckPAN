@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.133';
+  $App::DuckPAN::DDG::VERSION = '0.134';
 }
 # ABSTRACT: DDG related functionality of duckpan
 
@@ -18,7 +18,7 @@ sub get_dukgo_user_pass {
 	my $config = $self->app->perl->get_dzil_config;
 	unless (defined $config->{'%DUKGO'}) {
 		shift->app->print_text(
-			"[ERROR] No configuration found for your https://dukgo.com/ username and password, please use: 'dzil setup' first!",
+			"[ERROR] No configuration found for your https://duck.co/ username and password, please use: 'dzil setup' first!",
 		);
 		exit 1;
 	}
@@ -89,7 +89,7 @@ App::DuckPAN::DDG - DDG related functionality of duckpan
 
 =head1 VERSION
 
-version 0.133
+version 0.134
 
 =head1 AUTHOR
 
@@ -97,7 +97,7 @@ Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+This software is copyright (c) 2013 by DuckDuckGo, Inc. L<https://duckduckgo.com/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

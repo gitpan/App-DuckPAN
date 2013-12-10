@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Config::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Config::VERSION = '0.133';
+  $App::DuckPAN::Config::VERSION = '0.134';
 }
 # ABSTRACT: Configuration class of the duckpan client
 
@@ -45,7 +45,7 @@ App::DuckPAN::Config - Configuration class of the duckpan client
 
 =head1 VERSION
 
-version 0.133
+version 0.134
 
 =head1 AUTHOR
 
@@ -53,7 +53,7 @@ Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+This software is copyright (c) 2013 by DuckDuckGo, Inc. L<https://duckduckgo.com/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.133';
+  $App::DuckPAN::VERSION = '0.134';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -33,7 +33,7 @@ our $VERSION ||= '9.999';
 option dukgo_login => (
 	is => 'ro',
 	lazy => 1,
-	default => sub { 'https://dukgo.com/my/login' }
+	default => sub { 'https://duck.co/my/login' }
 );
 
 option no_check => (
@@ -172,7 +172,7 @@ sub execute {
 		my @modules;
 		my @left_args;
 		for (@arr_args) {
-			if ($_ =~ /^ddg/i || $_ =~ /^app::duckpan/i) {
+			if ($_ =~ /^dist/i || $_ =~ /^ddg/i || $_ =~ /^app/i) {
 				push @modules, $_;
 			} elsif (lc($_) eq 'duckpan' or lc($_) eq 'upgrade') {
 				push @modules, 'App::DuckPAN';
@@ -370,7 +370,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.133
+version 0.134
 
 =head1 DuckPAN
 
@@ -392,7 +392,7 @@ C<duckpan help> provides more detailed information.
 
 =item L<https://duckduckgo.com>
 
-=item L<https://dukgo.com>
+=item L<https://duck.co>
 
 =item L<http://duckpan.org>
 
@@ -400,7 +400,7 @@ C<duckpan help> provides more detailed information.
 
 =head1 CONTRIBUTION
 
-To contribute to DuckPAN, please visit L<https://github.com/duckduckgo/p5-app-duckpan>. We also welcome and encourage contributions from our community. Please visit L<http://duckduckhack.com/> to contribute new instant answers, or visit L<https://dukgo.com/ideas> to share your ideas and instant answer source suggestions.
+To contribute to DuckPAN, please visit L<https://github.com/duckduckgo/p5-app-duckpan>. We also welcome and encourage contributions from our community. Please visit L<http://duckduckhack.com/> to contribute new instant answers, or visit L<https://duck.co/ideas> to share your ideas and instant answer source suggestions.
 
 =head1 SUPPORT
 
@@ -422,7 +422,7 @@ Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+This software is copyright (c) 2013 by DuckDuckGo, Inc. L<https://duckduckgo.com/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

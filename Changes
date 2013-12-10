@@ -1,10 +1,28 @@
 ==================================================
-Changes from 1740-02-22 00:00:00 +0000 to present.
+Changes from 1740-02-26 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.133 at 2013-12-06 03:42:54 +0000
+version 0.134 at 2013-12-10 01:28:33 +0000
 ------------------------------------------
+
+  Change: 1004b1d9688f7d2879f5713f704e91460b49391b
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-10 02:28:20 +0000
+
+    Added ReleaseOnlyWithLatest 
+
+  Change: 66bf07d68d8996df967965b50cb4b5357b3e61e1
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-10 02:27:54 +0000
+
+    Fixed rights 
+
+  Change: a6eeaa2632003c13c8edb4fbca033c891b09cc99
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-10 02:26:59 +0000
+
+    Replaced the last dukgo.com mentions with duck.co 
 
   Change: cba79403c75d457aea2685c9f76dca0f7a0644c2
   Author: Michael Smith <crazedpsyc@duckduckgo.com>

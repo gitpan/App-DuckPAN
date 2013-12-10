@@ -26,7 +26,7 @@ duckpan - Command line tool for using the DuckPAN of DuckDuckGo
 
 =head1 VERSION
 
-version 0.133
+version 0.134
 
 =head1 DESCRIPTION
 
@@ -102,7 +102,7 @@ B<duckpan -Ilib>:
 
 =item L<https://duckduckgo.com>
 
-=item L<https://dukgo.com>
+=item L<https://duck.co>
 
 =item L<http://duckpan.org>
 
@@ -110,7 +110,7 @@ B<duckpan -Ilib>:
 
 =head1 CONTRIBUTION
 
-To contribute to DuckPAN, please visit L<https://github.com/duckduckgo/p5-app-duckpan>. We also welcome and encourage contributions from our community. Please visit L<http://duckduckhack.com/> to contribute new instant answers, or visit L<https://dukgo.com/ideas> to share your ideas and instant answer source suggestions.
+To contribute to DuckPAN, please visit L<https://github.com/duckduckgo/p5-app-duckpan>. We also welcome and encourage contributions from our community. Please visit L<http://duckduckhack.com/> to contribute new instant answers, or visit L<https://duck.co/ideas> to share your ideas and instant answer source suggestions.
 
 =head2 SUPPORT
 
@@ -134,7 +134,7 @@ Torsten Raudssus <torsten@raudss.us> L<https://raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by DuckDuckGo, Inc. L<http://duckduckgo.com/>.
+This software is copyright (c) 2013 by DuckDuckGo, Inc. L<https://duckduckgo.com/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
