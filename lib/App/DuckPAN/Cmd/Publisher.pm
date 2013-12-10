@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Publisher::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Publisher::VERSION = '0.134';
+  $App::DuckPAN::Cmd::Publisher::VERSION = '0.135';
 }
 # ABSTRACT: Starting up the publisher test webserver
 
@@ -89,7 +89,7 @@ App::DuckPAN::Cmd::Publisher - Starting up the publisher test webserver
 
 =head1 VERSION
 
-version 0.134
+version 0.135
 
 =head1 AUTHOR
 

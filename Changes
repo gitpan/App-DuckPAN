@@ -3,8 +3,15 @@ Changes from 1740-02-26 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.134 at 2013-12-10 01:28:33 +0000
+version 0.135 at 2013-12-10 03:01:30 +0000
 ------------------------------------------
+
+  Change: 624d0c976ff763ef3fcf18c239c648e2bcbb4b5e
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-10 03:01:20 +0000
+
+    Added also fetching of WWW:: (for WWW::DuckDuckGo) with duckpan
+    client 
 
   Change: 1004b1d9688f7d2879f5713f704e91460b49391b
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::VERSION = '0.134';
+  $App::DuckPAN::VERSION = '0.135';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
 
@@ -172,7 +172,10 @@ sub execute {
 		my @modules;
 		my @left_args;
 		for (@arr_args) {
-			if ($_ =~ /^dist/i || $_ =~ /^ddg/i || $_ =~ /^app/i) {
+			if ($_ =~ /^www/i ||
+				$_ =~ /^dist/i ||
+				$_ =~ /^ddg/i ||
+				$_ =~ /^app/i) {
 				push @modules, $_;
 			} elsif (lc($_) eq 'duckpan' or lc($_) eq 'upgrade') {
 				push @modules, 'App::DuckPAN';
@@ -370,7 +373,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.134
+version 0.135
 
 =head1 DuckPAN
 
@@ -386,15 +389,15 @@ C<duckpan help> provides more detailed information.
 
 =over 4
 
-=item L<https://github.com/duckduckgo/p5-app-duckpan>
+=item L<https://github.com/duckduckgo/p5-app-duckpan/>
 
-=item L<https://github.com/duckduckgo>
+=item L<https://github.com/duckduckgo/>
 
-=item L<https://duckduckgo.com>
+=item L<https://duckduckgo.com/>
 
-=item L<https://duck.co>
+=item L<https://duck.co/>
 
-=item L<http://duckpan.org>
+=item L<http://duckpan.org/>
 
 =back
 
@@ -414,7 +417,7 @@ B<Repository>:
 
 B<Issue Tracker>:
 
-    https://github.com/duckduckgo/p5-app-duckpan/issues
+    L<https://github.com/duckduckgo/p5-app-duckpan/issues>
 
 =head1 AUTHOR
 

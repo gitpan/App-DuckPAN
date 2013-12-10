@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::DDG::VERSION = '0.134';
+  $App::DuckPAN::DDG::VERSION = '0.135';
 }
 # ABSTRACT: DDG related functionality of duckpan
 
@@ -89,7 +89,7 @@ App::DuckPAN::DDG - DDG related functionality of duckpan
 
 =head1 VERSION
 
-version 0.134
+version 0.135
 
 =head1 AUTHOR
 

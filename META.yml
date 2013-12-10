@@ -67,7 +67,7 @@ requires:
 resources:
   homepage: https://github.com/duckduckgo/p5-app-duckpan
   repository: git://github.com/duckduckgo/p5-app-duckpan.git
-version: 0.134
+version: 0.135
 x_Dist_Zilla:
   perl:
     version: 5.018000
@@ -75,7 +75,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ReleaseOnlyWithLatest
       name: ReleaseOnlyWithLatest
-      version: 0.001
+      version: 0.002
     -
       class: Dist::Zilla::Plugin::UploadToDuckPAN
       name: UploadToDuckPAN

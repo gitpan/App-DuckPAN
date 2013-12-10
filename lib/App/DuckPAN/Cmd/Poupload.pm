@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Poupload::AUTHORITY = 'cpan:DDG';
 }
 {
-  $App::DuckPAN::Cmd::Poupload::VERSION = '0.134';
+  $App::DuckPAN::Cmd::Poupload::VERSION = '0.135';
 }
 # ABSTRACT: Command for uploading .po files to the DuckDuckGo Community Platform
 
@@ -76,7 +76,7 @@ App::DuckPAN::Cmd::Poupload - Command for uploading .po files to the DuckDuckGo 
 
 =head1 VERSION
 
-version 0.134
+version 0.135
 
 =head1 AUTHOR
 
