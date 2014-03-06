@@ -2,11 +2,8 @@ package App::DuckPAN::Query;
 BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
-{
-  $App::DuckPAN::Query::VERSION = '0.135';
-}
 # ABSTRACT: Main application/loop for duckpan query
-
+$App::DuckPAN::Query::VERSION = '0.136';
 use Moo;
 
 my $query;
@@ -96,9 +93,11 @@ sub handle_user_input {
 }
  
 sub setup_console {
-  $_[HEAP]{console} = POE::Wheel::ReadLine->new(
+  my $powh_readline = POE::Wheel::ReadLine->new(
     InputEvent => 'got_user_input'
   );
+  $powh_readline->bind_key("C-\\", "interrupt");
+  $_[HEAP]{console} = $powh_readline;
   $_[HEAP]{console}->read_history($history_path);
   $_[HEAP]{console}->get("Query: ");
 }
@@ -116,7 +115,7 @@ App::DuckPAN::Query - Main application/loop for duckpan query
 
 =head1 VERSION
 
-version 0.135
+version 0.136
 
 =head1 AUTHOR
 

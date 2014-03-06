@@ -2,11 +2,8 @@ package App::DuckPAN::Cmd::New;
 BEGIN {
   $App::DuckPAN::Cmd::New::AUTHORITY = 'cpan:DDG';
 }
-{
-  $App::DuckPAN::Cmd::New::VERSION = '0.135';
-}
 # ABSTRACT: Take a name as input and generates a new, named Goodie or Spice instant answer skeleton
-
+$App::DuckPAN::Cmd::New::VERSION = '0.136';
 # For Goodies:
 # 	- <name>.pm file is created in lib/DDG/Goodie
 #
@@ -130,7 +127,7 @@ App::DuckPAN::Cmd::New - Take a name as input and generates a new, named Goodie 
 
 =head1 VERSION
 
-version 0.135
+version 0.136
 
 =head1 AUTHOR
 

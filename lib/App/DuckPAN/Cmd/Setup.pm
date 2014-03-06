@@ -2,11 +2,8 @@ package App::DuckPAN::Cmd::Setup;
 BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:DDG';
 }
-{
-  $App::DuckPAN::Cmd::Setup::VERSION = '0.135';
-}
 # ABSTRACT: Setting up your duck.co Account on your duckpan client
-
+$App::DuckPAN::Cmd::Setup::VERSION = '0.136';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -188,7 +185,7 @@ App::DuckPAN::Cmd::Setup - Setting up your duck.co Account on your duckpan clien
 
 =head1 VERSION
 
-version 0.135
+version 0.136
 
 =head1 AUTHOR
 

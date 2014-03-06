@@ -2,11 +2,8 @@ package App::DuckPAN;
 BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
-{
-  $App::DuckPAN::VERSION = '0.135';
-}
 # ABSTRACT: The DuckDuckGo DuckPAN client
-
+$App::DuckPAN::VERSION = '0.136';
 
 use Moo;
 use MooX::Cmd;
@@ -177,7 +174,7 @@ sub execute {
 				$_ =~ /^ddg/i ||
 				$_ =~ /^app/i) {
 				push @modules, $_;
-			} elsif (lc($_) eq 'duckpan' or lc($_) eq 'upgrade') {
+			} elsif ($_ =~ m/^(duckpan|upgrade|update)$/i) {
 				push @modules, 'App::DuckPAN';
 				push @modules, 'DDG' if lc($_) eq 'upgrade';
 			} else {
@@ -281,6 +278,7 @@ sub get_local_app_duckpan_version {
 
 sub check_app_duckpan {
 	my ( $self ) = @_;
+        return 1 if $self->no_check;
 	my $ok = 1;
 	my $installed_version = $self->get_local_app_duckpan_version;
 	return $ok if $installed_version && $installed_version == '9.999';
@@ -310,6 +308,7 @@ sub check_app_duckpan {
 
 sub check_ddg {
 	my ( $self ) = @_;
+        return 1 if $self->no_check;
 	my $ok = 1;
 	my $installed_version = $self->get_local_ddg_version;
 	return $ok if $installed_version && $installed_version == '9.999';
@@ -373,7 +372,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.135
+version 0.136
 
 =head1 DuckPAN
 

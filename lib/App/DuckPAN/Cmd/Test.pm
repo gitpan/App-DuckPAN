@@ -2,11 +2,8 @@ package App::DuckPAN::Cmd::Test;
 BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:DDG';
 }
-{
-  $App::DuckPAN::Cmd::Test::VERSION = '0.135';
-}
 # ABSTRACT: Command for running the tests of this library
-
+$App::DuckPAN::Cmd::Test::VERSION = '0.136';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
@@ -40,7 +37,7 @@ App::DuckPAN::Cmd::Test - Command for running the tests of this library
 
 =head1 VERSION
 
-version 0.135
+version 0.136
 
 =head1 AUTHOR
 

@@ -1,10 +1,139 @@
 ==================================================
-Changes from 1740-02-26 00:00:00 +0000 to present.
+Changes from 1740-05-22 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.135 at 2013-12-10 03:01:30 +0000
+version 0.136 at 2014-03-06 14:47:14 +0000
 ------------------------------------------
+
+  Change: c9b58e0d624b338db8157c09b56ba7be44aa258b
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-03-05 16:05:32 +0000
+
+    Merge pull request #62 from duckduckgo/jag/web/missing-api-keys
+
+    DuckPAN/Web: Default to DDG's endpoint if API key is missing. 
+
+  Change: 5a3c1fca372e82bdb006896c83dc24150877b7e0
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-03-04 16:25:56 +0000
+
+    DuckPAN/Web: Remove else block. 
+
+  Change: 3c1517d0eaf548f7275fa40ac9c29218a72d789f
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-03-04 13:37:44 +0000
+
+    DuckPAN/Web: Default to DDG's endpoint if API key is missing.
+
+    The lack of publicly available API keys have prevented open-source
+    developers from correctly fixing / testing Spice instant answers
+    without DDG's help. The developer, especially new ones, will run into
+    one of these two problems:
+
+    1. She has to register for an API key for an instant answer she has
+    to fix. 2. She cannot register for an API key at all (because the API
+    key was exclusively given to DDG).
+
+    I think this fix will make it easier for people to test their fixes
+    and changes to JavaScript. 
+
+  Change: c02cedc10952af0999a4414cefa6c67c83922de2
+  Author: Caine Tighe <caine@duckduckgo.com>
+  Date : 2014-02-24 17:21:36 +0000
+
+    Merge pull request #60 from duckduckgo/dylan/allow-update-to-upgrade
+
+    allow update to upgrade 
+
+  Change: cd836f444fa78ada1de12b92e90a4e757135451b
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2014-02-23 22:41:43 +0000
+
+    tightened matching 
+
+  Change: 9e2f54936b36284ae237e57515e56b7dded252da
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2014-02-23 22:34:18 +0000
+
+    allow update to upgrade 
+
+  Change: 34142fab49c78ce7e1f063f89df2376ff557b105
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-02-17 18:51:31 +0000
+
+    Merge pull request #57 from duckduckgo/goodie-server
+
+    Server: Move goodie rendering to perl 
+
+  Change: 0b62857cd52b0055a0695dec1fe918e49e947922
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-02-17 18:44:43 +0000
+
+    README: Add TravisCI image. 
+
+  Change: b2ae2d4eb6ba0d379424feea29387fb9cbb79126
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-02-17 18:42:48 +0000
+
+    Merge pull request #59 from duckduckgo/jag/travisci
+
+    TravisCI: Specify the Perl versions that we want. 
+
+  Change: ddcd8badff46475777784cd9274a16a797d463b2
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-02-17 14:05:44 +0000
+
+    TravisCI: Specify the Perl versions that we want. 
+
+  Change: 0817144fd276e9f9802294f970db6f1998755a1e
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2014-02-15 18:08:46 +0000
+
+    Updated Travis plugin -- fix dependency issues over there 
+
+  Change: 0d35527574105eac06b3314db4120ac5f89488f3
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2014-02-15 16:49:23 +0000
+
+    Clean out some old comments 
+
+  Change: 1de02c94da17297d8cbd05cf2b583d50b7dbeac5
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2014-02-15 16:44:48 +0000
+
+    Server: Move goodie rendering to perl 
+
+  Change: dd3621d3776c364240015702763ae1cbd373a0f9
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-01-21 10:43:32 +0000
+
+    Update README.md 
+
+  Change: fcef147fab4a481f456ba8c8ae2ad283b2fa1961
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2014-01-09 19:14:07 +0000
+
+    Make --no_check seriously not check 
+
+  Change: 46230338b82326175e748fa54fe4c92646f358c0
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-01-05 09:18:40 +0000
+
+    Merge pull request #51 from nospampleasemam/handle-sigquit
+
+    Catch and exit on SIGQUIT 
+
+  Change: 2d42655d07cba0abd25ab48785e0ac3f885d64bf
+  Author: Dylan Lloyd <dylan@dylansserver.com>
+  Date : 2013-12-24 01:36:58 +0000
+
+    Catch and exit on SIGQUIT
+
+    This is expected behavior. Also submitted a POE::Wheel::Readline bug
+    to allow handingly of other generally expected signals:
+
+    https://rt.cpan.org/Public/Bug/Display.html?id=91615 
 
   Change: 624d0c976ff763ef3fcf18c239c648e2bcbb4b5e
   Author: Torsten Raudssus <torsten@raudss.us>

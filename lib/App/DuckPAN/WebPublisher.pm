@@ -2,11 +2,8 @@ package App::DuckPAN::WebPublisher;
 BEGIN {
   $App::DuckPAN::WebPublisher::AUTHORITY = 'cpan:DDG';
 }
-{
-  $App::DuckPAN::WebPublisher::VERSION = '0.135';
-}
 # ABSTRACT: Webserver for duckpan publisher
-
+$App::DuckPAN::WebPublisher::VERSION = '0.136';
 use Moo;
 with qw( App::DuckPAN::HasApp );
 
@@ -115,7 +112,7 @@ App::DuckPAN::WebPublisher - Webserver for duckpan publisher
 
 =head1 VERSION
 
-version 0.135
+version 0.136
 
 =head1 AUTHOR
 
