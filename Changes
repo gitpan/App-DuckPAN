@@ -3,8 +3,40 @@ Changes from 1740-08-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.138 at 2014-05-23 19:28:33 +0000
+version 0.139 at 2014-05-23 19:29:29 +0000
 ------------------------------------------
+
+  Change: bd93d812c5e282ff93df803eeb33c91eba4fd9e3
+  Author: Russell Holt <russell@duckduckgo.com>
+  Date : 2014-05-23 15:18:38 +0000
+
+    Merge pull request #68 from duckduckgo/zaahir/duckpan-updates
+
+    More minor fixes 
+
+  Change: acedb84730ab693713603369128f928ca9869bfb
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 14:52:18 +0000
+
+    Temp Fix - ignore d.js 
+
+  Change: 580a933b6a11610d430ca4afd602f586fb5e208d
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 14:07:36 +0000
+
+    Whoops, extra bracket 
+
+  Change: 1ce7a8b7e3f99f11d9362be82f60d233967f7de0
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 14:02:23 +0000
+
+    Don't need File::Path right now 
+
+  Change: b5d1501df3b8cc752dad7a888193a1dd7609aa3c
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 14:01:02 +0000
+
+    Rewrite dpan.js to duckduckhack_js 
 
   Change: ec4fdf7bf6d332af4bca984dc216c57833515d3e
   Author: Russell Holt <russell@duckduckgo.com>
