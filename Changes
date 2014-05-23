@@ -1,10 +1,158 @@
 ==================================================
-Changes from 1740-05-22 00:00:00 +0000 to present.
+Changes from 1740-08-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.137 at 2014-03-06 15:51:43 +0000
+version 0.138 at 2014-05-23 19:28:33 +0000
 ------------------------------------------
+
+  Change: ec4fdf7bf6d332af4bca984dc216c57833515d3e
+  Author: Russell Holt <russell@duckduckgo.com>
+  Date : 2014-05-23 12:09:05 +0000
+
+    Merge pull request #66 from duckduckgo/zaahir/bttf-updates
+
+    BTTF: Updates for next version of DuckDuckGo 
+
+  Change: 979b4ae8d3e660c142615307a5eb5c601fe09fe0
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 10:58:20 +0000
+
+    write page_js into cach 
+
+  Change: cb374f2c5fa30009971563edeedf81eadeeeeaf5
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 01:01:06 +0000
+
+    Now accepts versioned dpan.js (rather than duckduckpan.js) 
+
+  Change: d1d59f4ef12b97096493e64d2156e786a7b2d567
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-22 23:26:43 +0000
+
+    Bring back page_templates, still need them 
+
+  Change: 886db6984cc297d54552488e873774c556ab749d
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-22 21:57:32 +0000
+
+    More cleanup, fix duckpan.js 
+
+  Change: 836e69f65383b3380d829b3059991bfd4e3f3237
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-22 21:17:05 +0000
+
+    Only clear the duckpan cache when it exists 
+
+  Change: 1c023d606d7e4a5f28fe2c65407c213f0b4bb665
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-22 21:09:40 +0000
+
+    Update DuckPAN to use duckduckpan.js 
+
+  Change: 98fd720f7ba53f5715faee9cb203f26e809e46a9
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-22 21:07:51 +0000
+
+    clear cache with rm -r, remove_tree not working... 
+
+  Change: cd2c9697257564d30e5dbac6d05d48ddc05e8e44
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-19 13:07:28 +0000
+
+    Force duckpan to clear the cache on upgrade 
+
+  Change: df54efde3c9af38b045a34b18e88605562ea7ebd
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-19 11:58:33 +0000
+
+    Change hostname back to duckduckgo.com, add back hostname output 
+
+  Change: 800031b6855010ed143c059a8a2d59a58c48d086
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-19 11:56:14 +0000
+
+    Merge remote-tracking branch 'origin/master' into zaahir/bttf-updates 
+
+  Change: 200ebb938ab51823f81abf4b2c579524b1172ea5
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-01 16:54:17 +0000
+
+    Revert "update test"
+
+    This reverts commit 2e969b403a63ad9ce60cf98da50f7f3ee13fdb24. 
+
+  Change: 2e969b403a63ad9ce60cf98da50f7f3ee13fdb24
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-01 16:54:00 +0000
+
+    update test 
+
+  Change: b5b692bcfc5373ee2e943c68c8876373819777da
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-01 16:29:42 +0000
+
+    Small update to duckpan.js 
+
+  Change: 2ce7b49429863b7cf865ca79a7a314136e13bbfe
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-01 16:14:49 +0000
+
+    Remove auth headers, not needed 
+
+  Change: 8f54da47f2744b19c161bde3d9c3f85fdfc934db
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-23 21:55:42 +0000
+
+    Remove old bootstrap files from duckpan, not necessary 
+
+  Change: 58e6925bc519c0cda7a91d2499490c062765257c
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-22 17:36:47 +0000
+
+    Accept dev version of s.css 
+
+  Change: 3ad2240f671286028870d25cef02cbf6d84eb362
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-22 14:02:56 +0000
+
+    Properly handle requests for versioned share dir assets 
+
+  Change: 6efbd3afa1c6fe046cff8432b8972e8d6892058f
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-22 14:01:58 +0000
+
+    Duckpan now accepts dev versions of d.js, g.js and s.css 
+
+  Change: 9f7aecb9392fa48500a9ce93c68a4aa69c01d72b
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-22 09:42:21 +0000
+
+    bugfix, won't redefine Spice.<spice_name> during each loop 
+
+  Change: dc17c30dc4fafb73b39107f1453c32959ddd8a43
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-10 13:29:03 +0000
+
+    update duckpan.js for BTTF - mostly temporary fix 
+
+  Change: fe6888ce7320787c5cae67aa56ec2d3bd2a9eed8
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-10 13:28:41 +0000
+
+    update Web.pm for BTTF Spice and Goodies 
+
+  Change: f5981f726a3f0d7be9325e491e2b0c3862e76c5c
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-04-10 13:26:45 +0000
+
+    Update dp Server for bttf 
+
+  Change: 62e3ee39c086a6c74560776a69548d0da1958263
+  Author: Michael Smith <crazedpsyc@duckduckgo.com>
+  Date : 2014-03-06 14:05:38 +0000
+
+    Document installdeps/roadrunner 
 
   Change: c9b58e0d624b338db8157c09b56ba7be44aa258b
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
