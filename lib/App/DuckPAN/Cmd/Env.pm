@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Get or set ENV variables for the plugins
-$App::DuckPAN::Cmd::Env::VERSION = '0.140';
+$App::DuckPAN::Cmd::Env::VERSION = '0.141';
 use Moo;
 extends 'App::DuckPAN::CmdBase::Env';
 
@@ -40,7 +40,7 @@ App::DuckPAN::Cmd::Env - Get or set ENV variables for the plugins
 
 =head1 VERSION
 
-version 0.140
+version 0.141
 
 =head1 AUTHOR
 

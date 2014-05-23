@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.140';
+$App::DuckPAN::VERSION = '0.141';
 
 use Moo;
 use MooX::Cmd;
@@ -24,7 +24,7 @@ use Term::ReadLine;
 use Carp;
 use Encode;
 use Path::Class;
-#use File::Path qw(remove_tree);
+use File::Path;
 
 our $VERSION ||= '9.999';
 
@@ -176,15 +176,15 @@ sub execute {
 				$_ =~ /^app/i) {
 				push @modules, $_;
 			} elsif ($_ =~ m/^(duckpan|upgrade|update)$/i) {
-				push @modules, 'App::DuckPAN';
-				push @modules, 'DDG' if lc($_) eq 'upgrade';
+				# Clear cache so share files are written into cache
 				my $cache = $self->cfg->cache_path;
 				if (-d $cache){
 					print "Clearing DuckPAN cache...";
-					print `rm -r $cache/*`;
-					# remove_tree($self->cfg->cache_path); #better option, not working though...
+					rmtree($cache, {keep_root => 1});
 					print "Done\n";
 				}
+				push @modules, 'App::DuckPAN';
+				push @modules, 'DDG' if lc($_) eq 'upgrade';
 			} else {
 				push @left_args, $_;
 			}
@@ -380,7 +380,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.140
+version 0.141
 
 =head1 DuckPAN
 

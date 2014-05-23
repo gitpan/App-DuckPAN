@@ -3,8 +3,49 @@ Changes from 1740-08-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.140 at 2014-05-23 21:33:15 +0000
+version 0.141 at 2014-05-23 22:20:20 +0000
 ------------------------------------------
+
+  Change: 233a0e138dcd2f50c512caf3f7b5aaa3011bc869
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 18:20:00 +0000
+
+    Merge pull request #71 from duckduckgo/zaahir/better-cache-clear
+
+    clear cache with rmtree() 
+
+  Change: a7982b95b376beadeb48a1f98387150d84e6b864
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 18:18:53 +0000
+
+    clear cache with rmtree() 
+
+  Change: d5b18dc63b4ceaef6cb132c8deb3644cd8c402f8
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 17:59:40 +0000
+
+    Revert "clear cache with rmtree()" Didn't mean to push this to
+    master! This reverts commit 2774dd86c1c3bc765fe44a0264ed7a71444f4032. 
+
+  Change: 2774dd86c1c3bc765fe44a0264ed7a71444f4032
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 17:55:46 +0000
+
+    clear cache with rmtree() 
+
+  Change: 8b0ef9dc663d232da047cee7c47474df38263c7e
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 17:41:44 +0000
+
+    Merge pull request #70 from duckduckgo/zaahir/upgrade-clear-cache
+
+    Clear cache before installing new modules 
+
+  Change: 006481c509a08ca6e5f9535595bce41efd3b701c
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 17:38:46 +0000
+
+    Clear cache before installing new modules 
 
   Change: 5a3eaa3034655f070c3b86740093d1123ca25987
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
