@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.141';
+$App::DuckPAN::Web::VERSION = '0.142';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
@@ -306,6 +306,7 @@ sub request {
 
 				my $duckbar_home = $root->look_down(id => "duckbar_home");
 				$duckbar_home->delete_content();
+				$duckbar_home->attr(class => "zcm__menu");
 				$duckbar_home->push_content(
 					HTML::TreeBuilder->new_from_content(
 						q(<li class="zcm__item">
@@ -393,7 +394,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.141
+version 0.142
 
 =head1 AUTHOR
 

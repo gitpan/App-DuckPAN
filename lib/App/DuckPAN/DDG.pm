@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: DDG related functionality of duckpan
-$App::DuckPAN::DDG::VERSION = '0.141';
+$App::DuckPAN::DDG::VERSION = '0.142';
 use Moo;
 with 'App::DuckPAN::HasApp';
 
@@ -52,10 +52,11 @@ sub get_blocks_from_current_dir {
 	require lib;
 	lib->import('lib');
 	print "\nUsing the following DDG instant answers:\n\n";
-	for (@args) {
-		load_class($_);
-		print " - ".$_;
-		print " (".$_->triggers_block_type.")\n";
+    
+	foreach my $class (@args) {
+            load_class($class);
+            print " - ".$class;
+            print " (".$class->triggers_block_type.")\n";
 	}
 	my %blocks_plugins;
 	for (@args) {
@@ -86,7 +87,7 @@ App::DuckPAN::DDG - DDG related functionality of duckpan
 
 =head1 VERSION
 
-version 0.141
+version 0.142
 
 =head1 AUTHOR
 

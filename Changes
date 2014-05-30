@@ -1,10 +1,48 @@
 ==================================================
-Changes from 1740-08-08 00:00:00 +0000 to present.
+Changes from 1740-08-15 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.141 at 2014-05-23 22:20:20 +0000
+version 0.142 at 2014-05-30 18:46:58 +0000
 ------------------------------------------
+
+  Change: 79ddf623866b1a5dd7ee1aa41bf6527a1959597a
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-30 13:39:44 +0000
+
+    Merge pull request #73 from duckduckgo/jag/load
+
+    DuckPAN/DDG: Fixed an error with load_class. 
+
+  Change: de1b56aaf80b437cdada3c505db0a81e6f3a3b88
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-05-30 10:00:59 +0000
+
+    DuckPAN/DDG: Formatted code. 
+
+  Change: 9436eb19621253a7a85bc826b61c4db94e913089
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-05-28 22:19:45 +0000
+
+    DuckPAN/DDG: Fixed an error with load_class.
+
+    `load_class` was returning `undef`, which makes accessing
+    `trigger_block_type` an invalid operation. Thanks to @nilnilnil for
+    solving the problem. 
+
+  Change: 32865661725351d9e9c5fc2f6c18e00519290931
+  Author: Russell Holt <russell@duckduckgo.com>
+  Date : 2014-05-23 22:16:14 +0000
+
+    Merge pull request #72 from duckduckgo/zaahir/goodies-fix
+
+    Display "Answer" tab for Goodies in DP Server 
+
+  Change: 6e3f360723a50b9c360b95531ebba0f779632947
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-05-23 18:44:22 +0000
+
+    remove class zcm__dynamic from #duckbar_home so Answer tab shows 
 
   Change: 233a0e138dcd2f50c512caf3f7b5aaa3011bc869
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
