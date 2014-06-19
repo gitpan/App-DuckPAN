@@ -1,10 +1,203 @@
 ==================================================
-Changes from 1740-08-15 00:00:00 +0000 to present.
+Changes from 1740-09-04 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.142 at 2014-05-30 18:46:58 +0000
+version 0.143 at 2014-06-19 01:16:22 +0000
 ------------------------------------------
+
+  Change: 8e8f91daf01a7aaf016a47900b42bc749953ca29
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-18 21:15:25 +0000
+
+    DDG.pm: Update link to docs. 
+
+  Change: 24734f6127e5fab002ae40650f126b3579f06b88
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-18 20:53:41 +0000
+
+    Merge pull request #80 from duckduckgo/jag/typos
+
+    README.md: Fix typos 
+
+  Change: d7e65eb3bdc36d7a11ab1896729b88e7596f8738
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-18 20:44:38 +0000
+
+    Merge pull request #78 from duckduckgo/jag/loading-error
+
+    DuckPAN/DDG: DuckPAN won't die when a module fails to load. 
+
+  Change: 47bba306fd2e5a92f21a155828598c624afc078a
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-18 19:25:20 +0000
+
+    README.md: Fix typos 
+
+  Change: db618dd88144c50dc8730058d24a5f72ef94ff1f
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 22:52:40 +0000
+
+    DuckPAN/DDG: Don't display warning every time. 
+
+  Change: 5ce6c9c9766a739865822628165064223e75f557
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 22:42:08 +0000
+
+    Merge remote-tracking branch 'origin/jag/loading-error' into
+    jag/loading-error
+
+    Conflicts:
+
+    lib/App/DuckPAN/DDG.pm 
+
+  Change: 8b432fe37da1627acf159e554f0f47a7c5511127
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 22:40:43 +0000
+
+    DuckPAN/DDG: Clearer warning. 
+
+  Change: d62e9426b78a5500463195c5bf62cb6ac73e660a
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-18 18:34:19 +0000
+
+    Merge pull request #79 from duckduckgo/jag/codio-update
+
+    README.md: Make Codio instructions clearer. 
+
+  Change: 7c1953491782f4d42452e1b030bdf1dd1635d7ca
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-18 18:05:39 +0000
+
+    README.md: Make Codio instructions clearer.
+
+    Based on Jordan's comments. 
+
+  Change: c953bb938a3f82be444f222703e5f135cdf36d65
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-18 17:32:27 +0000
+
+    Update DDG.pm 
+
+  Change: d42b0959c4472124fc1129b434d3b1ac1014d634
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 20:36:24 +0000
+
+    DuckPAN/DDG: Add extra message to be clear. 
+
+  Change: 5107b329ae8408027884d508a1eabb03bcbee83e
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 20:13:49 +0000
+
+    DuckPAN/DDG: Changed message. 
+
+  Change: 7ff04f16b19972c0923fc4b97c8ac2be99289b58
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 19:21:51 +0000
+
+    DuckPAN/DDG: Format to spaces instead. 
+
+  Change: 208605b6241036748face8b793eac12cf3e53fcb
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 19:08:54 +0000
+
+    DuckPAN/DDG: Format using tabs. 
+
+  Change: 4815ecf420abe6335df7ab6f9974c731dcb1a353
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 19:01:40 +0000
+
+    DuckPAN/DDG: Less fail oriented message.
+
+    As suggested in
+    https://github.com/duckduckgo/p5-app-duckpan/pull/78#discussion_r1393
+    2667. 
+
+  Change: b5672f9f3d6528211b0baaacf4f5c822f5b6fe69
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 16:39:40 +0000
+
+    DuckPAN/DDG: Updated comment. 
+
+  Change: d76d37cda7dbdabf09d0b0dfe5245f84087a0dfe
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 16:29:32 +0000
+
+    DuckPAN/DDG: Format 
+
+  Change: 099c167ae08a62588b13560e866299b46cc13966
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-18 15:53:20 +0000
+
+    DuckPAN/DDG: DuckPAN won't die when a module fails to load.
+
+    It's been a perennial problem for DuckPAN users to install all of the
+    dependencies of each IA in the repo before they can even test
+    anything. This patch prevents DuckPAN from exiting when it fails to
+    load an IA. It goes on running, but it warns the user that some IAs
+    didn't load (along with the errors that caused it). 
+
+  Change: 2099cc41971ce88244b84d571ac01f68670b75d2
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-13 18:13:28 +0000
+
+    Merge pull request #77 from duckduckgo/jag/wrapping
+
+    DuckPAN/Web.pm: Don't wrap if we have missing envs and wrap is
+    enabled. 
+
+  Change: cb02e6d79861fe14a911cd645815cac3db59bb22
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-13 22:00:13 +0000
+
+    DuckPAN/Web.pm: Don't wrap if we have missing envs and wrap is
+    enabled.
+
+    Fixes #76 
+
+  Change: 31dc9778022aa5bd2d8da892dba6c6e14fb210c8
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-11 19:33:27 +0000
+
+    Merge pull request #75 from duckduckgo/jag/codio
+
+    Add Codio Walkthrough 
+
+  Change: 3ead76436db333777f68f41846bc717df15368cb
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-11 19:00:12 +0000
+
+    README.md: Bold some text to highlight 
+
+  Change: 84822e07739aa57a7a3d7d809ec1b49d006fe30a
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-11 18:07:19 +0000
+
+    README.md: Remove Mac OS X from the platforms with reported issues. 
+
+  Change: 8d38d81dd1db0c1587cf6fc5dc5cc81f6e3d9220
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-11 18:04:34 +0000
+
+    README.md: Remove "for now" 
+
+  Change: 16cd65495dc78d115a46f59b2a434b13a930be42
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-11 15:50:39 +0000
+
+    README.md: Add newlines before the image. 
+
+  Change: e3237005d540bb2ab855cde8154f04ffa0833039
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-11 15:50:03 +0000
+
+    README.md: Add images for the Codio walkthrough. 
+
+  Change: a8b185f3d9266918c98fb836bec4bd15e16a061b
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-06-11 15:21:59 +0000
+
+    README.md: Add install instructions for Codio 
 
   Change: 79ddf623866b1a5dd7ee1aa41bf6527a1959597a
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
