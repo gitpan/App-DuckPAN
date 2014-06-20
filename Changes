@@ -1,10 +1,24 @@
 ==================================================
-Changes from 1740-09-04 00:00:00 +0000 to present.
+Changes from 1740-09-05 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.144 at 2014-06-19 01:41:27 +0000
+version 0.145 at 2014-06-20 19:49:50 +0000
 ------------------------------------------
+
+  Change: 4750116aa224969ffb64e973fccaa7ac495ed285
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-20 13:43:08 +0000
+
+    Merge pull request #82 from duckduckgo/jag/message
+
+    DuckPAN/DDG: Make load error message work for 5.16 
+
+  Change: 4c6dd525f983c3f2c3133e888e3f08a4f6c61088
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-06-20 15:02:07 +0000
+
+    DuckPAN/DDG: Make load error message work for 5.16 
 
   Change: 8e8f91daf01a7aaf016a47900b42bc749953ca29
   Author: Jag Talon <jagtalon@duckduckgo.com>
