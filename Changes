@@ -1,10 +1,24 @@
 ==================================================
-Changes from 1740-09-05 00:00:00 +0000 to present.
+Changes from 1740-09-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.145 at 2014-06-20 19:49:50 +0000
+version 0.146 at 2014-07-03 13:46:27 +0000
 ------------------------------------------
+
+  Change: 8a880392ae541b7c8303a7083418b1bc5a642713
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-07-03 09:35:16 +0000
+
+    Merge pull request #85 from duckduckgo/zaahir/support-svg-canvas
+
+    DuckPAN Server - Add support for <svg>, <canvas>, etc 
+
+  Change: 926e1424a0a89411291713bbadb466a5f778f725
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-30 18:44:33 +0000
+
+    Support parsing <svg>, <canvas>, etc in Goodie HTML 
 
   Change: 4750116aa224969ffb64e973fccaa7ac495ed285
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
