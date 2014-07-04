@@ -1,10 +1,36 @@
 ==================================================
-Changes from 1740-09-18 00:00:00 +0000 to present.
+Changes from 1740-09-19 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.146 at 2014-07-03 13:46:27 +0000
+version 0.147 at 2014-07-04 18:06:36 +0000
 ------------------------------------------
+
+  Change: e827bc52b66a84e18e4495fd9300b2f527dada05
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-07-04 13:59:27 +0000
+
+    Merge pull request #92 from duckduckgo/jag/duckpan-fix
+
+    Server.pm: New DuckDuckGo homepage has a new CSS file. 
+
+  Change: a0ca4339679d5407f737e2c5c008c71933df54d3
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-07-04 15:51:52 +0000
+
+    Server: Only load the CSS file once.
+
+    Since /?duckduckhack_css=1 already contains all of the CSS files in
+    the page, we only need to load it once. 
+
+  Change: 47b3de2003d313723a1ebfe25d08aff2b1a1aac4
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-07-03 22:56:08 +0000
+
+    Server.pm: New DuckDuckGo homepage has a new CSS file.
+
+    The new CSS file is static.css (or sxxx.css in production). We need
+    to slurp this in, too. 
 
   Change: 8a880392ae541b7c8303a7083418b1bc5a642713
   Author: Jag Talon <jagtalon@duckduckgo.com>
