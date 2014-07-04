@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan static
-$App::DuckPAN::WebStatic::VERSION = '0.147';
+$App::DuckPAN::WebStatic::VERSION = '0.148';
 use Moo;
 use IO::All -utf8;
 use HTTP::Request;
@@ -111,7 +111,7 @@ App::DuckPAN::WebStatic - Webserver for duckpan static
 
 =head1 VERSION
 
-version 0.147
+version 0.148
 
 =head1 AUTHOR
 

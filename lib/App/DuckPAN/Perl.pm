@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Perl related functionality for duckpan
-$App::DuckPAN::Perl::VERSION = '0.147';
+$App::DuckPAN::Perl::VERSION = '0.148';
 use Moo;
 with 'App::DuckPAN::HasApp';
 
@@ -81,14 +81,28 @@ sub duckpan_install {
 			my $module = $packages->package($_);
 			if ($module) {
 				local $@;
+				
+				# see if we have an env variable for this module
+				my $sp = $_;
+				$sp =~ s/\:\:/_/g;
+
+				# special case: check for a pinned verison number
+				my $pin_version = $ENV{$sp};
 				my $localver = $self->get_local_version($_);
-				if ($localver && $localver == version->parse($module->version)) {
+				my $duckpan_module_version = version->parse($module->version);
+				my $duckpan_module_url = $self->app->duckpan.'authors/id/'.$module->distribution->pathname;
+
+				if ($pin_version) {
+					print "$_: $localver installed, $pin_version pin, $duckpan_module_version latest\n";
+					if ($localver && $pin_version > $localver && $duckpan_module_version > $localver && $duckpan_module_version <= $pin_version) {
+						push @to_install, $duckpan_module_url unless grep { $_ eq $duckpan_module_url } @to_install;
+					}
+				} elsif ($localver && $localver == $duckpan_module_version) {
 					$self->app->print_text("You already have latest version of ".$_." with ".$localver."\n");
-				} elsif ($localver && $localver > version->parse($module->version)) {
-					$self->app->print_text("You have a newer version of ".$_." with ".$localver." (duckpan has ".version->parse($module->version).")\n");
+				} elsif ($localver && $localver > $duckpan_module_version) {
+					$self->app->print_text("You have a newer version of ".$_." with ".$localver." (duckpan has ".$duckpan_module_version.")\n");
 				} else {
-					my $latest = $self->app->duckpan.'authors/id/'.$module->distribution->pathname;
-					push @to_install, $latest unless grep { $_ eq $latest } @to_install;
+					push @to_install, $duckpan_module_url unless grep { $_ eq $duckpan_module_url } @to_install;
 				}
 			} else {
 				$self->app->print_text("[ERROR] Can't find package ".$_." on ".$self->app->duckpan."\n");
@@ -128,7 +142,7 @@ App::DuckPAN::Perl - Perl related functionality for duckpan
 
 =head1 VERSION
 
-version 0.147
+version 0.148
 
 =head1 AUTHOR
 
