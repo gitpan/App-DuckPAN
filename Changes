@@ -1,10 +1,33 @@
 ==================================================
-Changes from 1740-09-19 00:00:00 +0000 to present.
+Changes from 1740-09-22 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.148 at 2014-07-04 18:33:04 +0000
+version 0.149 at 2014-07-07 15:44:51 +0000
 ------------------------------------------
+
+  Change: 44c1aac7acdaa76258c712c0f08293defd485347
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-07-07 10:45:41 +0000
+
+    Merge pull request #88 from duckduckgo/zaahir/temp-calltype-self-fix
+
+    Force Duckpan to manually call Spice callback after templates are
+    compiled 
+
+  Change: 0d76e04cc7522fe9b1084f524fcbfafd13c07a61
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-07-04 18:19:55 +0000
+
+    Merge pull request #93 from duckduckgo/jag/fmt-server
+
+    Cmd/Server.pm: Fmt the file. 
+
+  Change: e1378ecafbec1466917a4dac75fafa5e00d21df9
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-07-04 19:42:57 +0000
+
+    Cmd/Server.pm: Fmt the file. 
 
   Change: 4b2fb7cbae2871a5a10777626c37bd4d37832073
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
@@ -65,6 +88,13 @@ version 0.148 at 2014-07-04 18:33:04 +0000
   Date : 2014-06-30 12:29:03 +0000
 
     more appropriate names. using tabs again. 
+
+  Change: 1f834d547fdeb592d655932661177ee259f07af8
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-06-30 11:33:14 +0000
+
+    Force Duckpan to manually call Spice callback after templates are
+    compiled 
 
   Change: 542af1806781dc2c834f562ecbeb71893873ca15
   Author: Russell Holt <russell@duckduckgo.com>
