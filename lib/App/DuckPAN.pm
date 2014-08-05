@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.149';
+$App::DuckPAN::VERSION = '0.150';
 
 use Moo;
 use MooX::Cmd;
@@ -380,7 +380,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.149
+version 0.150
 
 =head1 DuckPAN
 

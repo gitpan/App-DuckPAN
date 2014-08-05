@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Release the distribution of the current directory
-$App::DuckPAN::Cmd::Release::VERSION = '0.149';
+$App::DuckPAN::Cmd::Release::VERSION = '0.150';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
@@ -31,7 +31,7 @@ App::DuckPAN::Cmd::Release - Release the distribution of the current directory
 
 =head1 VERSION
 
-version 0.149
+version 0.150
 
 =head1 AUTHOR
 

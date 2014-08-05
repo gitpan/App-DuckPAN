@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.149';
+$App::DuckPAN::Web::VERSION = '0.150';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
@@ -140,7 +140,7 @@ sub request {
 					# Check if environment variables (most likely the API key) is missing.
 					# If it is missing, switch to the DDG endpoint.
 					if(defined $rewrite->missing_envs) {
-						 $to = 'https://duckduckgo.com' . $request->request_uri;
+						 $to = 'https://ddh1.duckduckgo.com' . $request->request_uri;
 						 # Display the URL that we used.
 						 print "\nAPI key not found. Using DuckDuckGo's endpoint:\n";
 					}
@@ -398,7 +398,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.149
+version 0.150
 
 =head1 AUTHOR
 

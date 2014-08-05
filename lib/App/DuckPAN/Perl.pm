@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Perl related functionality for duckpan
-$App::DuckPAN::Perl::VERSION = '0.149';
+$App::DuckPAN::Perl::VERSION = '0.150';
 use Moo;
 with 'App::DuckPAN::HasApp';
 
@@ -63,7 +63,12 @@ sub get_local_version {
 sub cpanminus_install_error {
 	shift->app->print_text(
 		"[ERROR] Failure on installation of modules!",
-		"This could have several reasons, for first you can just restart this installer, cause it could be a pure download problem. If this isnt the case, please read the build.log mentioned on the errors and see if you can fix the problem yourself. Otherwise, please report the problem via email to use at open\@duckduckgo.com with the build.log attached. If there is no build.log mentioned, just attach the output you see.",
+        "There are several possible explanations and fixes for this error:",
+        "1. The download from CPAN was unsuccessful - Please restart this installer.",
+        "2. Some other error occured - Please read the `build.log` mentioned in the errors and see if you can fix the problem yourself.",
+        "If you are unable to solve the problem, please let us know by making a GitHub Issue in the DuckPAN Repo:",
+        "https://github.com/duckduckgo/p5-app-duckpan/issues",
+        "Make sure to attach the `build.log` file if it exists. Otherwise, copy/paste the output you see."
 	);
 	exit 1;	
 }
@@ -92,9 +97,9 @@ sub duckpan_install {
 				my $duckpan_module_version = version->parse($module->version);
 				my $duckpan_module_url = $self->app->duckpan.'authors/id/'.$module->distribution->pathname;
 
-				if ($pin_version) {
+				if ($pin_version && $localver) {
 					print "$_: $localver installed, $pin_version pin, $duckpan_module_version latest\n";
-					if ($localver && $pin_version > $localver && $duckpan_module_version > $localver && $duckpan_module_version <= $pin_version) {
+					if ($pin_version > $localver && $duckpan_module_version > $localver && $duckpan_module_version <= $pin_version) {
 						push @to_install, $duckpan_module_url unless grep { $_ eq $duckpan_module_url } @to_install;
 					}
 				} elsif ($localver && $localver == $duckpan_module_version) {
@@ -142,7 +147,7 @@ App::DuckPAN::Perl - Perl related functionality for duckpan
 
 =head1 VERSION
 
-version 0.149
+version 0.150
 
 =head1 AUTHOR
 

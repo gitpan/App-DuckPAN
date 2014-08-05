@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Goodie::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: DEPRECATED
-$App::DuckPAN::Cmd::Goodie::VERSION = '0.149';
+$App::DuckPAN::Cmd::Goodie::VERSION = '0.150';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -30,7 +30,7 @@ App::DuckPAN::Cmd::Goodie - DEPRECATED
 
 =head1 VERSION
 
-version 0.149
+version 0.150
 
 =head1 AUTHOR
 
