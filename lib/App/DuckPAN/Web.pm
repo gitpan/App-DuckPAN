@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.150';
+$App::DuckPAN::Web::VERSION = '0.151';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
@@ -187,6 +187,7 @@ sub request {
 		$body = $self->page_templates;
 	} elsif ($request->param('q') && $request->path_info eq '/') {
 		my $query = $request->param('q');
+		$query =~ s/^\s+|\s+$//g; # strip leading & trailing whitespace
 		Encode::_utf8_on($query);
 		my $ddg_request = DDG::Request->new(
 			query_raw => $query,
@@ -323,7 +324,10 @@ sub request {
 				$duckbar_static_sep->attr(class => "zcm__sep--h");
 
 				my $html = $root->look_down(_tag => "html");
-				$html->attr(class => "set-header--fixed  has-zcm js no-touch csstransforms3d csstransitions svg use-opts has-active-zci")
+				$html->attr(class => "set-header--fixed  has-zcm js no-touch csstransforms3d csstransitions svg use-opts has-active-zci");
+
+				# Make sure we only show one Goodie (this will change down the road)
+				last;
 
 			# If not Spice or Goodie,
 			# inject raw Dumper() output from into page
@@ -357,7 +361,7 @@ sub request {
 					my $template_content = $calls_template{$spice_name}{$template_name}{"content"}->slurp;
 					"<script class='duckduckhack_spice_template' spice-name='$spice_name' template-name='$template_name' is-ct-self='$is_ct_self' type='text/plain'>$template_content</script>"
 
-				} keys $calls_template{$spice_name});
+				} keys %{ $calls_template{$spice_name} });
 			}
 		}
 
@@ -398,7 +402,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.150
+version 0.151
 
 =head1 AUTHOR
 

@@ -1,10 +1,76 @@
 ==================================================
-Changes from 1740-10-21 00:00:00 +0000 to present.
+Changes from 1740-11-04 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.150 at 2014-08-05 22:37:43 +0000
+version 0.151 at 2014-08-19 15:04:12 +0000
 ------------------------------------------
+
+  Change: 40a9cbca456739c06c01f955953b5767bafca1a9
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-08-19 10:45:52 +0000
+
+    Merge pull request #105 from duckduckgo/jag/utf8
+
+    dist.ini: Add autodie as a dependency. 
+
+  Change: c3caf9fc334a2e8fe5f9739ffa346097fa40b734
+  Author: moollaza <moollaza@fastmail.fm>
+  Date : 2014-08-19 14:34:23 +0000
+
+    Merge branch 'master' into pr/104 
+
+  Change: cfabc5e6b698b21a166808f401beb32ce5576ebf
+  Author: moollaza <moollaza@fastmail.fm>
+  Date : 2014-08-19 14:33:48 +0000
+
+    simplify whitespace removal 
+
+  Change: 5a12c8c59855882c3ce0feca06c7c74eb11d06bd
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-08-14 09:00:16 +0000
+
+    Merge pull request #103 from duckduckgo/zaahir/single-goodie-result
+
+    Web.pm - Make sure we only inject one Goodie result into the detail
+    area 
+
+  Change: cc7f6c29f5c397e78c6aefc1a4c8f17bd6edcd7f
+  Author: jagtalon <jag@jagtalon.com>
+  Date : 2014-08-13 19:06:39 +0000
+
+    dist.ini: Add autodie as a dependency.
+
+    utf8::all doesn't install because it needs autodie version that's >=
+    2.11. But the one that's installed in Perl 5.10 to 5.16 is lower than
+    that. 
+
+  Change: 6e0b4ac47f53539e303d3524026c5d7b7413cf5f
+  Author: moollaza <moollaza@fastmail.fm>
+  Date : 2014-08-08 13:40:44 +0000
+
+    Web.pm - Make sure we only inject one Goodie result into the detail
+    area Fixes #97 
+
+  Change: f35599d5d541521067b9c718df200bd770860bd0
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-08-08 18:38:32 +0000
+
+    fixed whitespace 
+
+  Change: 8f2f266015aa27ed99a22335f5e801d940dec7f1
+  Author: Jag Talon <jagtalon@duckduckgo.com>
+  Date : 2014-08-07 15:54:44 +0000
+
+    Merge pull request #102 from duckduckgo/zaahir/fix-keys-on-reference
+
+    fix perl 20 keys on reference warning 
+
+  Change: 5427bff88fb30ebd65559d4abb98303e649cfc9a
+  Author: moollaza <moollaza@fastmail.fm>
+  Date : 2014-08-06 04:59:45 +0000
+
+    fix perl 20 keys on reference warning 
 
   Change: c6c16c279df7a36c11b48b1d7436c1ecca7cb8ac
   Author: Russell Holt <russell@duckduckgo.com>
