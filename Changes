@@ -1,10 +1,24 @@
 ==================================================
-Changes from 1740-11-04 00:00:00 +0000 to present.
+Changes from 1740-11-07 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.151 at 2014-08-19 15:04:12 +0000
+version 0.152 at 2014-08-22 02:57:21 +0000
 ------------------------------------------
+
+  Change: 86d52fb3f93e4c15786d0e239e54b6a64c427a24
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-08-21 16:35:51 +0000
+
+    Merge pull request #106 from duckduckgo/zaahir/dynamic-port
+
+    Add port option to duckpan server to allow port specification 
+
+  Change: 16d3a12fca45cfe21e7b9efab9dbe3a7399c1a86
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-08-21 20:09:58 +0000
+
+    Add port option to duckpan server to allow port specification 
 
   Change: 40a9cbca456739c06c01f955953b5767bafca1a9
   Author: Zaahir Moolla <moollaza@duckduckgo.com>

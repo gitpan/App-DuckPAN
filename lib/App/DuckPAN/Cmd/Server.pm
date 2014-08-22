@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Starting up the web server to test instant answers
-$App::DuckPAN::Cmd::Server::VERSION = '0.151';
+$App::DuckPAN::Cmd::Server::VERSION = '0.152';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -30,6 +30,14 @@ option verbose => (
     lazy => 1,
     short => 'v',
     default => sub { 0 }
+);
+
+option port => (
+    is => 'ro',
+    format => 'i',
+    lazy => 1,
+    short => 'p',
+    default => sub { 5000 }
 );
 
 has page_js_filename => (
@@ -181,6 +189,7 @@ sub run {
         app => sub { $web->run_psgi(@_) },
     );
     #$runner->loader->watch("./lib");
+    $runner->parse_options("--port", $self->port);
     exit $runner->run;
 }
 
@@ -373,7 +382,7 @@ App::DuckPAN::Cmd::Server - Starting up the web server to test instant answers
 
 =head1 VERSION
 
-version 0.151
+version 0.152
 
 =head1 AUTHOR
 
