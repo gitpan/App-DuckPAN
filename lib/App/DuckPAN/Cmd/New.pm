@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::New::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Take a name as input and generates a new, named Goodie or Spice instant answer skeleton
-$App::DuckPAN::Cmd::New::VERSION = '0.152';
+$App::DuckPAN::Cmd::New::VERSION = '0.153';
 # For Goodies:
 # 	- <name>.pm file is created in lib/DDG/Goodie
 #
@@ -23,7 +23,8 @@ sub run {
 	my ( $self, @args ) = @_;
 
 	# Instant Answer name as parameter
-	my $name = $args[0] || $self->app->get_reply('Please enter a name for your Instant Answer');
+	my $entered_name = (@args) ? join(' ', @args) : $self->app->get_reply('Please enter a name for your Instant Answer');
+	my $name = $self->app->phrase_to_camel($entered_name);
 	my $lc_name = $self->app->camel_to_underscore($name);
 
 	# %templates forms the spine data structure which is used
@@ -127,7 +128,7 @@ App::DuckPAN::Cmd::New - Take a name as input and generates a new, named Goodie 
 
 =head1 VERSION
 
-version 0.152
+version 0.153
 
 =head1 AUTHOR
 

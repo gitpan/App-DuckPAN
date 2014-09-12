@@ -53,6 +53,7 @@
             "JSON" : "2.59",
             "LWP::Protocol::https" : "0",
             "LWP::Simple" : "6.00",
+            "List::Util" : "0",
             "Module::Data" : "0.006",
             "Module::Pluggable" : "4.8",
             "Moo" : "1.002000",
@@ -92,11 +93,11 @@
       "homepage" : "https://github.com/duckduckgo/p5-app-duckpan",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/duckduckgo/p5-app-duckpan.git",
+         "url" : "https://github.com/duckduckgo/p5-app-duckpan.git",
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.152",
+   "version" : "0.153",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"
@@ -189,8 +190,18 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::NextVersion" : {
+                  "first_version" : "0.001",
+                  "version_by_branch" : "0",
+                  "version_regexp" : "(?^u:^([0-9]+\\.[0-9]+)$)"
+               },
+               "Dist::Zilla::Role::Git::Repo" : {
+                  "repo_root" : "."
+               }
+            },
             "name" : "Git::NextVersion",
-            "version" : "2.020"
+            "version" : "2.023"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
@@ -215,7 +226,7 @@
          {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
             "name" : "GithubMeta",
-            "version" : "0.42"
+            "version" : "0.46"
          },
          {
             "class" : "Dist::Zilla::Plugin::InstallRelease",
@@ -320,27 +331,85 @@
                }
             },
             "name" : "PodWeaver",
-            "version" : "4.005"
+            "version" : "4.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::Check" : {
+                  "untracked_files" : "die"
+               },
+               "Dist::Zilla::Role::Git::DirtyFiles" : {
+                  "allow_dirty" : [
+                     "dist.ini",
+                     "Changes"
+                  ],
+                  "allow_dirty_match" : [],
+                  "changelog" : "Changes"
+               },
+               "Dist::Zilla::Role::Git::Repo" : {
+                  "repo_root" : "."
+               }
+            },
             "name" : "@Git/Check",
-            "version" : "2.020"
+            "version" : "2.023"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::Commit" : {
+                  "add_files_in" : [],
+                  "commit_msg" : "v%v%n%n%c",
+                  "time_zone" : "local"
+               },
+               "Dist::Zilla::Role::Git::DirtyFiles" : {
+                  "allow_dirty" : [
+                     "dist.ini",
+                     "Changes"
+                  ],
+                  "allow_dirty_match" : [],
+                  "changelog" : "Changes"
+               },
+               "Dist::Zilla::Role::Git::Repo" : {
+                  "repo_root" : "."
+               }
+            },
             "name" : "@Git/Commit",
-            "version" : "2.020"
+            "version" : "2.023"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::Tag" : {
+                  "branch" : null,
+                  "signed" : 0,
+                  "tag" : "0.153",
+                  "tag_format" : "%v",
+                  "tag_message" : "v%v",
+                  "time_zone" : "local"
+               },
+               "Dist::Zilla::Role::Git::Repo" : {
+                  "repo_root" : "."
+               }
+            },
             "name" : "@Git/Tag",
-            "version" : "2.020"
+            "version" : "2.023"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Push",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::Push" : {
+                  "push_to" : [
+                     "origin master"
+                  ],
+                  "remotes_must_exist" : 1
+               },
+               "Dist::Zilla::Role::Git::Repo" : {
+                  "repo_root" : "."
+               }
+            },
             "name" : "@Git/Push",
-            "version" : "2.020"
+            "version" : "2.023"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -372,7 +441,7 @@
          {
             "class" : "Dist::Zilla::Plugin::ChangelogFromGit",
             "name" : "ChangelogFromGit",
-            "version" : "0.016"
+            "version" : "0.015"
          },
          {
             "class" : "Dist::Zilla::Plugin::TravisCI",

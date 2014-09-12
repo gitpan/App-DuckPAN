@@ -26,7 +26,7 @@ duckpan - Command line tool for using the DuckPAN of DuckDuckGo
 
 =head1 VERSION
 
-version 0.152
+version 0.153
 
 =head1 DESCRIPTION
 
@@ -52,7 +52,7 @@ B<duckpan check>:
 B<duckpan query>:
     Test Goodie and Spice triggers interactively on the command line. For each query, the instant answers triggered will be displayed. This tool should be used to ensure your instant answer triggers correctly.
 
-B<duckpan server>: [--verbose] [--no-cache]
+B<duckpan server>: [--verbose] [--no-cache] [--port <number>]
     Starts a local web server, which emulates the DuckDuckGo production environment. Allows for live testing of Goodie and Spice instant answers.  This tool should be used to ensure your instant answer displays correctly. For Spice instant answers, this is especially important to verify API calls are successful and no JavaScript errors exist.
 
     -v, --verbose:
@@ -60,6 +60,9 @@ B<duckpan server>: [--verbose] [--no-cache]
 
     --no-cache:
         Forces the cache to be repopulated each time the server starts (defaults to using cached copies of assets unless newer versions exist)
+
+    -p, --port <number>:
+        Forces DuckPAN server to run on the specified port (default port is 5000)
 
 B<duckpan help>:
     Shows you the DuckPAN help page which briefly describes DuckPAN and its features.
@@ -84,6 +87,15 @@ B<duckpan release>:
 
 B<duckpan setup>:
   Helps configure your environment so you can use L<Dist::Zilla::Plugin::UploadToDuckPAN>, which is used by B<duckpan release>.
+
+B<duckpan update>:
+   Update DuckPAN to the latest version.
+
+B<duckpan upgrade>:
+   Upgrade DuckPAN and DDG to the latest versions.
+
+B<duckpan reinstall>:
+   Force installation of the latest released versions of DuckPAN and DDG.
 
 =head2 ENVIRONMENT VARIABLES
 

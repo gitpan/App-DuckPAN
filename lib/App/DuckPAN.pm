@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.152';
+$App::DuckPAN::VERSION = '0.153';
 
 use Moo;
 use MooX::Cmd;
@@ -175,7 +175,7 @@ sub execute {
 				$_ =~ /^ddg/i ||
 				$_ =~ /^app/i) {
 				push @modules, $_;
-			} elsif ($_ =~ m/^(duckpan|upgrade|update)$/i) {
+			} elsif ($_ =~ m/^(duckpan|upgrade|update|reinstall)$/i) {
 				# Clear cache so share files are written into cache
 				my $cache = $self->cfg->cache_path;
 				if (-d $cache){
@@ -184,7 +184,8 @@ sub execute {
 					print "Done\n";
 				}
 				push @modules, 'App::DuckPAN';
-				push @modules, 'DDG' if lc($_) eq 'upgrade';
+				push @modules, 'DDG' if $_ =~ /^(?:upgrade|reinstall)$/i;
+				unshift @modules, 'force' if lc($_) eq 'reinstall';
 			} else {
 				push @left_args, $_;
 			}
@@ -223,6 +224,12 @@ sub camel_to_underscore {
 	# Substitute camelCase to camel_case
 	$name =~ s/([a-z])([A-Z])/$1.'_'.lc($2)/ge;
 	return lc $name;
+}
+
+sub phrase_to_camel {
+ my ($self, $phrase) = @_;
+	# Other things imply camelCase, we're going with CamelCase, kinda.
+	return join('', map { ucfirst $_; } (split /\s+/, $phrase));
 }
 
 sub check_requirements {
@@ -380,7 +387,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.152
+version 0.153
 
 =head1 DuckPAN
 

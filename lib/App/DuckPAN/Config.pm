@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Config::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Configuration class of the duckpan client
-$App::DuckPAN::Config::VERSION = '0.152';
+$App::DuckPAN::Config::VERSION = '0.153';
 use Moo;
 use MooX::HasEnv;
 use Path::Class;
@@ -42,7 +42,7 @@ App::DuckPAN::Config - Configuration class of the duckpan client
 
 =head1 VERSION
 
-version 0.152
+version 0.153
 
 =head1 AUTHOR
 

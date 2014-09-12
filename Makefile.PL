@@ -45,6 +45,7 @@ my %WriteMakefileArgs = (
     "JSON" => "2.59",
     "LWP::Protocol::https" => 0,
     "LWP::Simple" => "6.00",
+    "List::Util" => 0,
     "Module::Data" => "0.006",
     "Module::Pluggable" => "4.8",
     "Moo" => "1.002000",
@@ -75,7 +76,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.152",
+  "VERSION" => "0.153",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -105,6 +106,7 @@ my %FallbackPrereqs = (
   "JSON" => "2.59",
   "LWP::Protocol::https" => 0,
   "LWP::Simple" => "6.00",
+  "List::Util" => 0,
   "Module::Data" => "0.006",
   "Module::Pluggable" => "4.8",
   "Moo" => "1.002000",

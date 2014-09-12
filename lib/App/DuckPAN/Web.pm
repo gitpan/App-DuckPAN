@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.152';
+$App::DuckPAN::Web::VERSION = '0.153';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
@@ -167,7 +167,7 @@ sub request {
 						$response->code($res->code);
 						$response->content_type($res->content_type);
 					} else {
-						warn $res->status_line, "\n";
+						p($res->status_line, color => { string => 'red' });
 						$body = "";
 					}
 				}
@@ -248,41 +248,42 @@ sub request {
 
 			# NOTE -- this isn't designed to have both goodies and spice at once.
 
-			# Check if we have a Spice result
-			# if so grab the associated JS, Handlebars and CSS
-			# and add them to correct arrays for injection into page
-			if (ref $result eq 'DDG::ZeroClickInfo::Spice') {
-
+			my $res_ref = ref $result;
+			my $result_type =	($res_ref eq 'DDG::ZeroClickInfo::Spice') ? 'spice' :
+								($res_ref eq 'DDG::ZeroClickInfo') ?		'goodie' :
+																			'other';
+			if (($result_type eq 'spice' || $result_type eq 'goodie')
+				&& $result->caller->can('module_share_dir')) {
+				# grab associated JS, Handlebars and CSS
+				# and add them to correct arrays for injection into page
 				my $io;
 				my @files;
 				my $share_dir = $result->caller->module_share_dir;
 				my @path = split(/\/+/, $share_dir);
-				my $spice_name = join("_", @path[2..$#path]);
+				my $ia_name = join("_", @path[2..$#path]);
 
 				$io = io($result->caller->module_share_dir);
 				push(@files, @$io);
 
 				foreach (@files){
-
-					if ($_->filename =~ /$spice_name\.js$/){
+					if ($_->filename =~ /$ia_name\.js$/){
 						push (@calls_script, $_);
 
-					} elsif ($_->filename =~ /$spice_name\.css$/){
+					} elsif ($_->filename =~ /$ia_name\.css$/){
 						push (@calls_nrc, $_);
 
 					} elsif ($_->filename =~ /^.+handlebars$/){
 						my $template_name = $_->filename;
 						$template_name =~ s/\.handlebars//;
-						$calls_template{$spice_name}{$template_name}{"content"} = $_;
-						$calls_template{$spice_name}{$template_name}{"is_ct_self"} = $result->call_type eq 'self';
+						$calls_template{$ia_name}{$template_name}{"content"} = $_;
+						$calls_template{$ia_name}{$template_name}{"is_ct_self"} = $result->call_type eq 'self';
 					}
 				}
-				push (@calls_nrj, $result->call_path);
+				push (@calls_nrj, $result->call_path) if ($result->can('call_path'));
 
-			# Check if we have a Goodie result
-			# if so modify HTML and return content
-			} elsif ( ref $result eq 'DDG::ZeroClickInfo' ){
-
+			}
+			if ($result_type eq 'goodie'){
+				# We have a Goodie result so modify HTML and return content
 				# Grab ZCI div, push in required HTML
 				my $zci_container = HTML::Element->new('div', id => "zci-answer", class => "zci zci--answer is-active");
 				$zci_container->push_content(
@@ -329,9 +330,9 @@ sub request {
 				# Make sure we only show one Goodie (this will change down the road)
 				last;
 
-			# If not Spice or Goodie,
-			# inject raw Dumper() output from into page
-			} else {
+			}
+			if ($result_type eq 'other') {
+				# Not Spice or Goodie, inject raw Dumper() output from into page
 
 				my $content = $root->look_down(id => "bottom_spacing2");
 				my $dump = HTML::Element->new('pre');
@@ -402,7 +403,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.152
+version 0.153
 
 =head1 AUTHOR
 
