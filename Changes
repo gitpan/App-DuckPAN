@@ -1,10 +1,38 @@
 ==================================================
-Changes from 1740-11-28 00:00:00 +0000 to present.
+Changes from 1740-12-03 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.153 at 2014-09-12 00:44:32 +0000
+version 0.154 at 2014-09-17 01:10:40 +0000
 ------------------------------------------
+
+  Change: 570eb3bc925a271d1e597a5d4da3465330abffdd
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-09-16 20:00:36 +0000
+
+    Merge pull request #111 from duckduckgo/zaahir/fix-duckpan-setup
+
+    Make `duckpan setup` work properly. 
+
+  Change: 6a47ad38c6ecf65917a0afcd0c5cd7a5b3849eca
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-09-12 12:26:10 +0000
+
+    Merge pull request #120 from fern4lvarez/fix-locally-link
+
+    Fixes on README.md 
+
+  Change: 5c406309ea2e13b89a82de93fc15f2a98224cce2
+  Author: Fernando Ãlvarez <fa@cloudcontrol.de>
+  Date : 2014-09-12 18:13:15 +0000
+
+    README.md - Fix trailing whitespaces 
+
+  Change: f27f6852d2dafce4f678b9409cbc018d4a23503d
+  Author: Fernando Ãlvarez <fa@cloudcontrol.de>
+  Date : 2014-09-12 18:12:39 +0000
+
+    README.md - Fix broken link for locally installation 
 
   Change: 20b070f98497cad7ea82122e3c26c86c45175eee
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
@@ -106,6 +134,18 @@ version 0.153 at 2014-09-12 00:44:32 +0000
     We'll only force the first letters to caps and assume they know what
     they are doing with the rest of it. 
 
+  Change: 5852ddcd62db30b92fd1d169f00da0e99c853be4
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-09-04 19:19:51 +0000
+
+    whoops, add missing semicolon 
+
+  Change: 95cbcda1e18af015e062c41cfd4b8abc559855ef
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-09-04 19:06:50 +0000
+
+    update logic after feedback 
+
   Change: 8769163c2253a23b247475e7f4365a2625850ade
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
   Date : 2014-09-04 13:28:02 +0000
@@ -154,6 +194,13 @@ version 0.153 at 2014-09-12 00:44:32 +0000
     our purposes.
 
     Addresses #110. 
+
+  Change: 86e7c1d2be620d277db1819b11b056c8083df6b6
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-08-27 15:07:03 +0000
+
+    change 'unless' to 'if' because check_requirements returns 0 for
+    success 
 
   Change: 9c5f17bd01fe003e74c827f20de98f2af93591cb
   Author: Matt Miller <mwmiller@outlook.com>

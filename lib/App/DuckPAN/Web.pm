@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.153';
+$App::DuckPAN::Web::VERSION = '0.154';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
@@ -403,7 +403,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.153
+version 0.154
 
 =head1 AUTHOR
 

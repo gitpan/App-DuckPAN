@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Setup::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Setting up your duck.co Account on your duckpan client
-$App::DuckPAN::Cmd::Setup::VERSION = '0.153';
+$App::DuckPAN::Cmd::Setup::VERSION = '0.154';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -52,7 +52,7 @@ sub get_email { shift->app->get_reply( 'What is your email (public in your relea
 
 sub run {
 	my ( $self ) = @_;
-	exit 1 unless $self->app->check_requirements;
+	exit if $self->app->check_requirements != 0;
 	if (my $dzil_config = $self->app->perl->get_dzil_config) {
 		print "\nFound existing Dist::Zilla config!\n\n";
 		my $name = $dzil_config->{'%User'}->{name};
@@ -185,7 +185,7 @@ App::DuckPAN::Cmd::Setup - Setting up your duck.co Account on your duckpan clien
 
 =head1 VERSION
 
-version 0.153
+version 0.154
 
 =head1 AUTHOR
 
