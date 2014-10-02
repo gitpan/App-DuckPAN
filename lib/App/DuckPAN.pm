@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.154';
+$App::DuckPAN::VERSION = '0.155';
 
 use Moo;
 use MooX::Cmd;
@@ -18,7 +18,6 @@ use LWP::UserAgent;
 use LWP::Simple;
 use Parse::CPAN::Packages::Fast;
 use File::Temp qw/ :POSIX /;
-use Class::Load ':all';
 use Term::UI;
 use Term::ReadLine;
 use Carp;
@@ -387,7 +386,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.154
+version 0.155
 
 =head1 DuckPAN
 

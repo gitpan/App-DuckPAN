@@ -1,10 +1,110 @@
 ==================================================
-Changes from 1740-12-03 00:00:00 +0000 to present.
+Changes from 1740-12-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.154 at 2014-09-17 01:10:40 +0000
+version 0.155 at 2014-10-02 19:39:27 +0000
 ------------------------------------------
+
+  Change: 6288c33002508b0b466753448d88daf5db5171a3
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-09-30 12:39:28 +0000
+
+    Merge pull request #125 from mwmiller/autotemplates
+
+    Goodie Auto-Templating. 
+
+  Change: 4b3f1143b72d3655ceea145cebee4df48cb4a4f1
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-09-26 14:54:44 +0000
+
+    Web: allow for auto-template inclusion for goodies.
+
+    This approximates the way things work on the backend, without
+    requiring all of the infrastructure. 
+
+  Change: ad8d7ce3cf6ef3db0f5e5b0692e79d62245f916b
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-09-25 17:01:52 +0000
+
+    Merge pull request #124 from
+    duckduckgo/zaahir/remove-dzil-ReleaseOnlyWithLatest
+
+    replace ReleaseOnlyWithLatest with PromptIfStale 
+
+  Change: 502ed159fe07ab5ea27026ce2be29f866904e391
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-09-25 15:35:11 +0000
+
+    Merge pull request #118 from killerfish/podupdate
+
+    Updated pod and readme 
+
+  Change: 519ebfcf95cb343bb7a0c13684232cc940a757e9
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-09-25 15:14:24 +0000
+
+    replace ReleaseOnlyWithLatest with PromptIfStale 
+
+  Change: 359fb29f82e9a8c4f76d9def9afda49da4486c0b
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-09-22 20:15:03 +0000
+
+    Merge pull request #123 from killerfish/rmdeprecated
+
+    Removing deprecated command goodie 
+
+  Change: 112d783720e61516888f34b9b264ba51d0137393
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-21 19:22:22 +0000
+
+    removed semicolon in pod 
+
+  Change: 4f1461919cec628de117e4f727886868a6b0dde7
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-21 17:56:25 +0000
+
+    Removing deprecated command goodie 
+
+  Change: 0e960caab596e93f174068466e860b08902fcae0
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-09-18 19:36:42 +0000
+
+    Merge pull request #121 from duckduckgo/zaahir/update-pr-template
+
+    updated pr template with new question 
+
+  Change: 6536dabe7aeac447091946f48db4f5f0ed460089
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-09-18 18:41:32 +0000
+
+    updated pr template with new question 
+
+  Change: 5b3357a6f84014a58b7354b268ad61b587e1835c
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-17 18:17:02 +0000
+
+    moved to shell 
+
+  Change: a49d0a4581a4cf78d4f1d3cca6151cbf8a73d5fd
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-17 18:15:04 +0000
+
+    moved to 3 backticks 
+
+  Change: d7cfe45acbd9682b01449dbb54871e4783c3ce17
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-17 18:12:09 +0000
+
+    updated with backticks 
+
+  Change: 731670db418a90f84965562e8538187174347a0d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-09-16 22:39:57 +0000
+
+    Merge pull request #119 from killerfish/rmduplicate
+
+    Duckpan.pm: Removed duplicate import 
 
   Change: 570eb3bc925a271d1e597a5d4da3465330abffdd
   Author: Zaahir Moolla <moollaza@fastmail.fm>
@@ -33,6 +133,36 @@ version 0.154 at 2014-09-17 01:10:40 +0000
   Date : 2014-09-12 18:12:39 +0000
 
     README.md - Fix broken link for locally installation 
+
+  Change: b7fe6bb7e8711ec48726e9e0aa322067f194f2d6
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-12 17:33:52 +0000
+
+    updated argument syntax in pod 
+
+  Change: 5d5a8aa0e0535d5219ae2e87db98d224966904fa
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-12 17:27:36 +0000
+
+    defined section for ddg-query 
+
+  Change: ade59621369abfcfabbb87a62cfb055b9914ddec
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-12 16:58:13 +0000
+
+    added seperators 
+
+  Change: 22a0d23b105646b5751f1d8ba9f0454712401278
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-12 16:42:54 +0000
+
+    removed duplicate import 
+
+  Change: dfa3608327294c9c28af46fa07838ac4e11331cc
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-09-09 23:59:12 +0000
+
+    updated pod and readme 
 
   Change: 20b070f98497cad7ea82122e3c26c86c45175eee
   Author: Zaahir Moolla <moollaza@duckduckgo.com>
