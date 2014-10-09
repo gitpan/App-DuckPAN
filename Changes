@@ -1,10 +1,89 @@
 ==================================================
-Changes from 1740-12-18 00:00:00 +0000 to present.
+Changes from 1740-12-25 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.155 at 2014-10-02 19:39:27 +0000
+version 0.156 at 2014-10-09 16:56:32 +0000
 ------------------------------------------
+
+  Change: a0cffadcfdc77cfc1bd052aca12e3f0c6d676138
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-09 11:20:07 +0000
+
+    Merge pull request #127 from mwmiller/caching
+
+    Caching 
+
+  Change: c37ead7ca36d0eded3835938285be23e13993693
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-09 16:26:49 +0000
+
+    Server: remove errant backtick. 
+
+  Change: 15b96495f7400b8d43c61a4b0866fb9dacd703e7
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-09 10:13:35 +0000
+
+    Server: update verbose messages.
+
+    This might make it easier to pair them up and understand what is
+    happening. 
+
+  Change: 34c8d47e1a18658fd1511e5a6c817ed02dfdf47b
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-08 16:56:00 +0000
+
+    Server: show how we come to find those sub_assets. 
+
+  Change: bcebdc9dbff1acf51eb0e1912ee19617a4ef2151
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-08 15:55:04 +0000
+
+    Server: remove extraneous cache_path output. 
+
+  Change: cef665eae6812902e657f38a08e2de65043561cd
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-08 15:25:29 +0000
+
+    Server: Unify internal/external name distinction.
+
+    We had this concept in a less useful way with the `%assets` hash.
+    We'd prefer to have them all have similar characteristics so we (and
+    the code!) can reaosn about what is going on.
+
+    With this nearly everything is cached locally, which makes for a
+    better experiencefor those on slow links. Let's assume those people
+    exist. 
+
+  Change: 7d4ace5064157bf895b53edf0de476c151ebd157
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-08 10:20:01 +0000
+
+    Server: make failure to cache a fatal error.
+
+    Also, cleanup and improve the logging code around that area a tiny
+    bit. 
+
+  Change: 35be9642401d9412528eb7bb0b2d481628635117
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-08 01:01:13 +0000
+
+    Server/Web: cache locales JS.
+
+    This makes things much faster when on a slow connection. Or so I
+    hear. 
+
+  Change: b11bc6eeffdb8b58d21691c9398c5264f55029fb
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-08 00:55:54 +0000
+
+    Server: improve retrival and caching code reuse
+
+    Two areas had essentially identical code, so extract that into a
+    single method.
+
+    Also, improve the output of the extract code to help with diagnostics
+    when things go awry. 
 
   Change: 6288c33002508b0b466753448d88daf5db5171a3
   Author: Zaahir Moolla <moollaza@fastmail.fm>
