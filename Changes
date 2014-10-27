@@ -3,8 +3,22 @@ Changes from 1741-01-12 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.157 at 2014-10-27 20:01:52 +0000
+version 0.158 at 2014-10-27 23:01:19 +0000
 ------------------------------------------
+
+  Change: 9b88fa35e07fa32d925ec38a9b888627b31c4a5c
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-27 19:00:15 +0000
+
+    Merge pull request #147 from duckduckgo/zaahir/fix-duckpan-server
+
+    Make sure we check the file we're copying exists 
+
+  Change: 368d930bbd896eb4b30e6dee925c5c1d47e298e8
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-27 18:58:24 +0000
+
+    Make sure we check the file we're copying exists 
 
   Change: 778860240b27474b30f52af2262c50b1596d4190
   Author: Zaahir Moolla <moollaza@fastmail.fm>
