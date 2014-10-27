@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Command for checking the requirements
-$App::DuckPAN::Cmd::Check::VERSION = '0.156';
+$App::DuckPAN::Cmd::Check::VERSION = '0.157';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -11,7 +11,7 @@ use MooX::Options protect_argv => 0;
 
 sub run {
 	my ( $self ) = @_;
-	exit 1 unless $self->app->check_app_duckpan;
+	$self->app->verify_versions;
 	if ($self->app->check_requirements) {
 		print "\n[ERROR] Check for the requirements failed!! See instructions or reports above\n\n";
 		exit 1;
@@ -32,7 +32,7 @@ App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

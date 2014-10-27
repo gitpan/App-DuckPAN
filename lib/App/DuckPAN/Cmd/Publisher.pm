@@ -3,13 +3,13 @@ BEGIN {
   $App::DuckPAN::Cmd::Publisher::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Starting up the publisher test webserver
-$App::DuckPAN::Cmd::Publisher::VERSION = '0.156';
+$App::DuckPAN::Cmd::Publisher::VERSION = '0.157';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
 use MooX::Options protect_argv => 0;
 
-use Path::Class;
+use Path::Tiny;
 use Plack::Handler::Starman;
 
 for (qw( duckduckgo dontbubbleus donttrackus whatisdnt fixtracking duckduckhack )) {
@@ -25,7 +25,7 @@ sub run {
 
 	print "\n\nChecking for Publisher...\n";
 
-	my $publisher_pm = file('lib','DDG','Publisher.pm')->absolute;
+	my $publisher_pm = path('lib','DDG','Publisher.pm')->absolute;
 	die "You must be in the root of the duckduckgo-publisher repository" unless -f $publisher_pm;
 
 	print "\n\nStarting up publisher webserver...";
@@ -86,7 +86,7 @@ App::DuckPAN::Cmd::Publisher - Starting up the publisher test webserver
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

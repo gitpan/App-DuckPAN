@@ -6,6 +6,9 @@ DuckPAN is an application built to provide developers a testing environment for 
 
 ## Disclaimer
 
+
+### Operating Systems
+
 Currently, DuckPAN has been developed on, and works well with **Ubuntu**. More specifically, we regularly build, test and run DuckPAN on **Ubuntu 12.04**. We have also successfully installed and run DuckPAN on older and newer Ubuntu releases, e.g. Ubuntu 10.04, 12.10, and 13.04.
 
 Developers have also been successful running DuckPAN on other Linux distros (e.g. Arch, Debian) and on Mac OS X 10.8 and later, but **we make no promises that it will work outside of Ubuntu**.
@@ -13,6 +16,11 @@ Developers have also been successful running DuckPAN on other Linux distros (e.g
 As well, **there have been reported issues with installing DuckPAN on Windows**, so we don't recommend you go down that path.
 
 That being said, we are more than willing to help you debug any installation problems, so please come to us with your problems and we'll try to get your issues sorted out. If you'd like some help from our community, feel free to engage with them on the [DuckDuckGo forum](http://duck.co/).
+
+
+### Perl Versions
+
+We run our DuckPAN tests against Perl 5.16 and 5.18 using Travis (https://travis-ci.org/duckduckgo/p5-app-duckpan). We suggest you install Perl 5.16 via Perlbrew for local development. The Codio boxes come with Perlbrew and Perl 5.18 already installed.
 
 ------
 
@@ -313,13 +321,13 @@ Force installation of the latest released versions of DuckPAN and DDG
 ### Instant Answer Testing
 
 ```shell
-duckpan query [spice_package|goodie_package]
+duckpan query [spice_package|goodie_package] ...
 ```
 
 Test Goodie and Spice triggers interactively on the command line
 
 ```shell
-duckpan server [--verbose] [--no-cache] [--port <number>] [spice_package|goodie_package]
+duckpan server [--verbose] [--no-cache] [--port <number>] [spice_package|goodie_package] ...
 ```
 
 Test Goodie and Spice instant answers on a local web server (for design/layout purposes)
@@ -332,14 +340,16 @@ Options:
 
 Arguments:
 
-- `[spice_package|goodie_package]` to load a specific spice or goodie instant answer only
+- `[spice_package|goodie_package]` to load a specific spice or goodie instant answer only. You can pass multiple instant answers.
 
 ```shell
-duckpan query Spice::Npm
+duckpan query Npm
+duckpan query Twitter IsItUp
 ```
 
 ```shell
-duckpan server Goodie::MD5
+duckpan server Movie
+duckpan server IDN Sort Morse
 ```
 
 ### Advanced Features 

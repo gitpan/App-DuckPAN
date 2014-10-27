@@ -1,10 +1,375 @@
 ==================================================
-Changes from 1740-12-25 00:00:00 +0000 to present.
+Changes from 1741-01-12 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.156 at 2014-10-09 16:56:32 +0000
+version 0.157 at 2014-10-27 20:01:52 +0000
 ------------------------------------------
+
+  Change: 778860240b27474b30f52af2262c50b1596d4190
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-27 15:59:40 +0000
+
+    Merge pull request #145 from duckduckgo/mwm/tiny_paths_all_alike
+
+    Replace IO::All and Path::Class with Path::Tiny. 
+
+  Change: 6b6964cd0f758c31f42a1ed472e560c232686069
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-24 14:56:56 +0000
+
+    Replace IO::All and Path::Class with Path::Tiny.
+
+    This should make dealing with paths somewhat more straight- forward
+    and reusable. 
+
+  Change: 6dd77b5753aecc5441d546bc34dcf57cd6b3e3cb
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-24 14:51:42 +0000
+
+    Merge pull request #139 from killerfish/updatedocs
+
+    Updated docs according to changes in #138 
+
+  Change: 6699ff9f4c0ccd8fd34f63ebf9742a31aa318907
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-24 14:50:17 +0000
+
+    Merge pull request #138 from killerfish/nameshort
+
+    Easy input for instant answer loading 
+
+  Change: f4fa31e77729871b6eddd91bb173075153962279
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-24 17:37:40 +0000
+
+    cleaned up duckpan as ia type 
+
+  Change: 3076ee51c4dde786603c0d8423a3448322cbbd7e
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-24 15:58:13 +0000
+
+    removed print if not in root dir, as it is handled in func
+    ia_get_type 
+
+  Change: ad2d17c7dbadd4f2a9ebe71df44a4fab20c48283
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-24 15:55:14 +0000
+
+    updated search path 
+
+  Change: 159fdb1cb798f767eb4b73a6c247a6fc7c2c8f40
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-24 14:54:39 +0000
+
+    moved func call so we can fail if in fathead/longtail 
+
+  Change: 829ea4737a51e8ce675e4c5f14e13c42d39e5ff9
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-24 14:23:17 +0000
+
+    switched to function get_ia_type 
+
+  Change: a90443adbb482c63bb1a17519689cb7cda29cb8d
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-24 14:09:40 +0000
+
+    Better Handling of Instant Answer load option, so instead of
+    Spice::IsItUp we can pass IsItUp 
+
+  Change: 777f366da0d14d630ea60705f4979fd86e963e4b
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-24 11:00:29 +0000
+
+    Merge pull request #144 from mwmiller/verify
+
+    Query: verify_versions on correct package. 
+
+  Change: 343dd81565b887140e7aa6fe1fb3de7f36e22525
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-24 10:42:01 +0000
+
+    Versions: bump required to 5.14.
+
+    We're no longer testing against 5.10, so we won't know if it is
+    broken for them (as it likely already is).
+
+    - Bump version check in App::DuckPAN - Updated README for Travis
+    change 
+
+  Change: cec18745f23c9e7f4bfa5fa108b4a16248ca8d54
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-24 10:36:22 +0000
+
+    Query: verify_versions on correct package. 
+
+  Change: 679c743d2ad9e1fb8081fcc6c82972108841eac6
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-23 23:43:00 +0000
+
+    Merge pull request #143 from
+    duckduckgo/zaahir/duckpan-new-more-updates
+
+    More updates to duckpan new 
+
+  Change: cc6d1cb6022d77a05bd2765d119bdad89519c875
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-23 23:11:53 +0000
+
+    Merge pull request #140 from killerfish/addredirect
+
+    Display spice fail errors 
+
+  Change: 7a6fc00cd2886541e059bc06bd7c53f0e0fb1fd7
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-23 23:45:17 +0000
+
+    added trailing ellipsis 
+
+  Change: 58181ed28ccbdb0f492e1e1b2c053c37595950b1
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-23 00:57:23 +0000
+
+    added hostname to resolve redirects 
+
+  Change: 57e9fccd0d91a4ab64cac65ab2544cdf610e9c4a
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-22 18:11:11 +0000
+
+    Cmd/New: require that the entered name not be empty.
+
+    They can still be jerks and enter invalid things, but maybe we will
+    notice later. 
+
+  Change: 9b46132cde6560b52b5c4e49884feedb5dd98c44
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-22 18:11:11 +0000
+
+    DuckPAN: add `exit_with_msg` method.
+
+    Toward better logging, here's a simple routine to print a supplied
+    message and then exit with the supplied code. 
+
+  Change: ee779794b3f5c7320800304f0a29a841fd553b8b
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-22 18:10:26 +0000
+
+    DuckPAN: support IA typing more easily.
+
+    - Expose a singular hashref with directory and related info. - Use a
+    more platform independent way of constructing directories.
+
+    Except that IO::All thwarts this.
+
+    This could definitely use some cleanup (and probably some actual Type
+    Objects), but the basic idea is here. 
+
+  Change: 7efc916383b38bcc9568aa69cfab0f72455af5a8
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-22 14:47:30 +0000
+
+    Changed text plugins to instant answer 
+
+  Change: ff7bb3792be54d9fe3e16852edf92a2bc79cf4da
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-21 19:58:27 +0000
+
+    Merge pull request #134 from duckduckgo/mwmiller/versioning
+
+    Versions 
+
+  Change: 825ca13dcc202c69f730d955775d1d54fa2e1951
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-21 19:47:27 +0000
+
+    More updates to duckpan new thanks to @mwmiller for the feedback 
+
+  Change: e1a15cd386805c88a8365bb200e46546c99dfabc
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-21 15:25:00 +0000
+
+    Merge pull request #142 from duckduckgo/zaahir/remove-test
+
+    remove unneeded test, causing problems when system has old Groff 
+
+  Change: ffa61da37eb00450ad860cdc2acc14b2f617bd1f
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-20 18:30:39 +0000
+
+    remove unneeded test 
+
+  Change: 22626a0083f69c0ebb66cd457bdb816a3655b894
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-20 05:06:52 +0000
+
+    updated sentence 
+
+  Change: c21700d3d5449fe12baec57edb5082ea25512b05
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-20 05:02:32 +0000
+
+    updated pod 
+
+  Change: 922b3ca55df153277e6594360e2b087f4a6e7cdd
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-20 04:59:41 +0000
+
+    updated readme 
+
+  Change: 900cf534190921f511e3b42a9db6eb6898b0dba4
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-19 15:09:02 +0000
+
+    Added support for the port option 
+
+  Change: 9996bbf8ff2c5178daca99289f7b7d7788edc38d
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-19 01:15:18 +0000
+
+    Redirect on failed spice calls 
+
+  Change: e10e6d30531509e33d7591e60c0b2cb444762950
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-18 16:00:37 +0000
+
+    highlight no plugin found msg 
+
+  Change: 57c2129c7af9bc13a73dc41980a2f2eabc69f723
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-10-18 15:42:35 +0000
+
+    added and using error function if no ia triggers 
+
+  Change: 0a6436780f8d65f1dfe5a1a81a56a90bd4f2aac7
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-16 11:09:38 +0000
+
+    Merge pull request #135 from duckduckgo/zaahir/bump-json-version
+
+    Bump JSON Version, fixes #129 
+
+  Change: 589e5c7f5b579345e34e5bf5c246be50391d95ec
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-16 10:55:50 +0000
+
+    Bump JSON Version, fixes #129 
+
+  Change: b9b51ee132efd46fe5f6176ab4af70a68d815509
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-16 08:29:00 +0000
+
+    Server: only show asset loading messages in verbose. 
+
+  Change: 595a99bfd29e0582105fef407441c90c60cdf5f4
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-16 08:29:00 +0000
+
+    App::DuckPAN: do perl version checking.
+
+    This should make the required and recommended versions more visible
+    to the users who need to know. 
+
+  Change: f6e71f062347892b4bc3d5a05e261d8aa27e09ad
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-16 08:25:54 +0000
+
+    Merge pull request #130 from duckduckgo/zaahir/readme-update
+
+    Mention suggested Perl versions in README 
+
+  Change: 4775dc9a88f8932d4dcea878e7674f0aa2f64b65
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-16 08:25:03 +0000
+
+    Merge pull request #133 from duckduckgo/zaahir/duckpan-new-update
+
+    duckpan new update 
+
+  Change: 83aae1d1dfc966adcb60630505099afb1518f53d
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-16 00:13:28 +0000
+
+    fix up lc_path 
+
+  Change: 669c997f7864cf39533a3892a08050faf7728888
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-16 00:12:18 +0000
+
+    Make sure camel_to_underscore does exhaustive search 
+
+  Change: 94f19f3b8ec1ec5aaa42fa1c751bcec6742090dd
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 23:37:25 +0000
+
+    typo fix, package_name 
+
+  Change: 7bd3056b53b94d1eb6f6b2a25150d49703d64356
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 23:08:27 +0000
+
+    show dev created package name, not just filename 
+
+  Change: 5cdbc507ed128a900a171e41fc7ac864ab665592
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 23:07:38 +0000
+
+    whoops, make sure we pass along correct path 
+
+  Change: c0c0313395eea23727499eff75e08d7caefcfa32
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 22:59:53 +0000
+
+    better name and path handling for template variables 
+
+  Change: 510316106bf3f333fb340302ddd3199cac71c280
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 22:50:24 +0000
+
+    Better handlng of $path 
+
+  Change: a6f42d4bac41aa4dffde2a1cbff2b9437d55a43d
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 22:24:39 +0000
+
+    Check current dir first, no point in taking input when we can't use
+    it 
+
+  Change: 8c04db652decb1afedf20b3f945071f6ab45aeac
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 21:55:56 +0000
+
+    remove unneeded File::Path 
+
+  Change: c3ce8c91461a92601a501512d6742d34e6d6b40e
+  Author: Zaahir Moolla <moollaza@gmail.com>
+  Date : 2014-10-15 21:55:12 +0000
+
+    improve handling of names to support filepaths or package names,
+    cleanup code 
+
+  Change: b351d5ecb09dcc9b5851593f34a1fe941543c15d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-11 11:51:23 +0000
+
+    small typo fix 
+
+  Change: 4ac5c6c4286bad2489686a25c1dcb8ab43a548e7
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-11 11:50:11 +0000
+
+    whoops, add newline before hr 
+
+  Change: 3b7029a0bb7dfd58297ecf1152be41270c42d05d
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-11 11:48:37 +0000
+
+    whoops, add newline after heading 
+
+  Change: c057a457cc60125f929fecce414ee1bfccb28900
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-11 11:47:54 +0000
+
+    Updated README to mention suggested Perl versions for DuckPAN 
 
   Change: a0cffadcfdc77cfc1bd052aca12e3f0c6d676138
   Author: Zaahir Moolla <moollaza@fastmail.fm>

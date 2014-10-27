@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.156';
+$App::DuckPAN::VERSION = '0.157';
 
 use Moo;
 use MooX::Cmd;
@@ -22,8 +22,9 @@ use Term::UI;
 use Term::ReadLine;
 use Carp;
 use Encode;
-use Path::Class;
+use Perl::Version;
 use File::Path;
+use Path::Tiny;
 
 our $VERSION ||= '9.999';
 
@@ -55,7 +56,6 @@ sub _ua_string {
   my ($self) = @_;
   my $class   = ref $self || $self;
   my $version = $class->VERSION;
- 
   return "$class/$version";
 }
 
@@ -81,6 +81,66 @@ has term => (
 );
 
 sub _build_term { Term::ReadLine->new('duckpan') }
+
+has ia_types => (
+	is => 'ro',
+	lazy => 1,
+	builder => '_build_ia_types',
+);
+
+sub _build_ia_types {
+    my $ddg_path = path('lib', 'DDG');
+    my $t_dir = path('t');
+    return [{
+            name      => 'Goodie',
+            dir       => $ddg_path->child('Goodie'),
+            supported => 1,
+            templates => {
+                code => {
+                    in  => path('template', 'lib', 'DDG', 'Goodie', 'Example.pm'),
+                    out => $ddg_path->child('Goodie')
+                },
+                test => {
+                    in  => path('template', 't', 'Example.t'),
+                    out => $t_dir
+                },
+            },
+        },
+        {
+            name      => 'Spice',
+            dir       => $ddg_path->child('Spice'),
+            supported => 1,
+            templates => {
+                code => {
+                    in  => path('template', 'lib', 'DDG', 'Spice', 'Example.pm'),
+                    out => $ddg_path->child('Spice')
+                },
+                test => {
+                    in  => path('template', 't', 'Example.t'),
+                    out => $t_dir
+                },
+                handlebars => {
+                    in  => path('template', 'share', 'spice', 'example', 'example.handlebars'),
+                    out => path('share',    'spice')
+                },
+                js => {
+                    in  => path('template', 'share', 'spice', 'example', 'example.js'),
+                    out => path('share',    'spice')
+                },
+            },
+        },
+        {
+            name      => 'Fathead',
+            dir       => $ddg_path->child('Fathead'),
+            supported => 0
+        },
+        {
+            name      => 'Longtail',
+            dir       => $ddg_path->child('Longtail'),
+            supported => 0
+        },
+    ];
+}
 
 sub get_reply {
 	my ( $self, $prompt, %params ) = @_;
@@ -146,7 +206,7 @@ has perl => (
 	lazy => 1,
 );
 
-sub _build_perl { 
+sub _build_perl {
 	load_class('App::DuckPAN::Perl');
 	App::DuckPAN::Perl->new( app => shift );
 }
@@ -157,7 +217,7 @@ has ddg => (
 	lazy => 1,
 );
 
-sub _build_ddg { 
+sub _build_ddg {
 	load_class('App::DuckPAN::DDG');
 	App::DuckPAN::DDG->new( app => shift );
 }
@@ -197,6 +257,7 @@ sub execute {
 
 sub print_text {
 	shift;
+	return unless @_;
 	for (@_) {
 		print "\n";
 		my @words = split(/\s+/,$_);
@@ -215,11 +276,19 @@ sub print_text {
 	print "\n";
 }
 
+sub exit_with_msg {
+	my ($self, $exit_code, @msg) = @_;
+
+	$self->print_text('[ERROR] ' . shift @msg) if (@msg);
+	$self->print_text(@msg);
+	exit $exit_code;
+}
+
 sub camel_to_underscore {
  my ($self, $name) = @_;
 	# Replace first capital by lowercase
 	# if followed my lowercase.
-	$name =~ s/^([A-Z])([a-z])/lc($1).$2/e;
+	$name =~ s/^([A-Z])([a-z])/lc($1).$2/ge;
 	# Substitute camelCase to camel_case
 	$name =~ s/([a-z])([A-Z])/$1.'_'.lc($2)/ge;
 	return lc $name;
@@ -288,6 +357,29 @@ sub get_local_ddg_version {
 sub get_local_app_duckpan_version {
 	my ( $self ) = @_;
 	return $self->perl->get_local_version('App::DuckPAN');
+}
+
+my %perl_versions = (
+    required    => Perl::Version->new('v5.14'),
+    recommended => Perl::Version->new('v5.16'),
+);
+
+sub verify_versions {
+	my ($self) = @_;
+
+	my $installed_version = Perl::Version->new($]);
+
+	if ($installed_version->vcmp($perl_versions{required}) < 0) {
+		print '[ERROR] perl ' . $perl_versions{required}->normal . ' or higher is required. ' . $installed_version->normal . " is installed.\n";
+		exit 1;
+	} elsif ($installed_version->vcmp($perl_versions{recommended}) < 0) {
+		print '[NOTICE] perl ' . $perl_versions{recommended}->normal . ' or higher is recommended. ' . $installed_version->normal . " is installed.\n";
+	}
+
+	exit 1 unless $self->check_app_duckpan;
+	exit 1 unless $self->check_ddg;
+
+	return;
 }
 
 sub check_app_duckpan {
@@ -361,15 +453,26 @@ sub checking_dukgo_user {
 	$response->code == 302 ? 1 : 0; # workaround, need something in dukgo
 }
 
+sub get_ia_type {
+	my ($self) = @_;
+
+	my $ia_type = first { -d $_->{dir} } @{$self->ia_types};
+
+	$self->exit_with_msg(-1, 'Must be run from the root of a checked-out Instant Answer repository.') unless ($ia_type);
+	$self->exit_with_msg(-1, "Sorry, DuckPAN does not support " . $ia_type->{name} . " yet!") if $ia_type->{supported} == 0;
+
+	return $ia_type;
+}
+
 sub BUILD {
 	my ( $self ) = @_;
 	if ($^O eq 'MSWin32') {
 		print "\n[ERROR] We dont support Win32\n\n";
 		exit 1;
 	}
-    my $env_config = file($self->cfg->config_path, 'env.ini');
-    if (-e $env_config) {
-        my $env = Config::INI::Reader->read_file(file($self->cfg->config_path, 'env.ini'));
+    my $env_config = path($self->cfg->config_path, 'env.ini');
+    if ($env_config->exists) {
+        my $env = Config::INI::Reader->read_file($env_config);
         map { $ENV{$_} = $env->{'_'}{$_}; } keys %{$env->{'_'}} if $env->{'_'};
     }
 }
@@ -386,7 +489,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 DuckPAN
 

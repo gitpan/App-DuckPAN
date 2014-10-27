@@ -3,9 +3,9 @@ BEGIN {
   $App::DuckPAN::CmdBase::Env::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Base class for ENV related functionality of duckpan (duckpan env and duckpan rm)
-$App::DuckPAN::CmdBase::Env::VERSION = '0.156';
+$App::DuckPAN::CmdBase::Env::VERSION = '0.157';
 use MooX qw( Options );
-use Path::Class;
+use Path::Tiny;
 use Config::INI;
 
 has env_ini => (
@@ -14,7 +14,7 @@ has env_ini => (
   builder => 1,
 );
 
-sub _build_env_ini { file(shift->app->cfg->config_path, 'env.ini') }
+sub _build_env_ini { path(shift->app->cfg->config_path, 'env.ini') }
 
 sub load_env_ini {
   my ( $self ) = @_;
@@ -88,7 +88,7 @@ App::DuckPAN::CmdBase::Env - Base class for ENV related functionality of duckpan
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

@@ -3,15 +3,14 @@ BEGIN {
   $App::DuckPAN::WebStatic::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan static
-$App::DuckPAN::WebStatic::VERSION = '0.156';
+$App::DuckPAN::WebStatic::VERSION = '0.157';
 use Moo;
-use IO::All -utf8;
 use HTTP::Request;
 use Plack::Request;
 use Plack::Response;
 use LWP::UserAgent;
 use URI::Escape;
-use Path::Class;
+use Path::Tiny;
 use JSON;
 
 has sites => ( is => 'ro', required => 1 );
@@ -34,9 +33,9 @@ sub BUILD {
 	for my $site (keys %{$self->sites}) {
 		my $port = $self->sites->{$site}->{port};
 		my $url = $self->sites->{$site}->{url};
-		my $data_file = file($site.'.json')->absolute;
-		die "Missing JSON publisher data file for ".$site unless -f $data_file;
-		my $data = decode_json(io($data_file)->slurp);
+		my $data_file = path($site.'.json');
+		die "Missing JSON publisher data file for ".$site unless $data_file->is_file;
+		my $data = decode_json($data_file->slurp_utf8);
 		my %urls;
 		for my $dir (keys %$data) {
 			next if $dir eq 'locales';
@@ -46,8 +45,7 @@ sub BUILD {
 					my $url = $data->{$dir}->{$filebase}->{$file}->{url};
 					my $locale = $data->{$dir}->{$filebase}->{$file}->{locale};
 					$urls{$url} = {} unless defined $urls{$url};
-					$urls{$url}->{$locale} = file($site,$dir,$file)->absolute->stringify;
-					#use DDP; p($data->{$dir}->{$filebase}->{$file}->{url});
+					$urls{$url}->{$locale} = path($site,$dir,$file)->absolute->stringify;
 				}
 			}
 		}
@@ -76,7 +74,7 @@ sub request {
 	my $site = $self->_ports->{$request->port};
 
 	if ($site->{urls}->{$request->request_uri}) {
-		$body = io($site->{urls}->{$request->request_uri}->{$locale})->slurp;
+		$body = path($site->{urls}->{$request->request_uri}->{$locale})->slurp_utf8;
 		$response->code("200");
 		$response->content_type('text/html');
 	} else {
@@ -111,7 +109,7 @@ App::DuckPAN::WebStatic - Webserver for duckpan static
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

@@ -2,8 +2,8 @@ package App::DuckPAN::Cmd::Query;
 BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
-# ABSTRACT: Command line tool for testing queries and see triggered plugins
-$App::DuckPAN::Cmd::Query::VERSION = '0.156';
+# ABSTRACT: Command line tool for testing queries and see triggered instant answers
+$App::DuckPAN::Cmd::Query::VERSION = '0.157';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
@@ -11,9 +11,7 @@ with qw( App::DuckPAN::Cmd );
 sub run {
 	my ( $self, @args ) = @_;
 
-	exit 1 unless $self->app->check_app_duckpan;
-	exit 1 unless $self->app->check_ddg;
-
+	$self->app->verify_versions;
 	my @blocks = @{$self->app->ddg->get_blocks_from_current_dir(@args)};
 
 	require App::DuckPAN::Query;
@@ -29,11 +27,11 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Query - Command line tool for testing queries and see triggered plugins
+App::DuckPAN::Cmd::Query - Command line tool for testing queries and see triggered instant answers
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

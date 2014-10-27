@@ -3,11 +3,12 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.156';
+$App::DuckPAN::Web::VERSION = '0.157';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
 use DDG::Test::Language;
+use Path::Tiny;
 use Plack::Request;
 use Plack::Response;
 use Plack::MIME;
@@ -15,7 +16,6 @@ use HTML::Entities;
 use HTML::TreeBuilder;
 use HTML::Element;
 use Data::Printer;
-use IO::All;
 use HTTP::Request;
 use LWP::UserAgent;
 use URI::Escape;
@@ -31,9 +31,11 @@ has page_locales => ( is => 'ro', required => 1 );
 has page_templates => ( is => 'ro', required => 1 );
 has server_hostname => ( is => 'ro', required => 0 );
 
+has _our_hostname => ( is => 'rw' );
 has _share_dir_hash => ( is => 'rw' );
 has _path_hash => ( is => 'rw' );
 has _rewrite_hash => ( is => 'rw' );
+has _query => ( is => 'rw' );
 
 has ua => (
 	is => 'ro',
@@ -68,13 +70,14 @@ sub BUILD {
 
 sub run_psgi {
 	my ( $self, $env ) = @_;
+	$self->_our_hostname($env->{HTTP_HOST}) unless $self->_our_hostname;
 	my $request = Plack::Request->new($env);
 	my $response = $self->request($request);
 	return $response->finalize;
 }
 
 my $has_common_js = 0;
-
+my $error;
 sub request {
 	my ( $self, $request ) = @_;
 	my $hostname = $self->server_hostname;
@@ -85,7 +88,8 @@ sub request {
 
 	if ($request->request_uri eq "/"){
 		$response->content_type("text/html");
-		$body = $self->page_root;
+		$body = $self->page_root unless $error;
+		$body = $self->_inject_error() and $error = "" if $error;
 	} elsif (@path_parts && $path_parts[0] eq 'share') {
 		my $filename = pop @path_parts;
 		my $share_dir = join('/',@path_parts);
@@ -102,14 +106,14 @@ sub request {
 			my $parent_name = $2;
 			my $common_js = $parent_dir."$parent_name.js";
 
-			$body = io($common_js)->slurp;
+			$body = path($common_js)->slurp_utf8;
 			warn "\nAppended $common_js to $filename\n\n";
 		}
 
 		my $filename_path = $self->_share_dir_hash->{$share_dir}->can('share')->($filename);
 		my $content_type = Plack::MIME->mime_type($filename);
 		$response->content_type($content_type);
-		$body .= -f $filename_path ? io($filename_path)->slurp : "";
+		$body .= -f $filename_path ? path($filename_path)->slurp_utf8 : "";
 
 	} elsif (@path_parts && $path_parts[0] eq 'js' && $path_parts[1] eq 'spice') {
 		for (keys %{$self->_path_hash}) {
@@ -169,7 +173,8 @@ sub request {
 						$response->content_type($res->content_type);
 					} else {
 						p($res->status_line, color => { string => 'red' });
-						$body = "";
+						$error = encode_entities($res->status_line);
+						$body = "window.location.replace('http://" . $self->_our_hostname . "/')";
 					}
 				}
 			}
@@ -193,6 +198,7 @@ sub request {
 		my $query = $request->param('q');
 		$query =~ s/^\s+|\s+$//g; # strip leading & trailing whitespace
 		Encode::_utf8_on($query);
+		$self->_query($query);
 		my $ddg_request = DDG::Request->new(
 			query_raw => $query,
 			location => test_location_by_env(),
@@ -225,21 +231,9 @@ sub request {
 
 		# Check for no results
 		if (!scalar(@results)) {
-
-			print "NO RESULTS\n";
-
-			$root = HTML::TreeBuilder->new;
-			$root->parse($self->page_root);
-			my $text_field = $root->look_down(
-				"name", "q"
-			);
-			$text_field->attr( value => $query );
-			$root->find_by_tag_name('body')->push_content(
-				HTML::TreeBuilder->new_from_content(
-					q(<script type="text/javascript">seterr('Sorry, no hit for your plugins')</script>)
-				)->guts
-			);
-			$page = $root->as_HTML;
+			$error = "Sorry, no hit for your instant answer";
+			p($error, color => { string => 'red' });
+			$page = $self->_inject_error();
 		}
 
 		# Iterate over results,
@@ -260,27 +254,22 @@ sub request {
 				&& $result->caller->can('module_share_dir')) {
 				# grab associated JS, Handlebars and CSS
 				# and add them to correct arrays for injection into page
-				my $io;
-				my @files;
-				my $share_dir = $result->caller->module_share_dir;
+				my $share_dir = path($result->caller->module_share_dir);
 				my @path = split(/\/+/, $share_dir);
 				my $ia_name = join("_", @path[2..$#path]);
 
-				$io = io($result->caller->module_share_dir);
-				push(@files, @$io);
-
-				foreach (@files){
-					if ($_->filename =~ /$ia_name\.js$/){
+				foreach ($share_dir->children) {
+					my $name = $_->basename;
+					if ($name =~ /$ia_name\.js$/){
 						push (@calls_script, $_);
 
-					} elsif ($_->filename =~ /$ia_name\.css$/){
+					} elsif ($name =~ /$ia_name\.css$/){
 						push (@calls_nrc, $_);
 
-					} elsif ($_->filename =~ /^.+handlebars$/){
-						my $template_name = $_->filename;
-						$template_name =~ s/\.handlebars//;
-						$calls_template{$ia_name}{$template_name}{"content"} = $_;
-						$calls_template{$ia_name}{$template_name}{"is_ct_self"} = $result->call_type eq 'self';
+					} elsif ($name =~ /handlebars$/){
+						$name =~ s/\.handlebars//;
+						$calls_template{$ia_name}{$name}{"content"} = $_;
+						$calls_template{$ia_name}{$name}{"is_ct_self"} = $result->call_type eq 'self';
 					}
 				}
 				push (@calls_nrj, $result->call_path) if ($result->can('call_path'));
@@ -374,14 +363,14 @@ sub request {
 				$calls_script .= join("",map {
 					my $template_name = $_;
 					my $is_ct_self = $calls_template{$spice_name}{$template_name}{"is_ct_self"};
-					my $template_content = $calls_template{$spice_name}{$template_name}{"content"}->slurp;
+					my $template_content = $calls_template{$spice_name}{$template_name}{"content"}->slurp_utf8;
 					"<script class='duckduckhack_spice_template' spice-name='$spice_name' template-name='$template_name' is-ct-self='$is_ct_self' type='text/plain'>$template_content</script>"
 
 				} keys %{ $calls_template{$spice_name} });
 			}
 		}
-
-		$page = $root->as_HTML;
+		
+		$error ? $error = "" :  $page = $root->as_HTML;
 
 		$page =~ s/####DUCKDUCKHACK-CALL-NRJ####/$calls_nrj/g;
 		$page =~ s/####DUCKDUCKHACK-CALL-NRC####/$calls_nrc/g;
@@ -405,7 +394,20 @@ sub request {
 	$response->body($body);
 	return $response;
 }
-
+sub _inject_error {
+	my $self = shift;
+	my $query = $self->_query;
+	my $root = HTML::TreeBuilder->new;
+	$root->parse($self->page_root);
+	my $text_field = $root->look_down(
+		"name", "q"
+	);
+	$text_field->attr( value => $query );
+	$root->find_by_tag_name('body')->push_content(
+		HTML::TreeBuilder->new_from_content("<script type=\"text/javascript\">seterr('$error')</script>")->guts
+	);
+	return $root->as_HTML;
+}
 1;
 
 __END__
@@ -418,7 +420,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

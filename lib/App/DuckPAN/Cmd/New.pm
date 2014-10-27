@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::New::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Take a name as input and generates a new, named Goodie or Spice instant answer skeleton
-$App::DuckPAN::Cmd::New::VERSION = '0.156';
+$App::DuckPAN::Cmd::New::VERSION = '0.157';
 # For Goodies:
 # 	- <name>.pm file is created in lib/DDG/Goodie
 #
@@ -14,106 +14,71 @@ $App::DuckPAN::Cmd::New::VERSION = '0.156';
 # 	- <name.handlebars> is created in /share/spice/<name>
 
 use Moo;
-use Data::Dumper;
 with qw( App::DuckPAN::Cmd );
 use Text::Xslate qw(mark_raw);
-use IO::All;
+use Path::Tiny;
+
 
 sub run {
-	my ( $self, @args ) = @_;
+	my ($self, @args) = @_;
+
+	# Check which IA repo we're in...
+	my $type = $self->app->get_ia_type();
 
 	# Instant Answer name as parameter
 	my $entered_name = (@args) ? join(' ', @args) : $self->app->get_reply('Please enter a name for your Instant Answer');
+	$self->app->exit_with_msg(-1, "Must supply a name for your Instant Answer.") unless $entered_name;
+	$entered_name =~ s/\//::/g;    #change "/" to "::" for easier handling
 	my $name = $self->app->phrase_to_camel($entered_name);
-	my $lc_name = $self->app->camel_to_underscore($name);
+	my ($package_name, $separated_name, $path, $lc_path) = ($name, $name, "", "");
+	$separated_name =~ s/::/ /g;
 
-	# %templates forms the spine data structure which is used
-	# as a guide to discovering content which is moved around
-	my %templates = (
-		goodie => {
-			lib_dir => "./lib/DDG/Goodie",
-			files => {
-				"./template/lib/DDG/Goodie/Example.pm" => "./lib/DDG/Goodie/$name.pm",
-				"./template/t/Example.t" => "./t/$name.t",
-			},
-		},
-
-		spice => {
-			lib_dir => "./lib/DDG/Spice",
-			share_dir => "./share/spice/$lc_name",
-			files => {
-				"./template/lib/DDG/Spice/Example.pm" => "./lib/DDG/Spice/$name.pm",
-				"./template/t/Example.t" => "./t/$name.t",
-				"./template/share/spice/example/example.handlebars" => "./share/spice/$lc_name/$lc_name.handlebars",
-				"./template/share/spice/example/example.js" => "./share/spice/$lc_name/$lc_name.js"
-			}
+	if ($entered_name =~ m/::/) {
+		my @path_parts = split(/::/, $entered_name);
+		if (scalar @path_parts > 1) {
+			$name    = pop @path_parts;
+			$path    = join("/", @path_parts);
+			$lc_path = join("/", map { $self->app->camel_to_underscore($_) } @path_parts);
+		} else {
+			$self->app->exit_with_msg(-1, "Malformed input. Please provide a properly formatted package name for your Instant Answer.");
 		}
+	}
+
+	my $lc_name     = $self->app->camel_to_underscore($name);
+	my $filepath    = ($path eq "") ? $name : "$path/$name";
+	my $lc_filepath = ($lc_path eq "") ? $lc_name : "$lc_path/$lc_name";
+	if (scalar $lc_path) {
+		$lc_path =~ s/\//_/g;    #safe to modify, we already used this in $lc_filepath
+		$lc_name = $lc_path . "_" . $lc_name;
+	}
+
+	$self->app->exit_with_msg(-1, "No templates exist for this IA Type: " . $type->{name}) if (!defined $type->{templates});
+
+	my %template_info = %{$type->{templates}};
+	my $tx            = Text::Xslate->new();
+	my %files         = (
+		test       => ["$filepath.t"],
+		code       => ["$filepath.pm"],
+		handlebars => [$lc_filepath, "$lc_name.handlebars"],
+		js         => [$lc_filepath, "$lc_name.js"]);
+	my %vars = (
+		ia_name           => $name,
+		ia_package_name   => $package_name,
+		ia_name_separated => $separated_name,
+		lia_name          => $lc_name,
+		ia_path           => $filepath
 	);
-
-	# Check if we're in a Goodie repository
-	if (-d $templates{'goodie'}{'lib_dir'}) {
-		
-		for my $filename (keys %{$templates{'goodie'}{'files'}}) {
-			my $dest = $templates{'goodie'}{'files'}{$filename};
-			if (-e $dest) {
-				$self->app->print_text("[ERROR] File already exists: $name $dest");
-				exit -1;
-			}
-			unless (-e $filename) {
-				$self->app->print_text("[ERROR] Template does not exist: $filename");
-				exit -1;
-			}
-		}
-
-		while (my ($source, $dest) = each(%{$templates{'goodie'}{'files'}})) {
-			my $tx = Text::Xslate->new();
-			my %vars = (ia_name => $name,	lia_name => $lc_name);
-			my $content = $tx->render($source, \%vars);
-			io($dest)->append($content);
-			$self->app->print_text("Created file: $dest");
-		}
-		$self->app->print_text("Successfully created Goodie: $name ");
+	foreach my $template_type (sort keys %template_info) {
+		my ($source, $dest) = ($template_info{$template_type}{in}, $template_info{$template_type}{out});
+		$self->app->exit_with_msg(-1, 'Template does not exist: ' . $source) unless ($source->exists);
+		# Update dest based on type:
+		$dest = $dest->child(@{$files{$template_type}});
+		$self->app->exit_with_msg(-1, 'File already exists: "' . $dest->basename . '" in ' . $dest->parent) if ($dest->exists);
+		my $content = $tx->render("$source", \%vars);
+		$dest->touchpath->append_utf8($content);    #create file path and append to file
+		$self->app->print_text("Created file: $dest");
 	}
-
-	# Check if we're in a Spice repository
-	elsif (-d $templates{'spice'}{'lib_dir'}) {
-
-		if (-d $templates{'spice'}{'share_dir'}) {
-			$self->app->print_text("[ERROR] Instant answer already exists: $name");
-			exit -1;
-		}	else {
-			for my $filename (keys %{$templates{'spice'}{'files'}}) {
-				my $dest = $templates{'spice'}{'files'}{$filename};
-				if (-e $dest) {
-					$self->app->print_text("[ERROR] File already exists: $name $dest");
-					exit -1;
-				}
-				unless (-e $filename) {
-					$self->app->print_text("[ERROR] Template does not exist: $filename");
-					exit -1;
-				}
-			}
-
-			mkdir $templates{'spice'}{'share_dir'};
-			while (my ($source, $dest) = each(%{$templates{'spice'}{'files'}})) {
-				my $tx = Text::Xslate->new();
-				my %vars = (ia_name => $name,
-					lia_name => $lc_name);
-				my $content = $tx->render($source, \%vars);
-
-				io($dest)->append($content);
-
-				$self->app->print_text("Created file: $dest");
-			}
-			$self->app->print_text("Successfully created Spice: $name");
-		}
-	}
-
-	# [TODO] Implement Fathead and Longtail templates
-
-	else {
-		$self->app->print_text("[ERROR] No lib/DDG/Goodie, lib/DDG/Spice, lib/DDG/Fathead or lib/DDG/Longtail found");
-	}
+	$self->app->print_text("Successfully created " . $type->{name} . ": $package_name");
 }
 
 1;
@@ -128,7 +93,7 @@ App::DuckPAN::Cmd::New - Take a name as input and generates a new, named Goodie 
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

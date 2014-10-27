@@ -3,15 +3,13 @@ BEGIN {
   $App::DuckPAN::WebPublisher::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan publisher
-$App::DuckPAN::WebPublisher::VERSION = '0.156';
+$App::DuckPAN::WebPublisher::VERSION = '0.157';
 use Moo;
 with qw( App::DuckPAN::HasApp );
 
-use IO::All -utf8;
 use HTTP::Request;
 use Plack::Request;
 use Plack::Response;
-use Path::Class;
 
 has sites => ( is => 'ro', required => 1 );
 
@@ -112,7 +110,7 @@ App::DuckPAN::WebPublisher - Webserver for duckpan publisher
 
 =head1 VERSION
 
-version 0.156
+version 0.157
 
 =head1 AUTHOR
 

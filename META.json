@@ -49,8 +49,7 @@
             "File::Which" : "1.09",
             "HTML::Parser" : "3.71",
             "HTML::TreeBuilder" : "0",
-            "IO::All" : "0",
-            "JSON" : "2.59",
+            "JSON" : "2.9",
             "LWP::Protocol::https" : "0",
             "LWP::Simple" : "6.00",
             "List::Util" : "0",
@@ -63,7 +62,8 @@
             "MooX::Options" : "3.71",
             "POE" : "1.354",
             "Parse::CPAN::Packages::Fast" : "0.04",
-            "Path::Class" : "0.26",
+            "Path::Tiny" : "0",
+            "Perl::Version" : "0",
             "Plack" : "1.0029",
             "Pod::Usage" : "1.63",
             "Starman" : "0",
@@ -97,7 +97,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.156",
+   "version" : "0.157",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"
