@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Starting up the web server to test instant answers
-$App::DuckPAN::Cmd::Server::VERSION = '0.159';
+$App::DuckPAN::Cmd::Server::VERSION = '0.160';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -155,8 +155,6 @@ sub run {
     print "\n\nStarting up webserver...";
     print "\n\nYou can stop the webserver with Ctrl-C";
     print "\n\n";
-
-    warn "\n\nMODIFIED DEVELOPMENT VERSION OF DUCKPAN\n\n";
 
     require App::DuckPAN::Web;
 
@@ -403,7 +401,7 @@ App::DuckPAN::Cmd::Server - Starting up the web server to test instant answers
 
 =head1 VERSION
 
-version 0.159
+version 0.160
 
 =head1 AUTHOR
 
