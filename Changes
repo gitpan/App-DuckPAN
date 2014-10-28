@@ -1,10 +1,38 @@
 ==================================================
-Changes from 1741-01-12 00:00:00 +0000 to present.
+Changes from 1741-01-13 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.158 at 2014-10-27 23:01:19 +0000
+version 0.159 at 2014-10-28 23:30:53 +0000
 ------------------------------------------
+
+  Change: 052756042a20cc37f4c417d1d91cbab87a4e2f96
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-28 19:29:09 +0000
+
+    Merge pull request #148 from duckduckgo/zaahir/utf8-fix
+
+    remove slurp_utf8 and spew_utf8 
+
+  Change: e03453a4330d633280a3a1bbb83177719e8fe902
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-28 19:27:47 +0000
+
+    remove slurp_utf8 and spew_utf8 
+
+  Change: 90995ea37bb18774e7704a4aecc65c621ebae8b6
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-28 19:26:59 +0000
+
+    Revert "remove slurp_utf8 and spew_utf8"
+
+    This reverts commit 3d58833493409f0a217042ae9a6209289f186554. 
+
+  Change: 3d58833493409f0a217042ae9a6209289f186554
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-28 19:26:51 +0000
+
+    remove slurp_utf8 and spew_utf8 
 
   Change: 9b88fa35e07fa32d925ec38a9b888627b31c4a5c
   Author: Zaahir Moolla <moollaza@fastmail.fm>
