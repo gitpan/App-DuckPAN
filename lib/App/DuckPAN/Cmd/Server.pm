@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Server::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Starting up the web server to test instant answers
-$App::DuckPAN::Cmd::Server::VERSION = '0.160';
+$App::DuckPAN::Cmd::Server::VERSION = '0.161';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -18,9 +18,10 @@ use Config::INI;
 use Data::Printer;
 use Data::Dumper;
 
-option no_cache => (
+option force => (
     is => 'ro',
     lazy => 1,
+    short => 'f',
     default => sub { 0 }
 );
 
@@ -74,9 +75,7 @@ sub run {
 
     # Ensure eveything is up do date, or exit.
     $self->app->verify_versions;
-    my $cache_path = path($self->app->cfg->cache_path);
-
-    $cache_path->mkpath unless $cache_path->exists;
+    my $cache_path = $self->app->cfg->cache_path;
 
     # This hash contains files which DuckPAN requests
     # and stores locally in its own cache
@@ -115,7 +114,7 @@ sub run {
 
     print "\n\nHostname is: http://".$self->hostname if $self->verbose;
     print "\n\nChecking for newest assets from: http://".$self->hostname."\n";
-    print "\n[CACHE DISABLED]. Forcing request for all assets...\n\n" if $self->verbose && $self->no_cache;
+    print "\n[CACHE DISABLED]. Forcing request for all assets...\n\n" if $self->verbose && $self->force;
 
     # First we bootstrap the cache, copying all files from /share (dist_dir) into the
     # cache. Then we get each file from given hostname (usually DuckDuckGo.com) and
@@ -244,7 +243,7 @@ sub change_html {
     my $has_dpanjs = 0;
     for (@script) {
         if (my $src = $_->attr('src')) {
-            next if ($src =~ m/^\/\?duckduckhack_/);    # Already updated, no need to do again
+            next if ($src =~ m/^\/\?duckduckhack_/); # Already updated, no need to do again
             if ($src =~ m/^\/(dpan\d+|duckpan_dev)\.js/) {
                 $_->attr('src','/?duckduckhack_js=1');
                 $has_dpanjs = 1;
@@ -334,17 +333,18 @@ sub get_sub_assets {
         }
     }
 
-    if ($self->no_cache) {
-        print "\nCaching turned off; assets will not be loaded.\n";
-    } else {
-        # Check if we need to request any new assets from hostname, otherwise use cached copies
-        foreach my $curr_asset ($self->page_js_files, $self->page_templates_files, @{$self->page_css_files_list}, $self->page_locales_files) {
-            my $file_name = $curr_asset->{internal};
-            if (path($self->app->cfg->cache_path, $file_name)->exists) {
-                print "\n$file_name already exists in cache -- no request made.\n" if $self->verbose;
-            } else {
-                $self->retrieve_and_cache($curr_asset, $from);
-            }
+    if ($self->force){
+        print "\nCache disable; Forcing request for every asset.\n";
+    }
+
+    # Check if we need to request any new assets from hostname, otherwise use cached copies
+    foreach my $curr_asset ($self->page_js_files, $self->page_templates_files, @{$self->page_css_files_list}, $self->page_locales_files) {
+        my $file_name = $curr_asset->{internal};
+
+        if (path($self->app->cfg->cache_path, $file_name)->exists && !$self->force) {
+            print "\n$file_name already exists in cache -- no request made.\n" if $self->verbose;
+        } else {
+            $self->retrieve_and_cache($curr_asset, $from);
         }
     }
 }
@@ -401,7 +401,7 @@ App::DuckPAN::Cmd::Server - Starting up the web server to test instant answers
 
 =head1 VERSION
 
-version 0.160
+version 0.161
 
 =head1 AUTHOR
 

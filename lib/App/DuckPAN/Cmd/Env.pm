@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Env::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Get or set ENV variables for instant answers
-$App::DuckPAN::Cmd::Env::VERSION = '0.160';
+$App::DuckPAN::Cmd::Env::VERSION = '0.161';
 use Moo;
 extends 'App::DuckPAN::CmdBase::Env';
 
@@ -40,7 +40,7 @@ App::DuckPAN::Cmd::Env - Get or set ENV variables for instant answers
 
 =head1 VERSION
 
-version 0.160
+version 0.161
 
 =head1 AUTHOR
 

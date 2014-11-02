@@ -1,10 +1,89 @@
 ==================================================
-Changes from 1741-01-13 00:00:00 +0000 to present.
+Changes from 1741-01-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.160 at 2014-10-28 23:45:00 +0000
+version 0.161 at 2014-11-02 02:59:31 +0000
 ------------------------------------------
+
+  Change: 1029bf779fdddf62f83062b97323443d1a5682bf
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:42:17 +0000
+
+    Merge pull request #155 from duckduckgo/mwm/config_updates
+
+    Config: make more reislient. 
+
+  Change: d5bb47838bb336067f472f0bf56bb9e78dd8ec21
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:16:08 +0000
+
+    App::DuckPAN: explictly import first from List::Util.
+
+    Without this it may work, but we don'thave any reason so expect it
+    will, nor that we'll be able to easily interpret the resulting
+    messages. 
+
+  Change: 0424c71f93b8f4e11ede0ea2e088f6e439ccfdd4
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 12:38:26 +0000
+
+    Config: use tiny paths even from ENV vars.
+
+    - Remove MooX::HasEnv. - Build Path::Tiny objects for the paths. 
+
+  Change: 81904d2854c2fbef3814ee876f614958db5ab400
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 07:14:59 +0000
+
+    dist.ini: update dependencies.
+
+    Add specific versions for all unversioned entries in dist.ini. Also,
+    remve List::Util as, it has been in core since before our minimum
+    required version.
+
+    The version numbers are derived from a working installation, namely
+    mine. 
+
+  Change: 6808cd7eb43625e108ad8d32843cb1032239f2b3
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-30 18:11:45 +0000
+
+    Merge pull request #149 from duckduckgo/zaahir/fix-no-cache
+
+    change --no-cache to --force, fix implementation 
+
+  Change: 12d1eb96b40e007987ccab7598a9ab4e7c2a55ac
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-10-29 22:30:53 +0000
+
+    pointless commit so Travis will run 
+
+  Change: 65c074fd756728df9915f9fef98cd33a335b7492
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-29 14:55:24 +0000
+
+    Merge pull request #150 from duckduckgo/mwm/test_ease
+
+    dist.init: remove Repository in favor of GitHubMeta 
+
+  Change: b6f707586de827e74b168ab0ceb7e2eba8350d3b
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-29 14:44:15 +0000
+
+    dist.ini: move from perl 5.10 -> 5.14 on Travis 
+
+  Change: ed1e58e1326a4ccd5085e273f2e0ed291af749a7
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-10-29 14:34:29 +0000
+
+    dist.init: remove Repository in favor of GitHubMeta 
+
+  Change: 77f45be4dfbde2043212153b5b01234f9120248f
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-10-28 20:26:05 +0000
+
+    change --no-cache to --force, fix implementation 
 
   Change: 31ac1a1eab95a898bdaca020909d72960808ae89
   Author: Zaahir Moolla <moollaza@fastmail.fm>

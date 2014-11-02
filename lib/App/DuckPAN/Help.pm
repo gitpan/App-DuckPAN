@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Contains the main help page
-$App::DuckPAN::Help::VERSION = '0.160';
+$App::DuckPAN::Help::VERSION = '0.161';
 use Moo;
 use Pod::Usage;
 
@@ -21,7 +21,7 @@ App::DuckPAN::Help - Contains the main help page
 
 =head1 VERSION
 
-version 0.160
+version 0.161
 
 =head1 AUTHOR
 
