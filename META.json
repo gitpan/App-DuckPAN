@@ -65,6 +65,7 @@
             "Plack" : "1.0029",
             "Pod::Usage" : "1.63",
             "Starman" : "0.4008",
+            "Term::ProgressBar" : "2.16",
             "Term::UI" : "0.30",
             "Text::Xslate" : "v3.0.0",
             "URI" : "1.60",
@@ -95,7 +96,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.161",
+   "version" : "0.162",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"
@@ -398,7 +399,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.161",
+                  "tag" : "0.162",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

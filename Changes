@@ -1,10 +1,133 @@
 ==================================================
-Changes from 1741-01-18 00:00:00 +0000 to present.
+Changes from 1741-01-19 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.161 at 2014-11-02 02:59:31 +0000
+version 0.162 at 2014-11-03 22:03:04 +0000
 ------------------------------------------
+
+  Change: 428d5a3c9460aa5c877a32f3b3025e3dfe0409aa
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 13:41:07 +0000
+
+    Merge pull request #152 from duckduckgo/mwm/missing_files
+
+    Server: caching improvements 
+
+  Change: 64baf7357e94c9ef1e36225f0efd57dde6e368b4
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 13:23:23 +0000
+
+    Remove old filenames from regex, switch around base and duckpan 
+
+  Change: 8dbc136ca1674ad469a7217cffa5f0d1c47775f7
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-02 10:48:42 +0000
+
+    Server: store assets on a per-host basis.
+
+    If you're changing the hostname, you're probably looking for
+    different assets.
+
+    Also, look for new gruny-style filenames which addresses #151. 
+
+  Change: 4d47a015a05188cb7fff5870b27d207574447367
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 23:18:20 +0000
+
+    Config: clean up path separation.
+
+    This straightens out the directory structure, while also expanding
+    the application of path(). 
+
+  Change: 7b3adca8388d60b94fc8508d052851e80d849046
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:51:44 +0000
+
+    Server: clean up output a bit.
+
+    Also:
+
+    - Remove now incorrect comment. - Simplify the external/dist logic a
+    bit. 
+
+  Change: bc607debdd8b979a6d00590efe7702bf39d949a6
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:51:44 +0000
+
+    Server: do not trust things external things in the dist-cache
+
+    Only copy over files without external soruces (notably duckpan.js, at
+    present)... everything else is either gotten fresh or cache-checked.
+
+    I don't even know how these managed to get distributed to me, but ah,
+    well. 
+
+  Change: e0a67f21421507f1664d93af76b945d363e36554
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:51:44 +0000
+
+    Server: still better caching information.
+
+    - Make it possible to recognize paritally downloaded files, exiting
+
+    and removing them from the cache. - Add Term::ProgressBar for
+    download tracking. - Replace die with exit_with_msg. - Update
+    exit_with_msg for better visual on multi-line messages. 
+
+  Change: cb803fad0d3ed184fed0922f314e784f07727177
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:51:44 +0000
+
+    Server: further streamline caching structure.
+
+    This allows for a much better experience when working on a slow link.
+
+    - Allow caching of everything (including perl module status and HTML
+
+    pages) for 4 hours, by default. - Provide an option to change the
+    cache lifetime (-c=0 is more or less
+
+    equivalent to -f) - Store un-changed files in cache, updating them
+    just before preparing
+
+    to serve. - Always read from cached file, which helps ensure they
+    will be
+
+    reusable, even when the force is on.
+
+    Still a problem: country.json 
+
+  Change: cfefaab22b19afcfd80b2147550c953f8e38e604
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:50:37 +0000
+
+    Server: further refactor cachefile handling.
+
+    This is still not _exactly_ what I want, but we're getting closer. 
+
+  Change: 88968e72938037b9f150d9b590b3a5ea3247d027
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:50:37 +0000
+
+    Server: clean up file cache loading somewhat.
+
+    This makes a more straight-forward path through the code to
+    understand what is happening.
+
+    Also more commenting on the files themselves, to make it easier to
+    review in-browser. 
+
+  Change: 21da700a4820e89e704c6fcc286bcd1a598399f6
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-01 22:50:37 +0000
+
+    Server: deal better with changing page structure.
+
+    This is still far too tied to a particular page layout, but it won't
+    die now.
+
+    Fixes #151. (With improvements to come) 
 
   Change: 1029bf779fdddf62f83062b97323443d1a5682bf
   Author: Matt Miller <mwmiller@outlook.com>

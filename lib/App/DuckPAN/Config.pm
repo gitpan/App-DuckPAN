@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Config::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Configuration class of the duckpan client
-$App::DuckPAN::Config::VERSION = '0.161';
+$App::DuckPAN::Config::VERSION = '0.162';
 use Moo;
 use File::HomeDir;
 use Path::Tiny;
@@ -30,7 +30,7 @@ sub _path_for {
 	my $which = shift;
 
 	my $from_env = $ENV{'DUCKPAN_' . uc $which . '_PATH'};
-	my $path = ($from_env) ? path($from_env) : path(File::HomeDir->my_home, '.duckpan');
+	my $path = ($from_env) ? path($from_env) : path(File::HomeDir->my_home, '.duckpan', lc $which);
 	$path->mkpath unless $path->exists;
 	return $path;
 }
@@ -58,7 +58,7 @@ App::DuckPAN::Config - Configuration class of the duckpan client
 
 =head1 VERSION
 
-version 0.161
+version 0.162
 
 =head1 AUTHOR
 

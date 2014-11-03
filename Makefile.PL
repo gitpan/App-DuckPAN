@@ -57,6 +57,7 @@ my %WriteMakefileArgs = (
     "Plack" => "1.0029",
     "Pod::Usage" => "1.63",
     "Starman" => "0.4008",
+    "Term::ProgressBar" => "2.16",
     "Term::UI" => "0.30",
     "Text::Xslate" => "3.0.0",
     "URI" => "1.60",
@@ -74,7 +75,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.161",
+  "VERSION" => "0.162",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -118,6 +119,7 @@ my %FallbackPrereqs = (
   "Plack" => "1.0029",
   "Pod::Usage" => "1.63",
   "Starman" => "0.4008",
+  "Term::ProgressBar" => "2.16",
   "Term::UI" => "0.30",
   "Test::LoadAllModules" => "0.021",
   "Test::More" => "0.98",

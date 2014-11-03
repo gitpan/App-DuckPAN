@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.161';
+$App::DuckPAN::VERSION = '0.162';
 
 use Moo;
 use MooX::Cmd;
@@ -280,7 +280,7 @@ sub print_text {
 sub exit_with_msg {
 	my ($self, $exit_code, @msg) = @_;
 
-	$self->print_text('[ERROR] ' . shift @msg) if (@msg);
+	$msg[0] = '[ERROR] ' . $msg[0] if (@msg);
 	$self->print_text(@msg);
 	exit $exit_code;
 }
@@ -471,7 +471,7 @@ sub BUILD {
 		print "\n[ERROR] We dont support Win32\n\n";
 		exit 1;
 	}
-    my $env_config = path($self->cfg->config_path, 'env.ini');
+    my $env_config = $self->cfg->config_path->child('env.ini');
     if ($env_config->exists) {
         my $env = Config::INI::Reader->read_file($env_config);
         map { $ENV{$_} = $env->{'_'}{$_}; } keys %{$env->{'_'}} if $env->{'_'};
@@ -490,7 +490,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.161
+version 0.162
 
 =head1 DuckPAN
 

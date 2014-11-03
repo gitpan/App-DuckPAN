@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Command line tool for testing queries and see triggered instant answers
-$App::DuckPAN::Cmd::Query::VERSION = '0.161';
+$App::DuckPAN::Cmd::Query::VERSION = '0.162';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
@@ -31,7 +31,7 @@ App::DuckPAN::Cmd::Query - Command line tool for testing queries and see trigger
 
 =head1 VERSION
 
-version 0.161
+version 0.162
 
 =head1 AUTHOR
 

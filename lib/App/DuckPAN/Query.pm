@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Main application/loop for duckpan query
-$App::DuckPAN::Query::VERSION = '0.161';
+$App::DuckPAN::Query::VERSION = '0.162';
 use Moo;
 
 my $query;
@@ -24,7 +24,7 @@ sub run {
 	require DDG::Test::Language;
 	DDG::Test::Language->import;
 
-	$history_path = $app->cfg->cache_path."/query_history";
+	$history_path = $app->cfg->cache_path->child("query_history");
 
 	print "\n(Empty query for ending test)\n";
 	while (1) {
@@ -115,7 +115,7 @@ App::DuckPAN::Query - Main application/loop for duckpan query
 
 =head1 VERSION
 
-version 0.161
+version 0.162
 
 =head1 AUTHOR
 
