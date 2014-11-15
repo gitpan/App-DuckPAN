@@ -1,10 +1,558 @@
 ==================================================
-Changes from 1741-01-19 00:00:00 +0000 to present.
+Changes from 1741-01-31 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.162 at 2014-11-03 22:03:04 +0000
+version 0.163 at 2014-11-15 16:26:22 +0000
 ------------------------------------------
+
+  Change: 381e2d62a3cf71ace3f61e0a8a008c13e3c5276a
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-13 13:46:32 +0000
+
+    Merge pull request #170 from duckduckgo/zaahir/pod2usage-improvements
+
+    DuckPAN Help and pod2usage Improvements 
+
+  Change: 77c7d429e302ab68ba59e17ff32b6a68b07a1f87
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:31:45 +0000
+
+    Update tests to match new outut 
+
+  Change: fda1f01af02fac72ce5930baf5abe5d49a39cc2e
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:31:45 +0000
+
+    Update Help to output SYNOPSIS only for duckpan w/o args 
+
+  Change: 3463c3be29ff97c7fb24c8483eaad2dbca44257e
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:31:45 +0000
+
+    Big reformat of POD, closer to true POD syntax 
+
+  Change: 3a1c3964165a85c506fe53a6fee08fa5dec95e92
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:31:45 +0000
+
+    Convert tabs to spaces 
+
+  Change: 4cf8ee01b8f9347c892c8f72c885e70b56999f94
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:14:58 +0000
+
+    Update tests to match new Help text 
+
+  Change: 9f5df9a0692d6f5a613a3c155d2ac8a9474ec628
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:14:58 +0000
+
+    lots of updated, not working as expected 
+
+  Change: 2cf2d7c1e88dd3de53f82a53b65af822cf1bed7c
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:13:28 +0000
+
+    Update tests to make sure duckpan and duckpan help work 
+
+  Change: c588db948cf269703448aef413a5ed85496d5f2e
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:13:03 +0000
+
+    Make sure DuckPAN w/o arguments show Help info 
+
+  Change: 75fd8695a42ba7ad86ff7c8992e7b0f6da4bb3cd
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-13 13:13:03 +0000
+
+    Fixed POD formatting, output currently broken 
+
+  Change: 31221de01d3cbf942e05fef2a1e37db13f256152
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-12 09:37:10 +0000
+
+    Merge pull request #164 from duckduckgo/mwm/verbosity
+
+    Improve Output 
+
+  Change: 4ceb4eb7b39ccc600acd973e82acec5eb389bade
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-11 16:54:23 +0000
+
+    Merge pull request #168 from killerfish/addhelpcmd
+
+    Added help command for duckpan 
+
+  Change: 080dad6009f0c549002c99223f7cf692fd365efc
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-11-12 00:43:38 +0000
+
+    added help command 
+
+  Change: 0555ce579a73c6cc89dd9afc187f5e9a977f5ed4
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-11 11:25:35 +0000
+
+    Merge pull request #165 from killerfish/docupdate
+
+    Updated docs for env path 
+
+  Change: 36933bd5fbcbc7a3571d581354f4369e5f0a290c
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-11-11 14:47:10 +0000
+
+    update env path 
+
+  Change: 0128975fb30500eb7de4a5012e1be6ce3fae169a
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-11-11 14:45:44 +0000
+
+    update env path 
+
+  Change: 1eae4b2b3acdb9968e39780a28e690237fbd77b0
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-10 17:29:14 +0000
+
+    DuckPAN: improve check_requirements.
+
+    This makes it just exit on its own when requirements checking fails.
+
+    Also, improve both message text and "emission levels."
+
+    Also removes verify_versions which was not well-integrated. This
+    involves extra checking on git and SSH which didn't happen to much
+    before, but is fairly cheap in the grand scheme of things. 
+
+  Change: c87d99f4ca041eb60bd5eaaba43d8c0399209b39
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-10 13:35:55 +0000
+
+    Server: include file info prefix on errors.
+
+    If you're not in verbose mode these messages won't make any sense,
+    otherwise. 
+
+  Change: a6033af51b634ee7fb1ebc92ceb9d354f4cf688c
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-10 13:21:08 +0000
+
+    DuckPAN: bold all prefix lines, NOTE -> NOTICE
+
+    The intention is to have them stand out a bit, so this should help.
+    In the old case, it could blend in with the output if the user
+    happens to be using a chosen color as their base color, since there
+    aren't any obvious prefixes on the standard output. If people run
+    with bold all the time, they deserve what they get.
+
+    I dunno why I like NOTICE better, but I somehow do. This means
+    expanding the prefix_width.. which might be moot now that we don't
+    always prefix. 
+
+  Change: bcb084170e874ceafd29efb96ea081b295cd87c1
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-10 13:10:02 +0000
+
+    Server: left-align ProgressBar.
+
+    Already seeing the problems with something which doesn't go through
+    the `emit` process. It's still helpful, but it requires extra
+    maintenance effort when the assumptions change. 
+
+  Change: 169a56235003a3b20ffa84d75fadee5034934a43
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-10 13:04:37 +0000
+
+    DuckPAN: move prefix-appending into `_print_msg`
+
+    This may (or may not) make it easier to do more interesting things
+    with the various kinds of output. 
+
+  Change: e5b20f3014c13264f1a1373177d23583941e5844
+  Author: Zaahir Moolla <moollaza@duckduckgo.com>
+  Date : 2014-11-09 18:30:59 +0000
+
+    remove colour and prefix from standard and verbose output 
+
+  Change: 750a4f4b3cc1b85603742c4e6532387fc6c1a5d7
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-09 17:44:18 +0000
+
+    Merge pull request #162 from duckduckgo/mwm/faster_duckpan
+
+    DuckPAN: store and parse module list once. 
+
+  Change: 957323231c548090b9fb44c18133307530970c8c
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-08 17:07:43 +0000
+
+    DuckPAN: rearrange outputting, again.
+
+    - Organize into 'emit_<msg_type>' - Prefix pretty much everything. -
+    Add fixed-width prefix-maker 
+
+  Change: 58a08bb0b7a6770c3169730a6b6e9a605e971d8e
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 19:27:45 +0000
+
+    DuckPAN: add colored prefixes.
+
+    This isn't too distracting, but maybe adds some value. Also, not
+    expected to be the final version. 
+
+  Change: 8edd36707b1a93c63c0ffca4097a8316b97872aa
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 19:20:33 +0000
+
+    DuckPAN: use _print_msg internally.
+
+    This fixes a bug with exit_with_msg.. as well as preparing for the
+    future goodness.
+
+    Also, a mis-aligned exit code for the unknown command path. 
+
+  Change: 344f059634560b7cbd52251348e41e707e2de21e
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 18:31:56 +0000
+
+    DuckPAN: improve switch documentation 
+
+  Change: d6bf6a67d9dccbaf67b300d5be234e53cd436ea6
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 18:29:30 +0000
+
+    DuckPAN: improve exit_with_msg for good and bad exits.
+
+    There's no point in yapping about a FATAL ERROR when the exit is 0.
+    Also, if it IS an error send it to STDERR. 
+
+  Change: 4602bdb1c9b59ec80b14bd8caaff36e56fea6f06
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 12:19:29 +0000
+
+    Covert DOS to UNIX line-endings.
+
+    I have enough trouble with the mixed tabs and spaces; I don't need
+    this hassle, too. 
+
+  Change: c58c3da612a7a7a1d202c7a3ee11f3f81faeac1b
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 12:17:38 +0000
+
+    DuckPAN: update some message outputs.
+
+    Having run this, I saw some places where the messages are less
+    appealing, now that each line ends. This is fixing up some of that. 
+
+  Change: 5036ef99e776d0bccf93549eb9596e462c760f0a
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 12:03:30 +0000
+
+    DuckPAN: prepend log level on each line.
+
+    With the word splitter gone we can better format these messages such
+    that if they span several lines, they look "blocky" enough to
+    logically group. 
+
+  Change: c110cd8d66f7e41402e90238d04876ce8fb30d69
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 12:03:30 +0000
+
+    DuckPAN: drop line splitting.
+
+    It's a lot of wasted cycles in 2014 to do this kind of thing. If
+    someone cares, they probably have a terminal setting to do it. If
+    they don't, the cycles are even more wasted.
+
+    Includes some message review work as well, in an attempt to make sure
+    this isn't insane. 
+
+  Change: 42de57dfecb2f0a0e14174916c46ff57267de025
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:02 +0000
+
+    Direct Data::Printer output to msg mechanisms.
+
+    This way the info gets caputred in the same ways. 
+
+  Change: 125a0204e6afff04ec8d9bc09f0c40d6a1392f7d
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:02 +0000
+
+    DDG: turn per-class loads into verbose messages.
+
+    It all scrolls by so quickly that it is unlikey to help. It's mostly
+    the unable to load messages which are of interest. Those also become
+    warnings herein. 
+
+  Change: 487f3d1ee3784d9ab9d176eaccc360e2e334d8c2
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:02 +0000
+
+    App::DuckPAN: add warning_msg and error_msg.
+
+    Still more abstracting of the output such that we can potentially do
+    interesting things with it later
+
+    Also: - Move meat of show_msg into _print_msg with filehandle
+    passing. - Put error_msg on to STDERR via the above facility. -
+    Minorly refactor _print_msg for slightly tighter output and better
+
+    comprehensibility. 
+
+  Change: 9cf74984ad6faebe33a44272b8b9b1aa767f9509
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:01 +0000
+
+    Replace print with show_msg.
+
+    We want a consistent way of outputting messages, so all of the print
+    statements with access to the App are converted to use its
+    outputters. 
+
+  Change: c5632933684b167eb14a705f292ae5cad6e1e2d5
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:01 +0000
+
+    DuckPAN: switch print_text to show_msg.
+
+    This creates a more consistent API and is easier to think about in a
+    general way.
+
+    `exit_with_msg` stays as it is, because an extra argument is required
+    which should be slightly more obvious with the naming difference. 
+
+  Change: 2143d753e95fc3ac20ed6caa2d10c2904363e876
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:01 +0000
+
+    App::DuckPAN: add and use verbose message.
+
+    We abviously aren't _overly_ concerned about speed, so the early
+    return guard there is mostly in case we decide we want to mutate the
+    output or something else fancy inside `verbose_msg` 
+
+  Change: da50bc836cf09c2c8ed1abb0d6565ee30a29b216
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:33:01 +0000
+
+    App::DuckPAN: move verbose option to App level.
+
+    There's no particular reason why verbosity should be set on only the
+    server command level. If we move it here, we can better unify logging
+    and create a more consistent interface.
+
+    This is a breaking change for scripts which expect the other
+    ordering, but it will really improve things. So let's do it now,
+    early in product up-take. 
+
+  Change: 3206aa668fabe1ea0675200860aa43e2558e803c
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:10:42 +0000
+
+    DuckPAN: use a more reasonable terminal width for `print_text`.
+
+    If we can figure out their width, we might as well use it so we get a
+    nicer output.
+
+    I don't feel comfortable writing cross-platform code to determine
+    when the width may have changed, so I'll leave that for smarter
+    people. 
+
+  Change: a6007cfb8e49e021c76211611181a5cec83d86cc
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:10:42 +0000
+
+    Perl: allow pinning for uninstalled packages.
+
+    We've always required that we have a local version against which we
+    compare. But if it's not installed at all, we'd miss the comparisons
+    with the pinned version. So, let's give it a value against which to
+    compare.
+
+    Hopefully that value is silly enough. 
+
+  Change: 46f4dde9b515007081b8b48d6a64fa8bca5d1270
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:10:42 +0000
+
+    Perl: make pinned versions work.
+
+    We don't have access to an export which allows us to find previous
+    distributions, but we can assert a bunch of shaky premises and try to
+    find it anyway. 
+
+  Change: 09ab54d928b35dd25d0ecdee9062cd2a687d48b8
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:10:42 +0000
+
+    Perl: simplify module version checking.
+
+    This makes things slightly easier to follow for the next person. I
+    suspect I'll be back here soon and I like my sanity. 
+
+  Change: a38a01c082090b5af85ec1d14742e8269fe94ff7
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:10:42 +0000
+
+    DuckPAN: make reinstall do reinstall.
+
+    force is much more dangerous, ignoring test results and the whole
+    ordeal. This should reinstall if it's possible. 
+
+  Change: 4895b6d692743c4cccc3802266dccdc57c8c96af
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-07 11:10:42 +0000
+
+    DuckPAN: store and parse module list once.
+
+    Rather than redownloading a couple (or more) times in a row and
+    re-parsing, just parse it once per run.
+
+    - Eliminates duckpan_packages as an option, but that seemed silly. -
+    File is mirrored instead of gotten and stored, may make things very
+
+    slightly faster on slow connections. - File is parsed just once per
+    application run. 
+
+  Change: 3b4b3446d784d5d8abbb3bb2590bb255b9753f0c
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-05 16:32:29 +0000
+
+    Merge pull request #157 from mwmiller/inclusiveness
+
+    duckpan: fail on missing include directory. 
+
+  Change: 752f8af8822dcb2c0d606d38bef10e43c7059230
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-05 07:53:48 +0000
+
+    Merge pull request #161 from duckduckgo/zaahir/calm-down-duckpan
+
+    Don't be so quick to throw the manpage in my face 
+
+  Change: e7099c780f0d8c14deb7eaaa4056e5829d3bab06
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-05 07:14:51 +0000
+
+    DuckPAN: dead code elimination.
+
+    Remove a line which could never be hit. 
+
+  Change: 666b2e09e6a0b24177312b9a2f4406c5b232e32e
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-04 16:17:35 +0000
+
+    Small update to phrasing 
+
+  Change: 6ec9a319902763d218ade2b815c6a6f255fddb24
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-04 16:16:28 +0000
+
+    Add a period to error message 
+
+  Change: 106f9cc916f910726643388911a02eced92ef939
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-04 16:06:19 +0000
+
+    Don't be so quick to throw the manpage in my face
+
+    This has bugged me for a long time... 
+
+  Change: e767ebf44070dd707978243022cdac9bc8d8e37c
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-04 10:59:11 +0000
+
+    bin/duckpan: give them the absolute path, if we can't get realpath
+
+    I still think the realpath is more useful, but if throws an
+    exception, just go with absolute.
+
+    The absolute is not in a `catch` block, because we lose our `$_`. If
+    this was any more complex I would write it a different way.
+
+    Also, split out into to sub-tests. 
+
+  Change: 768b50556465d3e01841f0e8800ddb1970c040be
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-04 10:59:11 +0000
+
+    duckpan: fail on missing include directory.
+
+    Using realpath instead of user-entered string, in order to possibly
+    help them spot the problem.
+
+    Addresses #156. 
+
+  Change: 6dbec9e75a6c221577b5858fdd6852b5905c42d5
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-04 10:51:34 +0000
+
+    Merge pull request #159 from duckduckgo/zaahir/duckpan-empty
+
+    Added empty command, updated and reorganize docs 
+
+  Change: 83b514cb3169c6b8ae2a42723a8df009639e5664
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-04 10:35:17 +0000
+
+    bin/duckpan: minor documentation fixes.
+
+    - Remove an errant : - Document server cachesec 
+
+  Change: a07be8d3c9135d1bae38fbcd71d3d4f3044c1330
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:46:57 +0000
+
+    slight phrasing change 
+
+  Change: 055431c3d5ff7ed8e3e1e3494f0d1b8d89c6416f
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:39:55 +0000
+
+    add duckduckgo to list of releasable repos 
+
+  Change: 1e562d59e9726beecca9f170392af5421d09ee14
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:37:53 +0000
+
+    add missing periods 
+
+  Change: b4adb33690ab216352b8413ebc107884da6e3041
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:30:12 +0000
+
+    a few more updates 
+
+  Change: 3c129b18634b042e48a9a2c23ed18e2125a66e83
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:26:19 +0000
+
+    whoops, fix numbered list 
+
+  Change: 8d1f8fe951fc4967e981571d47073dd01b20af0f
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:24:00 +0000
+
+    Updated index 
+
+  Change: 242ee36cfaf3b08b9bec2fb23691d92dfd1db2cd
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:21:18 +0000
+
+    better bolding of Codio option 
+
+  Change: 7acf16dce5ee2e0f01b40e804ace20a9c296bcb3
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:19:06 +0000
+
+    More updated and a few typo fixes 
+
+  Change: f16ca0d063682485eabf939d2e6e505d21e8832a
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-03 16:12:46 +0000
+
+    Added empty commany, updated and reorganize docs 
 
   Change: 428d5a3c9460aa5c877a32f3b3025e3dfe0409aa
   Author: Zaahir Moolla <moollaza@fastmail.fm>

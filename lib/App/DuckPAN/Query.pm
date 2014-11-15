@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Main application/loop for duckpan query
-$App::DuckPAN::Query::VERSION = '0.162';
+$App::DuckPAN::Query::VERSION = '0.163';
 use Moo;
 
 my $query;
@@ -26,9 +26,9 @@ sub run {
 
 	$history_path = $app->cfg->cache_path->child("query_history");
 
-	print "\n(Empty query for ending test)\n";
+	$app->emit_info('(Empty query for ending test)');
 	while (1) {
-		
+
 		POE::Session->create(
 	      inline_states=> {
 	        _start => \&setup_console,
@@ -39,7 +39,7 @@ sub run {
 	    POE::Kernel->run();
 
 	    last unless $query;
-		
+
 		eval {
 			my $request = DDG::Request->new(
 				query_raw => $query,
@@ -50,31 +50,24 @@ sub run {
 			for my $b (@blocks) {
 				for ($b->request($request)) {
 					$hit = 1;
-					print "\n";
-					p($_);
-					print "\n";
+					$app->emit_info('---', p($_, colored => 1), '---');
 				}
 			}
 			unless ($hit) {
-				print "\nSorry, no hit on your instant answer\n\n";
+				$app->emit_info("Sorry, no hit on your instant answer")
 			}
 		};
 		if ($@) {
 			my $error = $@;
 			if ($error =~ m/Malformed UTF-8 character/) {
-				print "\n[WARNING] You got a malformed utf8 error message, which normally means\n";
-				print "that you try to entered a special character on the query prompt, but your\n";
-				print "interface is not properly configured for utf8. Please check out the\n";
-				print "documentation of your terminal, ssh client or whatever client you use\n";
-				print "to access the shell of this system\n\n";
-				print "Here the original error message:\n\n";
-			} else {
-				print "\nCaught error:\n\n";
+				$app->emit_info(
+					"You got a malformed utf8 error message, which normally means that you try to entered a special character on the query prompt, but your interface is not properly configured for utf8. Please check out the documentation of your terminal, ssh client or whatever client you use to access the shell of this system"
+				);
 			}
-			print $error."\n";
+			$app->emit_info("Caught error:", $error);
 		}
 	}
-	print "\n\n\\_o< Thanks for testing!\n\n";
+	$app->emit_info("\\_o< Thanks for testing!");
 	return 0;
 }
 
@@ -115,7 +108,7 @@ App::DuckPAN::Query - Main application/loop for duckpan query
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

@@ -1,20 +1,17 @@
-package App::DuckPAN::Cmd::Check;
+package App::DuckPAN::Cmd::Empty;
 BEGIN {
-  $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Cmd::Empty::AUTHORITY = 'cpan:DDG';
 }
-# ABSTRACT: Command for checking the requirements
-$App::DuckPAN::Cmd::Check::VERSION = '0.163';
+# ABSTRACT: Install the distribution in current directory
+$App::DuckPAN::Cmd::Empty::VERSION = '0.163';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
 use MooX::Options protect_argv => 0;
 
 sub run {
-	my ($self) = @_;
-
-	$self->app->check_requirements; # Exits on missing requirements.
-	$self->app->emit_info("EVERYTHING OK! You can now go hacking! :)");
-	exit 0;
+	my ( $self, @args ) = @_;
+	$self->app->empty_cache();
 }
 
 1;
@@ -25,7 +22,7 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Cmd::Check - Command for checking the requirements
+App::DuckPAN::Cmd::Empty - Install the distribution in current directory
 
 =head1 VERSION
 

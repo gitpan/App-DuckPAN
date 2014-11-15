@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Release::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Release the distribution of the current directory
-$App::DuckPAN::Cmd::Release::VERSION = '0.162';
+$App::DuckPAN::Cmd::Release::VERSION = '0.163';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
@@ -13,8 +13,7 @@ sub run {
 
     my $ret = system('dzil release');
 
-    print STDERR '[ERROR] Could not begin release. Is Dist::Zilla installed?'
-      if $ret == -1;
+    $self->app->error_msg('Could not begin release. Is Dist::Zilla installed?') if $ret == -1;
 
     return $ret;
 }
@@ -31,7 +30,7 @@ App::DuckPAN::Cmd::Release - Release the distribution of the current directory
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

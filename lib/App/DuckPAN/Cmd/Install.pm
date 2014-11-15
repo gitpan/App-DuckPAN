@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Install::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Install the distribution in current directory
-$App::DuckPAN::Cmd::Install::VERSION = '0.162';
+$App::DuckPAN::Cmd::Install::VERSION = '0.163';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -13,15 +13,11 @@ sub run {
 	my ( $self, @args ) = @_;
 
 	if (-f 'dist.ini') {
-		$self->app->print_text(
-			"Found a dist.ini, suggesting a Dist::Zilla distribution",
-		);
+		$self->app->emit_info("Found a dist.ini, suggesting a Dist::Zilla distribution");
 
 		$self->app->perl->cpanminus_install_error
 			if (system("dzil install --install-command 'cpanm .'"));
-		$self->app->print_text(
-			"Everything fine!",
-		);
+		$self->app->emit_info("Everything fine!");
 	}
 
 }
@@ -38,7 +34,7 @@ App::DuckPAN::Cmd::Install - Install the distribution in current directory
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

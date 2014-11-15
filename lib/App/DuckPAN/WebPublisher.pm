@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::WebPublisher::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan publisher
-$App::DuckPAN::WebPublisher::VERSION = '0.162';
+$App::DuckPAN::WebPublisher::VERSION = '0.163';
 use Moo;
 with qw( App::DuckPAN::HasApp );
 
@@ -74,7 +74,7 @@ sub request {
 	my $file = $uri.'/'.$self->current_language.'.html';
 
 	if (defined $site->fullpath_files->{$file}) {
-		print 'Request '.$request->path_info.' uses '.$file.' from DDG::Publisher...'."\n";
+		$self->app->emit_info('Request '.$request->path_info.' uses '.$file.' from DDG::Publisher...');
 		$body = $site->fullpath_files->{$file}->uncached_content;
 		$response->code("200");
 		$response->content_type('text/html');
@@ -110,7 +110,7 @@ App::DuckPAN::WebPublisher - Webserver for duckpan publisher
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

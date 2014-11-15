@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Test::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Command for running the tests of this library
-$App::DuckPAN::Cmd::Test::VERSION = '0.162';
+$App::DuckPAN::Cmd::Test::VERSION = '0.163';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
@@ -15,10 +15,9 @@ sub run {
 
     if (-e 'dist.ini') {
       $ret = system('dzil test');
-      print STDERR '[ERROR] Could not begin testing. Is Dist::Zilla installed?'
-        if $ret == -1;
+      $self->app->emit_error('Could not begin testing. Is Dist::Zilla installed?') if $ret == -1;
     } else {
-      print STDERR "[WARNING] Could not find dist.ini.\n";
+      $self->app->emit_notice("Could not find dist.ini.");
       $ret = system('prove -Ilib');
     }
 
@@ -37,7 +36,7 @@ App::DuckPAN::Cmd::Test - Command for running the tests of this library
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

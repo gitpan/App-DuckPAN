@@ -3,20 +3,19 @@ BEGIN {
   $App::DuckPAN::Cmd::Query::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Command line tool for testing queries and see triggered instant answers
-$App::DuckPAN::Cmd::Query::VERSION = '0.162';
+$App::DuckPAN::Cmd::Query::VERSION = '0.163';
 use MooX;
 use MooX::Options protect_argv => 0;
 with qw( App::DuckPAN::Cmd );
 
 sub run {
-	my ( $self, @args ) = @_;
+	my ($self, @args) = @_;
 
-	$self->app->verify_versions;
+	$self->app->check_requirements;    # Will exit if missing
 	my @blocks = @{$self->app->ddg->get_blocks_from_current_dir(@args)};
 
 	require App::DuckPAN::Query;
 	exit App::DuckPAN::Query->run($self->app, @blocks);
-
 }
 
 1;
@@ -31,7 +30,7 @@ App::DuckPAN::Cmd::Query - Command line tool for testing queries and see trigger
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

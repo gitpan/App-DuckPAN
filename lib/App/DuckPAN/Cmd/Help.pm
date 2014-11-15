@@ -1,13 +1,20 @@
-package App::DuckPAN::Help;
+package App::DuckPAN::Cmd::Help;
 BEGIN {
-  $App::DuckPAN::Help::AUTHORITY = 'cpan:DDG';
+  $App::DuckPAN::Cmd::Help::AUTHORITY = 'cpan:DDG';
 }
-# ABSTRACT: Contains the main help page
-$App::DuckPAN::Help::VERSION = '0.162';
+# ABSTRACT: Launch help page
+$App::DuckPAN::Cmd::Help::VERSION = '0.163';
 use Moo;
-use Pod::Usage;
+with qw( App::DuckPAN::Cmd );
+use Pod::Usage qw(pod2usage);
 
-sub help { pod2usage(verbose => 2); }
+sub run {
+	my ($self, $short_output) = @_;
+
+
+	pod2usage(-verbose => 2) unless $short_output;
+	pod2usage(-verbose => 1);
+}
 
 1;
 
@@ -17,11 +24,11 @@ __END__
 
 =head1 NAME
 
-App::DuckPAN::Help - Contains the main help page
+App::DuckPAN::Cmd::Help - Launch help page
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Publisher::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Starting up the publisher test webserver
-$App::DuckPAN::Cmd::Publisher::VERSION = '0.162';
+$App::DuckPAN::Cmd::Publisher::VERSION = '0.163';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -23,14 +23,12 @@ for (qw( duckduckgo dontbubbleus donttrackus whatisdnt fixtracking duckduckhack 
 sub run {
 	my ( $self, @args ) = @_;
 
-	print "\n\nChecking for Publisher...\n";
+	$self->app->emit_info("Checking for Publisher...");
 
-	my $publisher_pm = path('lib','DDG','Publisher.pm')->absolute;
-	die "You must be in the root of the duckduckgo-publisher repository" unless -f $publisher_pm;
+	my $publisher_pm = path('lib','DDG','Publisher.pm');
+	$self->add->emit_and_exit(1, "You must be in the root of the duckduckgo-publisher repository") unless $publisher_pm->exists;
 
-	print "\n\nStarting up publisher webserver...";
-	print "\n\nYou can stop the webserver with Ctrl-C";
-	print "\n\n";
+	$self->app->emit_info("Starting up publisher webserver...", "You can stop the webserver with Ctrl-C");
 
 	my %sites = (
 		duckduckgo => {
@@ -44,7 +42,7 @@ sub run {
 		donttrackus => {
 			port => 5002,
 			url => $self->has_donttrackus ? $self->donttrackus : "http://donttrack.us/",
-		},	
+		},
 		whatisdnt => {
 			port => 5003,
 			url => $self->has_whatisdnt ? $self->whatisdnt : "http://whatisdnt.com/",
@@ -60,17 +58,15 @@ sub run {
 	);
 
 	for (sort { $sites{$a}->{port} <=> $sites{$b}->{port} } keys %sites) {
-		print "Serving on port ".$sites{$_}->{port}.": ".$sites{$_}->{url}."\n";
+		$self->app->emit_info("Serving on port ".$sites{$_}->{port}.": ".$sites{$_}->{url});
 	}
-
-	print "\n\n";
 
 	require App::DuckPAN::WebPublisher;
 	my $web = App::DuckPAN::WebPublisher->new(
 		app => $self->app,
 		sites => \%sites,
 	);
-	my @ports = map { $sites{$_}->{port} } keys %sites; 
+	my @ports = map { $sites{$_}->{port} } keys %sites;
 	exit Plack::Handler::Starman->new(listen => [ map { ":$_" } @ports ])->run(sub { $web->run_psgi(@_) });
 }
 
@@ -86,7 +82,7 @@ App::DuckPAN::Cmd::Publisher - Starting up the publisher test webserver
 
 =head1 VERSION
 
-version 0.162
+version 0.163
 
 =head1 AUTHOR
 

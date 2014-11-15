@@ -14,7 +14,9 @@ duckpan_pr_template.md
 lib/App/DuckPAN.pm
 lib/App/DuckPAN/Cmd.pm
 lib/App/DuckPAN/Cmd/Check.pm
+lib/App/DuckPAN/Cmd/Empty.pm
 lib/App/DuckPAN/Cmd/Env.pm
+lib/App/DuckPAN/Cmd/Help.pm
 lib/App/DuckPAN/Cmd/Install.pm
 lib/App/DuckPAN/Cmd/Installdeps.pm
 lib/App/DuckPAN/Cmd/New.pm
@@ -31,7 +33,6 @@ lib/App/DuckPAN/CmdBase/Env.pm
 lib/App/DuckPAN/Config.pm
 lib/App/DuckPAN/DDG.pm
 lib/App/DuckPAN/HasApp.pm
-lib/App/DuckPAN/Help.pm
 lib/App/DuckPAN/Perl.pm
 lib/App/DuckPAN/Query.pm
 lib/App/DuckPAN/Web.pm
