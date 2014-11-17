@@ -1,10 +1,32 @@
 ==================================================
-Changes from 1741-01-31 00:00:00 +0000 to present.
+Changes from 1741-02-02 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.163 at 2014-11-15 16:26:22 +0000
+version 0.164 at 2014-11-17 23:28:01 +0000
 ------------------------------------------
+
+  Change: a1597dc11ef588d5d2f57a409fb28f3be0592d2f
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-17 18:27:28 +0000
+
+    Merge pull request #173 from duckduckgo/mwm/insanity
+
+    DuckPAN: deal with incompatible versions of PCPF. 
+
+  Change: 5c973d5edf8b188a44d1eca08214fb9410f5af5f
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-15 20:26:21 +0000
+
+    DuckPAN: deal with incompatible versions of PCPF.
+
+    Either of the changes by itself should fix this, but why not both?
+
+    - Ask for version 0.8 of Parse::CPAN::Packages::Fast - Wastefully
+    send the filename to the parser
+
+    If the first one doesn't move them up, the second one will make it
+    work with the old interface. 
 
   Change: 381e2d62a3cf71ace3f61e0a8a008c13e3c5276a
   Author: Matt Miller <mwmiller@outlook.com>

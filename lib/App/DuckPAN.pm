@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.163';
+$App::DuckPAN::VERSION = '0.164';
 use feature 'state';
 
 use Moo;
@@ -66,7 +66,7 @@ sub _build_duckpan_packages {
 		$self->emit_and_exit(-1, "Cannot download $package_url");
 	}
 
-	return Parse::CPAN::Packages::Fast->new($mirror_to->openr);
+	return Parse::CPAN::Packages::Fast->new($mirror_to->stringify);
 }
 
 option duckpan => (
@@ -531,7 +531,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.163
+version 0.164
 
 =head1 DuckPAN
 

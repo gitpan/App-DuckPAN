@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Empty::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Install the distribution in current directory
-$App::DuckPAN::Cmd::Empty::VERSION = '0.163';
+$App::DuckPAN::Cmd::Empty::VERSION = '0.164';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -26,7 +26,7 @@ App::DuckPAN::Cmd::Empty - Install the distribution in current directory
 
 =head1 VERSION
 
-version 0.163
+version 0.164
 
 =head1 AUTHOR
 

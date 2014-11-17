@@ -52,7 +52,7 @@ my %WriteMakefileArgs = (
     "MooX::Cmd" => "0.001",
     "MooX::Options" => "3.71",
     "POE" => "1.354",
-    "Parse::CPAN::Packages::Fast" => "0.04",
+    "Parse::CPAN::Packages::Fast" => "0.08",
     "Path::Tiny" => "0.058",
     "Perl::Version" => "1.013",
     "Plack" => "1.0029",
@@ -79,7 +79,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.98",
     "Test::Script::Run" => "0.05"
   },
-  "VERSION" => "0.163",
+  "VERSION" => "0.164",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -118,7 +118,7 @@ my %FallbackPrereqs = (
   "MooX::Cmd" => "0.001",
   "MooX::Options" => "3.71",
   "POE" => "1.354",
-  "Parse::CPAN::Packages::Fast" => "0.04",
+  "Parse::CPAN::Packages::Fast" => "0.08",
   "Path::Tiny" => "0.058",
   "Perl::Version" => "1.013",
   "Plack" => "1.0029",

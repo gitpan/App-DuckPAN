@@ -60,7 +60,7 @@
             "MooX::Cmd" : "0.001",
             "MooX::Options" : "3.71",
             "POE" : "1.354",
-            "Parse::CPAN::Packages::Fast" : "0.04",
+            "Parse::CPAN::Packages::Fast" : "0.08",
             "Path::Tiny" : "0.058",
             "Perl::Version" : "1.013",
             "Plack" : "1.0029",
@@ -100,7 +100,7 @@
          "web" : "https://github.com/duckduckgo/p5-app-duckpan"
       }
    },
-   "version" : "0.163",
+   "version" : "0.164",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"
@@ -403,7 +403,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.163",
+                  "tag" : "0.164",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
