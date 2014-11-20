@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Query::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Main application/loop for duckpan query
-$App::DuckPAN::Query::VERSION = '0.164';
+$App::DuckPAN::Query::VERSION = '0.165';
 use Moo;
 
 my $query;
@@ -50,7 +50,7 @@ sub run {
 			for my $b (@blocks) {
 				for ($b->request($request)) {
 					$hit = 1;
-					$app->emit_info('---', p($_, colored => 1), '---');
+					$app->emit_info('---', p($_, colored => $app->colors), '---');
 				}
 			}
 			unless ($hit) {
@@ -108,7 +108,7 @@ App::DuckPAN::Query - Main application/loop for duckpan query
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 AUTHOR
 

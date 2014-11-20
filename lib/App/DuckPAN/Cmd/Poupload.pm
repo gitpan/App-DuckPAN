@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Poupload::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Command for uploading .po files to the DuckDuckGo Community Platform
-$App::DuckPAN::Cmd::Poupload::VERSION = '0.164';
+$App::DuckPAN::Cmd::Poupload::VERSION = '0.165';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -16,6 +16,7 @@ option domain => (
 	is => 'ro',
 	format => 's',
 	predicate => 1,
+	doc => 'set token domain in upload',
 );
 
 option upload_uri => (
@@ -23,6 +24,7 @@ option upload_uri => (
 	format => 's',
 	lazy => 1,
 	builder => 1,
+	doc => 'URI for token uploads. defaults to "https://duck.co/translate/po/upload"',
 );
 
 sub _build_upload_uri { 'https://duck.co/translate/po/upload' }
@@ -72,7 +74,7 @@ App::DuckPAN::Cmd::Poupload - Command for uploading .po files to the DuckDuckGo 
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 AUTHOR
 

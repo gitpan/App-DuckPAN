@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Cmd::Check::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Command for checking the requirements
-$App::DuckPAN::Cmd::Check::VERSION = '0.164';
+$App::DuckPAN::Cmd::Check::VERSION = '0.165';
 use Moo;
 with qw( App::DuckPAN::Cmd );
 
@@ -12,6 +12,7 @@ use MooX::Options protect_argv => 0;
 sub run {
 	my ($self) = @_;
 
+	$self->app->empty_cache;
 	$self->app->check_requirements; # Exits on missing requirements.
 	$self->app->emit_info("EVERYTHING OK! You can now go hacking! :)");
 	exit 0;
@@ -29,7 +30,7 @@ App::DuckPAN::Cmd::Check - Command for checking the requirements
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 AUTHOR
 

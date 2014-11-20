@@ -1,10 +1,119 @@
 ==================================================
-Changes from 1741-02-02 00:00:00 +0000 to present.
+Changes from 1741-02-05 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.164 at 2014-11-17 23:28:01 +0000
+version 0.165 at 2014-11-20 21:38:06 +0000
 ------------------------------------------
+
+  Change: e875c42ea0f999f03406666391f86effddedecce
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-20 16:31:07 +0000
+
+    Merge pull request #181 from killerfish/aha!
+
+    Fix for duckpan (#180) 
+
+  Change: f5bf434719323d035763cd8e04032866dd2d201d
+  Author: Usman Raza <usman.r123@gmail.com>
+  Date : 2014-11-20 23:30:59 +0000
+
+    removed ternary 
+
+  Change: f6dbd313e7efec927d109bd65b1f8b30c12dd6db
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-18 22:14:57 +0000
+
+    Merge pull request #174 from duckduckgo/mwm/options
+
+    Options updates. 
+
+  Change: 4b91d8fe038e3bf66bdf4b1a4b9d9a948e72a3b1
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-19 02:55:20 +0000
+
+    Merge pull request #178 from duckduckgo/zaahir/duckpan-help-updates
+
+    remove references to deleted `empty` cmd, fix `duckpan` output 
+
+  Change: 80129b19991809cfb1c2ff7d0f356eac1128f871
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-18 15:41:42 +0000
+
+    remove reference to deleted empty cmd, fix commands output 
+
+  Change: c915475a31064e88b2745bbded1210a0a29d613b
+  Author: Zaahir Moolla <moollaza@fastmail.fm>
+  Date : 2014-11-18 14:23:49 +0000
+
+    Merge pull request #177 from GregorioMartinez/master
+
+    README.md - Fixing Codio Project Template link in documentation 
+
+  Change: afa985ceba65c8dd7e11525f953846bc262d7774
+  Author: Greg Martinez <greg@gmartinez.com>
+  Date : 2014-11-17 23:38:54 +0000
+
+    README.md - Fixing Codio Project Template link in documentation 
+
+  Change: ab7f96336bee1824506fd50662a8426d3d640042
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-18 05:48:48 +0000
+
+    Add doc strings for existing commands.
+
+    TshHey can be seen with --help.. which feels quite conflicting with
+    the 'help' command. Not sure what to think about that. 
+
+  Change: 7cad82aaf8baae7a739720df2996f19e04ae1ad7
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-18 05:48:48 +0000
+
+    DuckPAN: make --no-check turn off all checking.
+
+    If this is not what is intended, we should probably rename the
+    switch.
+
+    Also, do an empty_cache in check to more generally require a full
+    re-check. 
+
+  Change: 2c8bbadc41cb21b74fa265709b3c83107e126a72
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-18 05:48:48 +0000
+
+    Simplify cache handling.
+
+    - Change 'empty' command to '--empty' switch. - Remove '--force' from
+    Server. - Remove '--cachesecs' from Server.
+
+    This allows other commands (say, `query`) to benefit from the same
+    cache-handling as the `server` command.
+
+    If we just empty the cache up-front then we don't have to keep
+    checking to see if there was a force. We can just see if they exist
+    and are new enough. 
+
+  Change: c4cfd81cae64b335839f5f090d75852edc6fdb69
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-18 05:48:48 +0000
+
+    DuckPAN: add option to turn on/off colored output
+
+    Defaults to colors on, can be switched off with --no-colors.
+
+    This doesn't work so well with the Web portions, which don't have
+    access to duckpan switches.
+
+    Fixes #29. 
+
+  Change: e891bd549711a82ff47a612ef0fa888d725d5975
+  Author: Matt Miller <mwmiller@outlook.com>
+  Date : 2014-11-18 05:48:48 +0000
+
+    DuckPAN: change --no_check to --check.
+
+    Also, make is negativeable so that --no-check works. This is a more
+    standard way of doing these kind of options. 
 
   Change: a1597dc11ef588d5d2f57a409fb28f3be0592d2f
   Author: Zaahir Moolla <moollaza@fastmail.fm>

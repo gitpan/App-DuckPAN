@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Perl::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Perl related functionality for duckpan
-$App::DuckPAN::Perl::VERSION = '0.164';
+$App::DuckPAN::Perl::VERSION = '0.165';
 use Moo;
 with 'App::DuckPAN::HasApp';
 
@@ -184,7 +184,7 @@ App::DuckPAN::Perl - Perl related functionality for duckpan
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 AUTHOR
 

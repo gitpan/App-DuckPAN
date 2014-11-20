@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::Web::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: Webserver for duckpan server
-$App::DuckPAN::Web::VERSION = '0.164';
+$App::DuckPAN::Web::VERSION = '0.165';
 use Moo;
 use DDG::Request;
 use DDG::Test::Location;
@@ -370,7 +370,11 @@ sub request {
 			}
 		}
 		
-		$error ? $error = "" :  $page = $root->as_HTML;
+		if($error) {
+			$error = "";
+		} else {
+			$page = $root->as_HTML;
+		}
 
 		$page =~ s/####DUCKDUCKHACK-CALL-NRJ####/$calls_nrj/g;
 		$page =~ s/####DUCKDUCKHACK-CALL-NRC####/$calls_nrc/g;
@@ -420,7 +424,7 @@ App::DuckPAN::Web - Webserver for duckpan server
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 AUTHOR
 

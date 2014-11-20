@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::DDG::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: DDG related functionality of duckpan
-$App::DuckPAN::DDG::VERSION = '0.164';
+$App::DuckPAN::DDG::VERSION = '0.165';
 use Moo;
 with 'App::DuckPAN::HasApp';
 
@@ -27,7 +27,7 @@ sub show_failed_modules {
 
     if (%$failed_to_load) {
         $self->app->emit_notice("These instant answers were not loaded:");
-        $self->app->emit_notice(p($failed_to_load, colored => 1));
+        $self->app->emit_notice(p($failed_to_load, colored => $self->app->colors));
         $self->app->emit_notice(
             "To learn more about installing Perl dependencies, please read https://duck.co/duckduckhack/faq#how-do-i-install-a-missing-perl-dependency.",
             "Note: You can ignore these errors if you're not working on these instant answers."
@@ -138,7 +138,7 @@ App::DuckPAN::DDG - DDG related functionality of duckpan
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 AUTHOR
 

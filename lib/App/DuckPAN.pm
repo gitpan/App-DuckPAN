@@ -3,7 +3,7 @@ BEGIN {
   $App::DuckPAN::AUTHORITY = 'cpan:DDG';
 }
 # ABSTRACT: The DuckDuckGo DuckPAN client
-$App::DuckPAN::VERSION = '0.164';
+$App::DuckPAN::VERSION = '0.165';
 use feature 'state';
 
 use Moo;
@@ -26,20 +26,45 @@ use Carp;
 use Encode;
 use Perl::Version;
 use Path::Tiny;
-use App::DuckPAN::Cmd::Help
+use App::DuckPAN::Cmd::Help;
 
 our $VERSION ||= '9.999';
 
 option dukgo_login => (
 	is => 'ro',
 	lazy => 1,
-	default => sub { 'https://duck.co/my/login' }
+	default => sub { 'https://duck.co/my/login' },
+	doc => 'URI to log into community platform. defaults to "https://duck.co/my/login"',
 );
 
-option no_check => (
-	is => 'ro',
-	lazy => 1,
-	default => sub { 0 }
+option check => (
+	is          => 'ro',
+	lazy        => 1,
+	negativable => 1,
+	default     => sub { 1 },
+	doc         => 'perform requirements checks. turn off with --no-check',
+);
+
+option 'empty' => (
+	is          => 'ro',
+	lazy        => 1,
+	short       => 'e',
+	default     => sub { 0 },
+	doc         => 'empty duckpan cache at start-up',
+);
+
+has cachesec => (
+	is      => 'ro',
+	lazy    => 1,
+	default => sub { 60 * 60 * 4 },    # 4 hours by default
+);
+
+option colors => (
+	is          => 'ro',
+	lazy        => 1,
+	negativable => 1,
+	default     => sub { 1 },
+	doc         => 'use color output. turn off with --no-colors',
 );
 
 option verbose => (
@@ -47,6 +72,7 @@ option verbose => (
 	lazy    => 1,
 	short   => 'v',
 	default => sub { 0 },
+	doc     => 'provide expanded output during operation',
 );
 
 has duckpan_packages => (
@@ -72,7 +98,8 @@ sub _build_duckpan_packages {
 option duckpan => (
 	is => 'ro',
 	lazy => 1,
-	default => sub { 'http://duckpan.org/' }
+	default => sub { 'http://duckpan.org/' },
+	doc => 'URI for the duckpan package server. defaults to "https://duckpan.org/"',
 );
 
 sub _ua_string {
@@ -85,16 +112,19 @@ sub _ua_string {
 option http_proxy => (
 	is => 'ro',
 	predicate => 1,
+	doc => 'proxy to use for outbound HTTP requests',
 );
 
 option config => (
 	is => 'ro',
 	predicate => 1,
+	doc => 'path to config directory. defaults to "~/.duckpan/config"',
 );
 
 option cache => (
 	is => 'ro',
 	predicate => 1,
+	doc => 'path to cache directory. defaults to "~/.duckpan/cache"',
 );
 
 has term => (
@@ -239,7 +269,7 @@ sub _build_ddg {
 
 sub execute {
 	my ( $self, $args, $chain ) = @_;
-	my @arr_args = @{$args};
+	my @arr_args = grep { $_ !~ /^-/} @{$args}; # Command line switches make it here, so we try to remove
 	App::DuckPAN::Cmd::Help->run(1) if scalar @arr_args == 0;
 	if (@arr_args) {
 		my @modules;
@@ -251,7 +281,7 @@ sub execute {
 				$_ =~ /^app/i) {
 				push @modules, $_;
 			} elsif ($_ =~ m/^(duckpan|upgrade|update|reinstall)$/i) {
-				$self->empty_cache();
+				$self->empty_cache unless $self->empty;
 				push @modules, 'App::DuckPAN';
 				push @modules, 'DDG' if $_ =~ /^(?:upgrade|reinstall)$/i;
 				unshift @modules, 'reinstall' if lc($_) eq 'reinstall';
@@ -269,14 +299,14 @@ has standard_prefix_width => (
 	default => sub { 9 },
 );
 
-sub _colored_prefix {
+sub _output_prefix {
 	my ($self, $word, $color) = @_;
 
 	my $extra_spaces = max(0, $self->standard_prefix_width - length($word) - 2 ); # 2 []s to be added.
 
 	my $full_prefix = '[' . uc $word . ']' . (' ' x $extra_spaces);
 
-	return colored($full_prefix, $color);
+	return ($self->colors) ? colored($full_prefix, $color) : $full_prefix;
 }
 
 sub emit_info {
@@ -288,7 +318,7 @@ sub emit_info {
 sub emit_error {
 	my ($self, @msg) = @_;
 
-	state $prefix = $self->_colored_prefix('ERROR', 'red bold');
+	state $prefix = $self->_output_prefix('ERROR', 'red bold');
 
 	$self->_print_msg(*STDERR, $prefix, @msg);
 }
@@ -296,7 +326,7 @@ sub emit_error {
 sub emit_and_exit {
 	my ($self, $exit_code, @msg) = @_;
 
-	state $prefix = $self->_colored_prefix('FATAL', 'bright_red bold');
+	state $prefix = $self->_output_prefix('FATAL', 'bright_red bold');
 
 	if ($exit_code == 0) {      # This is just an info message.
 		$self->emit_info(@msg);
@@ -318,7 +348,7 @@ sub emit_debug {
 sub emit_notice {
 	my ($self, @msg) = @_;
 
-	state $prefix = $self->_colored_prefix('NOTiCE', 'yellow bold');
+	state $prefix = $self->_output_prefix('NOTICE', 'yellow bold');
 
 	$self->_print_msg(*STDOUT, $prefix, @msg);
 }
@@ -350,10 +380,21 @@ sub phrase_to_camel {
 sub check_requirements {
 	my ($self) = @_;
 
-	$self->emit_info("Checking for DuckPAN requirements...");
+	if (!$self->check) {
+		$self->emit_notice("Requirements checking was disabled...");
+		return 1;
+	}
+	my $signal_file = $self->cfg->cache_path->child('perl_checked');
+	my $last_checked_perl = ($signal_file->exists) ? $signal_file->stat->mtime : 0;
+	if ((time - $last_checked_perl) <= $self->cachesec) {
+		$self->emit_debug("Perl module versions recently checked, skipping requirements check...");
+	} else {
+		$self->emit_info("Checking for DuckPAN requirements...");
 
-	$self->emit_and_exit(1, 'Requirements check failed')
-	  unless ($self->check_perl && $self->check_app_duckpan && $self->check_ddg && $self->check_ssh && $self->check_git);
+		$self->emit_and_exit(1, 'Requirements check failed')
+		  unless ($self->check_perl && $self->check_app_duckpan && $self->check_ddg && $self->check_ssh && $self->check_git);
+	}
+	$signal_file->touch;
 
 	return 1;
 }
@@ -431,7 +472,6 @@ sub check_perl {
 
 sub check_app_duckpan {
 	my ($self) = @_;
-	return 1 if $self->no_check;
 	my $ok                = 1;
 	my $installed_version = $self->get_local_app_duckpan_version;
 	return $ok if $installed_version && $installed_version == '9.999';
@@ -454,7 +494,6 @@ sub check_app_duckpan {
 
 sub check_ddg {
 	my ($self) = @_;
-	return 1 if $self->no_check;
 	my $ok                = 1;
 	my $installed_version = $self->get_local_ddg_version;
 	return $ok if $installed_version && $installed_version == '9.999';
@@ -513,6 +552,7 @@ sub BUILD {
 
 	$self->emit_and_exit(1, 'We dont support Win32') if ($^O eq 'MSWin32');
 	my $env_config = $self->cfg->config_path->child('env.ini');
+	$self->empty_cache if $self->empty;
 	if ($env_config->exists) {
 		my $env = Config::INI::Reader->read_file($env_config);
 		map { $ENV{$_} = $env->{'_'}{$_}; } keys %{$env->{'_'}} if $env->{'_'};
@@ -531,7 +571,7 @@ App::DuckPAN - The DuckDuckGo DuckPAN client
 
 =head1 VERSION
 
-version 0.164
+version 0.165
 
 =head1 DuckPAN
 
